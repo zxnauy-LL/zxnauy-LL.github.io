@@ -507,6 +507,8 @@ var _hmt = _hmt || [];
         <select class="select select-bordered" id="categoryFilter" name="categoryFilter">
           <option value="">All Categories</option>
           
+            <option value="talks">talks</option>
+          
         </select>
       </div>
 
@@ -528,7 +530,7 @@ var _hmt = _hmt || [];
 
     <!-- Results Count -->
     <div class="mt-2 text-sm opacity-70">
-      <span id="resultsCount">Showing all 2 notes</span>
+      <span id="resultsCount">Showing all 3 notes</span>
     </div>
 
     <!-- Search suggestions (hidden by default) -->
@@ -541,6 +543,50 @@ var _hmt = _hmt || [];
 
   <!-- Posts Archive -->
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="notesContainer">
+    
+      <article class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-105 transition-all duration-300 note-item h-80 flex flex-col" 
+               data-category="talks"
+               data-year="2025"
+               data-title="思考"
+               data-content=""
+               data-tags="">
+        <div class="card-body p-6 flex flex-col h-full">
+          <!-- Header -->
+          <div class="mb-4">
+            <h2 class="card-title text-lg font-bold leading-tight mb-2">
+              <a href="/2025/10/21/%E6%80%9D%E8%80%83/" class="hover:text-primary no-underline transition-colors duration-200">
+                思考
+              </a>
+            </h2>
+            <div class="flex items-center justify-between">
+              <time class="text-sm opacity-70">
+                Oct 21, 2025
+              </time>
+              
+                <div class="badge badge-primary badge-sm">
+                  talks
+                </div>
+              
+            </div>
+          </div>
+
+          <!-- Excerpt -->
+          
+            <div class="flex-1"></div>
+          
+
+          <!-- Tags -->
+          
+
+          <!-- Read More -->
+          <div class="card-actions justify-end mt-auto">
+            <a href="/2025/10/21/%E6%80%9D%E8%80%83/" class="btn btn-primary btn-sm">
+              Read More
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </article>
     
       <article class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-105 transition-all duration-300 note-item h-80 flex flex-col" 
                data-category=""
