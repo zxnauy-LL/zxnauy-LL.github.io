@@ -495,611 +495,415 @@ var _hmt = _hmt || [];
 
   <!-- Content area for Desktop -->
   <div class="lg:ml-80 pt-20 px-4 py-8">
-    <div class="container mx-auto px-4 py-8 space-y-6">
-  <!-- Post Header Card -->
-  <div class="rounded-box card bg-base-100 shadow-lg text-base-content hover:shadow-xl transition-all duration-300 timeline-item">
+    <div class="container mx-auto px-4">
+  <h1 class="text-4xl font-extrabold mb-8 text-base-content">我的想法</h1>
+  
+  <!-- Search and Filter -->
+  <!-- Filters -->
+  <div class="glass-card p-4 mb-8">
+    <div class="flex flex-wrap gap-4">
+      <!-- Category Filter -->
+      <div class="form-control">
+        <select class="select select-bordered" id="categoryFilter" name="categoryFilter">
+          <option value="">All Categories</option>
+          
+            <option value="notes">notes</option>
+          
+            <option value="talks">talks</option>
+          
+        </select>
+      </div>
 
-    <div class="card-body">
-      <h1 class="text-4xl font-bold text-primary mb-4">talks</h1>
-      
-      <div class="flex flex-wrap items-center gap-4 text-sm opacity-70 mb-4">
-        <div class="flex items-center gap-2">
-          <i class="fa-regular fa-calendar"></i>
-          <time datetime="2025-10-06T16:33:37.000Z">2025-10-07</time>
-        </div>
+      <!-- Year Filter -->
+      <div class="form-control">
+        <select class="select select-bordered" id="yearFilter" name="yearFilter">
+          <option value="">All Years</option>
+          
+            <option value="2025">2025</option>
+          
+        </select>
+      </div>
 
-        <div class="flex items-center gap-1">
-              <i class="fa-solid fa-clock"></i>
-              <span>0 min read</span>
-        </div>
-        <!-- Categories and Tags -->
-          <div class="flex flex-wrap gap-2">
-            
-            
-            
+      <!-- Search -->
+      <div class="form-control flex-1">
+        <input type="text" placeholder="Search notes..." class="input input-bordered" id="searchInput" />
+      </div>
+    </div>
+
+    <!-- Results Count -->
+    <div class="mt-2 text-sm opacity-70">
+      <span id="resultsCount">Showing all 2 notes</span>
+    </div>
+
+    <!-- Search suggestions (hidden by default) -->
+    <div id="searchSuggestions" class="hidden mt-2">
+      <div class="bg-base-100 border border-base-300 rounded-lg shadow-lg max-h-60 overflow-y-auto">
+        <!-- Search suggestions will be populated here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Posts Archive -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="notesContainer">
+    
+      <article class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-105 transition-all duration-300 note-item h-80 flex flex-col" 
+               data-category="talks"
+               data-year="2025"
+               data-title="思考"
+               data-content=""
+               data-tags="">
+        <div class="card-body p-6 flex flex-col h-full">
+          <!-- Header -->
+          <div class="mb-4">
+            <h2 class="card-title text-lg font-bold leading-tight mb-2">
+              <a href="/2025/10/21/%E6%80%9D%E8%80%83/" class="hover:text-primary no-underline transition-colors duration-200">
+                思考
+              </a>
+            </h2>
+            <div class="flex items-center justify-between">
+              <time class="text-sm opacity-70">
+                Oct 21, 2025
+              </time>
+              
+                <div class="badge badge-primary badge-sm">
+                  talks
+                </div>
+              
+            </div>
           </div>
-      </div>
+
+          <!-- Excerpt -->
+          
+            <div class="flex-1"></div>
+          
+
+          <!-- Tags -->
+          
+
+          <!-- Read More -->
+          <div class="card-actions justify-end mt-auto">
+            <a href="/2025/10/21/%E6%80%9D%E8%80%83/" class="btn btn-primary btn-sm">
+              Read More
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </article>
     
-    </div>
+      <article class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-105 transition-all duration-300 note-item h-80 flex flex-col" 
+               data-category="notes"
+               data-year="2025"
+               data-title="第一次生日记录"
+               data-content=""
+               data-tags="">
+        <div class="card-body p-6 flex flex-col h-full">
+          <!-- Header -->
+          <div class="mb-4">
+            <h2 class="card-title text-lg font-bold leading-tight mb-2">
+              <a href="/2025/10/04/%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%94%9F%E6%97%A5%E8%AE%B0%E5%BD%95/" class="hover:text-primary no-underline transition-colors duration-200">
+                第一次生日记录
+              </a>
+            </h2>
+            <div class="flex items-center justify-between">
+              <time class="text-sm opacity-70">
+                Oct 04, 2025
+              </time>
+              
+                <div class="badge badge-primary badge-sm">
+                  notes
+                </div>
+              
+            </div>
+          </div>
+
+          <!-- Excerpt -->
+          
+            <div class="flex-1"></div>
+          
+
+          <!-- Tags -->
+          
+
+          <!-- Read More -->
+          <div class="card-actions justify-end mt-auto">
+            <a href="/2025/10/04/%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%94%9F%E6%97%A5%E8%AE%B0%E5%BD%95/" class="btn btn-primary btn-sm">
+              Read More
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+    
   </div>
 
-  <!-- Post Content Card -->
-  <div class="card bg-base-100 hover:shadow-xl">
-    <div class="card-body">
-      <!-- Post Content -->
-      <div class="prose prose-lg max-w-none post-content">
-        <style>
-          /* ========== 基础排版样式 ========== */
-          /* 主要内容容器：post-content 类 */
-          .post-content {
-            line-height: 1.8;                   /* 行高：1.8 */
-            color: hsl(var(--bc));              /* 颜色：基础内容色 */
-          }
-          
-          /* 标题样式：h1-h6 元素 */
-          .post-content h1, .post-content h2, .post-content h3,
-          .post-content h4, .post-content h5, .post-content h6 {
-            color: hsl(var(--bc));              /* 颜色：基础内容色 */
-            font-weight: 600;                   /* 字重：半粗体 */
-            margin-top: 2rem;                   /* 上边距 */
-            margin-bottom: 1rem;                /* 下边距 */
-            line-height: 1.3;                   /* 行高：紧密 */
-          }
-          
-          /* 段落样式：p 元素 */
-          .post-content p {
-            margin: 1.2rem 0;                  /* 上下边距 */
-            text-align: justify;                /* 两端对齐 */
-          }
-          
-          /* 强调文本：strong 和 b 元素 */
-          .post-content strong, .post-content b {
-            font-weight: 700;                   /* 字重：粗体 */
-            color: hsl(var(--bc));              /* 颜色：基础内容色 */
-          }
-          
-          /* 斜体文本：em 和 i 元素 */
-          .post-content em, .post-content i {
-            font-style: italic;                 /* 斜体 */
-            color: hsl(var(--bc) / 0.9);       /* 颜色：略透明的基础内容色 */
-          }
-
-          /* ========== 代码块样式 ========== */
-          /* DaisyUI mockup-code 组件：代码块容器 */
-          .post-content .mockup-code {
-            margin: 1.5rem 0;                  /* 上下边距 */
-            border-radius: 0.5rem;              /* 圆角 */
-            overflow-x: auto;                   /* 水平滚动 */
-            overflow-y: hidden;                 /* 隐藏垂直溢出 */
-          }
-          
-          /* mockup-code 内的 pre 元素：预格式化文本容器 */
-          .post-content .mockup-code pre {
-            white-space: pre-wrap;              /* 保持空白，允许换行 */
-            word-wrap: break-word;              /* 长单词换行 */
-            overflow-wrap: break-word;          /* 溢出换行 */
-            line-height: 0;                     /* 行高：0（行与行之间无间距） */
-            margin: 0;                          /* 上下边距：0 */
-          }
-          
-          /* mockup-code 内的 code 元素：代码文本 */
-          .post-content .mockup-code code {
-            white-space: pre-wrap;              /* 保持空白，允许换行 */
-            word-wrap: break-word;              /* 长单词换行 */
-            overflow-wrap: break-word;          /* 溢出换行 */
-            background: none;                   /* 移除背景 */
-            border: none;                       /* 移除边框 */
-            padding: 0;                         /* 移除内边距 */
-            font-size: inherit;                 /* 继承父元素字体大小 */
-            line-height: 1.2;                     /* 行高：0（行与行之间无间距） */
-            margin: 0;                          /* 上下边距：0 */
-          }
-          
-          /* 隐藏原始的语法高亮容器：避免样式冲突 */
-          .post-content .highlight {
-            display: none;                      /* 完全隐藏 */
-          }
-          
-          /* 行内代码样式：code 标签 */
-          .post-content code {
-            background-color: hsl(var(--n) / 0.08);  /* 半透明中性色背景 */
-            color: hsl(var(--bc));                    /* 基础内容颜色 */
-            padding: 0.2rem 0.4rem;                   /* 内边距 */
-            border-radius: 0.25rem;                   /* 圆角 */
-            font-size: 0.875rem;                      /* 字体大小 14px */
-            border: 1px solid hsl(var(--b3));        /* 边框 */
-          }
-
-          /* ========== 引用块样式 ========== */
-          /* blockquote 元素：引用文本块 */
-          .post-content blockquote {
-            border-left: 4px solid hsl(var(--p));    /* 左边框：主色调 */
-            background-color: hsl(var(bg-base-200));        /* 背景：base-200 */
-            margin: 1.5rem 0;                        /* 上下边距 */
-            padding: 1rem 1.5rem;                    /* 内边距 */
-            border-radius: 0 0.5rem 0.5rem 0;        /* 右侧圆角 */
-            position: relative;                       /* 相对定位 */
-            font-style: italic;                       /* 斜体 */
-            color: hsl(var(--bc) / 0.9);            /* 颜色：略透明 */
-          }
-          
-          /* 引用块内的段落：移除额外边距 */
-          .post-content blockquote p {
-            margin: 0.5rem 0;                  /* 减少上下边距 */
-          }
-          
-          /* 引用块最后一个段落：移除下边距 */
-          .post-content blockquote p:last-child {
-            margin-bottom: 0;                  /* 移除下边距 */
-          }
-
-          /* ========== 列表样式 ========== */
-          /* 无序列表：ul 元素 */
-          .post-content ul {
-            margin: 1rem 0;                    /* 上下边距 */
-            padding-left: 2rem;                /* 左内边距 */
-            list-style-type: disc;              /* 列表标记：实心圆点 */
-          }
-          
-          /* 有序列表：ol 元素 */
-          .post-content ol {
-            margin: 1rem 0;                    /* 上下边距 */
-            padding-left: 2rem;                /* 左内边距 */
-            list-style-type: decimal;           /* 列表标记：数字 */
-          }
-          
-          /* 列表项：li 元素 */
-          .post-content li {
-            margin: 0.5rem 0;                  /* 上下边距 */
-            line-height: 1.6;                  /* 行高 */
-          }
-          
-          /* 嵌套列表：缩进和不同标记 */
-          .post-content ul ul {
-            list-style-type: circle;            /* 二级：空心圆 */
-            margin: 0.5rem 0;                  /* 减少边距 */
-          }
-          
-          .post-content ul ul ul {
-            list-style-type: square;            /* 三级：方形 */
-          }
-
-          /* ========== 链接样式 ========== */
-          /* 链接元素：a 标签的默认状态 */
-          .post-content a {
-            color: hsl(var(--p));               /* 主色调 */
-            text-decoration: underline;         /* 下划线 */
-            text-decoration-thickness: 1px;     /* 下划线粗细 */
-            text-underline-offset: 2px;         /* 下划线偏移距离 */
-            transition: all 0.2s ease;          /* 平滑过渡效果 */
-          }
-          
-          /* 链接悬停状态：鼠标悬停时的样式 */
-          .post-content a:hover {
-            color: hsl(var(--pf));              /* 主色调焦点色 */
-            text-decoration-thickness: 2px;     /* 下划线变粗 */
-          }
-          
-          /* ========== 表格样式 ========== */
-          /* 表格外层滚动容器：支持水平滚动 */
-          .post-content .table-container {
-            overflow-x: auto;                   /* 水平滚动 */
-            margin: 1.5rem 0;                  /* 上下边距 */
-            border-radius: 0.5rem;              /* 圆角 */
-            border: 2px solid hsl(var(--b3));  /* 整体边框 */
-            border-left: 4px solid hsl(var(--p)); /* 左边框加粗：主色调 */
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 阴影效果 */
-          }
-          
-          /* 表格容器：table 元素 */
-          .post-content table {
-            width: 100%;                        /* 全宽 */
-            min-width: 600px;                  /* 最小宽度：确保有足够空间 */
-            margin: 0;                          /* 移除边距，由外层容器控制 */
-            border-collapse: collapse;          /* 边框合并 */
-            background-color: hsl(var(--b2) / 0.3); /* 背景：半透明基础色 */
-          }
-          
-          /* 表头单元格：th 元素 */
-          .post-content th {
-            background-color: hsl(var(--b2));   /* 基础色背景 */
-            font-weight: 600;                   /* 半粗体 */
-            padding: 0.75rem 1rem;              /* 内边距 */
-            text-align: left;                   /* 左对齐 */
-            color: hsl(var(--bc));              /* 基础内容颜色 */
-            border-bottom: 1px solid hsl(var(--bc)); /* 下边框 */
-            border-right: 1px solid hsl(var(--bc));  /* 右边框 */
-          }
-          
-          /* 表头最后一列：移除右边框 */
-          .post-content th:last-child {
-            border-right: none;                 /* 移除右边框 */
-          }
-          
-          /* 表格数据单元格：td 元素 */
-          .post-content td {
-            padding: 0.75rem 1rem;              /* 内边距 */
-            color: hsl(var(--bc));              /* 基础内容颜色 */
-            border-bottom: 1px solid hsl(var(--bc)); /* 下边框 */
-            border-right: 1px solid hsl(var(--bc));  /* 右边框 */
-          }
-          
-          /* 数据单元格最后一列：移除右边框 */
-          .post-content td:last-child {
-            border-right: none;                 /* 移除右边框 */
-          }
-          
-          /* 表格奇偶行样式：偶数行背景色 */
-          .post-content tbody tr:nth-child(even) {
-            background-color: hsl(var(--b2) / 0.5); /* 半透明基础色背景 */
-          }
-          
-          /* 表格行悬停效果：鼠标悬停时的背景色 */
-          .post-content tbody tr:hover {
-            background-color: hsl(var(--b2));   /* 基础色背景 */
-          }
-          
-          /* 表格最后一行：移除下边框 */
-          .post-content tbody tr:last-child td {
-            border-bottom: none;                /* 移除下边框 */
-          }
-
-          /* ========== 图片样式 ========== */
-          /* 图片元素：img 标签样式 */
-          .post-content img {
-            max-width: 100%;                    /* 最大宽度：响应式 */
-            height: auto;                       /* 自动高度：保持比例 */
-            border-radius: 0.5rem;              /* 圆角 */
-            margin: 1.5rem 0;                  /* 上下边距 */
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* 阴影效果 */
-          }
-          
-          /* ========== 分割线样式 ========== */
-          /* 分割线元素：hr 标签 */
-          .post-content hr {
-            border: none;                       /* 移除默认边框 */
-            height: 1px;                        /* 高度 */
-            background-color: hsl(var(--b3));   /* 背景色：基础色 */
-            margin: 2rem 0;                     /* 上下边距 */
-          }
-          
-          /* ========== 数学公式样式 ========== */
-          /* MathJax 通用样式：数学公式容器（v2兼容） */
-          .post-content .MathJax {
-            font-size: 1.1em !important;       /* 字体大小：略大于正文 */
-          }
-          
-          /* MathJax v3 容器：行内数学公式 */
-          .post-content mjx-container {
-            margin: 0.5rem 0;                  /* 上下边距 */
-          }
-          
-          /* MathJax v3 块级容器：display="true" 属性的公式 */
-          .post-content mjx-container[display="true"] {
-            margin: 1.5rem 0;                  /* 上下边距 */
-            text-align: center;                /* 居中对齐 */
-          }
-          
-          /* 包含块级数学公式的段落：:has() 伪类选择器 */
-          .post-content p:has(mjx-container[display="true"]) {
-            text-align: center;                /* 居中对齐 */
-            line-height: 1;                    /* 行高：紧密排列 */
-          }
-          
-          /* 自定义数学显示容器：.math-display 类 */
-          .math-display {
-            text-align: center;                /* 居中对齐 */
-            margin: 1.5rem 0;                 /* 上下边距 */
-          }
-
-          /* ========== 特殊元素样式修复 ========== */
-          /* 标题中的行内代码：h1-h6 标题内的 code 元素 */
-          .post-content h1 code, .post-content h2 code, .post-content h3 code, 
-          .post-content h4 code, .post-content h5 code, .post-content h6 code {
-            font-size: 0.85em;                 /* 字体大小：相对于标题字体的85% */
-            background-color: hsl(var(--b2));  /* 背景色：基础色 */
-            padding: 0.2rem 0.4rem;            /* 内边距 */
-          }
-        </style>
-        
-      <!-- Content will be processed here -->
-      <div id="processed-content"></div>
-
-
-      <!-- Tags Footer -->
-        
-    </div>
+  <!-- Empty State -->
+  <div id="emptyState" class="text-center py-16 hidden">
+    <div class="text-6xl opacity-20 mb-4">📝</div>
+    <h3 class="text-xl font-semibold mb-2">No notes found</h3>
+    <p class="opacity-70">Try adjusting your search criteria</p>
   </div>
 
+  <!-- Pagination (if needed) -->
   
-   
-  </div>
-
-<!-- Post Footer -->
-<div class="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
-  <!-- Share Section -->
-  <div class="card bg-base-100 hover:shadow-xl">
-    <div class="card-body p-6">
-      <h3 class="card-title mb-4">Share this post</h3>
-      <div class="flex flex-wrap gap-3">
-
-        <button class="btn btn-sm btn-primary">
-          <a href="https://twitter.com/intent/tweet?text=talks&url=http%3A%2F%2Fexample.com%2Ftalks%2Findex.html" 
-            target="_blank" rel="noopener">
-          <i class="fa-brands fa-twitter"></i>
-          <span>X (Twitter)</span>
-          </a>
-        </button>
-
-        
-        <button class="btn btn-sm btn-info">
-        <a href="https://www.linkedin.com/sharing/share-offsite/?url=http%3A%2F%2Fexample.com%2Ftalks%2Findex.html" 
-            target="_blank" rel="noopener">
-          <i class="fa-brands fa-linkedin"></i>
-          <span>LinkedIn</span>
-        </a>
-        </button>
-
-        <button onclick="copyToClipboard()" class="btn btn-sm btn-outline">
-          <i class="fa-solid fa-copy"></i>
-          <span>Copy Link</span>
-        </button>
-
-
-      </div>
-    </div>
-  </div>
-
-  <!-- Navigation Section -->
-  <div class="card bg-base-100 hover:shadow-xl">
-    <div class="card-body p-6">
-      <h3 class="card-title mb-4">Navigation</h3>
-      <div class="space-y-3">
-        <a href="/notes/" class="btn btn-sm btn btn-outline w-full justify-start">
-          <i class="fa-solid fa-folder-tree"></i>
-          All Notes
-        </a>
-        
-        
-      </div>
-    </div>
-  </div>
 </div>
 
-    
-  <!-- Previous/Next Navigation Card -->
-  
-
-</div>
-
-
-
-
-
-<!-- Math Processing and Code Block Transformation -->
 <script>
-// Copy to clipboard function
-function copyToClipboard() {
-  const url = window.location.href;
-  navigator.clipboard.writeText(url).then(function() {
-    // Show success feedback
-    const button = event.target.closest('button');
-    const originalText = button.innerHTML;
-    button.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
-    button.classList.remove('btn-outline');
-    button.classList.add('btn-success');
-    
-    setTimeout(function() {
-      button.innerHTML = originalText;
-      button.classList.remove('btn-success');
-      button.classList.add('btn-outline');
-    }, 2000);
-  }).catch(function(err) {
-    console.error('Failed to copy: ', err);
-    // Fallback for older browsers
-    const textArea = document.createElement('textarea');
-    textArea.value = url;
-    document.body.appendChild(textArea);
-    textArea.select();
-    document.execCommand('copy');
-    document.body.removeChild(textArea);
-    
-    // Show success feedback
-    const button = event.target.closest('button');
-    const originalText = button.innerHTML;
-    button.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
-    button.classList.remove('btn-outline');
-    button.classList.add('btn-success');
-    
-    setTimeout(function() {
-      button.innerHTML = originalText;
-      button.classList.remove('btn-success');
-      button.classList.add('btn-outline');
-    }, 2000);
-  });
-}
+let searchData = [];
+let allPosts = [];
 
 document.addEventListener('DOMContentLoaded', function() {
-  const processedContent = document.getElementById('processed-content');
-  let content = processedContent.innerHTML;
+  const searchInput = document.getElementById('searchInput');
+  const categoryFilter = document.getElementById('categoryFilter');
+  const yearFilter = document.getElementById('yearFilter');
+  const resultsCount = document.getElementById('resultsCount');
+  const noteItems = document.querySelectorAll('.note-item');
 
-  // ========== 数学公式处理 ==========
-  console.log('开始处理数学公式...');
+  // Store all posts data
+  allPosts = Array.from(noteItems).map(item => ({
+    element: item,
+    title: item.dataset.title,
+    content: item.dataset.content,
+    category: item.dataset.category,
+    categories: item.dataset.category.split(',').filter(c => c.trim()),
+    year: item.dataset.year,
+    tags: item.dataset.tags ? item.dataset.tags.split(',').filter(t => t.trim()) : []
+  }));
+
+  // Handle URL parameters for category and tag filtering
+  const urlParams = new URLSearchParams(window.location.search);
+  const categoryParam = urlParams.get('category');
+  const tagParam = urlParams.get('tag');
   
-  // 1. 处理单行公式：<p>$$formula$$</p>
-  content = content.replace(/<p>\s*\$\$([\s\S]*?)\$\$\s*<\/p>/g, function(match, formula) {
-    console.log('找到单行公式:', formula.trim());
-    return '<div class="math-display">$$' + formula.trim() + '$$</div>';
-  });
-
-  // 2. 处理多行公式：<p>$$</p>...content...<p>$$</p>
-  content = content.replace(/<p>\s*\$\$\s*<\/p>([\s\S]*?)<p>\s*\$\$\s*<\/p>/g, function(match, mathContent) {
-    console.log('找到多行公式:', mathContent);
-    // 提取数学内容，移除HTML标签
-    const cleanContent = mathContent
-      .replace(/<p>/g, '\n')
-      .replace(/<\/p>/g, '')
-      .replace(/\n+/g, '\n')
-      .trim();
-    console.log('清理后的数学内容:', cleanContent);
-    return '<div class="math-display">$$\n' + cleanContent + '\n$$</div>';
-  });
-
-  // 3. 清理任何剩余的单独$$ 
-  content = content.replace(/<p>\s*\$\$\s*<\/p>/g, '');
+  if (categoryParam) {
+    categoryFilter.value = categoryParam;
+  }
   
-  console.log('数学公式处理完成');
+  // Initial filter
+  filterPosts();
 
-  // 更新内容
-  processedContent.innerHTML = content;
+  // Load search data from hexo-generator-search
+  loadSearchData();
 
-  // ========== 表格滚动容器处理 ==========
-  // 为所有表格添加滚动容器
-  const tables = processedContent.querySelectorAll('table');
-  tables.forEach(function(table) {
-    if (!table.closest('.table-container')) {
-      const container = document.createElement('div');
-      container.className = 'table-container';
-      table.parentNode.insertBefore(container, table);
-      container.appendChild(table);
-    }
-  });
-
-  // ========== 代码块转换 ==========
-  setTimeout(function() {
-    console.log('开始处理代码块...');
-    
-    // 转换 Hexo highlight.js 代码块为 mockup-code 样式
-    const highlightFigures = processedContent.querySelectorAll('figure.highlight');
-    console.log('找到代码块数量:', highlightFigures.length);
-    
-    highlightFigures.forEach(function(figure) {
-      const codeLines = [];
-      const lineSpans = figure.querySelectorAll('td.code .line');
+  async function loadSearchData() {
+    try {
+      const response = await fetch('/search.xml');
+      const text = await response.text();
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(text, 'text/xml');
+      const entries = xmlDoc.querySelectorAll('entry');
       
-      lineSpans.forEach(function(lineSpan) {
-        let lineText = '';
-        for (let node of lineSpan.childNodes) {
-          if (node.nodeType === Node.TEXT_NODE) {
-            lineText += node.textContent;
-          } else if (node.nodeType === Node.ELEMENT_NODE) {
-            lineText += node.textContent;
+      searchData = Array.from(entries).map(entry => ({
+        title: entry.querySelector('title')?.textContent || '',
+        content: entry.querySelector('content')?.textContent || '',
+        url: entry.querySelector('url')?.textContent || '',
+        categories: entry.querySelector('categories')?.textContent || '',
+        tags: entry.querySelector('tags')?.textContent || ''
+      }));
+    } catch (error) {
+      console.warn('Could not load search data:', error);
+      // Fallback to local search if XML fails
+      searchData = allPosts.map(post => ({
+        title: post.title,
+        content: post.content,
+        url: post.element.querySelector('a').href,
+        categories: post.category,
+        tags: ''
+      }));
+    }
+  }
+
+  function filterPosts() {
+    const categoryVal = categoryFilter.value;
+    const yearVal = yearFilter.value;
+    const searchVal = searchInput.value.toLowerCase().trim();
+    const urlParams = new URLSearchParams(window.location.search);
+    const tagParam = urlParams.get('tag');
+    
+    let visibleCount = 0;
+
+    allPosts.forEach(post => {
+      const matchesCategory = !categoryVal || post.categories.includes(categoryVal);
+      const matchesYear = !yearVal || post.year === yearVal;
+      
+      // Check if post matches tag filter
+      let matchesTag = !tagParam;
+      if (tagParam) {
+        // Use the tags data from the post data
+        matchesTag = post.tags.some(tag => tag.trim() === tagParam.trim());
+      }
+      
+      // Search functionality
+      let matchesSearch = true;
+      if (searchVal.length >= 2) {
+        matchesSearch = post.title.includes(searchVal) || 
+                      post.content.includes(searchVal);
+        
+        // Use search data if available
+        if (searchData.length > 0) {
+          const postUrl = post.element.querySelector('a').getAttribute('href');
+          const searchMatch = searchData.find(data => data.url.includes(postUrl));
+          if (searchMatch) {
+            matchesSearch = searchMatch.title.toLowerCase().includes(searchVal) ||
+                           searchMatch.content.toLowerCase().includes(searchVal) ||
+                           searchMatch.categories.toLowerCase().includes(searchVal) ||
+                           searchMatch.tags.toLowerCase().includes(searchVal);
           }
         }
-        codeLines.push(lineText);
-      });
-
-      // 如果没有从表格获取到行，尝试其他方法
-      if (codeLines.length === 0) {
-        const codeContent = figure.querySelector('td.code');
-        if (codeContent) {
-          const text = codeContent.textContent || codeContent.innerText;
-          codeLines.push(...text.split('\n').filter(line => line.trim() !== ''));
-        }
+      } else if (searchVal.length > 0 && searchVal.length < 2) {
+        matchesSearch = false;
       }
 
-      if (codeLines.length === 0) return;
-
-      // 创建新的 mockup-code 容器
-      const mockupCode = document.createElement('div');
-      mockupCode.className = 'mockup-code bg-base-200 text-base-content w-full';
-      
-      let htmlContent = '';
-      codeLines.forEach((line, index) => {
-        const lineNumber = index + 1;
-        const escapedLine = line
-          .replace(/&/g, '&amp;')
-          .replace(/</g, '&lt;')
-          .replace(/>/g, '&gt;')
-          .replace(/"/g, '&quot;')
-          .replace(/'/g, '&#39;');
-        
-        // 检测特殊行类型并添加相应样式
-        let className = '';
-        const lowerLine = line.toLowerCase().trim();
-        
-        if (lowerLine.includes('error') || lowerLine.includes('exception') || lowerLine.includes('failed')) {
-          className = ' class="bg-error text-error-content"';
-        } else if (lowerLine.includes('warning') || lowerLine.includes('warn')) {
-          className = ' class="bg-warning text-warning-content"';
-        } else if (lowerLine.includes('success') || lowerLine.includes('done') || lowerLine.includes('completed')) {
-          className = ' class="bg-success text-success-content"';
-        } else if (lowerLine.includes('info') || lowerLine.includes('installing') || lowerLine.includes('loading')) {
-          className = ' class="bg-info text-info-content"';
-        }
-        
-        htmlContent += `<pre data-prefix="${lineNumber}"${className}><code>${escapedLine}</code></pre>`;
-      });
-
-      mockupCode.innerHTML = htmlContent;
-      figure.parentNode.replaceChild(mockupCode, figure);
+      if (matchesCategory && matchesYear && matchesTag && matchesSearch) {
+        post.element.style.display = 'block';
+        visibleCount++;
+      } else {
+        post.element.style.display = 'none';
+      }
     });
 
-    // 处理其他普通的 pre/code 块
-    const preBlocks = processedContent.querySelectorAll('pre:not(.mockup-code pre)');
-    preBlocks.forEach(function(pre) {
-      if (pre.closest('.mockup-code')) return;
-      
-      const codeElement = pre.querySelector('code') || pre;
-      const text = codeElement.textContent || codeElement.innerText || '';
-      const lines = text.split('\n').filter(line => line.trim() !== '');
-      
-      if (lines.length === 0) return;
-      
-      const mockupCode = document.createElement('div');
-      mockupCode.className = 'mockup-code bg-base-200 text-base-content w-full';
-      
-      let htmlContent = '';
-      lines.forEach((line, index) => {
-        const lineNumber = index + 1;
-        const escapedLine = line
-          .replace(/&/g, '&amp;')
-          .replace(/</g, '&lt;')
-          .replace(/>/g, '&gt;')
-          .replace(/"/g, '&quot;')
-          .replace(/'/g, '&#39;');
-        
-        htmlContent += `<pre data-prefix="${lineNumber}"><code>${escapedLine}</code></pre>`;
-      });
-
-      mockupCode.innerHTML = htmlContent;
-      pre.parentNode.replaceChild(mockupCode, pre);
-    });
-
-    console.log('代码块处理完成');
-
-    // ========== MathJax 初始化 ==========
-    console.log('初始化 MathJax...');
-    if (window.MathJax) {
-      MathJax.typesetPromise([processedContent]).then(function() {
-        console.log('MathJax 渲染完成');
-      }).catch(function (err) {
-        console.log('MathJax typeset failed: ' + err.message);
-      });
+    // Update results count
+    if (searchVal || categoryVal || yearVal || tagParam) {
+      resultsCount.textContent = `Found ${visibleCount} result${visibleCount !== 1 ? 's' : ''}`;
+    } else {
+      resultsCount.textContent = `Showing all ${allPosts.length} notes`;
     }
-  }, 50); // 短暂延迟确保DOM更新完成
-});
-</script>
-
-<!-- MathJax Configuration -->
-<script>
-window.MathJax = {
-  tex: {
-    inlineMath: [['$', '$'], ['\\(', '\\)']],
-    displayMath: [['$$', '$$'], ['\\[', '\\]']],
-    processEscapes: true,
-    processEnvironments: true,
-    tags: 'ams'
-  },
-  options: {
-    ignoreHtmlClass: 'tex2jax_ignore',
-    processHtmlClass: 'tex2jax_process'
   }
-};
-</script>
 
-<script type="text/javascript" id="MathJax-script" async
-src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  // Initialize filters
+  categoryFilter.addEventListener('change', filterPosts);
+  yearFilter.addEventListener('change', filterPosts);
+  searchInput.addEventListener('input', debounce(filterPosts, 300));
+
+  // Debounce function for search
+  function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  }
+
+  function highlightText(element, query) {
+    const titleElement = element.querySelector('.card-title a, .card-title span');
+    const contentElement = element.querySelector('.prose');
+    
+    if (titleElement) {
+      titleElement.innerHTML = titleElement.innerHTML.replace(
+        new RegExp(`(${escapeRegExp(query)})`, 'gi'),
+        '<mark class="bg-yellow-200 text-yellow-800">$1</mark>'
+      );
+    }
+    
+    if (contentElement) {
+      contentElement.innerHTML = contentElement.innerHTML.replace(
+        new RegExp(`(${escapeRegExp(query)})`, 'gi'),
+        '<mark class="bg-yellow-200 text-yellow-800">$1</mark>'
+      );
+    }
+  }
+
+  function escapeRegExp(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
+  function showAllPosts() {
+    allPosts.forEach(post => {
+      // Restore original content
+      post.element.innerHTML = post.originalContent;
+    });
+    filterByCategories();
+  }
+
+  function filterByCategories() {
+    const selectedCategory = categoryFilter.value;
+    const selectedYear = yearFilter.value;
+    let visibleCount = 0;
+
+    allPosts.forEach(post => {
+      const matchesCategory = !selectedCategory || post.category === selectedCategory;
+      const matchesYear = !selectedYear || post.year === selectedYear;
+
+      if (matchesCategory && matchesYear) {
+        post.element.style.display = 'block';
+        visibleCount++;
+      } else {
+        post.element.style.display = 'none';
+      }
+    });
+
+    updateResultsDisplay(visibleCount);
+  }
+
+  function updateResultsDisplay(count, query = '') {
+    if (count === 0) {
+      emptyState.classList.remove('hidden');
+      notesContainer.style.display = 'none';
+      resultsCount.textContent = query ? `No results found for "${query}"` : 'No notes match the selected filters';
+    } else {
+      emptyState.classList.add('hidden');
+      notesContainer.style.display = 'grid';
+      if (query) {
+        resultsCount.textContent = `Found ${count} result${count > 1 ? 's' : ''} for "${query}"`;
+      } else {
+        resultsCount.textContent = `Showing ${count} note${count > 1 ? 's' : ''}`;
+      }
+    }
+  }
+
+  // Event listeners
+  searchBtn.addEventListener('click', () => {
+    performSearch(searchInput.value);
+  });
+
+  searchInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      performSearch(searchInput.value);
+    }
+  });
+
+  // Real-time search with debounce
+  let searchTimeout;
+  searchInput.addEventListener('input', (e) => {
+    const query = e.target.value.trim();
+    
+    clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(() => {
+      if (query.length >= 2) {
+        performSearch(query);
+        showSearchSuggestions(query);
+      } else {
+        clearSearch();
+      }
+    }, 300); // 300ms debounce
+  });
+
+  clearBtn.addEventListener('click', clearSearch);
+
+  function clearSearch() {
+    searchInput.value = '';
+    showAllPosts();
+  }
+
+  categoryFilter.addEventListener('change', () => {
+    if (searchInput.value.trim()) {
+      performSearch(searchInput.value);
+    } else {
+      filterByCategories();
+    }
+  });
+
+  yearFilter.addEventListener('change', () => {
+    if (searchInput.value.trim()) {
+      performSearch(searchInput.value);
+    } else {
+      filterByCategories();
+    }
+  });
+});
 </script>
   </div>
 
