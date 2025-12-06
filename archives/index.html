@@ -491,158 +491,752 @@ var _hmt = _hmt || [];
 
   <!-- Content area for Desktop -->
   <div class="lg:ml-80 pt-20 px-4 py-8">
-    <!-- 引入样式库：DaisyUI 和 TailwindCSS -->
-<!-- <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.min.css" rel="stylesheet" type="text/css" /> -->
+    <!-- 引入字体：Playfair Display (衬线) 和 Lato (无衬线) 用于简约风格 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
-<!-- About Section -->
-<div class="container mx-auto px-4 py-8">
-  <h2 class="text-3xl font-bold mb-8 text-base-content">Awake</h2>
-
-  <!-- Avatar -->
-  <div class="p-4 text-center border-base-300 flex flex-col items-center cursor-pointer lg:hidden">
-    <div class="avatar mb-4">
-      <div class="w-24 rounded-full ring ring-primary ring-offset-base-100">
-        <img
-          src="/images/avatar.jpg"
-          alt="Profile"
-          class="transition-transform duration-500 hover:rotate-210 cursor-pointer rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 w-24"
-        />
-      </div>
+<!-- -------------------------- Theme Switcher (Global) -------------------------- -->
+<div class="fixed top-4 right-4 z-50">
+  <div class="dropdown dropdown-end">
+    <div tabindex="0" role="button" class="btn btn-circle btn-ghost bg-base-100/80 backdrop-blur shadow-sm">
+      <i class="fa-solid fa-layer-group text-xl"></i>
     </div>
-    <h2 class="text-xl font-bold text-base-content">Lulu</h2>
-    <p class="text-base-content opacity-80"></p>
-  </div>
-
-  <!--About-->
-  <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content">
-    <div class="card-body">
-      <div class="prose max-w-none text-base">
-        这里是薯仔给lulu老大创建的电子小世界！记录与lulu老大的出行，想要制作的礼物🎁和相关灵感🤔，还有就是！lulu的爱好、喜爱的美食和介意的事情等等重要信息！那么请一点一点地搭建起来吧！
-      </div>
-    </div>
+    <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow-lg bg-base-100 rounded-box w-56 mt-2 border border-base-content/10">
+      <li class="menu-title px-4 py-2 text-xs opacity-50 uppercase tracking-widest">Layout & Theme</li>
+      <li><a onclick="switchLayout('original', 'dark')"><i class="fa-solid fa-gem mr-2"></i> 原生 · 精致 (Dark)</a></li>
+      <li><a onclick="switchLayout('original', 'wireframe')"><i class="fa-solid fa-file-lines mr-2"></i> 原生 · 朴素 (Light)</a></li>
+      <div class="divider my-1"></div>
+      <li><a onclick="switchLayout('minimalist', 'lofi')"><i class="fa-solid fa-newspaper mr-2"></i> 简约 · 杂志 (Lofi)</a></li>
+    </ul>
   </div>
 </div>
 
-  <!--heatmap-->
-<div class="container mx-auto px-4 py-8">
-  <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content">
-    <div class="card-body p-6">
-      
-      <!-- 头部导航栏：月份切换 -->
-      <div class="flex justify-between items-center mb-4 px-2">
-        <button class="btn btn-circle btn-sm btn-ghost text-lg" onclick="changeMonth(-1)" aria-label="Previous Month">
-          <i class="fa-solid fa-chevron-left"></i>
-        </button>
-        <div class="text-xl font-bold font-mono tracking-wide" id="heatmap-title">
+<!-- ===================================================================================== -->
+<!-- LAYOUT 1: ORIGINAL (原生/精致风格) -->
+<!-- ===================================================================================== -->
+<div id="layout-original" class="transition-opacity duration-500 ease-in-out">
+  
+  <!-- About Section -->
+    <div class="container mx-auto px-4 py-16 max-w-7xl">
+        <div class="flex items-center gap-3 mb-12 pl-2">
+        <div class="h-8 w-1.5 bg-gradient-to-b from-primary to-secondary rounded-full shadow-sm"></div>
+        <h2 class="text-3xl font-bold tracking-tight text-base-content">Awake</h2>
         </div>
-        <button class="btn btn-circle btn-sm btn-ghost text-lg" onclick="changeMonth(1)" aria-label="Next Month">
-          <i class="fa-solid fa-chevron-right"></i>
-        </button>
-      </div>
-      
-      <!-- 主要内容区域：左侧日历 + 右侧详情 -->
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-        
-        <!-- 左侧日历容器：在中等屏幕占 7 列，大屏幕占 8 列 -->
-        <!-- 修复点1: 这里的 min-h-[450px] 仅对父级有效，子级需要明确高度 -->
-        <div class="md:col-span-7 lg:col-span-8 rounded-2xl p-4 relative group">
-          <!-- 添加一个标签，明确这是左侧区域 -->
-          <!-- 标签位置稍微调整一下，增加一点左边距和上边距显得不那么挤 -->
-          <div class="absolute top-4 left-6 text-xs font-bold text-base-content/20 uppercase tracking-widest">Calendar View</div>
-          
-          <div id="heatmap-container" class="w-full h-[450px]"></div>
-        </div>
-        
-        <!-- 右侧详情面板：在中等屏幕占 5 列，大屏幕占 4 列 -->
-        <div class="md:col-span-5 lg:col-span-4 sticky top-4">
-          <div class="card bg-base-100 shadow-md border border-base-200">
-            <div class="card-body p-6">
-              <h3 class="card-title text-lg font-bold mb-4 flex items-center gap-2 text-primary">
-                <i class="fa-regular fa-calendar-check"></i>
-                <span>记录详情</span>
-              </h3>
-              
-              <!-- 默认状态：未选择日期 -->
-              <div id="detail-default" class="text-center py-12 flex flex-col items-center justify-center min-h-[300px]">
-                <div class="w-16 h-16 rounded-full bg-base-200 flex items-center justify-center mb-4">
-                  <i class="fa-regular fa-hand-pointer text-2xl opacity-40"></i>
+
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div class="card glass rounded-2xl shadow-lg bg-base-100/70 text-base-content p-6 lg:col-span-1 flex flex-col items-center text-center transition-all duration-300">
+            <div class="avatar mb-4">
+                <div class="w-28 rounded-full ring ring-primary ring-offset-base-100 ring-offset-4">
+                <img src="/images/avatar.jpg" alt="Profile" class="rounded-full w-28" />
                 </div>
-                <p class="font-medium">选择一个日期</p>
-                <p class="text-sm text-base-content/60 mt-2 max-w-[200px]">点击左侧日历中的方块，查看当天的思念记录与心情。</p>
-              </div>
-              
-              <!-- 详情内容（初始隐藏） -->
-              <div id="detail-content" class="hidden min-h-[300px]">
-                <!-- 日期头部 -->
-                <div class="flex items-end gap-3 mb-6">
-                  <div class="text-4xl font-bold text-base-content" id="detail-day">--</div>
-                  <div class="mb-1">
-                    <div class="text-sm font-bold uppercase text-primary" id="detail-month">--</div>
-                    <div class="text-xs opacity-50" id="detail-weekday">--</div>
-                  </div>
-                  <div class="ml-auto">
-                     <span id="detail-mood-badge" class="badge badge-lg badge-outline gap-2 font-bold py-3">--</span>
-                  </div>
+            </div>
+            <h2 class="text-2xl font-bold text-base-content mb-1">Lulu</h2>
+            <p class="text-sm opacity-60 font-medium tracking-wider"></p>
+            <div class="divider my-4"></div>
+            <p class="text-xs text-base-content/70">「记录lulu老大的网站！」</p>
+        </div>
+
+        <div class="card glass rounded-2xl shadow-lg bg-base-100 text-base-content lg:col-span-3">
+            <div class="card-body p-6">
+            <div class="prose max-w-none text-base">
+                <h3 class="text-xl font-bold text-base-content mb-4">关于我</h3>
+                这里是薯仔给lulu老大创建的电子小世界！记录与lulu老大的出行，想要制作的礼物🎁和相关灵感🤔，还有就是！lulu的爱好、喜爱的美食和介意的事情等等重要信息！那么请一点一点地搭建起来吧！
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+  <!-- Heatmap Section -->
+    <div class="container mx-auto px-4 py-16 max-w-7xl">
+        <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content">
+        <div class="card-body p-6">
+            <div class="flex justify-between items-center mb-4 px-2">
+            <button class="btn btn-circle btn-sm btn-ghost text-lg" onclick="changeMonth(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+            <div class="flex flex-col items-center justify-center" id="heatmap-title"></div>
+            <button class="btn btn-circle btn-sm btn-ghost text-lg" onclick="changeMonth(1)"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+            <div class="md:col-span-7 lg:col-span-8 rounded-2xl p-4 relative group">
+                <div class="absolute top-4 left-6 flex items-center gap-2 select-none pointer-events-none">
+                <div class="w-1 h-3 bg-primary/40 rounded-full"></div>
+                <span class="text-xs font-black text-transparent bg-clip-text bg-gradient-to-r from-base-content/80 to-base-content/60 uppercase tracking-[0.25em]">Calendar View</span>
+                </div>
+                <div id="heatmap-container" class="w-full h-[450px]"></div>
+            </div>
+            
+            <div class="md:col-span-5 lg:col-span-4 sticky top-4">
+                <div class="card bg-base-100 shadow-md border border-base-200">
+                <div class="card-body p-6">
+                    <h3 class="card-title text-lg font-bold mb-4 flex items-center gap-2 text-primary">
+                    <i class="fa-regular fa-calendar-check"></i>
+                    <span>记录详情</span>
+                    </h3>
+                    <div id="detail-default" class="text-center py-12 flex flex-col items-center justify-center min-h-[300px]">
+                    <div class="w-16 h-16 rounded-full bg-base-200 flex items-center justify-center mb-4">
+                        <i class="fa-regular fa-hand-pointer text-2xl opacity-40"></i>
+                    </div>
+                    <p class="font-medium">选择一个日期</p>
+                    <p class="text-sm text-base-content/60 mt-2 max-w-[200px]">点击左侧日历中的方块，查看当天的思念记录与心情。</p>
+                    </div>
+                    <div id="detail-content" class="hidden min-h-[300px] flex flex-col">
+                    <div class="flex items-end gap-3 mb-6">
+                        <div class="text-4xl font-bold text-base-content" id="detail-day">--</div>
+                        <div class="mb-1">
+                        <div class="text-sm font-bold uppercase text-primary" id="detail-month">--</div>
+                        <div class="text-xs opacity-50" id="detail-weekday">--</div>
+                        </div>
+                        <div class="ml-auto"><span id="detail-mood-badge" class="badge badge-lg badge-outline gap-2 font-bold py-3">--</span></div>
+                    </div>
+                    <div class="mb-6">
+                        <div class="flex justify-between text-xs mb-2 font-medium opacity-70">
+                        <span>思念</span><span id="detail-count-val">0/10</span>
+                        </div>
+                        <progress id="detail-progress" class="progress progress-primary w-full h-3" value="0" max="10"></progress>
+                    </div>
+                    <div class="bg-base-200/50 rounded-xl p-4 border border-base-200/50 relative mb-4 flex-grow min-h-[200px]">
+                        <i class="fa-solid fa-quote-left text-primary/20 absolute top-3 left-3 text-xl"></i>
+                        <p class="text-sm leading-7 text-base-content/80 relative z-10 pt-8 indent-4" id="thoughts-text">...</p>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+            <div id="heatmap-data" data-json="[{&#34;date&#34;:&#34;2025-10-04&#34;,&#34;count&#34;:5,&#34;thoughts&#34;:&#34;今天是lulu的生日，，出去玩好开心呀好开心&#34;},{&#34;date&#34;:&#34;2025-10-11&#34;,&#34;count&#34;:10,&#34;thoughts&#34;:&#34;好后悔……好难过啊……&#34;},{&#34;date&#34;:&#34;2025-12-06&#34;,&#34;count&#34;:9,&#34;thoughts&#34;:&#34;偷偷完善这个网站ing……好想好想…&#34;}]" style="display: none;"></div>
+            <p class="text-sm text-center opacity-60 mt-4">点击日历中的日期查看详细信息</p>
+        </div>
+        </div>
+    </div>
+
+  <!-- Lulu 爱好 -->
+    <div class="container mx-auto px-4 max-w-7xl">
+        
+        <!-- 标题区域：统一风格 -->
+        <div class="flex items-center gap-3 mb-10 pl-2">
+        <div class="h-8 w-1.5 bg-gradient-to-b from-primary to-secondary rounded-full shadow-sm"></div>
+        <h2 class="text-3xl font-bold tracking-tight text-base-content">lulu的爱好</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        
+            
+            
+            <!-- 2. 卡片容器：group 用于控制内部悬停效果 -->
+            <div class="group relative flex flex-col h-full transition-all duration-300 hover:-translate-y-1">
+            
+            <!-- 装饰背景：悬停时显示的渐变光晕边框 -->
+            <div class="absolute -inset-0.5 bg-gradient-to-br from-primary/40 to-secondary/40 rounded-[1.4rem] opacity-0 group-hover:opacity-100 blur-sm transition duration-500"></div>
+            
+            <!-- 卡片主体：磨砂玻璃质感 -->
+            <div class="relative flex flex-col flex-grow h-full bg-base-100/90 backdrop-blur-md border border-base-content/5 rounded-[1.3rem] p-6 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden">
+                
+                <!-- 顶部装饰背景图标 (修改处) -->
+                <div class="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
+                    <!-- 动态应用图标 Class -->
+                    <i class="fa-solid fa-volleyball text-6xl text-primary transform rotate-12"></i>
                 </div>
 
-                <!-- 进度条/强度展示 -->
-                <div class="mb-6">
-                  <div class="flex justify-between text-xs mb-2 font-medium opacity-70">
-                    <span>思念</span>
-                    <span id="detail-count-val">0/10</span>
-                  </div>
-                  <progress id="detail-progress" class="progress progress-primary w-full h-3" value="0" max="10"></progress>
+                <!-- 3. 头部：动态图标与标题 -->
+                <div class="flex items-center gap-4 mb-5 relative z-10">
+                <!-- 自动生成首字母图标 -->
+                <div class="w-12 h-12 shrink-0 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-xl font-black shadow-sm group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-content transition-all duration-300">
+                    排
+                </div>
+                <h3 class="text-xl font-bold text-base-content group-hover:text-primary transition-colors">
+                    排球
+                </h3>
+                </div>
+
+                <!-- 4. 描述文字：限制行数，保持整齐 -->
+                
+                <div class="mb-6 relative z-10">
+                    <p class="text-sm text-base-content/70 leading-relaxed line-clamp-3 group-hover:text-base-content/90 transition-colors">
+                    这是老大最喜欢的运动，从高中开始就在打排球了！来了珠海之后，也爱上了沙滩排球🏐
+                    </p>
                 </div>
                 
-                <!-- 想法记录卡片 -->
-                <div class="bg-base-200/50 rounded-xl p-4 border border-base-200/50 relative mb-4 flex-grow min-h-[200px]">
-                  <i class="fa-solid fa-quote-left text-primary/20 absolute top-3 left-3 text-xl"></i>
-                  <!-- 这里的 pt-2 改为了 pt-8，增加了顶部内边距，使文字下移，避开图标 -->
-                  <p class="text-sm leading-7 text-base-content/80 relative z-10 pt-8 indent-4" id="thoughts-text">...</p>
+
+                <!-- 占位符，将标签推到底部 -->
+                <div class="flex-grow"></div>
+
+                <!-- 5. 关键词标签：精致的胶囊样式 -->
+                
+                <div class="pt-4 border-t border-base-content/5 relative z-10">
+                    <div class="flex flex-wrap gap-2">
+                    
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium bg-base-200/50 text-base-content/60 border border-base-content/5 group-hover:border-primary/20 group-hover:text-primary group-hover:bg-primary/5 transition-all duration-300 cursor-default">
+                        <span class="w-1 h-1 rounded-full bg-current opacity-40 mr-1.5"></span>
+                        排球
+                        </span>
+                    
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium bg-base-200/50 text-base-content/60 border border-base-content/5 group-hover:border-primary/20 group-hover:text-primary group-hover:bg-primary/5 transition-all duration-300 cursor-default">
+                        <span class="w-1 h-1 rounded-full bg-current opacity-40 mr-1.5"></span>
+                        运动
+                        </span>
+                    
+                    </div>
                 </div>
+                
+                
+            </div>
+            </div>
+        
+            
+            
+            <!-- 2. 卡片容器：group 用于控制内部悬停效果 -->
+            <div class="group relative flex flex-col h-full transition-all duration-300 hover:-translate-y-1">
+            
+            <!-- 装饰背景：悬停时显示的渐变光晕边框 -->
+            <div class="absolute -inset-0.5 bg-gradient-to-br from-primary/40 to-secondary/40 rounded-[1.4rem] opacity-0 group-hover:opacity-100 blur-sm transition duration-500"></div>
+            
+            <!-- 卡片主体：磨砂玻璃质感 -->
+            <div class="relative flex flex-col flex-grow h-full bg-base-100/90 backdrop-blur-md border border-base-content/5 rounded-[1.3rem] p-6 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden">
+                
+                <!-- 顶部装饰背景图标 (修改处) -->
+                <div class="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
+                    <!-- 动态应用图标 Class -->
+                    <i class="fa-solid fa-cookie-bite text-6xl text-primary transform rotate-12"></i>
+                </div>
+
+                <!-- 3. 头部：动态图标与标题 -->
+                <div class="flex items-center gap-4 mb-5 relative z-10">
+                <!-- 自动生成首字母图标 -->
+                <div class="w-12 h-12 shrink-0 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-xl font-black shadow-sm group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-content transition-all duration-300">
+                    零
+                </div>
+                <h3 class="text-xl font-bold text-base-content group-hover:text-primary transition-colors">
+                    零食
+                </h3>
+                </div>
+
+                <!-- 4. 描述文字：限制行数，保持整齐 -->
+                
+                <div class="mb-6 relative z-10">
+                    <p class="text-sm text-base-content/70 leading-relaxed line-clamp-3 group-hover:text-base-content/90 transition-colors">
+                    老大是一个很爱吃零食的小孩，当然要是美味的零食Ψ(￣∀￣)Ψ
+                    </p>
+                </div>
+                
+
+                <!-- 占位符，将标签推到底部 -->
+                <div class="flex-grow"></div>
+
+                <!-- 5. 关键词标签：精致的胶囊样式 -->
+                
+                <div class="pt-4 border-t border-base-content/5 relative z-10">
+                    <div class="flex flex-wrap gap-2">
+                    
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium bg-base-200/50 text-base-content/60 border border-base-content/5 group-hover:border-primary/20 group-hover:text-primary group-hover:bg-primary/5 transition-all duration-300 cursor-default">
+                        <span class="w-1 h-1 rounded-full bg-current opacity-40 mr-1.5"></span>
+                        零食
+                        </span>
+                    
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium bg-base-200/50 text-base-content/60 border border-base-content/5 group-hover:border-primary/20 group-hover:text-primary group-hover:bg-primary/5 transition-all duration-300 cursor-default">
+                        <span class="w-1 h-1 rounded-full bg-current opacity-40 mr-1.5"></span>
+                        美味
+                        </span>
+                    
+                    </div>
+                </div>
+                
+                
+            </div>
+            </div>
+        
+            
+            
+            <!-- 2. 卡片容器：group 用于控制内部悬停效果 -->
+            <div class="group relative flex flex-col h-full transition-all duration-300 hover:-translate-y-1">
+            
+            <!-- 装饰背景：悬停时显示的渐变光晕边框 -->
+            <div class="absolute -inset-0.5 bg-gradient-to-br from-primary/40 to-secondary/40 rounded-[1.4rem] opacity-0 group-hover:opacity-100 blur-sm transition duration-500"></div>
+            
+            <!-- 卡片主体：磨砂玻璃质感 -->
+            <div class="relative flex flex-col flex-grow h-full bg-base-100/90 backdrop-blur-md border border-base-content/5 rounded-[1.3rem] p-6 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden">
+                
+                <!-- 顶部装饰背景图标 (修改处) -->
+                <div class="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
+                    <!-- 动态应用图标 Class -->
+                    <i class="fa-solid fa-cat text-6xl text-primary transform rotate-12"></i>
+                </div>
+
+                <!-- 3. 头部：动态图标与标题 -->
+                <div class="flex items-center gap-4 mb-5 relative z-10">
+                <!-- 自动生成首字母图标 -->
+                <div class="w-12 h-12 shrink-0 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-xl font-black shadow-sm group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-content transition-all duration-300">
+                    猫
+                </div>
+                <h3 class="text-xl font-bold text-base-content group-hover:text-primary transition-colors">
+                    猫咪
+                </h3>
+                </div>
+
+                <!-- 4. 描述文字：限制行数，保持整齐 -->
+                
+                <div class="mb-6 relative z-10">
+                    <p class="text-sm text-base-content/70 leading-relaxed line-clamp-3 group-hover:text-base-content/90 transition-colors">
+                    🐱是老大最爱的动物！虽然对猫毛过敏，但是完全阻挡不了她的喜欢……
+                    </p>
+                </div>
+                
+
+                <!-- 占位符，将标签推到底部 -->
+                <div class="flex-grow"></div>
+
+                <!-- 5. 关键词标签：精致的胶囊样式 -->
+                
+                <div class="pt-4 border-t border-base-content/5 relative z-10">
+                    <div class="flex flex-wrap gap-2">
+                    
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium bg-base-200/50 text-base-content/60 border border-base-content/5 group-hover:border-primary/20 group-hover:text-primary group-hover:bg-primary/5 transition-all duration-300 cursor-default">
+                        <span class="w-1 h-1 rounded-full bg-current opacity-40 mr-1.5"></span>
+                        猫咪
+                        </span>
+                    
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium bg-base-200/50 text-base-content/60 border border-base-content/5 group-hover:border-primary/20 group-hover:text-primary group-hover:bg-primary/5 transition-all duration-300 cursor-default">
+                        <span class="w-1 h-1 rounded-full bg-current opacity-40 mr-1.5"></span>
+                        萌物
+                        </span>
+                    
+                    </div>
+                </div>
+                
+                
+            </div>
+            </div>
+        
+        </div>
+    </div>
+
+  <!-- Recent Notes -->
+    <div class="container mx-auto px-4 py-16 max-w-7xl">
+        <div class="flex items-center gap-3 mb-10 pl-2">
+        <div class="h-8 w-1.5 bg-gradient-to-b from-primary to-secondary rounded-full shadow-sm"></div>
+        <h2 class="text-3xl font-bold tracking-tight text-base-content">记lu</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+            <article class="card rounded-2xl shadow-md bg-base-100/90 text-base-content hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 h-full flex flex-col">
+            <div class="card-body p-6 flex flex-col h-full">
+                <div class="mb-4 flex justify-between items-start">
+                <time class="text-sm opacity-60 font-medium tracking-wide">
+                    <i class="far fa-calendar-alt mr-1"></i> 2025年10月23日
+                </time>
+                
+                    <div class="badge badge-outline badge-primary badge-sm py-2">薯仔想法</div>
+                
+                </div>
+                <h3 class="card-title text-xl font-bold leading-snug mb-3">
+                <a href="/2025/10/23/%E6%80%9D%E8%80%832/" class="hover:text-primary no-underline transition-colors duration-200">沟通失败的想法</a>
+                </h3>
+                <div class="flex-1"></div>
+                
+            </div>
+            </article>
+        
+            <article class="card rounded-2xl shadow-md bg-base-100/90 text-base-content hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 h-full flex flex-col">
+            <div class="card-body p-6 flex flex-col h-full">
+                <div class="mb-4 flex justify-between items-start">
+                <time class="text-sm opacity-60 font-medium tracking-wide">
+                    <i class="far fa-calendar-alt mr-1"></i> 2025年10月22日
+                </time>
+                
+                    <div class="badge badge-outline badge-primary badge-sm py-2">薯仔想法</div>
+                
+                </div>
+                <h3 class="card-title text-xl font-bold leading-snug mb-3">
+                <a href="/2025/10/22/%E6%80%9D%E8%80%831/" class="hover:text-primary no-underline transition-colors duration-200">思考</a>
+                </h3>
+                <div class="flex-1"></div>
+                
+            </div>
+            </article>
+        
+            <article class="card rounded-2xl shadow-md bg-base-100/90 text-base-content hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 h-full flex flex-col">
+            <div class="card-body p-6 flex flex-col h-full">
+                <div class="mb-4 flex justify-between items-start">
+                <time class="text-sm opacity-60 font-medium tracking-wide">
+                    <i class="far fa-calendar-alt mr-1"></i> 2025年10月04日
+                </time>
+                
+                    <div class="badge badge-outline badge-primary badge-sm py-2">出行</div>
+                
+                </div>
+                <h3 class="card-title text-xl font-bold leading-snug mb-3">
+                <a href="/2025/10/04/%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%94%9F%E6%97%A5%E8%AE%B0%E5%BD%95/" class="hover:text-primary no-underline transition-colors duration-200">第一次生日记录</a>
+                </h3>
+                <div class="flex-1"></div>
+                
+            </div>
+            </article>
+        
+        </div>
+        <div class="text-center mt-10">
+        <a href="/notes" class="btn btn-lg btn-outline btn-primary shadow-md"><i class="fa-solid fa-arrow-right mr-2"></i>探索所有记录</a>
+        </div>
+    </div>
+
+  <!-- Featured Projects -->
+    <div class="container mx-auto px-4 py-16 max-w-7xl">
+        <div class="flex items-center gap-3 mb-10 pl-2">
+        <div class="h-8 w-1.5 bg-gradient-to-b from-primary to-secondary rounded-full shadow-sm"></div>
+        <h2 class="text-3xl font-bold tracking-tight text-base-content">礼物及灵感</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+            <div class="group relative flex flex-col h-full transition-all duration-300 hover:-translate-y-1">
+            <div class="absolute -inset-0.5 bg-gradient-to-br from-primary/40 to-secondary/40 rounded-2xl opacity-0 group-hover:opacity-100 blur-sm transition duration-500"></div>
+            <div class="relative flex-grow card rounded-2xl shadow-md bg-base-100/90 text-base-content hover:shadow-xl transition-all duration-300">
+                <div class="card-body p-6">
+                <h3 class="card-title text-xl font-semibold mb-3 flex items-center justify-between">
+                    <span class="title group-hover:text-primary transition-colors">干花信封</span>
+                    
+                    <div class="badge badge-outline badge-secondary text-xs py-2">灵感</div>
+                    
+                </h3>
+                <div class="text-sm opacity-80 mb-3">
+                    
+                    <p class="flex items-center text-sm mb-1"><i class="far fa-calendar-alt w-4 mr-2 opacity-60"></i>2025年10月6日（中秋节）</p>
+                    
+                    
+                </div>
+                
+                    <p class="mt-3 text-base-content/80 text-sm flex-grow line-clamp-3">计划作为老大的考研结束小礼物！默默坚持了5~6个月，lulu老大一定很辛苦😭😭希望老大会喜欢这个礼物！</p>
+                
+                <div class="card-actions justify-end mt-4 pt-3 border-t border-base-content/5 gap-2 flex-wrap">
+                    
+                    
+                </div>
+                </div>
+            </div>
+            </div>
+        
+        </div>
+        <div class="text-center mt-10">
+        <a href="/projects" class="btn btn-lg btn-outline btn-primary shadow-md"><i class="fa-solid fa-lightbulb mr-2"></i>探索所有灵感</a>
+        </div>
+    </div>
+</div>
+
+<!-- ===================================================================================== -->
+<!-- LAYOUT 2: MINIMALIST (简约/杂志风格 - 参考 The Tavern) -->
+<!-- ===================================================================================== -->
+<div id="layout-minimalist" class="hidden transition-opacity duration-500 ease-in-out bg-white min-h-screen text-black" style="font-family: 'Lato', sans-serif;">
+  
+  <div class="container mx-auto px-4 py-12 max-w-4xl">
+    
+    <!-- Header Minimalist -->
+    <header class="text-center mb-20">
+      <div class="uppercase tracking-[0.3em] text-xs mb-4 text-gray-500">Current Status</div>
+      <h1 class="text-6xl font-bold mb-4" style="font-family: 'Playfair Display', serif;">LULU</h1>
+      <div class="flex justify-center items-center gap-2 text-sm text-gray-500 font-light italic">
+        <i class="far fa-clock"></i> <span id="minimalist-clock">Loading...</span>
+      </div>
+    </header>
+
+    <!-- Content Stream (类似 Reference Image 的卡片流) -->
+    <div class="flex flex-col gap-16">
+      
+      <!-- 1. Latest Thoughts (Heatmap Data but simplified) -->
+      <!-- 将热力图的最新数据转化为一张卡片 -->
+      
+      <div class="border-t border-b border-black/10 py-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <!-- Left Info -->
+          <div class="flex flex-col justify-between">
+            <div>
+              <div class="uppercase tracking-widest text-xs text-gray-400 mb-2">Location</div>
+              <div class="text-xl font-serif mb-6">Mind Palace - <span class="italic">Archive</span></div>
+              
+              <div class="uppercase tracking-widest text-xs text-gray-400 mb-2">Mood</div>
+              <div class="text-xl font-serif italic mb-6">
+                Deeply Thinking
+              </div>
+            </div>
+            
+            <div class="mt-8">
+              <div class="uppercase tracking-widest text-xs text-gray-400 mb-4">Ensemble</div>
+              <div class="text-2xl font-serif leading-relaxed">
+                "偷偷完善这个网站ing……好想好想…"
               </div>
             </div>
           </div>
+
+          <!-- Right Visual (Placeholder or Heatmap screenshot idea) -->
+          <div class="relative aspect-square md:aspect-auto border border-black/5 p-4 flex items-center justify-center bg-gray-50">
+             <div class="text-center">
+               <i class="fa-solid fa-brain text-6xl text-gray-200 mb-4"></i>
+               <p class="text-xs tracking-widest text-gray-400 uppercase">Thought Intensity</p>
+               <div class="text-4xl font-serif mt-2">9/10</div>
+             </div>
+             <!-- Minimalist corner decoration -->
+             <div class="absolute top-0 right-0 w-4 h-4 border-t border-r border-black"></div>
+             <div class="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-black"></div>
+          </div>
+        </div>
+        
+        <!-- Interest Bar -->
+        <div class="mt-10 flex items-center gap-4">
+          <i class="fa-solid fa-heart text-red-900 text-xs"></i>
+          <div class="uppercase tracking-widest text-xs font-bold w-24">Energy</div>
+          <div class="flex-grow h-0.5 bg-gray-100 relative">
+          </div>
+          <div class="text-xs font-bold">90%</div>
         </div>
       </div>
+
+      <!-- 2. Recent Notes (Loop) -->
       
-      <!-- 数据注入容器 -->
-      <div id="heatmap-data" 
-           data-json="[{&#34;date&#34;:&#34;2025-10-04&#34;,&#34;count&#34;:5,&#34;thoughts&#34;:&#34;今天是lulu的生日，，出去玩好开心呀好开心&#34;},{&#34;date&#34;:&#34;2025-10-11&#34;,&#34;count&#34;:10,&#34;thoughts&#34;:&#34;好后悔……好难过啊……&#34;},{&#34;date&#34;:&#34;2025-12-06&#34;,&#34;count&#34;:9,&#34;thoughts&#34;:&#34;偷偷完善这个网站ing……好想好想…&#34;}]" 
-           style="display: none;"></div>
+        <div class="border-t border-black/10 pt-10">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="relative group cursor-pointer overflow-hidden">
+               <!-- 如果文章有封面图，这里显示封面；否则显示默认 -->
+               
+                 <div class="w-full h-64 bg-gray-100 flex items-center justify-center text-gray-300">
+                   <span class="font-serif italic text-2xl">No Image</span>
+                 </div>
+               
+               <div class="absolute bottom-4 left-4 bg-white px-3 py-1 text-xs uppercase tracking-widest font-bold">
+                 Article
+               </div>
+            </div>
+            
+            <div class="flex flex-col justify-center">
+              <div class="flex items-center gap-2 mb-4 text-xs tracking-widest uppercase text-gray-400">
+                <span>Oct 23, 2025</span>
+                <span class="w-8 h-px bg-gray-300"></span>
+                
+                  <span>薯仔想法</span>
+                
+              </div>
+              
+              <h2 class="text-3xl font-serif font-bold mb-6 leading-tight group">
+                <a href="/2025/10/23/%E6%80%9D%E8%80%832/" class="hover:underline decoration-1 underline-offset-4 decoration-gray-300 text-black">
+                  沟通失败的想法
+                </a>
+              </h2>
+              
+              <div class="text-gray-600 font-light leading-relaxed mb-8 text-sm">
+                
+                  Click to read more details about this topic.
+                
+              </div>
+              
+              <a href="/2025/10/23/%E6%80%9D%E8%80%832/" class="self-start text-xs uppercase tracking-[0.2em] border-b border-black pb-1 hover:text-gray-500 hover:border-gray-500 transition-colors">
+                Read Journal
+              </a>
+            </div>
+          </div>
+        </div>
       
-      <!-- 底部说明文字 -->
+        <div class="border-t border-black/10 pt-10">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="relative group cursor-pointer overflow-hidden">
+               <!-- 如果文章有封面图，这里显示封面；否则显示默认 -->
+               
+                 <div class="w-full h-64 bg-gray-100 flex items-center justify-center text-gray-300">
+                   <span class="font-serif italic text-2xl">No Image</span>
+                 </div>
+               
+               <div class="absolute bottom-4 left-4 bg-white px-3 py-1 text-xs uppercase tracking-widest font-bold">
+                 Article
+               </div>
+            </div>
+            
+            <div class="flex flex-col justify-center">
+              <div class="flex items-center gap-2 mb-4 text-xs tracking-widest uppercase text-gray-400">
+                <span>Oct 22, 2025</span>
+                <span class="w-8 h-px bg-gray-300"></span>
+                
+                  <span>薯仔想法</span>
+                
+              </div>
+              
+              <h2 class="text-3xl font-serif font-bold mb-6 leading-tight group">
+                <a href="/2025/10/22/%E6%80%9D%E8%80%831/" class="hover:underline decoration-1 underline-offset-4 decoration-gray-300 text-black">
+                  思考
+                </a>
+              </h2>
+              
+              <div class="text-gray-600 font-light leading-relaxed mb-8 text-sm">
+                
+                  Click to read more details about this topic.
+                
+              </div>
+              
+              <a href="/2025/10/22/%E6%80%9D%E8%80%831/" class="self-start text-xs uppercase tracking-[0.2em] border-b border-black pb-1 hover:text-gray-500 hover:border-gray-500 transition-colors">
+                Read Journal
+              </a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="border-t border-black/10 pt-10">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="relative group cursor-pointer overflow-hidden">
+               <!-- 如果文章有封面图，这里显示封面；否则显示默认 -->
+               
+                 <div class="w-full h-64 bg-gray-100 flex items-center justify-center text-gray-300">
+                   <span class="font-serif italic text-2xl">No Image</span>
+                 </div>
+               
+               <div class="absolute bottom-4 left-4 bg-white px-3 py-1 text-xs uppercase tracking-widest font-bold">
+                 Article
+               </div>
+            </div>
+            
+            <div class="flex flex-col justify-center">
+              <div class="flex items-center gap-2 mb-4 text-xs tracking-widest uppercase text-gray-400">
+                <span>Oct 04, 2025</span>
+                <span class="w-8 h-px bg-gray-300"></span>
+                
+                  <span>出行</span>
+                
+              </div>
+              
+              <h2 class="text-3xl font-serif font-bold mb-6 leading-tight group">
+                <a href="/2025/10/04/%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%94%9F%E6%97%A5%E8%AE%B0%E5%BD%95/" class="hover:underline decoration-1 underline-offset-4 decoration-gray-300 text-black">
+                  第一次生日记录
+                </a>
+              </h2>
+              
+              <div class="text-gray-600 font-light leading-relaxed mb-8 text-sm">
+                
+                  Click to read more details about this topic.
+                
+              </div>
+              
+              <a href="/2025/10/04/%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%94%9F%E6%97%A5%E8%AE%B0%E5%BD%95/" class="self-start text-xs uppercase tracking-[0.2em] border-b border-black pb-1 hover:text-gray-500 hover:border-gray-500 transition-colors">
+                Read Journal
+              </a>
+            </div>
+          </div>
+        </div>
+      
+
     </div>
+    
+    <footer class="mt-24 pt-12 border-t border-black text-center">
+       <p class="font-serif italic text-xl mb-4">"Until next time."</p>
+       <div class="flex justify-center gap-8 text-xs uppercase tracking-widest text-gray-400">
+         <span>Archive</span>
+         <span>Contact</span>
+         <span>RSS</span>
+       </div>
+    </footer>
+
   </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
 
 <script>
+  // ===================================
+  // 核心：布局与主题切换逻辑
+  // ===================================
+  const STORAGE_KEY = 'site-preference';
+  
+  // 默认配置
+  const defaultPreference = {
+    layout: 'original', // 'original' 或 'minimalist'
+    theme: 'dark'       // daisyUI theme name
+  };
+
+  function applyPreference(pref) {
+    // 1. 设置颜色主题 (DaisyUI)
+    document.documentElement.setAttribute('data-theme', pref.theme);
+    
+    // 2. 切换布局显示
+    const originalLayout = document.getElementById('layout-original');
+    const minimalistLayout = document.getElementById('layout-minimalist');
+    
+    if (pref.layout === 'original') {
+      minimalistLayout.classList.add('hidden');
+      setTimeout(() => {
+        originalLayout.classList.remove('hidden');
+        // 给一点延迟让 display:block 生效后再加透明度，实现渐变（可选优化，这里直接显示）
+      }, 50);
+      
+      // 重新渲染 ECharts (如果在隐藏状态下 resize 会有问题，需要重新渲染)
+      setTimeout(() => {
+        if (myChart) myChart.resize();
+      }, 100);
+      
+    } else {
+      originalLayout.classList.add('hidden');
+      minimalistLayout.classList.remove('hidden');
+      // 启动简约版时钟
+      startMinimalistClock();
+    }
+  }
+
+  function switchLayout(layoutName, themeName) {
+    const newPref = { layout: layoutName, theme: themeName };
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(newPref));
+    applyPreference(newPref);
+  }
+
+  function loadInitialPreference() {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+      try {
+        applyPreference(JSON.parse(saved));
+      } catch(e) {
+        applyPreference(defaultPreference);
+      }
+    } else {
+      applyPreference(defaultPreference);
+    }
+  }
+  
+  // 简约版时钟逻辑
+  function startMinimalistClock() {
+    const el = document.getElementById('minimalist-clock');
+    if(!el) return;
+    const update = () => {
+      const now = new Date();
+      el.innerText = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+    };
+    update();
+    setInterval(update, 60000);
+  }
+
+  // 立即加载
+  loadInitialPreference();
+
+
+  // ===================================
+  // ECharts 逻辑 (仅用于 Original 布局)
+  // ===================================
   let currentDisplayDate = new Date();
   let updateChartDate;
   let myChart;
   let dataMap = new Map();
-  let thoughtsData = {}; // 存储完整的想法数据
 
   document.addEventListener('DOMContentLoaded', function() {
     const chartDom = document.getElementById('heatmap-container');
+    // 如果不在 Original 布局中，可能一开始拿不到 DOM，加个判断
+    if (!chartDom) return; 
+
     const titleDom = document.getElementById('heatmap-title');
     const dataDom = document.getElementById('heatmap-data');
     
-    if (!chartDom || !dataDom) return;
+    if (!dataDom) return; // 数据源必须存在
 
     myChart = echarts.init(chartDom, null, { renderer: 'svg' });
     
     myChart.on('click', function(params) {
       if (params.componentType === 'series') {
-        // params.data 是一个数组 [dateString, value]
         const dateStr = params.data[0];
         showDayDetail(dateStr);
       }
     });
 
-    // --- 1. 安全获取数据 ---
     let rawData = [];
     try {
       const jsonString = dataDom.getAttribute('data-json');
@@ -651,37 +1245,32 @@ var _hmt = _hmt || [];
       console.warn('Data parsing error:', e);
     }
     
-    // 将数据转为 Map: '2025-10-04' => {count, thoughts}
     rawData.forEach(item => {
       const dateStr = item.date instanceof Date ? item.date.toISOString().split('T')[0] : item.date;
       dataMap.set(dateStr, {
         count: item.count || 0,
-        thoughts: item.thoughts || item.note || "", // 兼容不同字段名
+        thoughts: item.thoughts || item.note || "", 
         mood: getMoodText(item.count || 0)
       });
     });
 
-    // --- 2. 颜色配置 ---
+    // ... (保留原有的 helper 函数: getMonthData, getMoodText, getMoodInfo, getOption, showDayDetail, initDefaultDetail)
+    // 为了节省篇幅，这里复用您之前满意的 ECharts 配置逻辑
+    
     const lightColors = ['#ffe6ef', '#ffadd2', '#ff85c0', '#f759ab', '#eb2f96', '#c41d7f'];
     const darkColors  = ['#4a2333', '#702438', '#962e4a', '#bd385d', '#e3426f', '#ff85c0'];
 
-    // --- 3. 核心：补全当月数据 ---
     function getMonthData(year, month) {
       const daysInMonth = new Date(year, month, 0).getDate();
       const res = [];
       for (let i = 1; i <= daysInMonth; i++) {
-        const dateStr = [
-          year,
-          month.toString().padStart(2, '0'),
-          i.toString().padStart(2, '0')
-        ].join('-');
-        const data = dataMap.get(dateStr) || { count: 0, thoughts: "", mood: "淡" };
+        const dateStr = [year, month.toString().padStart(2, '0'), i.toString().padStart(2, '0')].join('-');
+        const data = dataMap.get(dateStr) || { count: 0 };
         res.push([dateStr, data.count]);
       }
       return res;
     }
 
-    // --- 4. 文案映射 ---
     function getMoodText(val) {
       if (val === 0) return '淡淡的';
       if (val >= 1 && val <= 5) return '想…';
@@ -692,91 +1281,90 @@ var _hmt = _hmt || [];
       if (val === 10) return '懊悔…';
       return '淡';
     }
-
-    // --- 5. 点击事件处理 ---
-    const showDayDetail = (dateStr) => {
-      const item = dataMap.get(dateStr) || { count: 0, thoughts: '' };
-      const date = new Date(dateStr);
-      
-      // === 核心修复：确保这里操作的 ID 在 HTML 中真实存在 ===
-      
-      // 切换显示状态
-      document.getElementById('detail-default').classList.add('hidden');
-      const content = document.getElementById('detail-content');
-      content.classList.remove('hidden');
-      
-      // 触发动画
-      content.classList.remove('animate-fade-in');
-      void content.offsetWidth; 
-      content.classList.add('animate-fade-in');
-
-      // 填充日期信息 (对应 HTML 中的 id="detail-day", "detail-month"...)
-      const months = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'];
-      const weekdays = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
-      
-      document.getElementById('detail-day').textContent = date.getDate();
-      document.getElementById('detail-month').textContent = months[date.getMonth()];
-      document.getElementById('detail-weekday').textContent = weekdays[date.getDay()];
-
-      // 填充心情徽章 (对应 HTML 中的 id="detail-mood-badge")
-      const moodInfo = getMoodInfo(item.count);
-      const badge = document.getElementById('detail-mood-badge');
-      badge.textContent = moodInfo.text;
-      badge.style.borderColor = moodInfo.color;
-      badge.style.color = item.count > 0 ? '#c41d7f' : '#9ca3af';
-      badge.style.backgroundColor = item.count > 0 ? moodInfo.color + '20' : 'transparent';
-
-      // 填充进度条和数值 (对应 HTML 中的 id="detail-count-val", "detail-progress")
-      document.getElementById('detail-count-val').textContent = `${item.count}/10`;
-      document.getElementById('detail-progress').value = item.count;
-      
-      // 填充想法文字
-      const tText = document.getElementById('thoughts-text');
-      if (item.thoughts) {
-        tText.textContent = item.thoughts;
-        tText.classList.add('opacity-85');
-        // tText.classList.remove('italic', 'opacity-50');
-      } else {
-        tText.textContent = "今天没有记录什么特别的想法...";
-        tText.classList.add('italic', 'opacity-50');
-      }
-    };
     
     function getMoodInfo(val) {
-       // 简单的内部辅助函数，确保showDayDetail能获取到颜色
        const c = ['#ffe6ef', '#ffadd2', '#ff85c0', '#f759ab', '#eb2f96', '#c41d7f'];
        const t = getMoodText(val);
        const idx = Math.min(Math.floor(val/2), c.length-1);
        return { color: val===0 ? '#ccc' : c[idx], text: t };
     }
 
-
-    // --- 6. 生成 ECharts 配置 ---
-    function getOption(theme, dateObj) {
-      const isDark = ['dark', 'halloween', 'forest', 'black', 'luxury', 'dracula', 'business', 'night'].includes(theme);
+    const showDayDetail = (dateStr) => {
+      const item = dataMap.get(dateStr) || { count: 0, thoughts: '' };
+      const date = new Date(dateStr);
       
+      const detailDefault = document.getElementById('detail-default');
+      const detailContent = document.getElementById('detail-content');
+      
+      // 只有在 Original 布局显示时才操作 DOM，防止报错
+      if(detailDefault && detailContent) {
+          detailDefault.classList.add('hidden');
+          detailContent.classList.remove('hidden');
+          detailContent.classList.add('flex');
+          
+          detailContent.classList.remove('animate-fade-in');
+          void detailContent.offsetWidth; 
+          detailContent.classList.add('animate-fade-in');
+
+          // ... (填充数据的逻辑保持不变)
+          const months = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'];
+          const weekdays = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+          
+          document.getElementById('detail-day').textContent = date.getDate();
+          document.getElementById('detail-month').textContent = months[date.getMonth()];
+          document.getElementById('detail-weekday').textContent = weekdays[date.getDay()];
+
+          const moodInfo = getMoodInfo(item.count);
+          const badge = document.getElementById('detail-mood-badge');
+          badge.textContent = moodInfo.text;
+          badge.style.borderColor = moodInfo.color;
+          badge.style.color = item.count > 0 ? '#c41d7f' : '#9ca3af';
+          badge.style.backgroundColor = item.count > 0 ? moodInfo.color + '20' : 'transparent';
+
+          document.getElementById('detail-count-val').textContent = `${item.count}/10`;
+          document.getElementById('detail-progress').value = item.count;
+          
+          const tText = document.getElementById('thoughts-text');
+          if (item.thoughts) {
+            tText.textContent = item.thoughts;
+            tText.classList.add('opacity-85');
+          } else {
+            tText.textContent = "今天没有记录什么特别的想法...";
+            tText.classList.add('italic', 'opacity-50');
+          }
+      }
+    };
+
+    function getOption(theme, dateObj) {
+      // (保持您之前满意的 Option 配置完全一致)
+      const isDark = ['dark', 'halloween', 'forest', 'black', 'luxury', 'dracula', 'business', 'night'].includes(theme);
       const year = dateObj.getFullYear();
       const month = dateObj.getMonth() + 1;
       const displayData = getMonthData(year, month);
-
       const gradientColors = isDark ? darkColors : lightColors;
       const textColor = isDark ? '#a6adbb' : '#374151';
-      const borderColor = isDark ? '#1d232a' : '#ffffff';
       const emptyColor = isDark ? 'rgba(255,255,255,0.05)' : '#f3f4f6';
+      const transparentColor = 'rgba(0,0,0,0)'; 
 
-      // 更新标题
-      titleDom.innerText = `${year}年 ${month}月`;
+      // Update Title
+      if(titleDom) {
+          titleDom.innerHTML = `
+            <div class="flex items-baseline gap-2 select-none">
+              <span class="text-3xl font-black font-mono text-primary tracking-tight" style="text-shadow: 0 2px 10px rgba(var(--p), 0.2);">${month.toString().padStart(2, '0')}</span>
+              <span class="text-sm font-medium text-base-content/40 tracking-widest uppercase">/ ${year}</span>
+            </div>
+          `;
+      }
       
       const containerWidth = chartDom.clientWidth;
-      // 日历左右各留 8%，所以日历实际宽度占比约为 84%
-      // 减去一些像素以防边缘溢出
       const visualMapLength = containerWidth * 0.84; 
+      const cellWidth = (containerWidth * 0.84) / 7;
+      const cellHeight = 60;
+      const gap = 8;
 
       return {
-        // 移除tooltip，改为点击事件
+        backgroundColor: 'transparent',
         tooltip: { show: false },
-
-        // 底部连续长条
         visualMap: {
           type: 'continuous',
           min: 0,
@@ -784,99 +1372,42 @@ var _hmt = _hmt || [];
           calculable: true,
           orient: 'horizontal',
           left: 'center',
-          bottom: 10, // 稍微上移
+          bottom: 10,
           itemWidth: 16,
-          itemHeight: visualMapLength, // 稍微缩短图例，避免太宽
+          itemHeight: visualMapLength, 
           inRange: { color: gradientColors },
           textStyle: { color: textColor },
           outOfRange: { color: emptyColor },
           formatter: function (val) { return getMoodText(Math.floor(val)); },
-          handleLabel: { position: 'bottom' },
+          handleLabel: { show: true, position: 'bottom', color: textColor }
         },
-
-        // 日历坐标系
         calendar: {
-          // 修改点1: top 增大，与左上角的文字分离
-          top: 80, 
-          // 修改点2: 使用 left/right 撑满容器
-          left: '8%',
-          right: '8%',
-          orient: 'vertical',
-          // 修改点2: 宽度设为 auto 让其自适应容器宽度，高度设为 60 让格子看起来更大气
-          cellSize: ['auto', 60], 
-          yearLabel: { show: false },
-          monthLabel: { show: false },
-          dayLabel: {
-            firstDay: 1,
-            nameMap: 'CN',
-            color: textColor,
-            margin: 15,
-            fontSize: 14,
-            fontWeight: 'bold'
-          },
-          itemStyle: {
-            borderWidth: 6,
-            borderColor: borderColor,
-            borderRadius: 8
-          },
-          splitLine: { show: false },
-          range: `${year}-${month.toString().padStart(2, '0')}`,
-          bottom: 60
+          top: 80, left: '8%', right: '8%', orient: 'vertical',
+          cellSize: ['auto', 60], yearLabel: { show: false }, monthLabel: { show: false },
+          dayLabel: { firstDay: 1, nameMap: 'CN', color: textColor, margin: 15, fontSize: 14, fontWeight: 'bold' },
+          itemStyle: { color: 'transparent', borderColor: 'transparent', borderWidth: 0, backgroundColor: 'transparent' },
+          splitLine: { show: false }, range: `${year}-${month.toString().padStart(2, '0')}`, bottom: 60
         },
-
-
         series: {
-          type: 'heatmap',
-          coordinateSystem: 'calendar',
+          type: 'scatter', coordinateSystem: 'calendar', symbol: 'roundRect',
+          symbolSize: function (val) { return [Math.max(0, cellWidth - gap), Math.max(0, cellHeight - gap)]; },
           data: displayData,
-          emphasis: { // 鼠标悬停效果
-            itemStyle: {
-              shadowBlur: 10,
-              shadowColor: 'rgba(0, 0, 0, 0.3)'
-            }
-          },
-          
-          label: {
-            show: true,
-            formatter: function (params) {
-              var d = echarts.number.parseDate(params.value[0]);
-              return d.getDate();
-            },
-            color: isDark ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.4)',
-            fontSize: 14, // 字体稍微调大
-            fontWeight: 'bold',
-            // 修改点3: 移除了 offset: [-14, -14]，现在默认就是居中
-          },
-
-          itemStyle: {
-            borderRadius: 4
-          },
-          // 点击事件
-          onClick: function (params) {
-            const dateStr = params.data[0];
-            showDayDetail(dateStr);
-          }
+          label: { show: true, formatter: function (p) { return echarts.number.parseDate(p.value[0]).getDate(); }, color: isDark ? 'rgba(255,255,255,0.7)' : 'rgba(0,0,0,0.6)', fontSize: 14, fontWeight: 'bold', position: 'inside' },
+          itemStyle: { borderRadius: 8, borderColor: 'transparent', borderWidth: 0 }
         }
       };
     }
 
-    // --- 7. 初始化默认显示今天 ---
     function initDefaultDetail() {
       const today = new Date();
       const todayStr = today.toISOString().split('T')[0];
-      
-      if (dataMap.has(todayStr)) {
-        showDayDetail(todayStr);
-      } else {
-        // 显示最近有数据的日期
+      if (dataMap.has(todayStr)) showDayDetail(todayStr);
+      else {
         const dates = Array.from(dataMap.keys()).sort();
-        if (dates.length > 0) {
-          showDayDetail(dates[dates.length - 1]);
-        }
+        if (dates.length > 0) showDayDetail(dates[dates.length - 1]);
       }
     }
 
-    // --- 8. 渲染与更新 ---
     updateChartDate = function(offset) {
       currentDisplayDate.setMonth(currentDisplayDate.getMonth() + offset);
       const theme = document.documentElement.getAttribute('data-theme');
@@ -886,14 +1417,17 @@ var _hmt = _hmt || [];
     updateChartDate(0);
     initDefaultDetail();
 
-    // 主题切换监听
     const observer = new MutationObserver(function(mutations) {
       mutations.forEach(function(mutation) {
         if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
           const theme = document.documentElement.getAttribute('data-theme');
-          myChart.dispose();
-          myChart = echarts.init(chartDom, null, { renderer: 'svg' });
-          myChart.setOption(getOption(theme, currentDisplayDate));
+          // 重新渲染图表
+          if(document.getElementById('heatmap-container').offsetParent !== null) { // 仅当显示时渲染
+             myChart.dispose();
+             myChart = echarts.init(chartDom, null, { renderer: 'svg' });
+             myChart.on('click', function(params) { if (params.componentType === 'series') showDayDetail(params.data[0]); });
+             myChart.setOption(getOption(theme, currentDisplayDate));
+          }
         }
       });
     });
@@ -912,404 +1446,19 @@ var _hmt = _hmt || [];
 </script>
 
 <style>
-  /* 添加一些自定义样式 */
-  #detail-mood {
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
+  #detail-mood { transition: all 0.3s ease; border: 2px solid transparent; }
+  #heatmap-container .echarts-heatmap-cell { cursor: pointer; transition: transform 0.2s ease; }
+  #heatmap-container .echarts-heatmap-cell:hover { transform: scale(1.05); z-index: 10; }
+
+  .font-lato {
+    font-family: 'Lato', sans-serif;
   }
-  
-  #heatmap-container .echarts-heatmap-cell {
-    cursor: pointer;
-    transition: transform 0.2s ease;
-  }
-  
-  #heatmap-container .echarts-heatmap-cell:hover {
-    transform: scale(1.05);
-    z-index: 10;
+
+  /* 简约模式下的字体强制覆盖 */
+  #layout-minimalist h1, #layout-minimalist h2, #layout-minimalist h3 {
+      font-family: 'Playfair Display', serif;
   }
 </style>
-
-
-<!-- Lulu 爱好 -->
-
-<div class="w-full py-12">
-  <div class="container mx-auto px-4 max-w-7xl">
-    
-    <!-- 1. 标题区域：带渐变装饰线条，增加仪式感 -->
-    <div class="flex items-center gap-3 mb-10 pl-2">
-       <div class="h-8 w-1.5 bg-gradient-to-b from-primary to-secondary rounded-full shadow-sm"></div>
-       <h2 class="text-3xl font-bold tracking-tight text-base-content">lulu的爱好</h2>
-    </div>
-  
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      
-      
-        
-        
-        <!-- 2. 卡片容器：group 用于控制内部悬停效果 -->
-        <div class="group relative flex flex-col h-full transition-all duration-300 hover:-translate-y-1">
-          
-          <!-- 装饰背景：悬停时显示的渐变光晕边框 -->
-          <div class="absolute -inset-0.5 bg-gradient-to-br from-primary/40 to-secondary/40 rounded-[1.4rem] opacity-0 group-hover:opacity-100 blur-sm transition duration-500"></div>
-          
-          <!-- 卡片主体：磨砂玻璃质感 -->
-          <div class="relative flex flex-col flex-grow h-full bg-base-100/90 backdrop-blur-md border border-base-content/5 rounded-[1.3rem] p-6 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden">
-            
-            <!-- 顶部装饰背景图标 (修改处) -->
-            <div class="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
-                <!-- 动态应用图标 Class -->
-                <i class="fa-solid fa-volleyball text-6xl text-primary transform rotate-12"></i>
-            </div>
-  
-            <!-- 3. 头部：动态图标与标题 -->
-            <div class="flex items-center gap-4 mb-5 relative z-10">
-              <!-- 自动生成首字母图标 -->
-              <div class="w-12 h-12 shrink-0 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-xl font-black shadow-sm group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-content transition-all duration-300">
-                排
-              </div>
-              <h3 class="text-xl font-bold text-base-content group-hover:text-primary transition-colors">
-                排球
-              </h3>
-            </div>
-  
-            <!-- 4. 描述文字：限制行数，保持整齐 -->
-            
-              <div class="mb-6 relative z-10">
-                <p class="text-sm text-base-content/70 leading-relaxed line-clamp-3 group-hover:text-base-content/90 transition-colors">
-                  这是老大最喜欢的运动，从高中开始就在打排球了！来了珠海之后，也爱上了沙滩排球🏐
-                </p>
-              </div>
-            
-  
-            <!-- 占位符，将标签推到底部 -->
-            <div class="flex-grow"></div>
-  
-            <!-- 5. 关键词标签：精致的胶囊样式 -->
-            
-              <div class="pt-4 border-t border-base-content/5 relative z-10">
-                <div class="flex flex-wrap gap-2">
-                  
-                    <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium bg-base-200/50 text-base-content/60 border border-base-content/5 group-hover:border-primary/20 group-hover:text-primary group-hover:bg-primary/5 transition-all duration-300 cursor-default">
-                      <span class="w-1 h-1 rounded-full bg-current opacity-40 mr-1.5"></span>
-                      排球
-                    </span>
-                  
-                    <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium bg-base-200/50 text-base-content/60 border border-base-content/5 group-hover:border-primary/20 group-hover:text-primary group-hover:bg-primary/5 transition-all duration-300 cursor-default">
-                      <span class="w-1 h-1 rounded-full bg-current opacity-40 mr-1.5"></span>
-                      运动
-                    </span>
-                  
-                </div>
-              </div>
-            
-            
-          </div>
-        </div>
-      
-        
-        
-        <!-- 2. 卡片容器：group 用于控制内部悬停效果 -->
-        <div class="group relative flex flex-col h-full transition-all duration-300 hover:-translate-y-1">
-          
-          <!-- 装饰背景：悬停时显示的渐变光晕边框 -->
-          <div class="absolute -inset-0.5 bg-gradient-to-br from-primary/40 to-secondary/40 rounded-[1.4rem] opacity-0 group-hover:opacity-100 blur-sm transition duration-500"></div>
-          
-          <!-- 卡片主体：磨砂玻璃质感 -->
-          <div class="relative flex flex-col flex-grow h-full bg-base-100/90 backdrop-blur-md border border-base-content/5 rounded-[1.3rem] p-6 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden">
-            
-            <!-- 顶部装饰背景图标 (修改处) -->
-            <div class="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
-                <!-- 动态应用图标 Class -->
-                <i class="fa-solid fa-cookie-bite text-6xl text-primary transform rotate-12"></i>
-            </div>
-  
-            <!-- 3. 头部：动态图标与标题 -->
-            <div class="flex items-center gap-4 mb-5 relative z-10">
-              <!-- 自动生成首字母图标 -->
-              <div class="w-12 h-12 shrink-0 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-xl font-black shadow-sm group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-content transition-all duration-300">
-                零
-              </div>
-              <h3 class="text-xl font-bold text-base-content group-hover:text-primary transition-colors">
-                零食
-              </h3>
-            </div>
-  
-            <!-- 4. 描述文字：限制行数，保持整齐 -->
-            
-              <div class="mb-6 relative z-10">
-                <p class="text-sm text-base-content/70 leading-relaxed line-clamp-3 group-hover:text-base-content/90 transition-colors">
-                  老大是一个很爱吃零食的小孩，当然要是美味的零食Ψ(￣∀￣)Ψ
-                </p>
-              </div>
-            
-  
-            <!-- 占位符，将标签推到底部 -->
-            <div class="flex-grow"></div>
-  
-            <!-- 5. 关键词标签：精致的胶囊样式 -->
-            
-              <div class="pt-4 border-t border-base-content/5 relative z-10">
-                <div class="flex flex-wrap gap-2">
-                  
-                    <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium bg-base-200/50 text-base-content/60 border border-base-content/5 group-hover:border-primary/20 group-hover:text-primary group-hover:bg-primary/5 transition-all duration-300 cursor-default">
-                      <span class="w-1 h-1 rounded-full bg-current opacity-40 mr-1.5"></span>
-                      零食
-                    </span>
-                  
-                    <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium bg-base-200/50 text-base-content/60 border border-base-content/5 group-hover:border-primary/20 group-hover:text-primary group-hover:bg-primary/5 transition-all duration-300 cursor-default">
-                      <span class="w-1 h-1 rounded-full bg-current opacity-40 mr-1.5"></span>
-                      美味
-                    </span>
-                  
-                </div>
-              </div>
-            
-            
-          </div>
-        </div>
-      
-        
-        
-        <!-- 2. 卡片容器：group 用于控制内部悬停效果 -->
-        <div class="group relative flex flex-col h-full transition-all duration-300 hover:-translate-y-1">
-          
-          <!-- 装饰背景：悬停时显示的渐变光晕边框 -->
-          <div class="absolute -inset-0.5 bg-gradient-to-br from-primary/40 to-secondary/40 rounded-[1.4rem] opacity-0 group-hover:opacity-100 blur-sm transition duration-500"></div>
-          
-          <!-- 卡片主体：磨砂玻璃质感 -->
-          <div class="relative flex flex-col flex-grow h-full bg-base-100/90 backdrop-blur-md border border-base-content/5 rounded-[1.3rem] p-6 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden">
-            
-            <!-- 顶部装饰背景图标 (修改处) -->
-            <div class="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
-                <!-- 动态应用图标 Class -->
-                <i class="fa-solid fa-cat text-6xl text-primary transform rotate-12"></i>
-            </div>
-  
-            <!-- 3. 头部：动态图标与标题 -->
-            <div class="flex items-center gap-4 mb-5 relative z-10">
-              <!-- 自动生成首字母图标 -->
-              <div class="w-12 h-12 shrink-0 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-xl font-black shadow-sm group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-content transition-all duration-300">
-                猫
-              </div>
-              <h3 class="text-xl font-bold text-base-content group-hover:text-primary transition-colors">
-                猫咪
-              </h3>
-            </div>
-  
-            <!-- 4. 描述文字：限制行数，保持整齐 -->
-            
-              <div class="mb-6 relative z-10">
-                <p class="text-sm text-base-content/70 leading-relaxed line-clamp-3 group-hover:text-base-content/90 transition-colors">
-                  🐱是老大最爱的动物！虽然对猫毛过敏，但是完全阻挡不了她的喜欢……
-                </p>
-              </div>
-            
-  
-            <!-- 占位符，将标签推到底部 -->
-            <div class="flex-grow"></div>
-  
-            <!-- 5. 关键词标签：精致的胶囊样式 -->
-            
-              <div class="pt-4 border-t border-base-content/5 relative z-10">
-                <div class="flex flex-wrap gap-2">
-                  
-                    <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium bg-base-200/50 text-base-content/60 border border-base-content/5 group-hover:border-primary/20 group-hover:text-primary group-hover:bg-primary/5 transition-all duration-300 cursor-default">
-                      <span class="w-1 h-1 rounded-full bg-current opacity-40 mr-1.5"></span>
-                      猫咪
-                    </span>
-                  
-                    <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium bg-base-200/50 text-base-content/60 border border-base-content/5 group-hover:border-primary/20 group-hover:text-primary group-hover:bg-primary/5 transition-all duration-300 cursor-default">
-                      <span class="w-1 h-1 rounded-full bg-current opacity-40 mr-1.5"></span>
-                      萌物
-                    </span>
-                  
-                </div>
-              </div>
-            
-            
-          </div>
-        </div>
-      
-    </div>
-  </div>
-</div>
-
-
-<!-- Recent Notes -->
-<div class="container mx-auto px-4 py-8">
-  <h2 class="text-3xl font-bold mb-8 text-base-content">记lu</h2>
-  
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    
-      <article class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-105 transition-all duration-300 h-80 flex flex-col">
-        <div class="card-body p-6 flex flex-col h-full">
-          <!-- Header -->
-          <div class="mb-4">
-            <h3 class="card-title text-lg font-bold leading-tight mb-2">
-              <a href="/2025/10/23/%E6%80%9D%E8%80%832/" class="hover:text-primary no-underline transition-colors duration-200">
-                沟通失败的想法
-              </a>
-            </h3>
-            <div class="flex items-center justify-between">
-              <time class="text-sm opacity-70">
-                Oct 23, 2025
-              </time>
-              
-                <div class="badge badge-primary badge-sm">
-                  薯仔想法
-                </div>
-              
-            </div>
-          </div>
-
-          <!-- Excerpt -->
-          
-            <div class="flex-1"></div>
-          
-
-          <!-- Tags -->
-          
-
-          <!-- Read More -->
-          <div class="card-actions justify-end mt-auto">
-            <a href="/2025/10/23/%E6%80%9D%E8%80%832/" class="btn btn-primary btn-sm">
-              Read More
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </article>
-    
-      <article class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-105 transition-all duration-300 h-80 flex flex-col">
-        <div class="card-body p-6 flex flex-col h-full">
-          <!-- Header -->
-          <div class="mb-4">
-            <h3 class="card-title text-lg font-bold leading-tight mb-2">
-              <a href="/2025/10/22/%E6%80%9D%E8%80%831/" class="hover:text-primary no-underline transition-colors duration-200">
-                思考
-              </a>
-            </h3>
-            <div class="flex items-center justify-between">
-              <time class="text-sm opacity-70">
-                Oct 22, 2025
-              </time>
-              
-                <div class="badge badge-primary badge-sm">
-                  薯仔想法
-                </div>
-              
-            </div>
-          </div>
-
-          <!-- Excerpt -->
-          
-            <div class="flex-1"></div>
-          
-
-          <!-- Tags -->
-          
-
-          <!-- Read More -->
-          <div class="card-actions justify-end mt-auto">
-            <a href="/2025/10/22/%E6%80%9D%E8%80%831/" class="btn btn-primary btn-sm">
-              Read More
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </article>
-    
-      <article class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-105 transition-all duration-300 h-80 flex flex-col">
-        <div class="card-body p-6 flex flex-col h-full">
-          <!-- Header -->
-          <div class="mb-4">
-            <h3 class="card-title text-lg font-bold leading-tight mb-2">
-              <a href="/2025/10/04/%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%94%9F%E6%97%A5%E8%AE%B0%E5%BD%95/" class="hover:text-primary no-underline transition-colors duration-200">
-                第一次生日记录
-              </a>
-            </h3>
-            <div class="flex items-center justify-between">
-              <time class="text-sm opacity-70">
-                Oct 04, 2025
-              </time>
-              
-                <div class="badge badge-primary badge-sm">
-                  出行
-                </div>
-              
-            </div>
-          </div>
-
-          <!-- Excerpt -->
-          
-            <div class="flex-1"></div>
-          
-
-          <!-- Tags -->
-          
-
-          <!-- Read More -->
-          <div class="card-actions justify-end mt-auto">
-            <a href="/2025/10/04/%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%94%9F%E6%97%A5%E8%AE%B0%E5%BD%95/" class="btn btn-primary btn-sm">
-              Read More
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </article>
-    
-  </div>
-
-  <!-- View All -->
-  <div class="text-center mt-8">
-    <a href="/notes" class="btn btn-primary">所有内容</a>
-  </div>
-</div>
-
-
-<!-- Featured Projects -->
-<div class="container mx-auto px-4 py-8">
-  <h2 class="text-3xl font-bold mb-8 text-base-content">礼物及灵感</h2>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    
-      <div class="card glass rounded-box shadow-md bg-base-100 text-base-content hover:shadow-lg transition-all duration-300">
-        <div class="card-body p-4">
-          <h3 class="card-title text-lg font-semibold flex items-center gap-2">
-            <span class="title">干花信封</span>
-            
-              <div class="badge badge-primary text-xs">灵感</div>
-            
-          </h3>
-          <div class="opacity-80 text-sm mt-1">
-            
-              <p class="flex items-center text-sm mb-1">
-                <i class="far fa-calendar-alt mr-2"></i>2025年10月6日（中秋节）
-              </p>
-            
-            
-          </div>
-          
-            <p class="mt-3 text-base-content opacity-90 text-sm">计划作为老大的考研结束小礼物！默默坚持了5~6个月，lulu老大一定很辛苦😭😭希望老大会喜欢这个礼物！</p>
-          
-          <div class="card-actions justify-end mt-4 gap-2 flex-wrap">
-            
-            
-          </div>
-        </div>
-      </div>
-    
-  </div>
-  <div class="text-center mt-8">
-    <a href="/projects" class="btn btn-primary">探索灵感</a>
-  </div>
-</div>
-
   </div>
 
   <!-- Fixed top navbar for desktop -->
