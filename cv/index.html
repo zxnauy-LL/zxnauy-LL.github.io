@@ -28,7 +28,11 @@
 
 <!-- Tailwind CSS -->
 <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/custom-font.css">
 <script src="https://cdn.tailwindcss.com"></script>
+
+<!-- CJK WebFont (LXGW WenKai Screen) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.7.0/style.min.css">
 
 <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.min.css" rel="stylesheet" type="text/css" />
   
@@ -95,13 +99,8 @@ var _hmt = _hmt || [];
   
     
       <a href="/plan/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-list-check mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        计划
-      </a>
-    
-      <a href="/projects/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-gift mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        礼物&amp;灵感
+        <i class="fa-solid fa-compact-disc mr-3 text-lg group-hover:scale-110 transition-transform"></i>
+        听歌♪(´▽｀)
       </a>
     
       <a href="/cv/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
@@ -442,13 +441,8 @@ var _hmt = _hmt || [];
   
     
       <a href="/plan/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-list-check mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        计划
-      </a>
-    
-      <a href="/projects/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-gift mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        礼物&amp;灵感
+        <i class="fa-solid fa-compact-disc mr-3 text-lg group-hover:scale-110 transition-transform"></i>
+        听歌♪(´▽｀)
       </a>
     
       <a href="/cv/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
@@ -491,69 +485,80 @@ var _hmt = _hmt || [];
 
   <!-- Content area for Desktop -->
   <div class="lg:ml-80 pt-20 px-4 py-8">
-    <div class="container mx-auto px-4">
-  <h1 class="text-4xl font-extrabold mb-8 text-base-content">Lulu的绝密情报！请勿外传！！</h1>
+    <div class="container mx-auto px-4 py-8">
+  <div class="max-w-5xl mx-auto">
+    <header class="mb-8">
+      <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+        <div class="min-w-0">
+          <h1 class="text-3xl md:text-4xl font-black tracking-tight text-base-content">Lulu 的绝密情报</h1>
+        </div>
 
-  <!-- Jump to section -->
-  <p class="mb-2 text-base-content font-medium">请挑选在众多领域中挑选一个点击~都是重点</p>
-  <nav class="flex flex-wrap gap-2 mb-6">
-    
-      <a href="#experience" class="btn btn-outline btn-secondary">美食</a>
-    
-    
-      <a href="#skills" class="btn btn-outline btn-secondary">影视</a>
-    
-    
-      <a href="#awards" class="btn btn-outline btn-secondary">Awards</a>
-    
-    
-      <a href="#languages" class="btn btn-outline btn-secondary">Languages</a>
-    
-    
-      <a href="#teaching" class="btn btn-outline btn-secondary">Teaching</a>
-    
+        
+          <a href="/public/cv_pdf.html"
+             class="btn btn-primary glass-button inline-flex items-center gap-2"
+             target="_blank" rel="noopener noreferrer"
+             title="查看 PDF 页面">
+            <i class="fa-solid fa-file-arrow-down"></i>
+            <span>查看 特殊 页面</span>
+          </a>
+        
+      </div>
 
-  </nav>
-
-  <!-- Download CV -->
-  <div class="text-right mb-8 flex justify-end items-center space-x-2">
-    
-      <a href="/files/cv-template.pdf" 
-         class="btn btn-primary glass-button inline-flex items-center space-x-2 px-4 py-2"
-         target="_blank" rel="noopener noreferrer" 
-         title="Download PDF" 
-         download>
-        <i class="fa-solid fa-file-arrow-down"></i>
-        <span>Download PDF</span>
-      </a>
-    
-  </div>
+      <!-- Jump to section -->
+      <nav class="mt-6 flex flex-wrap gap-2">
+        
+          <a href="#experience" class="btn btn-sm btn-outline btn-secondary">美食</a>
+        
+        
+          <a href="#skills" class="btn btn-sm btn-outline btn-secondary">影视</a>
+        
+      </nav>
+    </header>
   
   <!-- Professional Experience -->
   
   <section class="mb-8" id="experience">
-    <h2 class="text-2xl font-bold mb-4 text-base-content">美食</h2>
-    <div class="grid gap-6">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-9 h-9 rounded-2xl bg-secondary/10 text-secondary flex items-center justify-center">
+        <i class="fa-solid fa-bowl-food"></i>
+      </div>
+      <h2 class="text-xl md:text-2xl font-extrabold text-base-content">美食</h2>
+    </div>
+    <div class="grid gap-4">
       
-        <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300">
-          <div class="card-body">
-            <h2 class="card-title text-xl font-bold">
-              水果类
+        <div class="card bg-base-100/80 border border-base-200 rounded-box shadow-md hover:shadow-lg transition-all duration-200 overflow-hidden">
+          <!-- Status Bar -->
+          <div class="px-5 py-3 bg-base-200/35 border-b border-base-200">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <div class="min-w-0">
+                <div class="text-[11px] uppercase tracking-widest opacity-60">Entry</div>
+                <h3 class="text-base md:text-lg font-extrabold text-base-content break-words whitespace-normal">水果类</h3>
+              </div>
               
-                <div class="badge badge-primary badge-sm lg:badge-md whitespace-nowrap">😋</div>
+                <div class="badge badge-primary badge-sm">😋</div>
               
-            </h2>
-            <div class="text-base-content opacity-80">
-              <p class="font-medium">Lulu老大的水果偏好😋</p>
-              <p class="mt-2 opacity-90">下面的是老大的宠爱水果！</p>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="card-body p-5 pt-4">
+            <div class="flex flex-col gap-2">
               
-                <ul class="list-disc list-inside mt-3 opacity-90">
+                <p class="font-semibold opacity-80 break-words whitespace-normal">Lulu老大的水果偏好😋</p>
+              
+
+              
+                <p class="mt-1 leading-relaxed opacity-90 break-words whitespace-normal">下面的是老大的宠爱水果！</p>
+              
+
+              
+                <ul class="mt-3 space-y-1 list-disc list-inside leading-relaxed opacity-90 break-words whitespace-normal">
                   
-                    <li>草莓🍓</li>
+                    <li class="break-words whitespace-normal">草莓🍓</li>
                   
-                    <li>芒果🥭</li>
+                    <li class="break-words whitespace-normal">芒果🥭</li>
                   
-                    <li>木瓜(找不到emoji惹)</li>
+                    <li class="break-words whitespace-normal">木瓜(找不到emoji惹)</li>
                   
                 </ul>
               
@@ -561,27 +566,41 @@ var _hmt = _hmt || [];
           </div>
         </div>
       
-        <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300">
-          <div class="card-body">
-            <h2 class="card-title text-xl font-bold">
-              零食类
+        <div class="card bg-base-100/80 border border-base-200 rounded-box shadow-md hover:shadow-lg transition-all duration-200 overflow-hidden">
+          <!-- Status Bar -->
+          <div class="px-5 py-3 bg-base-200/35 border-b border-base-200">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <div class="min-w-0">
+                <div class="text-[11px] uppercase tracking-widest opacity-60">Entry</div>
+                <h3 class="text-base md:text-lg font-extrabold text-base-content break-words whitespace-normal">零食类</h3>
+              </div>
               
-                <div class="badge badge-primary badge-sm lg:badge-md whitespace-nowrap">🤩</div>
+                <div class="badge badge-primary badge-sm">🤩</div>
               
-            </h2>
-            <div class="text-base-content opacity-80">
-              <p class="font-medium">说到老大的爱吃零食，那就要长篇大论了！！！</p>
-              <p class="mt-2 opacity-90">下面的是老大的宠爱们~（简直是大大后宫）</p>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="card-body p-5 pt-4">
+            <div class="flex flex-col gap-2">
               
-                <ul class="list-disc list-inside mt-3 opacity-90">
+                <p class="font-semibold opacity-80 break-words whitespace-normal">说到老大的爱吃零食，那就要长篇大论了！！！</p>
+              
+
+              
+                <p class="mt-1 leading-relaxed opacity-90 break-words whitespace-normal">下面的是老大的宠爱们~（简直是大大后宫）</p>
+              
+
+              
+                <ul class="mt-3 space-y-1 list-disc list-inside leading-relaxed opacity-90 break-words whitespace-normal">
                   
-                    <li>膨化食品：老大爱吃好丽友泡菜味薯片、大波浪（重口part）；轻口部分：玉米浓汤薯片or洋芋片，乐事袋装青柠味、黄瓜味，罐装原味，蒜味虾片，蜂蜜黄油味各种，芝士味各种！以及荔小芋的芋头条~</li>
+                    <li class="break-words whitespace-normal">膨化食品：老大爱吃好丽友泡菜味薯片、大波浪（重口part）；轻口部分：玉米浓汤薯片or洋芋片，乐事袋装青柠味、黄瓜味，罐装原味，蒜味虾片，蜂蜜黄油味各种，芝士味各种！以及荔小芋的芋头条~</li>
                   
-                    <li>饼干及面包：纯可可脂夹心的蛋卷，巧克力吐司，好丽友派原味或者抹茶，奥利奥薄脆草莓或者香草味，普通版的抹茶冰淇淋味，法丽兹抹茶或者巧克力酸奶还有趣多多也爱吃！</li>
+                    <li class="break-words whitespace-normal">饼干及面包：纯可可脂夹心的蛋卷，巧克力吐司，好丽友派原味或者抹茶，奥利奥薄脆草莓或者香草味，普通版的抹茶冰淇淋味，法丽兹抹茶或者巧克力酸奶还有趣多多也爱吃！</li>
                   
-                    <li>战略武器（其实是消化和嘴馋的小零食）：山楂，酸枣糕或者苹果醋</li>
+                    <li class="break-words whitespace-normal">战略武器（其实是消化和嘴馋的小零食）：山楂，酸枣糕或者苹果醋</li>
                   
-                    <li>辣条：笑辣辣印度飞饼等脆脆辣条，偶尔吃卫龙，喜欢甜辣不喜欢纯辣</li>
+                    <li class="break-words whitespace-normal">辣条：笑辣辣印度飞饼等脆脆辣条，偶尔吃卫龙，喜欢甜辣不喜欢纯辣</li>
                   
                 </ul>
               
@@ -589,27 +608,41 @@ var _hmt = _hmt || [];
           </div>
         </div>
       
-        <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300">
-          <div class="card-body">
-            <h2 class="card-title text-xl font-bold">
-              甜品类
+        <div class="card bg-base-100/80 border border-base-200 rounded-box shadow-md hover:shadow-lg transition-all duration-200 overflow-hidden">
+          <!-- Status Bar -->
+          <div class="px-5 py-3 bg-base-200/35 border-b border-base-200">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <div class="min-w-0">
+                <div class="text-[11px] uppercase tracking-widest opacity-60">Entry</div>
+                <h3 class="text-base md:text-lg font-extrabold text-base-content break-words whitespace-normal">甜品类</h3>
+              </div>
               
-                <div class="badge badge-primary badge-sm lg:badge-md whitespace-nowrap">🥰</div>
+                <div class="badge badge-primary badge-sm">🥰</div>
               
-            </h2>
-            <div class="text-base-content opacity-80">
-              <p class="font-medium">漂亮小孩的最爱部分！或许是的！</p>
-              <p class="mt-2 opacity-90">我把蛋糕、糖水铺和杂七杂八的都归入此类啦，希望老大不要觉得薯仔偷懒、、老大喜欢的东西还有很多很多、慢慢记录下来吧~</p>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="card-body p-5 pt-4">
+            <div class="flex flex-col gap-2">
               
-                <ul class="list-disc list-inside mt-3 opacity-90">
+                <p class="font-semibold opacity-80 break-words whitespace-normal">漂亮小孩的最爱部分！或许是的！</p>
+              
+
+              
+                <p class="mt-1 leading-relaxed opacity-90 break-words whitespace-normal">我把蛋糕、糖水铺和杂七杂八的都归入此类啦，希望老大不要觉得薯仔偷懒、、老大喜欢的东西还有很多很多、慢慢记录下来吧~</p>
+              
+
+              
+                <ul class="mt-3 space-y-1 list-disc list-inside leading-relaxed opacity-90 break-words whitespace-normal">
                   
-                    <li>陈皮红豆沙和芒果冰（或许只爱老友记的版本、、）</li>
+                    <li class="break-words whitespace-normal">陈皮红豆沙和芒果冰（或许只爱老友记的版本、、）</li>
                   
-                    <li>各式各样的美味面包（老大是一个面包脑袋，喜欢馅很多的面包，麻薯，米面包等等等等！）</li>
+                    <li class="break-words whitespace-normal">各式各样的美味面包（老大是一个面包脑袋，喜欢馅很多的面包，麻薯，米面包等等等等！）</li>
                   
-                    <li>爱喝椰子水，绿豆沙，油柑汁，巨峰葡萄乌龙，苦苦美式，芦荟美式，霸王茶姬，亚信四季饮的抹茶沙冰（化开了更浓郁），一点点（蔓越莓奶绿，qq莓莓和奶绿装芒），针王苹果，海神奶茶和梅子冰（被我带坏）</li>
+                    <li class="break-words whitespace-normal">爱喝椰子水，绿豆沙，油柑汁，巨峰葡萄乌龙，苦苦美式，芦荟美式，霸王茶姬，亚信四季饮的抹茶沙冰（化开了更浓郁），一点点（蔓越莓奶绿，qq莓莓和奶绿装芒），针王苹果，海神奶茶和梅子冰（被我带坏）</li>
                   
-                    <li>鲍师傅（肉松小贝，司康，芋泥系列例如芋泥奶贝和芋泥虎皮卷，脆巧泡芙）</li>
+                    <li class="break-words whitespace-normal">鲍师傅（肉松小贝，司康，芋泥系列例如芋泥奶贝和芋泥虎皮卷，脆巧泡芙）</li>
                   
                 </ul>
               
@@ -617,25 +650,39 @@ var _hmt = _hmt || [];
           </div>
         </div>
       
-        <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300">
-          <div class="card-body">
-            <h2 class="card-title text-xl font-bold">
-              主食类
+        <div class="card bg-base-100/80 border border-base-200 rounded-box shadow-md hover:shadow-lg transition-all duration-200 overflow-hidden">
+          <!-- Status Bar -->
+          <div class="px-5 py-3 bg-base-200/35 border-b border-base-200">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <div class="min-w-0">
+                <div class="text-[11px] uppercase tracking-widest opacity-60">Entry</div>
+                <h3 class="text-base md:text-lg font-extrabold text-base-content break-words whitespace-normal">主食类</h3>
+              </div>
               
-                <div class="badge badge-primary badge-sm lg:badge-md whitespace-nowrap">🤤</div>
+                <div class="badge badge-primary badge-sm">🤤</div>
               
-            </h2>
-            <div class="text-base-content opacity-80">
-              <p class="font-medium">lulu的日常用餐~</p>
-              <p class="mt-2 opacity-90">记录老大平时爱吃的主食（当然是考虑了control的！）</p>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="card-body p-5 pt-4">
+            <div class="flex flex-col gap-2">
               
-                <ul class="list-disc list-inside mt-3 opacity-90">
+                <p class="font-semibold opacity-80 break-words whitespace-normal">lulu的日常用餐~</p>
+              
+
+              
+                <p class="mt-1 leading-relaxed opacity-90 break-words whitespace-normal">记录老大平时爱吃的主食（当然是考虑了control的！）</p>
+              
+
+              
+                <ul class="mt-3 space-y-1 list-disc list-inside leading-relaxed opacity-90 break-words whitespace-normal">
                   
-                    <li>汉堡（老大叫它憨八嘎，吃这个是因为lulu认为这个可以吃的开心，而且减肥、虽然老大一点都不胖，但是就听她的吧！）</li>
+                    <li class="break-words whitespace-normal">汉堡（老大叫它憨八嘎，吃这个是因为lulu认为这个可以吃的开心，而且减肥、虽然老大一点都不胖，但是就听她的吧！）</li>
                   
-                    <li>冷面</li>
+                    <li class="break-words whitespace-normal">冷面</li>
                   
-                    <li>泡面：许多口味都爱吃，top1是茄皇的番茄鸡蛋面，其他的有粉面菜蛋，鲜虾鱼板，汤达人还有合味道</li>
+                    <li class="break-words whitespace-normal">泡面：许多口味都爱吃，top1是茄皇的番茄鸡蛋面，其他的有粉面菜蛋，鲜虾鱼板，汤达人还有合味道</li>
                   
                 </ul>
               
@@ -650,112 +697,237 @@ var _hmt = _hmt || [];
   <!-- Skills -->
   
   <section class="mb-8" id="skills">
-    <h2 class="text-2xl font-bold mb-4 text-base-content">影视</h2>
-    <div class="grid gap-6">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-9 h-9 rounded-2xl bg-primary/10 text-primary flex items-center justify-center">
+        <i class="fa-solid fa-film"></i>
+      </div>
+      <h2 class="text-xl md:text-2xl font-extrabold text-base-content">影视</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
       
-        <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300">
-          <div class="card-body">
-            <h2 class="card-title text-xl font-bold mb-4">神探夏洛克</h2>
-            <div class="flex flex-wrap gap-3">
+        
+
+        <div class="card bg-base-100/80 border border-base-200 rounded-box shadow-md hover:shadow-lg transition-all duration-200 overflow-hidden">
+          <!-- Status Bar -->
+          <div class="px-5 py-2 bg-base-200/20 border-b border-base-200/70">
+            <div class="flex items-center justify-between gap-3">
+              <div class="flex items-center gap-3 min-w-0">
+                <div class="flex items-center gap-1 opacity-60 flex-shrink-0">
+                  <span class="w-2 h-2 rounded-full bg-base-300"></span>
+                  <span class="w-2 h-2 rounded-full bg-base-300"></span>
+                  <span class="w-2 h-2 rounded-full bg-base-300"></span>
+                </div>
+                <div class="text-[10px] uppercase tracking-[0.28em] opacity-70">Feature</div>
+              </div>
+
+              <div class="text-[10px] uppercase tracking-[0.22em] opacity-60 whitespace-nowrap">
+                3 tags
+              </div>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="card-body p-5 pt-4">
+            <div class="w-full flex justify-center">
               
-                <span class="badge badge-primary cursor-default">
-                  悬疑
-                </span>
-                
-                
-                
-              
-                <span class="badge badge-primary cursor-default">
-                  推理
-                </span>
-                
-                
-                
-              
-                <span class="badge badge-primary cursor-default">
-                  老大最爱(未看完)
-                </span>
-                
-                
-                
+                <figure class="w-full max-w-[200px] md:max-w-[220px]">
+                  <img src="/pictures/cv_shows/sherlock.png" alt="神探夏洛克"
+                       class="w-full aspect-[2/3] object-cover border border-base-200 shadow-sm rounded-xl"
+                       loading="lazy" decoding="async">
+                </figure>
               
             </div>
+
+            <div class="mt-4 text-center">
+              <h3 class="text-base md:text-lg font-black tracking-tight break-words whitespace-normal leading-snug">神探夏洛克</h3>
+              <div class="mt-2.5 mx-auto w-12 h-px bg-base-200"></div>
+            </div>
+
+            
+              <div class="mt-3 text-center text-[11px] leading-relaxed opacity-80 break-words whitespace-normal">
+                
+                  <span class="break-words whitespace-normal">悬疑</span>
+                  
+                    <span class="opacity-40"> · </span>
+                  
+                
+                  <span class="break-words whitespace-normal">推理</span>
+                  
+                    <span class="opacity-40"> · </span>
+                  
+                
+                  <span class="break-words whitespace-normal">老大最爱(未看完)</span>
+                  
+                
+              </div>
+            
           </div>
         </div>
       
-        <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300">
-          <div class="card-body">
-            <h2 class="card-title text-xl font-bold mb-4">苍兰诀</h2>
-            <div class="flex flex-wrap gap-3">
+        
+
+        <div class="card bg-base-100/80 border border-base-200 rounded-box shadow-md hover:shadow-lg transition-all duration-200 overflow-hidden">
+          <!-- Status Bar -->
+          <div class="px-5 py-2 bg-base-200/20 border-b border-base-200/70">
+            <div class="flex items-center justify-between gap-3">
+              <div class="flex items-center gap-3 min-w-0">
+                <div class="flex items-center gap-1 opacity-60 flex-shrink-0">
+                  <span class="w-2 h-2 rounded-full bg-base-300"></span>
+                  <span class="w-2 h-2 rounded-full bg-base-300"></span>
+                  <span class="w-2 h-2 rounded-full bg-base-300"></span>
+                </div>
+                <div class="text-[10px] uppercase tracking-[0.28em] opacity-70">Feature</div>
+              </div>
+
+              <div class="text-[10px] uppercase tracking-[0.22em] opacity-60 whitespace-nowrap">
+                3 tags
+              </div>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="card-body p-5 pt-4">
+            <div class="w-full flex justify-center">
               
-                <span class="badge badge-primary cursor-default">
-                  爱情
-                </span>
-                
-                
-                
-              
-                <span class="badge badge-primary cursor-default">
-                  玄幻
-                </span>
-                
-                
-                
-              
-                <span class="badge badge-primary cursor-default">
-                  老大认可
-                </span>
-                
-                
-                
+                <figure class="w-full max-w-[200px] md:max-w-[220px]">
+                  <img src="/pictures/cv_shows/%E8%8B%8D%E5%85%B0%E8%AF%80.jpg" alt="苍兰诀"
+                       class="w-full aspect-[2/3] object-cover border border-base-200 shadow-sm rounded-xl"
+                       loading="lazy" decoding="async">
+                </figure>
               
             </div>
+
+            <div class="mt-4 text-center">
+              <h3 class="text-base md:text-lg font-black tracking-tight break-words whitespace-normal leading-snug">苍兰诀</h3>
+              <div class="mt-2.5 mx-auto w-12 h-px bg-base-200"></div>
+            </div>
+
+            
+              <div class="mt-3 text-center text-[11px] leading-relaxed opacity-80 break-words whitespace-normal">
+                
+                  <span class="break-words whitespace-normal">爱情</span>
+                  
+                    <span class="opacity-40"> · </span>
+                  
+                
+                  <span class="break-words whitespace-normal">玄幻</span>
+                  
+                    <span class="opacity-40"> · </span>
+                  
+                
+                  <span class="break-words whitespace-normal">老大认可</span>
+                  
+                
+              </div>
+            
           </div>
         </div>
       
-        <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300">
-          <div class="card-body">
-            <h2 class="card-title text-xl font-bold mb-4">非自然死亡</h2>
-            <div class="flex flex-wrap gap-3">
+        
+
+        <div class="card bg-base-100/80 border border-base-200 rounded-box shadow-md hover:shadow-lg transition-all duration-200 overflow-hidden">
+          <!-- Status Bar -->
+          <div class="px-5 py-2 bg-base-200/20 border-b border-base-200/70">
+            <div class="flex items-center justify-between gap-3">
+              <div class="flex items-center gap-3 min-w-0">
+                <div class="flex items-center gap-1 opacity-60 flex-shrink-0">
+                  <span class="w-2 h-2 rounded-full bg-base-300"></span>
+                  <span class="w-2 h-2 rounded-full bg-base-300"></span>
+                  <span class="w-2 h-2 rounded-full bg-base-300"></span>
+                </div>
+                <div class="text-[10px] uppercase tracking-[0.28em] opacity-70">Feature</div>
+              </div>
+
+              <div class="text-[10px] uppercase tracking-[0.22em] opacity-60 whitespace-nowrap">
+                2 tags
+              </div>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="card-body p-5 pt-4">
+            <div class="w-full flex justify-center">
               
-                <span class="badge badge-primary cursor-default">
-                  悬疑
-                </span>
-                
-                
-                
-              
-                <span class="badge badge-primary cursor-default">
-                  害怕ending的老大……
-                </span>
-                
-                
-                
+                <figure class="w-full max-w-[200px] md:max-w-[220px]">
+                  <img src="/pictures/cv_shows/%E9%9D%9E%E8%87%AA%E7%84%B6%E6%AD%BB%E4%BA%A1.jpg" alt="非自然死亡"
+                       class="w-full aspect-[2/3] object-cover border border-base-200 shadow-sm rounded-xl"
+                       loading="lazy" decoding="async">
+                </figure>
               
             </div>
+
+            <div class="mt-4 text-center">
+              <h3 class="text-base md:text-lg font-black tracking-tight break-words whitespace-normal leading-snug">非自然死亡</h3>
+              <div class="mt-2.5 mx-auto w-12 h-px bg-base-200"></div>
+            </div>
+
+            
+              <div class="mt-3 text-center text-[11px] leading-relaxed opacity-80 break-words whitespace-normal">
+                
+                  <span class="break-words whitespace-normal">悬疑</span>
+                  
+                    <span class="opacity-40"> · </span>
+                  
+                
+                  <span class="break-words whitespace-normal">害怕ending的老大……</span>
+                  
+                
+              </div>
+            
           </div>
         </div>
       
-        <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300">
-          <div class="card-body">
-            <h2 class="card-title text-xl font-bold mb-4">食贫道</h2>
-            <div class="flex flex-wrap gap-3">
+        
+
+        <div class="card bg-base-100/80 border border-base-200 rounded-box shadow-md hover:shadow-lg transition-all duration-200 overflow-hidden">
+          <!-- Status Bar -->
+          <div class="px-5 py-2 bg-base-200/20 border-b border-base-200/70">
+            <div class="flex items-center justify-between gap-3">
+              <div class="flex items-center gap-3 min-w-0">
+                <div class="flex items-center gap-1 opacity-60 flex-shrink-0">
+                  <span class="w-2 h-2 rounded-full bg-base-300"></span>
+                  <span class="w-2 h-2 rounded-full bg-base-300"></span>
+                  <span class="w-2 h-2 rounded-full bg-base-300"></span>
+                </div>
+                <div class="text-[10px] uppercase tracking-[0.28em] opacity-70">Feature</div>
+              </div>
+
+              <div class="text-[10px] uppercase tracking-[0.22em] opacity-60 whitespace-nowrap">
+                2 tags
+              </div>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="card-body p-5 pt-4">
+            <div class="w-full flex justify-center">
               
-                <span class="badge badge-primary cursor-default">
-                  美食
-                </span>
-                
-                
-                
-              
-                <span class="badge badge-primary cursor-default">
-                  贪吃的lulu…
-                </span>
-                
-                
-                
+                <figure class="w-full max-w-[200px] md:max-w-[220px]">
+                  <img src="/pictures/cv_shows/%E9%A3%9F%E8%B4%AB%E9%81%93.jpg" alt="食贫道"
+                       class="w-full aspect-[2/3] object-cover border border-base-200 shadow-sm rounded-xl"
+                       loading="lazy" decoding="async">
+                </figure>
               
             </div>
+
+            <div class="mt-4 text-center">
+              <h3 class="text-base md:text-lg font-black tracking-tight break-words whitespace-normal leading-snug">食贫道</h3>
+              <div class="mt-2.5 mx-auto w-12 h-px bg-base-200"></div>
+            </div>
+
+            
+              <div class="mt-3 text-center text-[11px] leading-relaxed opacity-80 break-words whitespace-normal">
+                
+                  <span class="break-words whitespace-normal">美食</span>
+                  
+                    <span class="opacity-40"> · </span>
+                  
+                
+                  <span class="break-words whitespace-normal">贪吃的lulu…</span>
+                  
+                
+              </div>
+            
           </div>
         </div>
       
@@ -763,182 +935,8 @@ var _hmt = _hmt || [];
   </section>
   
 
-  <!-- Awards & Honors -->
-  
-  <section class="mb-8" id="awards">
-    <h2 class="text-2xl font-bold mb-4 text-base-content">Awards & Honors</h2>
-    <div class="grid gap-6">
-      
-        <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300">
-          <div class="card-body">
-            <h2 class="card-title text-xl font-bold flex flex-wrap gap-2 items-start">
-              Best Paper Award
-              
-                <div class="badge badge-primary badge-sm lg:badge-md whitespace-nowrap">2022</div>
-              
-            </h2>
-            <div class="text-base-content opacity-80">
-              <p class="font-medium">International Conference on Machine Learning</p>
-              
-                <p class="mt-2 opacity-90">For outstanding contribution to the field of machine learning</p>
-              
-            </div>
-          </div>
-        </div>
-      
-        <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300">
-          <div class="card-body">
-            <h2 class="card-title text-xl font-bold flex flex-wrap gap-2 items-start">
-              Early Career Research Award
-              
-                <div class="badge badge-primary badge-sm lg:badge-md whitespace-nowrap">2021-02-21</div>
-              
-            </h2>
-            <div class="text-base-content opacity-80">
-              <p class="font-medium">National Science Foundation</p>
-              
-                <p class="mt-2 opacity-90">Recognizing exceptional promise in research</p>
-              
-            </div>
-          </div>
-        </div>
-      
-        <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300">
-          <div class="card-body">
-            <h2 class="card-title text-xl font-bold flex flex-wrap gap-2 items-start">
-              Teaching Excellence Award
-              
-                <div class="badge badge-primary badge-sm lg:badge-md whitespace-nowrap">2020</div>
-              
-            </h2>
-            <div class="text-base-content opacity-80">
-              <p class="font-medium">Stanford University</p>
-              
-                <p class="mt-2 opacity-90">For outstanding contributions to teaching</p>
-              
-            </div>
-          </div>
-        </div>
-      
-    </div>
-  </section>
-  
-
-  <!-- Languages -->
-  
-  <section class="mb-8" id="languages">
-  <h2 class="text-2xl font-bold mb-4 text-base-content">Languages</h2>
-  <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 p-6">
-    <div class="flex flex-wrap gap-3">
-      
-        <div class="px-4 py-4 bg-base-200 rounded-md shadow-sm text-sm flex items-center gap-2 whitespace-nowrap">
-          <span class="font-semibold">English</span>
-          <span class="text-xs opacity-70">(Native)</span>
-        </div>
-      
-        <div class="px-4 py-4 bg-base-200 rounded-md shadow-sm text-sm flex items-center gap-2 whitespace-nowrap">
-          <span class="font-semibold">Spanish</span>
-          <span class="text-xs opacity-70">(Professional)</span>
-        </div>
-      
-        <div class="px-4 py-4 bg-base-200 rounded-md shadow-sm text-sm flex items-center gap-2 whitespace-nowrap">
-          <span class="font-semibold">Mandarin</span>
-          <span class="text-xs opacity-70">(Intermediate)</span>
-        </div>
-      
-    </div>
-  </div>
-</section>
-
-
-  <!-- Teaching -->
-  
-  <section class="mb-8" id="teaching">
-    <h2 class="text-2xl font-bold mb-4 text-base-content">Teaching Experience</h2>
-    <div class="grid gap-6">
-      
-        <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300">
-          <div class="card-body">
-            <h2 class="card-title text-xl font-bold flex flex-wrap gap-2 items-start">
-              CS229: Machine Learning
-              
-                <div class="badge badge-primary badge-sm lg:badge-md whitespace-nowrap">2021 - Present</div>
-              
-            </h2>
-            <div class="text-base-content opacity-80">
-              <p class="font-medium">Stanford University</p>
-              
-                <p class="text-sm opacity-70">Instructor</p>
-              
-              
-                <p class="mt-2 opacity-90">Advanced graduate course covering machine learning algorithms and applications</p>
-              
-              
-                <p class="text-sm mt-2 opacity-70">Students: 120 students per semester</p>
-              
-              
-                <p class="text-sm mt-1 opacity-70">Evaluation: 4.8/5.0</p>
-              
-            </div>
-          </div>
-        </div>
-      
-        <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300">
-          <div class="card-body">
-            <h2 class="card-title text-xl font-bold flex flex-wrap gap-2 items-start">
-              CS106A: Programming Fundamentals
-              
-                <div class="badge badge-primary badge-sm lg:badge-md whitespace-nowrap">2020 - 2021</div>
-              
-            </h2>
-            <div class="text-base-content opacity-80">
-              <p class="font-medium">Stanford University</p>
-              
-                <p class="text-sm opacity-70">Teaching Assistant</p>
-              
-              
-                <p class="mt-2 opacity-90">Introductory programming course in Python</p>
-              
-              
-                <p class="text-sm mt-2 opacity-70">Students: 300 students</p>
-              
-              
-                <p class="text-sm mt-1 opacity-70">Evaluation: 4.6/5.0</p>
-              
-            </div>
-          </div>
-        </div>
-      
-        <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300">
-          <div class="card-body">
-            <h2 class="card-title text-xl font-bold flex flex-wrap gap-2 items-start">
-              AI Ethics and Society
-              
-                <div class="badge badge-primary badge-sm lg:badge-md whitespace-nowrap">2022 - Present</div>
-              
-            </h2>
-            <div class="text-base-content opacity-80">
-              <p class="font-medium">Stanford University</p>
-              
-                <p class="text-sm opacity-70">Co-Instructor</p>
-              
-              
-                <p class="mt-2 opacity-90">Interdisciplinary course exploring ethical implications of AI</p>
-              
-              
-                <p class="text-sm mt-2 opacity-70">Students: 80 students per semester</p>
-              
-              
-                <p class="text-sm mt-1 opacity-70">Evaluation: 4.9/5.0</p>
-              
-            </div>
-          </div>
-        </div>
-      
-    </div>
-  </section>
-  
-
+ 
+</div>
 </div>
 
   </div>
@@ -1213,10 +1211,8 @@ var _hmt = _hmt || [];
   <div class="grid grid-flow-col gap-4">
     <div class="text-center">
       <span>© 2025 Lulu</span>
-      <span>·</span>
-      <span>Powered by <a href="https://hexo.io/" target="_blank" rel="noopener noreferrer" class="link link-info no-underline">Hexo</a></span>
-      <span>·</span>
-      <span>Theme: <a href="https://github.com/jiehua1995/hexo-theme-researcher" target="_blank" rel="noopener noreferrer" class="link link-info no-underline">Researcher v0.1.4</a></span>
+
+      
     </div>
   </div>
 </footer>

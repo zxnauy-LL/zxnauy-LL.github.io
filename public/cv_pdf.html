@@ -1,0 +1,402 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lulu's Favorites</title>
+    
+    <!-- 引入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 引入 Lucide 图标库 -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- 自定义样式与动画 -->
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .animate-fade-in-up {
+            animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fade-in-up {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 隐藏滚动条但保持滚动功能 (可选) */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-[#F5F5F7] text-[#1d1d1f] pb-32 selection:bg-blue-100 selection:text-blue-900">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500 bg-transparent">
+        <div class="max-w-5xl mx-auto px-6 h-12 flex items-center justify-between">
+            <div class="flex items-center gap-2 cursor-default">
+                <span class="text-lg"></span>
+                <span class="font-medium text-xs tracking-wide uppercase text-gray-500">Lulu's Profile</span>
+            </div>
+            <div class="hidden sm:flex gap-1">
+                <span class="w-2 h-2 rounded-full bg-red-400"></span>
+                <span class="w-2 h-2 rounded-full bg-yellow-400"></span>
+                <span class="w-2 h-2 rounded-full bg-green-400"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-36 pb-16 px-6 max-w-5xl mx-auto">
+        <div class="animate-fade-in-up space-y-5">
+            <div class="inline-flex items-center px-3 py-1 rounded-full bg-white border border-gray-200 shadow-sm">
+                <span class="flex h-2 w-2 relative mr-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-pink-500"></span>
+                </span>
+                <span class="text-[11px] font-medium text-gray-600 uppercase tracking-wider">Lulu's Universe</span>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-semibold tracking-tighter text-gray-900 leading-[1.05]">
+                Lulu 的<br/>
+                <span class="text-gray-400/80">喜爱清单</span>
+            </h1>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 space-y-6 animate-fade-in-up" style="animation-delay: 0.2s;">
+        
+        <!-- Row 1: Snacks (Left) + Dessert (Right) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- 1. Snacks Card -->
+            <div class="md:col-span-2 bg-white rounded-[24px] p-7 shadow-sm border border-gray-100/50 hover:shadow-lg transition-all duration-300 group">
+                <!-- Header -->
+                <div class="flex justify-between items-start mb-5">
+                    <div>
+                        <div class="text-[10px] font-bold uppercase tracking-widest mb-1.5 text-yellow-600 opacity-80">零食</div>
+                        <h3 class="text-xl font-semibold tracking-tight text-gray-900">这是最重要的part</h3>
+                    </div>
+                    <div class="w-10 h-10 rounded-full flex items-center justify-center text-xl bg-yellow-50 text-yellow-600 bg-opacity-60">
+                        🍟
+                    </div>
+                </div>
+                <!-- Items Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 mt-4">
+                    <!-- Item 1 -->
+                    <div class="group/item">
+                        <span class="block text-[13px] font-semibold text-gray-800 mb-0.5 group-hover/item:text-blue-600 transition-colors">膨化食品</span>
+                        <span class="block text-[13px] text-gray-500 leading-relaxed">好丽友泡菜味、大波浪、玉米浓汤、乐事青柠/黄瓜、蒜味虾片、蜂蜜黄油、荔小芋</span>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="group/item">
+                        <span class="block text-[13px] font-semibold text-gray-800 mb-0.5 group-hover/item:text-blue-600 transition-colors">饼干及面包</span>
+                        <span class="block text-[13px] text-gray-500 leading-relaxed">纯可可脂蛋卷、巧克力吐司、好丽友派、奥利奥薄脆、法丽兹、趣多多</span>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="group/item">
+                        <span class="block text-[13px] font-semibold text-gray-800 mb-0.5 group-hover/item:text-blue-600 transition-colors">战略武器</span>
+                        <span class="block text-[13px] text-gray-500 leading-relaxed">山楂、酸枣糕、苹果醋（消化解馋专用）</span>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="group/item">
+                        <span class="block text-[13px] font-semibold text-gray-800 mb-0.5 group-hover/item:text-blue-600 transition-colors">辣条系列</span>
+                        <span class="block text-[13px] text-gray-500 leading-relaxed">笑辣辣印度飞饼、卫龙（只爱甜辣）</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Dessert Card -->
+            <div class="bg-white rounded-[24px] p-7 shadow-sm border border-gray-100/50 hover:shadow-lg transition-all duration-300 flex flex-col">
+                <div class="flex justify-between items-start mb-5">
+                    <div>
+                        <div class="text-[10px] font-bold uppercase tracking-widest mb-1.5 text-pink-600 opacity-80">甜品蛋糕</div>
+                        <h3 class="text-xl font-semibold tracking-tight text-gray-900">漂亮小孩的最爱</h3>
+                    </div>
+                    <div class="w-10 h-10 rounded-full flex items-center justify-center text-xl bg-pink-50 text-pink-600 bg-opacity-60">
+                        🍰
+                    </div>
+                </div>
+                <ul class="space-y-3 mt-2 flex-1">
+                    <li class="flex items-start text-[13px] text-gray-600 leading-snug py-0.5">
+                        <i data-lucide="check-circle-2" class="w-3.5 h-3.5 mr-2.5 mt-[3px] shrink-0 text-gray-300"></i>
+                        <span>老友记版本的陈皮红豆沙和芒果冰</span>
+                    </li>
+                    <li class="flex items-start text-[13px] text-gray-600 leading-snug py-0.5">
+                        <i data-lucide="check-circle-2" class="w-3.5 h-3.5 mr-2.5 mt-[3px] shrink-0 text-gray-300"></i>
+                        <span>各式面包（馅料多多、麻薯、米面包）</span>
+                    </li>
+                    <li class="flex items-start text-[13px] text-gray-600 leading-snug py-0.5">
+                        <i data-lucide="check-circle-2" class="w-3.5 h-3.5 mr-2.5 mt-[3px] shrink-0 text-gray-300"></i>
+                        <span>鲍师傅：肉松小贝、司康、芋泥奶贝</span>
+                    </li>
+                    <li class="flex items-start text-[13px] text-gray-600 leading-snug py-0.5">
+                        <i data-lucide="check-circle-2" class="w-3.5 h-3.5 mr-2.5 mt-[3px] shrink-0 text-gray-300"></i>
+                        <span>芋泥虎皮卷、脆巧泡芙</span>
+                    </li>
+                </ul>
+                <div class="mt-6 pt-4 border-t border-gray-50 flex items-center justify-between text-xs text-gray-400">
+                    <span>Sweet Tooth</span>
+                    <span>100%</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 2: Healthy & Daily -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- 3. Fruit Card -->
+            <div class="bg-white rounded-[24px] p-6 shadow-sm border border-gray-100/50 hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+                <div class="flex justify-between items-start mb-5">
+                    <div>
+                        <div class="text-[10px] font-bold uppercase tracking-widest mb-1.5 text-red-600 opacity-80">水果类</div>
+                        <h3 class="text-xl font-semibold tracking-tight text-gray-900">Lulu 的水果偏好</h3>
+                    </div>
+                    <div class="w-10 h-10 rounded-full flex items-center justify-center text-xl bg-red-50 text-red-600 bg-opacity-60">
+                        🍓
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-2 mt-2">
+                    <span class="px-3 py-1.5 bg-red-50 text-red-700 text-xs font-medium rounded-lg border border-red-100/50">草莓 🍓</span>
+                    <span class="px-3 py-1.5 bg-red-50 text-red-700 text-xs font-medium rounded-lg border border-red-100/50">芒果 🥭</span>
+                    <span class="px-3 py-1.5 bg-red-50 text-red-700 text-xs font-medium rounded-lg border border-red-100/50">木瓜 (缺emoji)</span>
+                </div>
+            </div>
+
+            <!-- 4. Drink Card -->
+            <div class="bg-white rounded-[24px] p-6 shadow-sm border border-gray-100/50 hover:shadow-lg transition-all duration-300">
+                <div class="flex justify-between items-start mb-5">
+                    <div>
+                        <div class="text-[10px] font-bold uppercase tracking-widest mb-1.5 text-cyan-600 opacity-80">续命水</div>
+                        <h3 class="text-xl font-semibold tracking-tight text-gray-900">饮品清单</h3>
+                    </div>
+                    <div class="w-10 h-10 rounded-full flex items-center justify-center text-xl bg-cyan-50 text-cyan-600 bg-opacity-60">
+                        <i data-lucide="droplets" class="w-5 h-5"></i>
+                    </div>
+                </div>
+                <ul class="space-y-2 mt-2">
+                    <li class="text-[13px] text-gray-600 flex items-center justify-between">
+                        <span>椰子水</span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-cyan-100"></span>
+                    </li>
+                    <li class="text-[13px] text-gray-600 flex items-center justify-between">
+                        <span>绿豆沙 & 油柑汁</span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-cyan-100"></span>
+                    </li>
+                    <li class="text-[13px] text-gray-600 flex items-center justify-between">
+                        <span>霸王茶姬</span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-cyan-100"></span>
+                    </li>
+                    <li class="text-[13px] text-gray-600 flex items-center justify-between">
+                        <span>苦苦美式 / 芦荟美式</span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-cyan-100"></span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 5. Health/Stats Ring (Dark Mode) -->
+            <div class="bg-[#121214] text-white rounded-[24px] p-6 shadow-md border border-gray-800 flex flex-col justify-between relative overflow-hidden group">
+                <!-- Background Gradient -->
+                <div class="absolute top-0 right-0 -mr-8 -mt-8 w-32 h-32 bg-gradient-to-br from-pink-500 to-purple-600 blur-3xl opacity-20 group-hover:opacity-40 transition-opacity duration-700"></div>
+                
+                <div class="flex justify-between items-start z-10">
+                    <div>
+                        <h3 class="text-[11px] font-semibold text-gray-400 uppercase tracking-widest">状态</h3>
+                        <p class="text-2xl font-bold mt-1 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
+                            健康
+                        </p>
+                    </div>
+                    <i data-lucide="activity" class="w-5 h-5 text-pink-500"></i>
+                </div>
+
+                <div class="flex items-end gap-3 z-10 mt-6">
+                    <div class="flex-1 space-y-3.5">
+                        <div class="flex items-center justify-between text-[13px]">
+                            <span class="text-pink-400 flex items-center gap-2">
+                                <i data-lucide="star" class="w-3.5 h-3.5"></i> 可爱😊 
+                            </span>
+                                <span class="font-mono font-medium tracking-wide text-pink-400 flex gap-0.5">
+                                    <i data-lucide="star" fill="currentColor" class="w-4 h-4"></i>
+                                    <i data-lucide="star" fill="currentColor" class="w-4 h-4"></i>
+                                    <i data-lucide="star" fill="currentColor" class="w-4 h-4"></i>
+                                    <i data-lucide="star" fill="currentColor" class="w-4 h-4"></i>
+                                    <i data-lucide="star" fill="currentColor" class="w-4 h-4"></i>
+                                </span>
+                        </div>
+                        <div class="flex items-center justify-between text-[13px]">
+                            <span class="text-blue-400 flex items-center gap-2">
+                                <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> 漂亮💐
+                            </span>
+                                <span class="font-mono font-medium tracking-wide text-blue-400 flex gap-0.5">
+                                    <i data-lucide="sparkles" fill="currentColor" class="w-4 h-4"></i>
+                                    <i data-lucide="sparkles" fill="currentColor" class="w-4 h-4"></i>
+                                    <i data-lucide="sparkles" fill="currentColor" class="w-4 h-4"></i>
+                                    <i data-lucide="sparkles" fill="currentColor" class="w-4 h-4"></i>
+                                    <i data-lucide="sparkles" fill="currentColor" class="w-4 h-4"></i>
+                                </span>
+                        </div>
+                        <div class="flex items-center justify-between text-[13px]">
+                            <span class="text-cyan-400 flex items-center gap-2">
+                                <i data-lucide="shield" class="w-3.5 h-3.5"></i> 勇敢♎︎
+                            </span>
+                                <span class="font-mono font-medium tracking-wide text-cyan-400 flex gap-0.5">
+                                    <i data-lucide="shield" fill="currentColor" class="w-4 h-4"></i>
+                                    <i data-lucide="shield" fill="currentColor" class="w-4 h-4"></i>
+                                    <i data-lucide="shield" fill="currentColor" class="w-4 h-4"></i>
+                                    <i data-lucide="shield" fill="currentColor" class="w-4 h-4"></i>
+                                    <i data-lucide="shield" fill="currentColor" class="w-4 h-4"></i>
+                                </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 3: Main Food Banner -->
+        <div class="bg-gradient-to-r from-orange-50 to-orange-100/50 rounded-[24px] p-6 border border-orange-100/50 flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm text-2xl">🍔</div>
+                <div>
+                    <h3 class="text-lg font-bold text-gray-900">主食 · 日常用餐</h3>
+                    <p class="text-sm text-gray-500">Control、、</p>
+                </div>
+            </div>
+            <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-white/60 backdrop-blur-sm border border-white/50 rounded-full text-xs font-medium text-orange-800">憨八嘎 (开心减肥餐)</span>
+                <span class="px-3 py-1 bg-white/60 backdrop-blur-sm border border-white/50 rounded-full text-xs font-medium text-orange-800">冷面</span>
+                <span class="px-3 py-1 bg-white/60 backdrop-blur-sm border border-white/50 rounded-full text-xs font-medium text-orange-800">茄皇番茄鸡蛋面</span>
+                <span class="px-3 py-1 bg-white/60 backdrop-blur-sm border border-white/50 rounded-full text-xs font-medium text-orange-800">粉面菜蛋 & 合味道</span>
+            </div>
+        </div>
+
+        <!-- Media Section -->
+        <section class="mt-16 mb-8">
+            <div class="flex items-end justify-between px-2 mb-6">
+                <h2 class="text-2xl font-bold text-gray-900 tracking-tight">影视清单</h2>
+                <span class="text-sm font-medium text-gray-400">Watch History</span>
+            </div>
+
+            <!-- List Container -->
+            <div class="bg-white rounded-[20px] shadow-sm border border-gray-200/60 overflow-hidden divide-y divide-gray-100">
+                
+                <!-- Media Item 1 -->
+                <div class="group flex items-center p-4 hover:bg-gray-50 transition-colors duration-200 cursor-default">
+                    <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center shadow-sm shrink-0 group-hover:scale-105 transition-transform duration-300">
+                        <i data-lucide="tv" class="w-5 h-5 text-white"></i>
+                    </div>
+                    <div class="ml-4 flex-1 min-w-0 grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+                        <div>
+                            <h3 class="text-[15px] font-bold text-gray-900 truncate">神探夏洛克</h3>
+                            <div class="flex gap-2 mt-1">
+                                <span class="text-[11px] text-gray-500 border border-gray-200 px-1.5 rounded-[4px] bg-gray-50/50">悬疑</span>
+                                <span class="text-[11px] text-gray-500 border border-gray-200 px-1.5 rounded-[4px] bg-gray-50/50">推理</span>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex justify-end">
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium text-blue-600 bg-blue-50">老大最爱 (未完)</span>
+                        </div>
+                    </div>
+                    <i data-lucide="arrow-right" class="w-4 h-4 text-gray-300 ml-4 opacity-0 group-hover:opacity-100 transition-opacity -translate-x-2 group-hover:translate-x-0"></i>
+                </div>
+
+                <!-- Media Item 2 -->
+                <div class="group flex items-center p-4 hover:bg-gray-50 transition-colors duration-200 cursor-default">
+                    <div class="w-12 h-12 rounded-xl bg-violet-600 flex items-center justify-center shadow-sm shrink-0 group-hover:scale-105 transition-transform duration-300">
+                        <i data-lucide="heart" class="w-5 h-5 text-white"></i>
+                    </div>
+                    <div class="ml-4 flex-1 min-w-0 grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+                        <div>
+                            <h3 class="text-[15px] font-bold text-gray-900 truncate">苍兰诀</h3>
+                            <div class="flex gap-2 mt-1">
+                                <span class="text-[11px] text-gray-500 border border-gray-200 px-1.5 rounded-[4px] bg-gray-50/50">爱情</span>
+                                <span class="text-[11px] text-gray-500 border border-gray-200 px-1.5 rounded-[4px] bg-gray-50/50">玄幻</span>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex justify-end">
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium text-purple-600 bg-purple-50">老大认可</span>
+                        </div>
+                    </div>
+                    <i data-lucide="arrow-right" class="w-4 h-4 text-gray-300 ml-4 opacity-0 group-hover:opacity-100 transition-opacity -translate-x-2 group-hover:translate-x-0"></i>
+                </div>
+
+                <!-- Media Item 3 -->
+                <div class="group flex items-center p-4 hover:bg-gray-50 transition-colors duration-200 cursor-default">
+                    <div class="w-12 h-12 rounded-xl bg-teal-600 flex items-center justify-center shadow-sm shrink-0 group-hover:scale-105 transition-transform duration-300">
+                        <i data-lucide="play" class="w-5 h-5 text-white"></i>
+                    </div>
+                    <div class="ml-4 flex-1 min-w-0 grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+                        <div>
+                            <h3 class="text-[15px] font-bold text-gray-900 truncate">非自然死亡</h3>
+                            <div class="flex gap-2 mt-1">
+                                <span class="text-[11px] text-gray-500 border border-gray-200 px-1.5 rounded-[4px] bg-gray-50/50">悬疑</span>
+                                <span class="text-[11px] text-gray-500 border border-gray-200 px-1.5 rounded-[4px] bg-gray-50/50">剧情</span>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex justify-end">
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium text-rose-600 bg-rose-50">老大说过害怕 Ending</span>
+                        </div>
+                    </div>
+                    <i data-lucide="arrow-right" class="w-4 h-4 text-gray-300 ml-4 opacity-0 group-hover:opacity-100 transition-opacity -translate-x-2 group-hover:translate-x-0"></i>
+                </div>
+
+                <!-- Media Item 4 -->
+                <div class="group flex items-center p-4 hover:bg-gray-50 transition-colors duration-200 cursor-default">
+                    <div class="w-12 h-12 rounded-xl bg-orange-500 flex items-center justify-center shadow-sm shrink-0 group-hover:scale-105 transition-transform duration-300">
+                        <i data-lucide="utensils" class="w-5 h-5 text-white"></i>
+                    </div>
+                    <div class="ml-4 flex-1 min-w-0 grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+                        <div>
+                            <h3 class="text-[15px] font-bold text-gray-900 truncate">食贫道</h3>
+                            <div class="flex gap-2 mt-1">
+                                <span class="text-[11px] text-gray-500 border border-gray-200 px-1.5 rounded-[4px] bg-gray-50/50">纪录片</span>
+                                <span class="text-[11px] text-gray-500 border border-gray-200 px-1.5 rounded-[4px] bg-gray-50/50">美食</span>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex justify-end">
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium text-orange-600 bg-orange-50">贪吃 Lulu</span>
+                        </div>
+                    </div>
+                    <i data-lucide="arrow-right" class="w-4 h-4 text-gray-300 ml-4 opacity-0 group-hover:opacity-100 transition-opacity -translate-x-2 group-hover:translate-x-0"></i>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-12 text-center border-t border-gray-200/60 mt-20">
+            <p class="text-xs font-medium text-gray-300 uppercase tracking-widest">Designed for Lulu · 2025</p>
+        </footer>
+
+    </main>
+
+    <!-- JavaScript for interactivity -->
+    <script>
+        // 1. Initialize Icons
+        lucide.createIcons();
+
+        // 2. Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('bg-white/70', 'backdrop-blur-xl', 'border-b', 'border-gray-200/50');
+                navbar.classList.remove('bg-transparent');
+            } else {
+                navbar.classList.add('bg-transparent');
+                navbar.classList.remove('bg-white/70', 'backdrop-blur-xl', 'border-b', 'border-gray-200/50');
+            }
+        });
+    </script>
+</body>
+</html>

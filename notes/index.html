@@ -28,7 +28,11 @@
 
 <!-- Tailwind CSS -->
 <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/custom-font.css">
 <script src="https://cdn.tailwindcss.com"></script>
+
+<!-- CJK WebFont (LXGW WenKai Screen) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.7.0/style.min.css">
 
 <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.min.css" rel="stylesheet" type="text/css" />
   
@@ -95,13 +99,8 @@ var _hmt = _hmt || [];
   
     
       <a href="/plan/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-list-check mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        计划
-      </a>
-    
-      <a href="/projects/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-gift mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        礼物&amp;灵感
+        <i class="fa-solid fa-compact-disc mr-3 text-lg group-hover:scale-110 transition-transform"></i>
+        听歌♪(´▽｀)
       </a>
     
       <a href="/cv/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
@@ -442,13 +441,8 @@ var _hmt = _hmt || [];
   
     
       <a href="/plan/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-list-check mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        计划
-      </a>
-    
-      <a href="/projects/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-gift mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        礼物&amp;灵感
+        <i class="fa-solid fa-compact-disc mr-3 text-lg group-hover:scale-110 transition-transform"></i>
+        听歌♪(´▽｀)
       </a>
     
       <a href="/cv/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
@@ -491,196 +485,384 @@ var _hmt = _hmt || [];
 
   <!-- Content area for Desktop -->
   <div class="lg:ml-80 pt-20 px-4 py-8">
-    <div class="container mx-auto px-4">
-  <h1 class="text-4xl font-extrabold mb-8 text-base-content">Notes for Lulu</h1>
+    <div class="container mx-auto px-4 py-8 md:py-12 max-w-7xl">
+  <!-- Header Section -->
+  <header class="mb-12 px-2">
+    <h1 class="text-5xl md:text-6xl font-normal mb-4 text-base-content tracking-tight" style="font-family: system-ui, -apple-system, sans-serif;">记Lu</h1>
+    <p class="text-xl text-base-content/60 font-light">想对你说的……</p>
+  </header>
   
-  <!-- Search and Filter -->
-  <!-- Filters -->
-  <div class="glass-card p-4 mb-8">
-    <div class="flex flex-wrap gap-4">
-      <!-- Category Filter -->
-      <div class="form-control">
-        <select class="select select-bordered" id="categoryFilter" name="categoryFilter">
-          <option value="">All Categories</option>
-          
-            <option value="出行">出行</option>
-          
-            <option value="薯仔想法">薯仔想法</option>
-          
-        </select>
-      </div>
-
-      <!-- Year Filter -->
-      <div class="form-control">
-        <select class="select select-bordered" id="yearFilter" name="yearFilter">
-          <option value="">All Years</option>
-          
-            <option value="2025">2025</option>
-          
-        </select>
-      </div>
-
-      <!-- Search -->
-      <div class="form-control flex-1">
-        <input type="text" placeholder="Search notes..." class="input input-bordered" id="searchInput" />
-      </div>
+  <!-- Material You Filter Bar -->
+  <div class="bg-base-200/50 backdrop-blur-2xl rounded-[28px] p-3 mb-12 shadow-sm border border-white/20 flex flex-col md:flex-row gap-3 transition-all duration-300 hover:shadow-md hover:bg-base-200/70">
+    
+    <!-- Category Filter -->
+    <div class="relative group min-w-[160px]">
+      <select class="w-full appearance-none bg-base-100 hover:bg-base-100/80 text-base-content pl-6 pr-10 py-3.5 rounded-full cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all font-medium text-sm border-none shadow-sm" id="categoryFilter" name="categoryFilter">
+        <option value="">All Categories</option>
+        
+          <option value="出行">出行</option>
+        
+          <option value="薯仔想法">薯仔想法</option>
+        
+      </select>
+      <i class="fa-solid fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-xs opacity-40 pointer-events-none group-hover:translate-y-0 transition-transform"></i>
     </div>
 
-    <!-- Results Count -->
-    <div class="mt-2 text-sm opacity-70">
-      <span id="resultsCount">Showing all 3 notes</span>
+    <!-- Year Filter -->
+    <div class="relative group min-w-[140px]">
+      <select class="w-full appearance-none bg-base-100 hover:bg-base-100/80 text-base-content pl-6 pr-10 py-3.5 rounded-full cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all font-medium text-sm border-none shadow-sm" id="yearFilter" name="yearFilter">
+        <option value="">All Years</option>
+        
+          <option value="2025">2025</option>
+        
+      </select>
+      <i class="fa-solid fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-xs opacity-40 pointer-events-none group-hover:translate-y-0 transition-transform"></i>
     </div>
 
-    <!-- Search suggestions (hidden by default) -->
-    <div id="searchSuggestions" class="hidden mt-2">
-      <div class="bg-base-100 border border-base-300 rounded-lg shadow-lg max-h-60 overflow-y-auto">
-        <!-- Search suggestions will be populated here -->
+    <!-- Search -->
+    <div class="flex-1 relative group">
+      <div class="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 flex items-center justify-center pointer-events-none opacity-40 group-focus-within:opacity-100 group-focus-within:text-primary transition-all">
+        <i class="fa-solid fa-search"></i>
       </div>
+      <input type="text" placeholder="Search notes..." class="w-full bg-base-100 border-none rounded-full py-3.5 pl-12 pr-6 focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-base-content/40 text-sm shadow-sm" id="searchInput" />
     </div>
   </div>
 
-  <!-- Posts Archive -->
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="notesContainer">
+  <!-- Results Count -->
+  <div class="px-4 mb-6 text-sm font-medium opacity-50 tracking-wide uppercase">
+    <span id="resultsCount">Showing all 5 notes</span>
+  </div>
+
+  <!-- Posts Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="notesContainer">
     
-      <article class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-105 transition-all duration-300 note-item h-80 flex flex-col" 
+      <article class="card group relative h-[420px] w-full overflow-hidden rounded-[32px] border-none shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl note-item"
+               data-category="薯仔想法"
+               data-year="2025"
+               data-title="几分之几"
+               data-content=""
+               data-tags="">
+        
+        <!-- Background Image / Gradient -->
+        <div class="absolute inset-0 h-full w-full bg-gradient-to-br from-teal-400 to-lime-400 transition-transform duration-700 group-hover:scale-110">
+          <!-- Try to load image matching the post slug -->
+          <img src="/pictures/posts/几分之几.jpg" 
+               class="h-full w-full object-cover transition-opacity duration-300"
+               loading="lazy"
+               onerror="this.style.display='none'"
+               alt="几分之几">
+        </div>
+
+        <!-- Dark Gradient Overlay for Text Readability -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 transition-opacity duration-300 group-hover:opacity-90"></div>
+
+        <!-- Content Container -->
+        <div class="absolute inset-0 flex flex-col justify-end p-6 text-white">
+          
+          <!-- Top Right Badge (Date) -->
+          <div class="absolute top-5 right-5 translate-y-[-10px] opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+             <span class="rounded-full bg-black/30 px-3 py-1.5 text-[10px] font-bold backdrop-blur-md border border-white/10 tracking-wider uppercase">
+                Dec 26
+             </span>
+          </div>
+
+          <!-- Category Tag (Top Left) -->
+          
+            <div class="absolute top-5 left-5">
+              <span class="rounded-full bg-white/20 px-3 py-1.5 text-[10px] font-bold backdrop-blur-md border border-white/10 tracking-wider uppercase">
+                薯仔想法
+              </span>
+            </div>
+          
+
+          <!-- Main Content Area -->
+          <div class="mb-4">
+            <!-- Title -->
+            <h2 class="mb-2 text-xl font-bold leading-tight tracking-tight text-white drop-shadow-sm">
+              几分之几
+            </h2>
+
+            <!-- Excerpt -->
+            <p class="line-clamp-2 text-xs font-medium text-gray-200/90 leading-relaxed">
+              ...
+            </p>
+          </div>
+
+          <!-- Tags -->
+          <div class="mb-5 flex flex-wrap gap-2 opacity-80">
+            
+          </div>
+
+          <!-- Action Button -->
+          <a href="/2025/12/26/%E5%87%A0%E5%88%86%E4%B9%8B%E5%87%A0/" class="flex w-full items-center justify-center rounded-full bg-white py-3.5 text-sm font-bold text-black transition-all active:scale-95 hover:bg-gray-100 shadow-lg">
+            Read Note
+          </a>
+        </div>
+      </article>
+    
+      <article class="card group relative h-[420px] w-full overflow-hidden rounded-[32px] border-none shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl note-item"
+               data-category="薯仔想法"
+               data-year="2025"
+               data-title="道歉信"
+               data-content=""
+               data-tags="">
+        
+        <!-- Background Image / Gradient -->
+        <div class="absolute inset-0 h-full w-full bg-gradient-to-br from-violet-400 to-fuchsia-400 transition-transform duration-700 group-hover:scale-110">
+          <!-- Try to load image matching the post slug -->
+          <img src="/pictures/posts/遗憾.jpg" 
+               class="h-full w-full object-cover transition-opacity duration-300"
+               loading="lazy"
+               onerror="this.style.display='none'"
+               alt="道歉信">
+        </div>
+
+        <!-- Dark Gradient Overlay for Text Readability -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 transition-opacity duration-300 group-hover:opacity-90"></div>
+
+        <!-- Content Container -->
+        <div class="absolute inset-0 flex flex-col justify-end p-6 text-white">
+          
+          <!-- Top Right Badge (Date) -->
+          <div class="absolute top-5 right-5 translate-y-[-10px] opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+             <span class="rounded-full bg-black/30 px-3 py-1.5 text-[10px] font-bold backdrop-blur-md border border-white/10 tracking-wider uppercase">
+                Dec 26
+             </span>
+          </div>
+
+          <!-- Category Tag (Top Left) -->
+          
+            <div class="absolute top-5 left-5">
+              <span class="rounded-full bg-white/20 px-3 py-1.5 text-[10px] font-bold backdrop-blur-md border border-white/10 tracking-wider uppercase">
+                薯仔想法
+              </span>
+            </div>
+          
+
+          <!-- Main Content Area -->
+          <div class="mb-4">
+            <!-- Title -->
+            <h2 class="mb-2 text-xl font-bold leading-tight tracking-tight text-white drop-shadow-sm">
+              道歉信
+            </h2>
+
+            <!-- Excerpt -->
+            <p class="line-clamp-2 text-xs font-medium text-gray-200/90 leading-relaxed">
+              ...
+            </p>
+          </div>
+
+          <!-- Tags -->
+          <div class="mb-5 flex flex-wrap gap-2 opacity-80">
+            
+          </div>
+
+          <!-- Action Button -->
+          <a href="/2025/12/26/%E9%81%97%E6%86%BE/" class="flex w-full items-center justify-center rounded-full bg-white py-3.5 text-sm font-bold text-black transition-all active:scale-95 hover:bg-gray-100 shadow-lg">
+            Read Note
+          </a>
+        </div>
+      </article>
+    
+      <article class="card group relative h-[420px] w-full overflow-hidden rounded-[32px] border-none shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl note-item"
                data-category="薯仔想法"
                data-year="2025"
                data-title="沟通失败的想法"
                data-content=""
                data-tags="">
-        <div class="card-body p-6 flex flex-col h-full">
-          <!-- Header -->
-          <div class="mb-4">
-            <h2 class="card-title text-lg font-bold leading-tight mb-2">
-              <a href="/2025/10/23/%E6%80%9D%E8%80%832/" class="hover:text-primary no-underline transition-colors duration-200">
-                沟通失败的想法
-              </a>
-            </h2>
-            <div class="flex items-center justify-between">
-              <time class="text-sm opacity-70">
-                Oct 23, 2025
-              </time>
-              
-                <div class="badge badge-primary badge-sm">
-                  薯仔想法
-                </div>
-              
-            </div>
+        
+        <!-- Background Image / Gradient -->
+        <div class="absolute inset-0 h-full w-full bg-gradient-to-br from-blue-400 to-indigo-400 transition-transform duration-700 group-hover:scale-110">
+          <!-- Try to load image matching the post slug -->
+          <img src="/pictures/posts/沟通失败的想法.jpg" 
+               class="h-full w-full object-cover transition-opacity duration-300"
+               loading="lazy"
+               onerror="this.style.display='none'"
+               alt="沟通失败的想法">
+        </div>
+
+        <!-- Dark Gradient Overlay for Text Readability -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 transition-opacity duration-300 group-hover:opacity-90"></div>
+
+        <!-- Content Container -->
+        <div class="absolute inset-0 flex flex-col justify-end p-6 text-white">
+          
+          <!-- Top Right Badge (Date) -->
+          <div class="absolute top-5 right-5 translate-y-[-10px] opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+             <span class="rounded-full bg-black/30 px-3 py-1.5 text-[10px] font-bold backdrop-blur-md border border-white/10 tracking-wider uppercase">
+                Oct 23
+             </span>
           </div>
 
-          <!-- Excerpt -->
+          <!-- Category Tag (Top Left) -->
           
-            <div class="flex-1"></div>
+            <div class="absolute top-5 left-5">
+              <span class="rounded-full bg-white/20 px-3 py-1.5 text-[10px] font-bold backdrop-blur-md border border-white/10 tracking-wider uppercase">
+                薯仔想法
+              </span>
+            </div>
           
+
+          <!-- Main Content Area -->
+          <div class="mb-4">
+            <!-- Title -->
+            <h2 class="mb-2 text-xl font-bold leading-tight tracking-tight text-white drop-shadow-sm">
+              沟通失败的想法
+            </h2>
+
+            <!-- Excerpt -->
+            <p class="line-clamp-2 text-xs font-medium text-gray-200/90 leading-relaxed">
+              ...
+            </p>
+          </div>
 
           <!-- Tags -->
-          
-
-          <!-- Read More -->
-          <div class="card-actions justify-end mt-auto">
-            <a href="/2025/10/23/%E6%80%9D%E8%80%832/" class="btn btn-primary btn-sm">
-              Read More
-              <i class="fa-solid fa-arrow-right"></i>
-            </a>
+          <div class="mb-5 flex flex-wrap gap-2 opacity-80">
+            
           </div>
+
+          <!-- Action Button -->
+          <a href="/2025/10/23/%E6%B2%9F%E9%80%9A%E5%A4%B1%E8%B4%A5%E7%9A%84%E6%83%B3%E6%B3%95/" class="flex w-full items-center justify-center rounded-full bg-white py-3.5 text-sm font-bold text-black transition-all active:scale-95 hover:bg-gray-100 shadow-lg">
+            Read Note
+          </a>
         </div>
       </article>
     
-      <article class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-105 transition-all duration-300 note-item h-80 flex flex-col" 
+      <article class="card group relative h-[420px] w-full overflow-hidden rounded-[32px] border-none shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl note-item"
                data-category="薯仔想法"
                data-year="2025"
                data-title="思考"
                data-content=""
                data-tags="">
-        <div class="card-body p-6 flex flex-col h-full">
-          <!-- Header -->
-          <div class="mb-4">
-            <h2 class="card-title text-lg font-bold leading-tight mb-2">
-              <a href="/2025/10/22/%E6%80%9D%E8%80%831/" class="hover:text-primary no-underline transition-colors duration-200">
-                思考
-              </a>
-            </h2>
-            <div class="flex items-center justify-between">
-              <time class="text-sm opacity-70">
-                Oct 22, 2025
-              </time>
-              
-                <div class="badge badge-primary badge-sm">
-                  薯仔想法
-                </div>
-              
-            </div>
+        
+        <!-- Background Image / Gradient -->
+        <div class="absolute inset-0 h-full w-full bg-gradient-to-br from-amber-400 to-orange-400 transition-transform duration-700 group-hover:scale-110">
+          <!-- Try to load image matching the post slug -->
+          <img src="/pictures/posts/思考.jpg" 
+               class="h-full w-full object-cover transition-opacity duration-300"
+               loading="lazy"
+               onerror="this.style.display='none'"
+               alt="思考">
+        </div>
+
+        <!-- Dark Gradient Overlay for Text Readability -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 transition-opacity duration-300 group-hover:opacity-90"></div>
+
+        <!-- Content Container -->
+        <div class="absolute inset-0 flex flex-col justify-end p-6 text-white">
+          
+          <!-- Top Right Badge (Date) -->
+          <div class="absolute top-5 right-5 translate-y-[-10px] opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+             <span class="rounded-full bg-black/30 px-3 py-1.5 text-[10px] font-bold backdrop-blur-md border border-white/10 tracking-wider uppercase">
+                Oct 22
+             </span>
           </div>
 
-          <!-- Excerpt -->
+          <!-- Category Tag (Top Left) -->
           
-            <div class="flex-1"></div>
+            <div class="absolute top-5 left-5">
+              <span class="rounded-full bg-white/20 px-3 py-1.5 text-[10px] font-bold backdrop-blur-md border border-white/10 tracking-wider uppercase">
+                薯仔想法
+              </span>
+            </div>
           
+
+          <!-- Main Content Area -->
+          <div class="mb-4">
+            <!-- Title -->
+            <h2 class="mb-2 text-xl font-bold leading-tight tracking-tight text-white drop-shadow-sm">
+              思考
+            </h2>
+
+            <!-- Excerpt -->
+            <p class="line-clamp-2 text-xs font-medium text-gray-200/90 leading-relaxed">
+              ...
+            </p>
+          </div>
 
           <!-- Tags -->
-          
-
-          <!-- Read More -->
-          <div class="card-actions justify-end mt-auto">
-            <a href="/2025/10/22/%E6%80%9D%E8%80%831/" class="btn btn-primary btn-sm">
-              Read More
-              <i class="fa-solid fa-arrow-right"></i>
-            </a>
+          <div class="mb-5 flex flex-wrap gap-2 opacity-80">
+            
           </div>
+
+          <!-- Action Button -->
+          <a href="/2025/10/22/%E6%80%9D%E8%80%83/" class="flex w-full items-center justify-center rounded-full bg-white py-3.5 text-sm font-bold text-black transition-all active:scale-95 hover:bg-gray-100 shadow-lg">
+            Read Note
+          </a>
         </div>
       </article>
     
-      <article class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-105 transition-all duration-300 note-item h-80 flex flex-col" 
+      <article class="card group relative h-[420px] w-full overflow-hidden rounded-[32px] border-none shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl note-item"
                data-category="出行"
                data-year="2025"
                data-title="第一次生日记录"
                data-content=""
                data-tags="">
-        <div class="card-body p-6 flex flex-col h-full">
-          <!-- Header -->
-          <div class="mb-4">
-            <h2 class="card-title text-lg font-bold leading-tight mb-2">
-              <a href="/2025/10/04/%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%94%9F%E6%97%A5%E8%AE%B0%E5%BD%95/" class="hover:text-primary no-underline transition-colors duration-200">
-                第一次生日记录
-              </a>
-            </h2>
-            <div class="flex items-center justify-between">
-              <time class="text-sm opacity-70">
-                Oct 04, 2025
-              </time>
-              
-                <div class="badge badge-primary badge-sm">
-                  出行
-                </div>
-              
-            </div>
+        
+        <!-- Background Image / Gradient -->
+        <div class="absolute inset-0 h-full w-full bg-gradient-to-br from-emerald-400 to-cyan-400 transition-transform duration-700 group-hover:scale-110">
+          <!-- Try to load image matching the post slug -->
+          <img src="/pictures/posts/第一次生日记录.jpg" 
+               class="h-full w-full object-cover transition-opacity duration-300"
+               loading="lazy"
+               onerror="this.style.display='none'"
+               alt="第一次生日记录">
+        </div>
+
+        <!-- Dark Gradient Overlay for Text Readability -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 transition-opacity duration-300 group-hover:opacity-90"></div>
+
+        <!-- Content Container -->
+        <div class="absolute inset-0 flex flex-col justify-end p-6 text-white">
+          
+          <!-- Top Right Badge (Date) -->
+          <div class="absolute top-5 right-5 translate-y-[-10px] opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+             <span class="rounded-full bg-black/30 px-3 py-1.5 text-[10px] font-bold backdrop-blur-md border border-white/10 tracking-wider uppercase">
+                Oct 04
+             </span>
           </div>
 
-          <!-- Excerpt -->
+          <!-- Category Tag (Top Left) -->
           
-            <div class="flex-1"></div>
+            <div class="absolute top-5 left-5">
+              <span class="rounded-full bg-white/20 px-3 py-1.5 text-[10px] font-bold backdrop-blur-md border border-white/10 tracking-wider uppercase">
+                出行
+              </span>
+            </div>
           
+
+          <!-- Main Content Area -->
+          <div class="mb-4">
+            <!-- Title -->
+            <h2 class="mb-2 text-xl font-bold leading-tight tracking-tight text-white drop-shadow-sm">
+              第一次生日记录
+            </h2>
+
+            <!-- Excerpt -->
+            <p class="line-clamp-2 text-xs font-medium text-gray-200/90 leading-relaxed">
+              ...
+            </p>
+          </div>
 
           <!-- Tags -->
-          
-
-          <!-- Read More -->
-          <div class="card-actions justify-end mt-auto">
-            <a href="/2025/10/04/%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%94%9F%E6%97%A5%E8%AE%B0%E5%BD%95/" class="btn btn-primary btn-sm">
-              Read More
-              <i class="fa-solid fa-arrow-right"></i>
-            </a>
+          <div class="mb-5 flex flex-wrap gap-2 opacity-80">
+            
           </div>
+
+          <!-- Action Button -->
+          <a href="/2025/10/04/%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%94%9F%E6%97%A5%E8%AE%B0%E5%BD%95/" class="flex w-full items-center justify-center rounded-full bg-white py-3.5 text-sm font-bold text-black transition-all active:scale-95 hover:bg-gray-100 shadow-lg">
+            Read Note
+          </a>
         </div>
       </article>
     
   </div>
 
   <!-- Empty State -->
-  <div id="emptyState" class="text-center py-16 hidden">
-    <div class="text-6xl opacity-20 mb-4">📝</div>
-    <h3 class="text-xl font-semibold mb-2">No notes found</h3>
-    <p class="opacity-70">Try adjusting your search criteria</p>
+  <div id="emptyState" class="text-center py-24 hidden">
+    <div class="w-24 h-24 bg-base-200 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl animate-bounce">🤔</div>
+    <h3 class="text-2xl font-medium mb-2">No notes found</h3>
+    <p class="opacity-60">Try adjusting your filters</p>
   </div>
 
   <!-- Pagination (if needed) -->
@@ -1217,10 +1399,8 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="grid grid-flow-col gap-4">
     <div class="text-center">
       <span>© 2025 Lulu</span>
-      <span>·</span>
-      <span>Powered by <a href="https://hexo.io/" target="_blank" rel="noopener noreferrer" class="link link-info no-underline">Hexo</a></span>
-      <span>·</span>
-      <span>Theme: <a href="https://github.com/jiehua1995/hexo-theme-researcher" target="_blank" rel="noopener noreferrer" class="link link-info no-underline">Researcher v0.1.4</a></span>
+
+      
     </div>
   </div>
 </footer>

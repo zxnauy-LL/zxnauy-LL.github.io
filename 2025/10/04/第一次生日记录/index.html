@@ -28,7 +28,11 @@
 
 <!-- Tailwind CSS -->
 <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/custom-font.css">
 <script src="https://cdn.tailwindcss.com"></script>
+
+<!-- CJK WebFont (LXGW WenKai Screen) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.7.0/style.min.css">
 
 <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.min.css" rel="stylesheet" type="text/css" />
   
@@ -95,13 +99,8 @@ var _hmt = _hmt || [];
   
     
       <a href="/plan/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-list-check mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        计划
-      </a>
-    
-      <a href="/projects/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-gift mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        礼物&amp;灵感
+        <i class="fa-solid fa-compact-disc mr-3 text-lg group-hover:scale-110 transition-transform"></i>
+        听歌♪(´▽｀)
       </a>
     
       <a href="/cv/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
@@ -442,13 +441,8 @@ var _hmt = _hmt || [];
   
     
       <a href="/plan/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-list-check mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        计划
-      </a>
-    
-      <a href="/projects/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-gift mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        礼物&amp;灵感
+        <i class="fa-solid fa-compact-disc mr-3 text-lg group-hover:scale-110 transition-transform"></i>
+        听歌♪(´▽｀)
       </a>
     
       <a href="/cv/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
@@ -491,321 +485,128 @@ var _hmt = _hmt || [];
 
   <!-- Content area for Desktop -->
   <div class="lg:ml-80 pt-20 px-4 py-8">
-    <div class="container mx-auto px-4 py-8 space-y-6">
-  <!-- Post Header Card -->
-  <div class="rounded-box card bg-base-100 shadow-lg text-base-content hover:shadow-xl transition-all duration-300 timeline-item">
-
-    <div class="card-body">
-      <h1 class="text-4xl font-bold text-primary mb-4">第一次生日记录</h1>
-      
-      <div class="flex flex-wrap items-center gap-4 text-sm opacity-70 mb-4">
-        <div class="flex items-center gap-2">
-          <i class="fa-regular fa-calendar"></i>
-          <time datetime="2025-10-03T16:00:00.000Z">2025-10-04</time>
-        </div>
-
-        <div class="flex items-center gap-1">
-              <i class="fa-solid fa-clock"></i>
-              <span>14 min read</span>
-        </div>
-        <!-- Categories and Tags -->
-          <div class="flex flex-wrap gap-2">
-            
-              
-                <a href="/notes/?category=%E5%87%BA%E8%A1%8C" class="badge badge-primary hover:badge-primary-focus transition-colors">
-                  出行
-                </a>
-              
-            
-            
-            
-          </div>
-      </div>
+    <div class="container mx-auto px-4 py-8 md:py-16 max-w-5xl">
+  <!-- Main Article Card -->
+  <article class="bg-base-100/80 backdrop-blur-2xl shadow-[0_8px_40px_rgb(0,0,0,0.06)] rounded-[40px] border border-white/40 dark:border-white/5 overflow-hidden transition-all duration-500">
     
-    </div>
-  </div>
+    <!-- Article Header -->
+    <header class="px-6 md:px-20 pt-16 pb-12 text-center relative overflow-hidden">
+      <!-- Decorative Background Gradient -->
+      <div class="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-primary/5 to-transparent -z-10"></div>
+      
+      <!-- Meta Info -->
+      <div class="flex flex-wrap justify-center items-center gap-4 mb-8 text-sm font-medium opacity-60 tracking-widest uppercase font-sans">
+        <time datetime="2025-10-03T16:00:00.000Z" class="flex items-center gap-2 bg-base-200/50 px-3 py-1 rounded-full">
+          <i class="fa-regular fa-calendar"></i>
+          Oct 04, 2025
+        </time>
+        
+        
+          <a href="/notes/?category=%E5%87%BA%E8%A1%8C" class="flex items-center gap-2 bg-primary/10 text-primary px-3 py-1 rounded-full hover:bg-primary hover:text-white transition-colors">
+            <i class="fa-solid fa-folder-open"></i>
+            出行
+          </a>
+        
 
-  <!-- Post Content Card -->
-  <div class="card bg-base-100 hover:shadow-xl">
-    <div class="card-body">
-      <!-- Post Content -->
-      <div class="prose prose-lg max-w-none post-content">
+        <div class="flex items-center gap-2 bg-base-200/50 px-3 py-1 rounded-full">
+          <i class="fa-solid fa-clock"></i>
+          <span>14 min read</span>
+        </div>
+      </div>
+
+      <!-- Title -->
+      <h1 class="text-4xl md:text-6xl font-bold text-base-content mb-8 leading-tight tracking-tight drop-shadow-sm" style="font-family: 'Noto Serif SC', serif;">
+        第一次生日记录
+      </h1>
+
+      <!-- Tags -->
+      
+    </header>
+
+    <!-- Article Content -->
+    <div class="px-6 md:px-20 pb-16">
+      <div class="prose prose-lg md:prose-xl max-w-none post-content mx-auto">
         <style>
-          /* ========== 基础排版样式 ========== */
-          /* 主要内容容器：post-content 类 */
+          @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600;700&family=Nunito:wght@400;600;700&display=swap');
+
           .post-content {
-            line-height: 1.8;                   /* 行高：1.8 */
-            color: hsl(var(--bc));              /* 颜色：基础内容色 */
+            font-family: 'Noto Serif SC', 'Songti SC', 'SimSun', serif;
+            line-height: 2;
+            color: var(--color-base-content);
+            font-size: 1.15rem;
           }
           
-          /* 标题样式：h1-h6 元素 */
+          .post-content p {
+            margin-bottom: 2em;
+            text-align: justify;
+            letter-spacing: 0.01em;
+            font-weight: 400;
+          }
+
           .post-content h1, .post-content h2, .post-content h3,
           .post-content h4, .post-content h5, .post-content h6 {
-            color: hsl(var(--bc));              /* 颜色：基础内容色 */
-            font-weight: 600;                   /* 字重：半粗体 */
-            margin-top: 2rem;                   /* 上边距 */
-            margin-bottom: 1rem;                /* 下边距 */
-            line-height: 1.3;                   /* 行高：紧密 */
-          }
-          
-          /* 段落样式：p 元素 */
-          .post-content p {
-            margin: 1.2rem 0;                  /* 上下边距 */
-            text-align: justify;                /* 两端对齐 */
-          }
-          
-          /* 强调文本：strong 和 b 元素 */
-          .post-content strong, .post-content b {
-            font-weight: 700;                   /* 字重：粗体 */
-            color: hsl(var(--bc));              /* 颜色：基础内容色 */
-          }
-          
-          /* 斜体文本：em 和 i 元素 */
-          .post-content em, .post-content i {
-            font-style: italic;                 /* 斜体 */
-            color: hsl(var(--bc) / 0.9);       /* 颜色：略透明的基础内容色 */
+            font-family: 'Nunito', system-ui, sans-serif;
+            font-weight: 700;
+            margin-top: 3em;
+            margin-bottom: 1em;
+            letter-spacing: -0.02em;
+            color: var(--color-base-content);
           }
 
-          /* ========== 代码块样式 ========== */
-          /* DaisyUI mockup-code 组件：代码块容器 */
-          .post-content .mockup-code {
-            margin: 1.5rem 0;                  /* 上下边距 */
-            border-radius: 0.5rem;              /* 圆角 */
-            overflow-x: auto;                   /* 水平滚动 */
-            overflow-y: hidden;                 /* 隐藏垂直溢出 */
-          }
-          
-          /* mockup-code 内的 pre 元素：预格式化文本容器 */
-          .post-content .mockup-code pre {
-            white-space: pre-wrap;              /* 保持空白，允许换行 */
-            word-wrap: break-word;              /* 长单词换行 */
-            overflow-wrap: break-word;          /* 溢出换行 */
-            line-height: 0;                     /* 行高：0（行与行之间无间距） */
-            margin: 0;                          /* 上下边距：0 */
-          }
-          
-          /* mockup-code 内的 code 元素：代码文本 */
-          .post-content .mockup-code code {
-            white-space: pre-wrap;              /* 保持空白，允许换行 */
-            word-wrap: break-word;              /* 长单词换行 */
-            overflow-wrap: break-word;          /* 溢出换行 */
-            background: none;                   /* 移除背景 */
-            border: none;                       /* 移除边框 */
-            padding: 0;                         /* 移除内边距 */
-            font-size: inherit;                 /* 继承父元素字体大小 */
-            line-height: 1.2;                     /* 行高：0（行与行之间无间距） */
-            margin: 0;                          /* 上下边距：0 */
-          }
-          
-          /* 隐藏原始的语法高亮容器：避免样式冲突 */
-          .post-content .highlight {
-            display: none;                      /* 完全隐藏 */
-          }
-          
-          /* 行内代码样式：code 标签 */
-          .post-content code {
-            background-color: hsl(var(--n) / 0.08);  /* 半透明中性色背景 */
-            color: hsl(var(--bc));                    /* 基础内容颜色 */
-            padding: 0.2rem 0.4rem;                   /* 内边距 */
-            border-radius: 0.25rem;                   /* 圆角 */
-            font-size: 0.875rem;                      /* 字体大小 14px */
-            border: 1px solid hsl(var(--b3));        /* 边框 */
+          .post-content strong {
+            font-weight: 600;
+            color: var(--color-primary);
           }
 
-          /* ========== 引用块样式 ========== */
-          /* blockquote 元素：引用文本块 */
           .post-content blockquote {
-            border-left: 4px solid hsl(var(--p));    /* 左边框：主色调 */
-            background-color: hsl(var(bg-base-200));        /* 背景：base-200 */
-            margin: 1.5rem 0;                        /* 上下边距 */
-            padding: 1rem 1.5rem;                    /* 内边距 */
-            border-radius: 0 0.5rem 0.5rem 0;        /* 右侧圆角 */
-            position: relative;                       /* 相对定位 */
-            font-style: italic;                       /* 斜体 */
-            color: hsl(var(--bc) / 0.9);            /* 颜色：略透明 */
-          }
-          
-          /* 引用块内的段落：移除额外边距 */
-          .post-content blockquote p {
-            margin: 0.5rem 0;                  /* 减少上下边距 */
-          }
-          
-          /* 引用块最后一个段落：移除下边距 */
-          .post-content blockquote p:last-child {
-            margin-bottom: 0;                  /* 移除下边距 */
+            font-style: normal;
+            border-left: 4px solid var(--color-primary);
+            background: var(--color-base-200);
+            padding: 1.5rem 2rem;
+            border-radius: 0 1rem 1rem 0;
+            font-family: 'Nunito', sans-serif;
+            opacity: 0.9;
           }
 
-          /* ========== 列表样式 ========== */
-          /* 无序列表：ul 元素 */
-          .post-content ul {
-            margin: 1rem 0;                    /* 上下边距 */
-            padding-left: 2rem;                /* 左内边距 */
-            list-style-type: disc;              /* 列表标记：实心圆点 */
-          }
-          
-          /* 有序列表：ol 元素 */
-          .post-content ol {
-            margin: 1rem 0;                    /* 上下边距 */
-            padding-left: 2rem;                /* 左内边距 */
-            list-style-type: decimal;           /* 列表标记：数字 */
-          }
-          
-          /* 列表项：li 元素 */
-          .post-content li {
-            margin: 0.5rem 0;                  /* 上下边距 */
-            line-height: 1.6;                  /* 行高 */
-          }
-          
-          /* 嵌套列表：缩进和不同标记 */
-          .post-content ul ul {
-            list-style-type: circle;            /* 二级：空心圆 */
-            margin: 0.5rem 0;                  /* 减少边距 */
-          }
-          
-          .post-content ul ul ul {
-            list-style-type: square;            /* 三级：方形 */
-          }
-
-          /* ========== 链接样式 ========== */
-          /* 链接元素：a 标签的默认状态 */
-          .post-content a {
-            color: hsl(var(--p));               /* 主色调 */
-            text-decoration: underline;         /* 下划线 */
-            text-decoration-thickness: 1px;     /* 下划线粗细 */
-            text-underline-offset: 2px;         /* 下划线偏移距离 */
-            transition: all 0.2s ease;          /* 平滑过渡效果 */
-          }
-          
-          /* 链接悬停状态：鼠标悬停时的样式 */
-          .post-content a:hover {
-            color: hsl(var(--pf));              /* 主色调焦点色 */
-            text-decoration-thickness: 2px;     /* 下划线变粗 */
-          }
-          
-          /* ========== 表格样式 ========== */
-          /* 表格外层滚动容器：支持水平滚动 */
-          .post-content .table-container {
-            overflow-x: auto;                   /* 水平滚动 */
-            margin: 1.5rem 0;                  /* 上下边距 */
-            border-radius: 0.5rem;              /* 圆角 */
-            border: 2px solid hsl(var(--b3));  /* 整体边框 */
-            border-left: 4px solid hsl(var(--p)); /* 左边框加粗：主色调 */
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 阴影效果 */
-          }
-          
-          /* 表格容器：table 元素 */
-          .post-content table {
-            width: 100%;                        /* 全宽 */
-            min-width: 600px;                  /* 最小宽度：确保有足够空间 */
-            margin: 0;                          /* 移除边距，由外层容器控制 */
-            border-collapse: collapse;          /* 边框合并 */
-            background-color: hsl(var(--b2) / 0.3); /* 背景：半透明基础色 */
-          }
-          
-          /* 表头单元格：th 元素 */
-          .post-content th {
-            background-color: hsl(var(--b2));   /* 基础色背景 */
-            font-weight: 600;                   /* 半粗体 */
-            padding: 0.75rem 1rem;              /* 内边距 */
-            text-align: left;                   /* 左对齐 */
-            color: hsl(var(--bc));              /* 基础内容颜色 */
-            border-bottom: 1px solid hsl(var(--bc)); /* 下边框 */
-            border-right: 1px solid hsl(var(--bc));  /* 右边框 */
-          }
-          
-          /* 表头最后一列：移除右边框 */
-          .post-content th:last-child {
-            border-right: none;                 /* 移除右边框 */
-          }
-          
-          /* 表格数据单元格：td 元素 */
-          .post-content td {
-            padding: 0.75rem 1rem;              /* 内边距 */
-            color: hsl(var(--bc));              /* 基础内容颜色 */
-            border-bottom: 1px solid hsl(var(--bc)); /* 下边框 */
-            border-right: 1px solid hsl(var(--bc));  /* 右边框 */
-          }
-          
-          /* 数据单元格最后一列：移除右边框 */
-          .post-content td:last-child {
-            border-right: none;                 /* 移除右边框 */
-          }
-          
-          /* 表格奇偶行样式：偶数行背景色 */
-          .post-content tbody tr:nth-child(even) {
-            background-color: hsl(var(--b2) / 0.5); /* 半透明基础色背景 */
-          }
-          
-          /* 表格行悬停效果：鼠标悬停时的背景色 */
-          .post-content tbody tr:hover {
-            background-color: hsl(var(--b2));   /* 基础色背景 */
-          }
-          
-          /* 表格最后一行：移除下边框 */
-          .post-content tbody tr:last-child td {
-            border-bottom: none;                /* 移除下边框 */
-          }
-
-          /* ========== 图片样式 ========== */
-          /* 图片元素：img 标签样式 */
           .post-content img {
-            max-width: 100%;                    /* 最大宽度：响应式 */
-            height: auto;                       /* 自动高度：保持比例 */
-            border-radius: 0.5rem;              /* 圆角 */
-            margin: 1.5rem 0;                  /* 上下边距 */
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* 阴影效果 */
-          }
-          
-          /* ========== 分割线样式 ========== */
-          /* 分割线元素：hr 标签 */
-          .post-content hr {
-            border: none;                       /* 移除默认边框 */
-            height: 1px;                        /* 高度 */
-            background-color: hsl(var(--b3));   /* 背景色：基础色 */
-            margin: 2rem 0;                     /* 上下边距 */
-          }
-          
-          /* ========== 数学公式样式 ========== */
-          /* MathJax 通用样式：数学公式容器（v2兼容） */
-          .post-content .MathJax {
-            font-size: 1.1em !important;       /* 字体大小：略大于正文 */
-          }
-          
-          /* MathJax v3 容器：行内数学公式 */
-          .post-content mjx-container {
-            margin: 0.5rem 0;                  /* 上下边距 */
-          }
-          
-          /* MathJax v3 块级容器：display="true" 属性的公式 */
-          .post-content mjx-container[display="true"] {
-            margin: 1.5rem 0;                  /* 上下边距 */
-            text-align: center;                /* 居中对齐 */
-          }
-          
-          /* 包含块级数学公式的段落：:has() 伪类选择器 */
-          .post-content p:has(mjx-container[display="true"]) {
-            text-align: center;                /* 居中对齐 */
-            line-height: 1;                    /* 行高：紧密排列 */
-          }
-          
-          /* 自定义数学显示容器：.math-display 类 */
-          .math-display {
-            text-align: center;                /* 居中对齐 */
-            margin: 1.5rem 0;                 /* 上下边距 */
+            border-radius: 16px;
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
+            margin: 3rem auto;
           }
 
-          /* ========== 特殊元素样式修复 ========== */
-          /* 标题中的行内代码：h1-h6 标题内的 code 元素 */
-          .post-content h1 code, .post-content h2 code, .post-content h3 code, 
-          .post-content h4 code, .post-content h5 code, .post-content h6 code {
-            font-size: 0.85em;                 /* 字体大小：相对于标题字体的85% */
-            background-color: hsl(var(--b2));  /* 背景色：基础色 */
-            padding: 0.2rem 0.4rem;            /* 内边距 */
+          .post-content code {
+            font-family: 'JetBrains Mono', monospace;
+            background: var(--color-base-200);
+            padding: 0.2em 0.4em;
+            border-radius: 6px;
+            font-size: 0.85em;
+            color: var(--color-primary);
+          }
+
+          /* Table Styles */
+          .table-container {
+            border-radius: 16px;
+            border: 1px solid var(--color-base-300);
+            overflow: hidden;
+            margin: 2rem 0;
+          }
+          
+          .post-content table {
+            margin: 0;
+          }
+          
+          .post-content th {
+            background: var(--color-base-200);
+            padding: 1rem;
+          }
+          
+          .post-content td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--color-base-200);
           }
         </style>
         
-      <!-- Content will be processed here -->
-      <div id="processed-content"><h2 id="与lulu老大的第一次正式出行"><a href="#与lulu老大的第一次正式出行" class="headerlink" title="与lulu老大的第一次正式出行"></a>与lulu老大的第一次正式出行</h2><p>今天天气很好！那么既然是薯仔记录，就从我的视角来回忆这一天吧！当然，有机会的话，可以补充上老大的那一部分~</p>
+        <div id="processed-content"><h2 id="与lulu老大的第一次正式出行"><a href="#与lulu老大的第一次正式出行" class="headerlink" title="与lulu老大的第一次正式出行"></a>与lulu老大的第一次正式出行</h2><p>今天天气很好！那么既然是薯仔记录，就从我的视角来回忆这一天吧！当然，有机会的话，可以补充上老大的那一部分~</p>
 <h3 id="出门前的准备"><a href="#出门前的准备" class="headerlink" title="出门前的准备"></a>出门前的准备</h3><p>因为今天要跟老大见面，所以我当然早早起来准备！信封的装饰还没有处理完，礼物篇的信也没写完呢，所以这是今天早上的工作！除此之外，我还要收拾一下自己，不能乱糟糟地出门！所以先是进行了一个洗面清洁，然后再用科颜氏的白泥处理一下下T区嘻嘻，最后再敷一片补水面膜确保脸蛋水润！然后洗了个头，并且用卷发棒夹了一个竖状纹理、、（其实这个时候已经让老大在等待我了呜呜）弄完之后就快速出门了！发型一下子就被风吹坏了！</p>
 <h3 id="见到lulu"><a href="#见到lulu" class="headerlink" title="见到lulu"></a>见到lulu</h3><p>在普陀寺的博物馆外见到lulu了，她朝我走了过来，今天穿了一身灰色的连衣裙，有黑色的小斑点，衣领处是白色带带，像是一套礼裙~很会搭配！（一整个可爱小姑娘的造型）她还考虑了同学的感受，没有让我们三个人待一块！非常会照顾人的老大~然后我们在博物馆的出口处打车，原本的计划是在车上把礼物展示给她看，但是打车的时间太长了，我就临时转换了思路！决定在博物馆展示给她（因为环境可能会更加舒服一些）我以为礼物会比较潦草呢、、因为又是公仔！感觉没有什么创意、只是公仔单纯地比较可爱（很适配老大）！但是老大表现出来很开心！非常非常非常地给我面子啊啊啊啊，所以也暗下决定要给予老大更用心的礼物呢（这是非常好的正反馈！！真的给予了我很多很多动力）</p>
 <p>接下来是坐车，有一个小小的事件！就是网约车司机无法打通老大电话，在我们一上车的时候，略微凶狠地质问了一下、、但是老大超级温柔地道歉了！然后司机就直接接受了老大的道歉！！老大真的是一个很好很好的小孩！在车上另一件让我印象深刻的事情是，老大很认真很认真地捧着pingu，史迪仔，拍拍它们的脑袋，认真地盯了它们好久好久……所以我也想表达感激！（谢谢老大如此地爱它们！花花gu和史迪仔跟着老大一定很幸福o(*￣▽￣*)o）当然我也要说，这一幕画面特别萌！萌萌的老大和可爱的崽崽们！</p>
@@ -821,104 +622,691 @@ var _hmt = _hmt || [];
 <p>最后老大花了一点点的时间陪伴朋友们，然后即使如此也要跟我道歉！觉得没有邀请我很愧疚、、但是老大已经花了一整天的时间陪我玩啦！已经感激不尽！！！我不能做一个贪心小子！而且老大的朋友们也很重要呢！我相信他们也一定给老大准备了很多惊喜和礼物嘻嘻</p>
 <h3 id="我想说的…"><a href="#我想说的…" class="headerlink" title="我想说的…"></a>我想说的…</h3><p>其实已经写了很多内容！但是呢，总是还想再说些什么……想让老大有东西可以读，想让老大更多一些地了解我的思维和想法……前两次的吃饭其实都是比较短的出行，虽然也占用了老大很多时间，，，所以在前两次并没有建立起对老大的一个完整印象，只知道带着一个漂亮小孩出门嘻嘻！但是这一次，很完整的一次出行，对老大产生更加完整深入的认知，愈发觉得老大性格超级好！然后也很细心善良！同时也超级勇敢，很主动去询问和沟通、、！真的是我的老大啊啊啊，我就是一个小弟形象！最后呢，我想说，我觉得自己很幸运可以认识lulu，这只是我们的第一次出行，还会有接下来的2345678……次的对吧！当你看到这里的时候，应该已经是第二次啦嘻嘻（应该是考完研，但是不确定是当天晚上还是隔两天呢）！无论考的如何，我相信老大已经尽力去争取了！所以就让我们一起等待结果吧！</p>
 </div>
-
-
-      <!-- Tags Footer -->
-        
-    </div>
-  </div>
-
-  
-   
-  </div>
-
-<!-- Post Footer -->
-<div class="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
-  <!-- Share Section -->
-  <div class="card bg-base-100 hover:shadow-xl">
-    <div class="card-body p-6">
-      <h3 class="card-title mb-4">Share this post</h3>
-      <div class="flex flex-wrap gap-3">
-
-        <button class="btn btn-sm btn-primary">
-          <a href="https://twitter.com/intent/tweet?text=%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%94%9F%E6%97%A5%E8%AE%B0%E5%BD%95&url=http%3A%2F%2Fexample.com%2F2025%2F10%2F04%2F%25E7%25AC%25AC%25E4%25B8%2580%25E6%25AC%25A1%25E7%2594%259F%25E6%2597%25A5%25E8%25AE%25B0%25E5%25BD%2595%2F" 
-            target="_blank" rel="noopener">
-          <i class="fa-brands fa-twitter"></i>
-          <span>X (Twitter)</span>
-          </a>
-        </button>
-
-        
-        <button class="btn btn-sm btn-info">
-        <a href="https://www.linkedin.com/sharing/share-offsite/?url=http%3A%2F%2Fexample.com%2F2025%2F10%2F04%2F%25E7%25AC%25AC%25E4%25B8%2580%25E6%25AC%25A1%25E7%2594%259F%25E6%2597%25A5%25E8%25AE%25B0%25E5%25BD%2595%2F" 
-            target="_blank" rel="noopener">
-          <i class="fa-brands fa-linkedin"></i>
-          <span>LinkedIn</span>
-        </a>
-        </button>
-
-        <button onclick="copyToClipboard()" class="btn btn-sm btn-outline">
-          <i class="fa-solid fa-copy"></i>
-          <span>Copy Link</span>
-        </button>
-
-
       </div>
     </div>
-  </div>
 
-  <!-- Navigation Section -->
-  <div class="card bg-base-100 hover:shadow-xl">
-    <div class="card-body p-6">
-      <h3 class="card-title mb-4">Navigation</h3>
-      <div class="space-y-3">
-        <a href="/notes/" class="btn btn-sm btn btn-outline w-full justify-start">
-          <i class="fa-solid fa-folder-tree"></i>
-          All Notes
+    <!-- Article Footer -->
+    <footer class="bg-base-200/30 px-6 md:px-20 py-12 border-t border-base-content/5">
+      <!-- Share & Actions -->
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-12">
+        <div class="flex gap-3">
+          <button class="btn btn-circle btn-ghost hover:bg-primary/10 hover:text-primary transition-all" onclick="copyToClipboard()" title="Copy Link">
+            <i class="fa-solid fa-link text-lg"></i>
+          </button>
+          <button class="btn btn-circle btn-ghost hover:bg-primary/10 hover:text-primary transition-all" onclick="downloadPostCardImage()" title="Save as Image">
+            <i class="fa-solid fa-image text-lg"></i>
+          </button>
+        </div>
+        
+        <a href="/notes/" class="btn btn-outline rounded-full px-8 hover:bg-primary hover:border-primary hover:text-white transition-all group">
+          <i class="fa-solid fa-arrow-left group-hover:-translate-x-1 transition-transform"></i>
+          Back to Notes
         </a>
-        
-        
-          <a href="/notes/?category=出行" class="btn btn-sm btn btn-outline w-full justify-start">
-            <i class="fa-solid fa-layer-group"></i>
-            出行 Posts
-          </a>
-        
       </div>
-    </div>
-  </div>
+
+      <!-- Prev/Next Navigation -->
+      
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          
+            <a href="/2025/10/22/%E6%80%9D%E8%80%83/" class="group flex flex-col p-6 rounded-3xl bg-base-100 border border-base-content/5 hover:border-primary/30 hover:shadow-lg transition-all duration-300">
+              <span class="text-xs font-bold opacity-40 uppercase tracking-wider mb-2 group-hover:text-primary transition-colors">Previous Note</span>
+              <span class="text-lg font-bold line-clamp-2 group-hover:text-primary transition-colors">思考</span>
+            </a>
+          
+          
+          
+        </div>
+      
+    </footer>
+  </article>
 </div>
 
-    
-  <!-- Previous/Next Navigation Card -->
-  
-  <div class="card bg-base-100 hover:shadow-xl">
-    <div class="card-body">
-      <h3 class="card-title mb-4">More Posts</h3>
-      <nav class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        
-          <a href="/2025/10/22/%E6%80%9D%E8%80%831/" class="btn btn-outline w-full justify-start hover:btn-primary transition-all duration-300">
-            <i class="fa-solid fa-left-long"></i>
-            <div class="flex-1 min-w-0 text-left ml-2">
-              <div class="text-xs opacity-60">Previous Post</div>
-              <div class="font-semibold truncate">思考</div>
-            </div>
-          </a>
-        
-        
-        
-      </nav>
-    </div>
-  </div>
-  
-
-</div>
-
-
-
-
-
-<!-- Math Processing and Code Block Transformation -->
 <script>
+// ====== Post -> Long Image ======
+// Export the full post as a long PNG with markdown-like formatting.
+const __POST_CARD_DATA__ = {"title":"第一次生日记录","dateText":"2025-10-04","category":"出行"};
+
+async function downloadPostCardImage() {
+  try {
+    // ========== 0. Ensure fonts are loaded (avoid garbled text / wrong measurements) ==========
+    const fontHref = 'https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Nunito:wght@700;800&display=swap';
+    try {
+      const exists = Array.from(document.querySelectorAll('link[rel="stylesheet"]'))
+        .some((l) => (l.href || '').includes('fonts.googleapis.com') && (l.href || '').includes('Noto+Serif+SC'));
+      if (!exists) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = fontHref;
+        document.head.appendChild(link);
+      }
+      if (document.fonts && document.fonts.load) {
+        await Promise.race([
+          Promise.all([
+            document.fonts.load('700 64px "Noto Serif SC"'),
+            document.fonts.load('700 44px Nunito'),
+            document.fonts.load('400 32px "Noto Serif SC"'),
+            document.fonts.load('700 18px Nunito')
+          ]),
+          new Promise((resolve) => setTimeout(resolve, 1400))
+        ]);
+      }
+    } catch (e) {
+      // Best-effort.
+    }
+
+    const data = __POST_CARD_DATA__;
+    const contentRoot = document.getElementById('processed-content');
+    if (!contentRoot) {
+      alert('未找到文章内容区域，无法生成长图。');
+      return;
+    }
+
+    // ========== 1. Convert rendered HTML into blocks ==========
+    function normText(s) {
+      return String(s || '').replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+    }
+
+    function isBlockTag(tag) {
+      return ['P','H1','H2','H3','H4','H5','H6','UL','OL','BLOCKQUOTE','PRE','TABLE','HR','FIGURE','DIV'].includes(tag);
+    }
+
+    function collectBlocksFromElement(el, listDepth = 0, orderedIndexStart = 1) {
+      const blocks = [];
+      if (!el || el.nodeType !== Node.ELEMENT_NODE) return blocks;
+      const tag = (el.tagName || '').toUpperCase();
+
+      // Ignore non-textual/media.
+      if (tag === 'IMG' || tag === 'VIDEO' || tag === 'AUDIO' || tag === 'CANVAS') return blocks;
+      if (tag === 'SCRIPT' || tag === 'STYLE') return blocks;
+
+      if (/^H[1-6]$/.test(tag)) {
+        const level = Number(tag.slice(1));
+        const text = normText(el.innerText).trim();
+        if (text) blocks.push({ type: 'heading', level, text });
+        return blocks;
+      }
+
+      if (tag === 'HR') {
+        blocks.push({ type: 'hr' });
+        return blocks;
+      }
+
+      if (tag === 'BLOCKQUOTE') {
+        const text = normText(el.innerText).trim();
+        if (text) blocks.push({ type: 'blockquote', text });
+        return blocks;
+      }
+
+      // Code blocks (support DaisyUI mockup-code or plain PRE)
+      if (tag === 'PRE' || el.classList.contains('mockup-code') || el.closest('.mockup-code')) {
+        const codeText = normText(el.innerText || '').replace(/\n+$/g, '');
+        const lines = codeText.split('\n');
+        if (lines.some((l) => l.trim() !== '')) blocks.push({ type: 'code', lines });
+        return blocks;
+      }
+
+      if (tag === 'TABLE') {
+        const rows = [];
+        el.querySelectorAll('tr').forEach((tr) => {
+          const cells = Array.from(tr.querySelectorAll('th,td')).map((c) => normText(c.innerText).trim());
+          if (cells.length) rows.push(cells.join(' | '));
+        });
+        if (rows.length) blocks.push({ type: 'table', rows });
+        return blocks;
+      }
+
+      if (tag === 'UL' || tag === 'OL') {
+        const ordered = tag === 'OL';
+        let idx = orderedIndexStart;
+        Array.from(el.children).forEach((child) => {
+          if (!child || child.tagName.toUpperCase() !== 'LI') return;
+
+          // Extract LI own text without nested lists first.
+          const liClone = child.cloneNode(true);
+          liClone.querySelectorAll('ul,ol').forEach((n) => n.remove());
+          const liText = normText(liClone.innerText).trim();
+          if (liText) {
+            blocks.push({
+              type: 'list-item',
+              ordered,
+              index: idx,
+              depth: listDepth,
+              text: liText
+            });
+          }
+          // Nested lists
+          const nested = child.querySelectorAll(':scope > ul, :scope > ol');
+          nested.forEach((nl) => {
+            blocks.push(...collectBlocksFromElement(nl, listDepth + 1, 1));
+          });
+          idx += 1;
+        });
+        return blocks;
+      }
+
+      if (tag === 'P') {
+        const text = normText(el.innerText);
+        // Preserve explicit line breaks.
+        if (text.trim()) blocks.push({ type: 'paragraph', text });
+        else blocks.push({ type: 'spacer' });
+        return blocks;
+      }
+
+      // For DIVs that act as math display, etc.
+      if (tag === 'DIV' && (el.classList.contains('math-display') || el.classList.contains('MathJax') || el.querySelector('.MathJax'))) {
+        const text = normText(el.innerText).trim();
+        if (text) blocks.push({ type: 'paragraph', text });
+        return blocks;
+      }
+
+      // Default: walk children if it contains block tags, else treat as paragraph.
+      const childEls = Array.from(el.children || []);
+      const hasBlockChild = childEls.some((c) => isBlockTag((c.tagName || '').toUpperCase()));
+      if (hasBlockChild) {
+        childEls.forEach((c) => blocks.push(...collectBlocksFromElement(c, listDepth, orderedIndexStart)));
+      } else {
+        const text = normText(el.innerText).trim();
+        if (text) blocks.push({ type: 'paragraph', text });
+      }
+      return blocks;
+    }
+
+    const blocks = [];
+    Array.from(contentRoot.children).forEach((el) => {
+      blocks.push(...collectBlocksFromElement(el, 0, 1));
+    });
+
+    // ========== 2. Layout + rendering helpers ==========
+    const W = 1080;
+    const PAD_X = 84;
+    const PAD_TOP = 120;
+    const PAD_BOTTOM = 120;
+    const CONTENT_W = W - PAD_X * 2;
+    
+    // Theme colors
+    const BG_CARD = '#ffffff';
+    const TEXT = '#2c2c2c';
+    const MUTED = 'rgba(44,44,44,0.65)';
+    const SOFT_BORDER = 'rgba(44,44,44,0.08)';
+    const CODE_BG = '#f8f9fa';
+    const ACCENT = 'rgba(59,130,246,0.08)'; // Subtle blue tint for accents
+
+    const F_TITLE = '700 64px "Noto Serif SC", "Songti SC", serif';
+    const F_H2 = '800 44px Nunito, system-ui, sans-serif';
+    const F_H3 = '800 38px Nunito, system-ui, sans-serif';
+    const F_H4 = '800 32px Nunito, system-ui, sans-serif';
+    const F_BODY = '400 32px "Noto Serif SC", "Songti SC", serif';
+    const F_META = '700 18px Nunito, system-ui, sans-serif';
+    const F_CODE = '500 26px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace';
+
+    const LH_TITLE = 88;
+    const LH_H2 = 64;
+    const LH_H3 = 56;
+    const LH_H4 = 50;
+    const LH_BODY = 58;
+    const LH_CODE = 44;
+
+    function wrapText(ctx, text, maxW, font) {
+      ctx.font = font;
+      const raw = normText(text);
+      const paras = raw.split('\n');
+      const lines = [];
+      for (const para of paras) {
+        const chars = String(para).split('');
+        let line = '';
+        for (const ch of chars) {
+          const test = line + ch;
+          if (ctx.measureText(test).width > maxW && line) {
+            lines.push(line);
+            line = ch;
+          } else {
+            line = test;
+          }
+        }
+        if (line) lines.push(line);
+        // Preserve empty line between paragraphs.
+        if (para !== paras[paras.length - 1]) lines.push('');
+      }
+      return lines;
+    }
+
+    function truncateLineToWidth(ctx, line, maxW, font) {
+      ctx.font = font;
+      if (ctx.measureText(line).width <= maxW) return line;
+      const ell = '…';
+      let s = line;
+      while (s.length > 0 && ctx.measureText(s + ell).width > maxW) {
+        s = s.slice(0, -1);
+      }
+      return (s.length > 0) ? (s + ell) : ell;
+    }
+
+    function roundRect(ctx, x, y, w, h, r) {
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.lineTo(x + w - r, y);
+      ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+      ctx.lineTo(x + w, y + h - r);
+      ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+      ctx.lineTo(x + r, y + h);
+      ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+      ctx.lineTo(x, y + r);
+      ctx.quadraticCurveTo(x, y, x + r, y);
+      ctx.closePath();
+    }
+
+    function pillWidth(ctx, text) {
+      ctx.font = F_META;
+      const t = String(text || '').trim();
+      return Math.ceil(ctx.measureText(t).width) + 32;
+    }
+
+    function renderSegment(segmentBlocks, partIndex, partCount) {
+      // First pass: measure height
+      const measureCanvas = document.createElement('canvas');
+      measureCanvas.width = 10; measureCanvas.height = 10;
+      const mctx = measureCanvas.getContext('2d');
+
+      let y = PAD_TOP;
+
+      // Meta pills
+      const pillH = 42;
+      if (data.dateText || data.category) {
+        y += pillH + 32;
+      }
+
+      // Title
+      {
+        const lines = wrapText(mctx, data.title, CONTENT_W, F_TITLE);
+        y += lines.length * LH_TITLE + 32;
+      }
+
+      // Body blocks
+      for (const b of segmentBlocks) {
+        if (b.type === 'spacer') {
+          y += 24;
+          continue;
+        }
+        if (b.type === 'hr') {
+          y += 40 + 24;
+          continue;
+        }
+        if (b.type === 'heading') {
+          const font = b.level <= 2 ? F_H2 : (b.level === 3 ? F_H3 : F_H4);
+          const lh = b.level <= 2 ? LH_H2 : (b.level === 3 ? LH_H3 : LH_H4);
+          const lines = wrapText(mctx, b.text, CONTENT_W, font);
+          y += lines.length * lh + 32;
+          continue;
+        }
+        if (b.type === 'blockquote') {
+          const innerW = CONTENT_W - 48;
+          const lines = wrapText(mctx, b.text, innerW, F_BODY);
+          y += 24 + lines.length * LH_BODY + 24 + 32;
+          continue;
+        }
+        if (b.type === 'list-item') {
+          const prefix = b.ordered ? `${b.index}. ` : '• ';
+          const indent = b.depth * 40;
+          const maxW = CONTENT_W - indent;
+          const lines = wrapText(mctx, prefix + b.text, maxW, F_BODY);
+          y += lines.length * LH_BODY + 16;
+          continue;
+        }
+        if (b.type === 'code') {
+          const innerW = CONTENT_W - 48;
+          // Each line wraps too (rare)
+          let lineCount = 0;
+          for (const ln of b.lines) {
+            const lines = wrapText(mctx, ln, innerW, F_CODE);
+            lineCount += Math.max(1, lines.length);
+          }
+          y += 24 + lineCount * LH_CODE + 24 + 32;
+          continue;
+        }
+        if (b.type === 'table') {
+          const lines = b.rows || [];
+          let rowLines = 0;
+          for (const row of lines) {
+            rowLines += wrapText(mctx, row, CONTENT_W, F_BODY).length;
+          }
+          y += rowLines * LH_BODY + 32;
+          continue;
+        }
+        // paragraph / default
+        {
+          const lines = wrapText(mctx, b.text || '', CONTENT_W, F_BODY);
+          y += lines.length * LH_BODY + 32;
+        }
+      }
+
+      const H = Math.ceil(y + PAD_BOTTOM);
+      const canvas = document.createElement('canvas');
+      canvas.width = W * 2;
+      canvas.height = H * 2;
+      const ctx = canvas.getContext('2d');
+      ctx.scale(2, 2);
+
+      // === Background & Card Style ===
+      // 1. Subtle gradient background
+      const bgGrad = ctx.createLinearGradient(0, 0, 0, H);
+      bgGrad.addColorStop(0, '#fdfbf7'); // Warm paper-like top
+      bgGrad.addColorStop(1, '#f5f5f7'); // Cool gray bottom
+      ctx.fillStyle = bgGrad;
+      ctx.fillRect(0, 0, W, H);
+
+      // 2. Decorative top gradient mesh (subtle)
+      const meshGrad = ctx.createRadialGradient(W*0.8, 0, 0, W*0.8, 0, 800);
+      meshGrad.addColorStop(0, 'rgba(59,130,246,0.06)');
+      meshGrad.addColorStop(1, 'transparent');
+      ctx.fillStyle = meshGrad;
+      ctx.fillRect(0, 0, W, H);
+
+      // 3. Card container (white rounded rect)
+      const cardM = 40; // margin
+      const cardW = W - cardM*2;
+      const cardH = H - cardM*2;
+      
+      // Drop shadow
+      ctx.shadowColor = 'rgba(0,0,0,0.08)';
+      ctx.shadowBlur = 60;
+      ctx.shadowOffsetY = 20;
+      
+      roundRect(ctx, cardM, cardM, cardW, cardH, 48);
+      ctx.fillStyle = BG_CARD;
+      ctx.fill();
+      
+      // Reset shadow
+      ctx.shadowColor = 'transparent';
+      ctx.shadowBlur = 0;
+      ctx.shadowOffsetY = 0;
+
+      // Inner border (very subtle)
+      ctx.strokeStyle = 'rgba(0,0,0,0.03)';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      // === Content Rendering ===
+      // Adjust coordinate system to be relative to card content area
+      // Original PAD_X was 84, now we are inside a card with margin 40.
+      // Let's keep visual padding similar: 84 - 40 = 44 padding inside card?
+      // Actually let's just use absolute coordinates but shift everything by cardM
+      // However, our measure logic assumed W=1080. 
+      // To keep layout consistent, we'll just draw content at original coordinates 
+      // but ensure they fall nicely within the card.
+      // PAD_X=84, cardM=40 => content is 44px from card edge. That's good.
+
+      let dy = PAD_TOP;
+
+      // Meta pills
+      if (data.dateText || data.category) {
+        let x = PAD_X;
+        const drawPill = (text) => {
+          const w = pillWidth(ctx, text);
+          const h = 42;
+          roundRect(ctx, x, dy, w, h, 21);
+          ctx.fillStyle = ACCENT;
+          ctx.fill();
+          
+          ctx.font = F_META;
+          ctx.fillStyle = '#3b82f6'; // Primary blue
+          ctx.textBaseline = 'middle';
+          ctx.textAlign = 'left';
+          ctx.fillText(String(text || '').trim(), x + 16, dy + h / 2 + 1);
+          x += w + 16;
+        };
+        if (data.dateText) drawPill(data.dateText);
+        if (data.category) drawPill(data.category);
+        dy += 42 + 32;
+      }
+
+      // Title
+      {
+        ctx.fillStyle = '#1a1a1a'; // Darker title
+        const lines = wrapText(ctx, data.title, CONTENT_W, F_TITLE);
+        ctx.font = F_TITLE;
+        ctx.textBaseline = 'top';
+        for (const line of lines) {
+          ctx.fillText(line, PAD_X, dy);
+          dy += LH_TITLE;
+        }
+        dy += 32;
+      }
+
+      // Body
+      ctx.textAlign = 'left';
+      ctx.textBaseline = 'top';
+
+      for (const b of segmentBlocks) {
+        if (b.type === 'spacer') {
+          dy += 24;
+          continue;
+        }
+        if (b.type === 'hr') {
+          ctx.strokeStyle = SOFT_BORDER;
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          ctx.moveTo(PAD_X + 40, dy + 20); // Indented HR
+          ctx.lineTo(PAD_X + CONTENT_W - 40, dy + 20);
+          ctx.stroke();
+          dy += 40 + 24;
+          continue;
+        }
+        if (b.type === 'heading') {
+          const font = b.level <= 2 ? F_H2 : (b.level === 3 ? F_H3 : F_H4);
+          const lh = b.level <= 2 ? LH_H2 : (b.level === 3 ? LH_H3 : LH_H4);
+          ctx.fillStyle = '#1a1a1a';
+          const lines = wrapText(ctx, b.text, CONTENT_W, font);
+          ctx.font = font;
+          for (const line of lines) {
+            ctx.fillText(line, PAD_X, dy);
+            dy += lh;
+          }
+          dy += 32;
+          continue;
+        }
+        if (b.type === 'blockquote') {
+          const boxX = PAD_X;
+          const boxW = CONTENT_W;
+          const innerX = boxX + 32;
+          const innerW = boxW - 64;
+          const lines = wrapText(ctx, b.text, innerW, F_BODY);
+          const boxH = 24 + lines.length * LH_BODY + 24;
+
+          roundRect(ctx, boxX, dy, boxW, boxH, 24);
+          ctx.fillStyle = '#f8f9fa';
+          ctx.fill();
+          
+          // Decorative quote mark
+          ctx.font = 'italic 700 60px serif';
+          ctx.fillStyle = 'rgba(0,0,0,0.06)';
+          ctx.fillText('“', boxX + 16, dy + 10);
+
+          ctx.fillStyle = '#4a4a4a';
+          ctx.font = F_BODY;
+          let ty = dy + 24;
+          for (const line of lines) {
+            ctx.fillText(line, innerX, ty);
+            ty += LH_BODY;
+          }
+          dy += boxH + 32;
+          continue;
+        }
+        if (b.type === 'list-item') {
+          const prefix = b.ordered ? `${b.index}. ` : '• ';
+          const indent = b.depth * 40;
+          const x = PAD_X + indent;
+          const maxW = CONTENT_W - indent;
+          ctx.fillStyle = TEXT;
+          ctx.font = F_BODY;
+          const lines = wrapText(ctx, prefix + b.text, maxW, F_BODY);
+          for (const line of lines) {
+            ctx.fillText(line, x, dy);
+            dy += LH_BODY;
+          }
+          dy += 16;
+          continue;
+        }
+        if (b.type === 'code') {
+          const boxX = PAD_X;
+          const boxW = CONTENT_W;
+          const innerX = boxX + 24;
+          const innerW = boxW - 48;
+          // Pre-wrap each line
+          const allLines = [];
+          for (const ln of (b.lines || [])) {
+            const wrapped = wrapText(ctx, ln, innerW, F_CODE);
+            if (wrapped.length === 0) allLines.push('');
+            else allLines.push(...wrapped);
+          }
+          const boxH = 24 + allLines.length * LH_CODE + 24;
+          roundRect(ctx, boxX, dy, boxW, boxH, 20);
+          ctx.fillStyle = CODE_BG;
+          ctx.fill();
+          ctx.strokeStyle = SOFT_BORDER;
+          ctx.lineWidth = 1;
+          ctx.stroke();
+
+          ctx.fillStyle = '#444';
+          ctx.font = F_CODE;
+          let ty = dy + 24;
+          for (const line of allLines) {
+            ctx.fillText(line, innerX, ty);
+            ty += LH_CODE;
+          }
+          dy += boxH + 32;
+          continue;
+        }
+        if (b.type === 'table') {
+          ctx.fillStyle = TEXT;
+          ctx.font = F_BODY;
+          for (const row of (b.rows || [])) {
+            const lines = wrapText(ctx, row, CONTENT_W, F_BODY);
+            for (const line of lines) {
+              ctx.fillText(line, PAD_X, dy);
+              dy += LH_BODY;
+            }
+            dy += 16;
+          }
+          dy += 16;
+          continue;
+        }
+
+        // paragraph / default
+        {
+          ctx.fillStyle = TEXT;
+          ctx.font = F_BODY;
+          const lines = wrapText(ctx, b.text || '', CONTENT_W, F_BODY);
+          for (const line of lines) {
+            if (line === '') {
+              dy += LH_BODY * 0.6;
+            } else {
+              ctx.fillText(line, PAD_X, dy);
+              dy += LH_BODY;
+            }
+          }
+          dy += 32;
+        }
+      }
+
+      return canvas;
+    }
+
+    // ========== 3. Split into parts if too tall ==========
+    // Conservative max height for wide canvases in Chrome.
+    const MAX_H = 28000;
+    // Measure each block height with a tiny measuring context.
+    const meas = document.createElement('canvas');
+    meas.width = 10; meas.height = 10;
+    const mctx = meas.getContext('2d');
+
+    function estimateBlockHeight(b) {
+      if (b.type === 'spacer') return 22;
+      if (b.type === 'hr') return 28 + 22;
+      if (b.type === 'heading') {
+        const font = b.level <= 2 ? F_H2 : (b.level === 3 ? F_H3 : F_H4);
+        const lh = b.level <= 2 ? LH_H2 : (b.level === 3 ? LH_H3 : LH_H4);
+        return wrapText(mctx, b.text, CONTENT_W, font).length * lh + 26;
+      }
+      if (b.type === 'blockquote') {
+        const innerW = CONTENT_W - 40;
+        const lines = wrapText(mctx, b.text, innerW, F_BODY);
+        return 18 + lines.length * LH_BODY + 18 + 22;
+      }
+      if (b.type === 'list-item') {
+        const prefix = b.ordered ? `${b.index}. ` : '• ';
+        const indent = b.depth * 40;
+        const maxW = CONTENT_W - indent;
+        return wrapText(mctx, prefix + b.text, maxW, F_BODY).length * LH_BODY + 12;
+      }
+      if (b.type === 'code') {
+        const innerW = CONTENT_W - 40;
+        let lineCount = 0;
+        for (const ln of (b.lines || [])) {
+          lineCount += Math.max(1, wrapText(mctx, ln, innerW, F_CODE).length);
+        }
+        return 18 + lineCount * LH_CODE + 18 + 22;
+      }
+      if (b.type === 'table') {
+        let rowLines = 0;
+        for (const row of (b.rows || [])) {
+          rowLines += wrapText(mctx, row, CONTENT_W, F_BODY).length;
+        }
+        return rowLines * LH_BODY + 22;
+      }
+      // paragraph/default
+      return wrapText(mctx, b.text || '', CONTENT_W, F_BODY).length * LH_BODY + 22;
+    }
+
+    // Estimate header height
+    const headerEstimate = (() => {
+      let y = PAD_TOP;
+      if (data.dateText || data.category) y += 40 + 22;
+      y += wrapText(mctx, data.title, CONTENT_W, F_TITLE).length * LH_TITLE + 22;
+      return y;
+    })();
+
+    const parts = [];
+    let current = [];
+    let curH = headerEstimate + PAD_BOTTOM;
+    for (const b of blocks) {
+      const bh = estimateBlockHeight(b);
+      if (current.length > 0 && (curH + bh) > MAX_H) {
+        parts.push(current);
+        current = [b];
+        curH = headerEstimate + PAD_BOTTOM + bh;
+      } else {
+        current.push(b);
+        curH += bh;
+      }
+    }
+    if (current.length) parts.push(current);
+
+    // ========== 4. Render + download ==========
+    const safeTitle = (data.title || 'post').replace(/[\\/:*?"<>|]/g, '').trim().slice(0, 50);
+    const total = parts.length;
+    for (let i = 0; i < total; i++) {
+      const canvas = renderSegment(parts[i], i + 1, total);
+      const dataUrl = canvas.toDataURL('image/png');
+      const a = document.createElement('a');
+      a.href = dataUrl;
+      a.download = total === 1
+        ? `${safeTitle || 'post'}-long.png`
+        : `${safeTitle || 'post'}-long-part${i + 1}.png`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      // Small delay to avoid blocking the browser when downloading multiple parts
+      if (total > 1) {
+        await new Promise((r) => setTimeout(r, 350));
+      }
+    }
+
+  } catch (err) {
+    console.error('Generate image failed:', err);
+    alert(`生成图片失败：${err && err.message ? err.message : err}`);
+  }
+}
+
 // Copy to clipboard function
 function copyToClipboard() {
   const url = window.location.href;
@@ -1414,10 +1802,8 @@ src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
   <div class="grid grid-flow-col gap-4">
     <div class="text-center">
       <span>© 2025 Lulu</span>
-      <span>·</span>
-      <span>Powered by <a href="https://hexo.io/" target="_blank" rel="noopener noreferrer" class="link link-info no-underline">Hexo</a></span>
-      <span>·</span>
-      <span>Theme: <a href="https://github.com/jiehua1995/hexo-theme-researcher" target="_blank" rel="noopener noreferrer" class="link link-info no-underline">Researcher v0.1.4</a></span>
+
+      
     </div>
   </div>
 </footer>

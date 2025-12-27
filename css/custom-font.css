@@ -1,0 +1,7 @@
+/* Global font override (CJK-friendly)
+   Uses Tailwind v4 theme vars: --font-sans is referenced by --default-font-family.
+*/
+:root {
+  --font-sans: "LXGW WenKai Screen", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}

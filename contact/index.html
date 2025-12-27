@@ -28,7 +28,11 @@
 
 <!-- Tailwind CSS -->
 <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/custom-font.css">
 <script src="https://cdn.tailwindcss.com"></script>
+
+<!-- CJK WebFont (LXGW WenKai Screen) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.7.0/style.min.css">
 
 <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.min.css" rel="stylesheet" type="text/css" />
   
@@ -95,13 +99,8 @@ var _hmt = _hmt || [];
   
     
       <a href="/plan/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-list-check mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        计划
-      </a>
-    
-      <a href="/projects/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-gift mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        礼物&amp;灵感
+        <i class="fa-solid fa-compact-disc mr-3 text-lg group-hover:scale-110 transition-transform"></i>
+        听歌♪(´▽｀)
       </a>
     
       <a href="/cv/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
@@ -442,13 +441,8 @@ var _hmt = _hmt || [];
   
     
       <a href="/plan/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-list-check mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        计划
-      </a>
-    
-      <a href="/projects/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-gift mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        礼物&amp;灵感
+        <i class="fa-solid fa-compact-disc mr-3 text-lg group-hover:scale-110 transition-transform"></i>
+        听歌♪(´▽｀)
       </a>
     
       <a href="/cv/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
@@ -491,51 +485,90 @@ var _hmt = _hmt || [];
 
   <!-- Content area for Desktop -->
   <div class="lg:ml-80 pt-20 px-4 py-8">
-    <div class="container mx-auto px-4">
-  <h1 class="text-4xl font-bold mb-8">Contact</h1>
+    <div class="container mx-auto px-4 py-8">
+  <div class="max-w-3xl mx-auto">
+    <div class="mb-8">
+      <h1 class="text-3xl md:text-4xl font-black tracking-tight">联系方式</h1>
+    </div>
 
-  <div class="grid gap-6 max-w-3xl mx-auto">
+    <div class="grid gap-5">
     
-      <div class="card glass rounded-box shadow-lg hover:shadow-xl transition-all duration-300 p-4">
-        <h2 class="card-title text-lg font-semibold mb-1"><i class="fas fa-envelope mr-2"></i>邮件</h2>
-        <a href="mailto:yuanxzh3@mail2.sysu.edu.cn" class="link block mt-2 text-lg font-medium no-underline">
-          yuanxzh3@mail2.sysu.edu.cn
-        </a>
-      </div>
+        <div class="card bg-base-100/80 border border-base-200 rounded-box shadow-md hover:shadow-lg transition-all duration-200">
+          <div class="card-body p-5">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="min-w-0 flex-1">
+                <h2 class="text-base font-extrabold">邮件</h2>
+                <a href="mailto:yuanxzh3@mail2.sysu.edu.cn" class="btn btn-sm btn-ghost normal-case mt-2 px-3 justify-start w-fit">
+                  <span class="truncate max-w-[22rem]">yuanxzh3@mail2.sysu.edu.cn</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
     
     
 
     
-      <div class="card glass rounded-box shadow-lg hover:shadow-xl transition-all duration-300 p-4">
-        <h2 class="card-title text-lg font-semibold mb-1"><i class="fas fa-phone-alt mr-2"></i>电话号码</h2>
-        <a href="tel:隐私！" class="link block mt-2 text-lg font-medium no-underline">隐私！</a>
-      </div>
+        <div class="card bg-base-100/80 border border-base-200 rounded-box shadow-md hover:shadow-lg transition-all duration-200">
+          <div class="card-body p-5">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-secondary/10 text-secondary flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div class="min-w-0 flex-1">
+                <h2 class="text-base font-extrabold">电话号码</h2>
+                <a href="tel:隐私！" class="btn btn-sm btn-ghost normal-case mt-2 px-3 justify-start w-fit">
+                  <span class="truncate max-w-[22rem]">隐私！</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
     
 
     <!-- Address -->
     
-    <div class="card glass rounded-box shadow-lg hover:shadow-xl transition-all duration-300 p-4">
-      <h2 class="card-title text-lg font-semibold mb-1">
-        <i class="fas fa-map-marker-alt mr-2"></i>学习地址
-      </h2>
+      <div class="card bg-base-100/80 border border-base-200 rounded-box shadow-md hover:shadow-lg transition-all duration-200">
+        <div class="card-body p-5">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-accent/10 text-accent flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="min-w-0 flex-1">
+              <h2 class="text-base font-extrabold">学习地址</h2>
 
-      
-        <a href="https://www.google.com/maps/place/%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A6%E7%8F%A0%E6%B5%B7%E6%A0%A1%E5%8C%BA/@22.3544214,113.5775453,13.83z/data=!4m15!1m8!3m7!1s0x35b271f9e242527d:0xedaefb4101c7414c!2z5Lit5Zu95LiK5rW35biC6Z2Z5a6J5Yy65rG25rC06LevNTDlj7cg6YKu5pS_57yW56CBOiAyMDAwNzI!3b1!8m2!3d31.29422!4d121.45776!16s%2Fg%2F11c88296r4!3m5!1s0x3403d817327db16d:0x33e055349e2520fe!8m2!3d22.34951!4d113.586955!16s%2Fg%2F11b62swmvp?entry=ttu&amp;g_ep=EgoyMDI1MTAwNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="link no-underline">
-          中山大学国际金融学院
-        </a>
-      
-    </div>
+              
+                <a href="https://www.google.com/maps/place/%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A6%E7%8F%A0%E6%B5%B7%E6%A0%A1%E5%8C%BA/@22.3544214,113.5775453,13.83z/data=!4m15!1m8!3m7!1s0x35b271f9e242527d:0xedaefb4101c7414c!2z5Lit5Zu95LiK5rW35biC6Z2Z5a6J5Yy65rG25rC06LevNTDlj7cg6YKu5pS_57yW56CBOiAyMDAwNzI!3b1!8m2!3d31.29422!4d121.45776!16s%2Fg%2F11c88296r4!3m5!1s0x3403d817327db16d:0x33e055349e2520fe!8m2!3d22.34951!4d113.586955!16s%2Fg%2F11b62swmvp?entry=ttu&amp;g_ep=EgoyMDI1MTAwNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener" class="btn btn-sm btn-ghost normal-case mt-2 px-3 justify-start w-fit">
+                  <span class="truncate max-w-[22rem]">中山大学国际金融学院</span>
+                </a>
+              
+            </div>
+          </div>
+        </div>
+      </div>
     
 
     <!-- Office hours -->
     
-      <div class="card glass rounded-box shadow-lg hover:shadow-xl transition-all duration-300 p-4">
-        <h2 class="card-title text-lg font-semibold mb-1"><i class="fas fa-clock mr-2"></i>学习时间</h2>
-        <p>周一至周日 10:00–23:00 (勤奋lulu)</p>
-      </div>
+        <div class="card bg-base-100/80 border border-base-200 rounded-box shadow-md hover:shadow-lg transition-all duration-200">
+          <div class="card-body p-5">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-info/10 text-info flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="min-w-0 flex-1">
+                <h2 class="text-base font-extrabold">学习时间</h2>
+                <p class="mt-2 opacity-80">周一至周日 10:00–23:00 (考研阶段……)</p>
+              </div>
+            </div>
+          </div>
+        </div>
     
+    </div>
   </div>
-
 </div>
 
   </div>
@@ -810,10 +843,8 @@ var _hmt = _hmt || [];
   <div class="grid grid-flow-col gap-4">
     <div class="text-center">
       <span>© 2025 Lulu</span>
-      <span>·</span>
-      <span>Powered by <a href="https://hexo.io/" target="_blank" rel="noopener noreferrer" class="link link-info no-underline">Hexo</a></span>
-      <span>·</span>
-      <span>Theme: <a href="https://github.com/jiehua1995/hexo-theme-researcher" target="_blank" rel="noopener noreferrer" class="link link-info no-underline">Researcher v0.1.4</a></span>
+
+      
     </div>
   </div>
 </footer>

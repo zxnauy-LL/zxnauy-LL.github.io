@@ -28,7 +28,11 @@
 
 <!-- Tailwind CSS -->
 <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/custom-font.css">
 <script src="https://cdn.tailwindcss.com"></script>
+
+<!-- CJK WebFont (LXGW WenKai Screen) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.7.0/style.min.css">
 
 <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.min.css" rel="stylesheet" type="text/css" />
   
@@ -95,13 +99,8 @@ var _hmt = _hmt || [];
   
     
       <a href="/plan/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-list-check mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        计划
-      </a>
-    
-      <a href="/projects/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-gift mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        礼物&amp;灵感
+        <i class="fa-solid fa-compact-disc mr-3 text-lg group-hover:scale-110 transition-transform"></i>
+        听歌♪(´▽｀)
       </a>
     
       <a href="/cv/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
@@ -442,13 +441,8 @@ var _hmt = _hmt || [];
   
     
       <a href="/plan/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-list-check mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        计划
-      </a>
-    
-      <a href="/projects/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-gift mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        礼物&amp;灵感
+        <i class="fa-solid fa-compact-disc mr-3 text-lg group-hover:scale-110 transition-transform"></i>
+        听歌♪(´▽｀)
       </a>
     
       <a href="/cv/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
@@ -494,233 +488,400 @@ var _hmt = _hmt || [];
     
 <div class="container mx-auto px-4 py-8">
       
-    <h1 class="text-3xl font-bold mb-8 text-base-content">未来计划清单 ✨</h1>
+    <h1 class="text-3xl font-bold mb-8 text-base-content">唱片收藏库 💿</h1>
 
-    <div class="glass-card p-4 mb-8">
-        <div class="flex flex-wrap gap-4 items-center">
+    
+    
+
+    
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
           
-          <div class="form-control w-40">
-            <select class="select select-bordered" id="statusFilter">
-              <option value="">所有状态</option>
-              
-                <option value="待完成">待完成</option>
-              
-                <option value="已完成">已完成</option>
-              
-            </select>
-          </div>
+          
 
-          <div class="form-control w-48">
-            <select class="select select-bordered" id="categoryFilter">
-              <option value="">所有分类</option>
-              
-                <option value="出行">出行</option>
-              
-                <option value="重要">重要</option>
-              
-                <option value="美食">美食</option>
-              
-            </select>
-          </div>
+          <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-[1.01] transition-all duration-300 border border-base-300">
+            <div class="card-body p-6">
+              <div class="flex items-start gap-5">
+                <div class="flex-shrink-0">
+                  <div class="w-20 h-20 rounded-full bg-base-200 border border-base-300 flex items-center justify-center relative">
+                    <div class="absolute inset-0 rounded-full" style="background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.55), rgba(0,0,0,0.06) 55%, rgba(0,0,0,0.10));"></div>
+                    
+                      <img src="/pictures/wyy_music/%E4%B8%8D%E6%AD%BB%E4%B9%8B%E8%BA%AB.png" alt="cover" class="w-12 h-12 rounded-full object-cover border border-base-100 relative" />
+                      <div class="w-2 h-2 rounded-full bg-base-100 border border-base-300 absolute"></div>
+                    
+                  </div>
+                </div>
 
-          <div class="form-control flex-grow min-w-[200px]">
-            <input type="text" placeholder="搜索计划..." class="input input-bordered" id="searchInput" />
-          </div>
-        </div>
-    </div>
+                <div class="min-w-0 flex-1">
+                  <h2 class="text-lg font-bold leading-tight truncate">不死之身</h2>
+                  <p class="text-sm text-base-content/70 truncate">林俊杰</p>
 
-    <div id="plansList" class="space-y-6">
+                  
+                    <p class="mt-3 text-sm italic text-base-content/80"> “地球毁灭了以后……” </p>
+                  
+
+                  
+                    <p class="mt-3 text-sm text-base-content/80">评价：从你的歌单里听到的，虽然以前就听过，但是还是很喜欢</p>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          
+          
+
+          <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-[1.01] transition-all duration-300 border border-base-300">
+            <div class="card-body p-6">
+              <div class="flex items-start gap-5">
+                <div class="flex-shrink-0">
+                  <div class="w-20 h-20 rounded-full bg-base-200 border border-base-300 flex items-center justify-center relative">
+                    <div class="absolute inset-0 rounded-full" style="background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.55), rgba(0,0,0,0.06) 55%, rgba(0,0,0,0.10));"></div>
+                    
+                      <img src="/pictures/wyy_music/%E5%A4%A7%E4%BA%BA%E4%B8%AD.png" alt="cover" class="w-12 h-12 rounded-full object-cover border border-base-100 relative" />
+                      <div class="w-2 h-2 rounded-full bg-base-100 border border-base-300 absolute"></div>
+                    
+                  </div>
+                </div>
+
+                <div class="min-w-0 flex-1">
+                  <h2 class="text-lg font-bold leading-tight truncate">大人中</h2>
+                  <p class="text-sm text-base-content/70 truncate">卢广仲</p>
+
+                  
+                    <p class="mt-3 text-sm italic text-base-content/80"> “抬起头才发现，流眼泪的星星正在放弃我……” </p>
+                  
+
+                  
+                    <p class="mt-3 text-sm text-base-content/80">评价：你在考研前分享的歌曲，听起来很舒服</p>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          
+          
+
+          <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-[1.01] transition-all duration-300 border border-base-300">
+            <div class="card-body p-6">
+              <div class="flex items-start gap-5">
+                <div class="flex-shrink-0">
+                  <div class="w-20 h-20 rounded-full bg-base-200 border border-base-300 flex items-center justify-center relative">
+                    <div class="absolute inset-0 rounded-full" style="background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.55), rgba(0,0,0,0.06) 55%, rgba(0,0,0,0.10));"></div>
+                    
+                      <img src="/pictures/wyy_music/%E5%A4%A7%E5%A4%B4%E8%B4%B4.png" alt="cover" class="w-12 h-12 rounded-full object-cover border border-base-100 relative" />
+                      <div class="w-2 h-2 rounded-full bg-base-100 border border-base-300 absolute"></div>
+                    
+                  </div>
+                </div>
+
+                <div class="min-w-0 flex-1">
+                  <h2 class="text-lg font-bold leading-tight truncate">大头贴</h2>
+                  <p class="text-sm text-base-content/70 truncate">TizzyT</p>
+
+                  
+                    <p class="mt-3 text-sm italic text-base-content/80"> “我把我们的合照 存进我的智能手机” </p>
+                  
+
+                  
+                    <p class="mt-3 text-sm text-base-content/80">评价：从你的听歌记录里发现的、、</p>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          
+          
+
+          <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-[1.01] transition-all duration-300 border border-base-300">
+            <div class="card-body p-6">
+              <div class="flex items-start gap-5">
+                <div class="flex-shrink-0">
+                  <div class="w-20 h-20 rounded-full bg-base-200 border border-base-300 flex items-center justify-center relative">
+                    <div class="absolute inset-0 rounded-full" style="background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.55), rgba(0,0,0,0.06) 55%, rgba(0,0,0,0.10));"></div>
+                    
+                      <img src="/pictures/wyy_music/%E6%99%B4.png" alt="cover" class="w-12 h-12 rounded-full object-cover border border-base-100 relative" />
+                      <div class="w-2 h-2 rounded-full bg-base-100 border border-base-300 absolute"></div>
+                    
+                  </div>
+                </div>
+
+                <div class="min-w-0 flex-1">
+                  <h2 class="text-lg font-bold leading-tight truncate">晴</h2>
+                  <p class="text-sm text-base-content/70 truncate">汪苏泷</p>
+
+                  
+                    <p class="mt-3 text-sm italic text-base-content/80"> “歌词里面的转折 现在变成了你我” </p>
+                  
+
+                  
+                    <p class="mt-3 text-sm text-base-content/80">评价：歌名是晴，可歌词都是关于雨</p>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          
+          
+
+          <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-[1.01] transition-all duration-300 border border-base-300">
+            <div class="card-body p-6">
+              <div class="flex items-start gap-5">
+                <div class="flex-shrink-0">
+                  <div class="w-20 h-20 rounded-full bg-base-200 border border-base-300 flex items-center justify-center relative">
+                    <div class="absolute inset-0 rounded-full" style="background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.55), rgba(0,0,0,0.06) 55%, rgba(0,0,0,0.10));"></div>
+                    
+                      <img src="/pictures/wyy_music/%E6%83%B3%E5%88%B0%E6%88%91%E4%BB%AC.png" alt="cover" class="w-12 h-12 rounded-full object-cover border border-base-100 relative" />
+                      <div class="w-2 h-2 rounded-full bg-base-100 border border-base-300 absolute"></div>
+                    
+                  </div>
+                </div>
+
+                <div class="min-w-0 flex-1">
+                  <h2 class="text-lg font-bold leading-tight truncate">想到我们</h2>
+                  <p class="text-sm text-base-content/70 truncate">汪苏泷</p>
+
+                  
+                    <p class="mt-3 text-sm italic text-base-content/80"> “想到世界足够辽阔 想到我们毫无结果” </p>
+                  
+
+                  
+                    <p class="mt-3 text-sm text-base-content/80">评价：灵魂陪你静坐</p>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          
+          
+
+          <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-[1.01] transition-all duration-300 border border-base-300">
+            <div class="card-body p-6">
+              <div class="flex items-start gap-5">
+                <div class="flex-shrink-0">
+                  <div class="w-20 h-20 rounded-full bg-base-200 border border-base-300 flex items-center justify-center relative">
+                    <div class="absolute inset-0 rounded-full" style="background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.55), rgba(0,0,0,0.06) 55%, rgba(0,0,0,0.10));"></div>
+                    
+                      <img src="/pictures/wyy_music/replay.png" alt="cover" class="w-12 h-12 rounded-full object-cover border border-base-100 relative" />
+                      <div class="w-2 h-2 rounded-full bg-base-100 border border-base-300 absolute"></div>
+                    
+                  </div>
+                </div>
+
+                <div class="min-w-0 flex-1">
+                  <h2 class="text-lg font-bold leading-tight truncate">Replay</h2>
+                  <p class="text-sm text-base-content/70 truncate">16</p>
+
+                  
+                    <p class="mt-3 text-sm italic text-base-content/80"> “I&#39;m on replay all night” </p>
+                  
+
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          
+          
+
+          <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-[1.01] transition-all duration-300 border border-base-300">
+            <div class="card-body p-6">
+              <div class="flex items-start gap-5">
+                <div class="flex-shrink-0">
+                  <div class="w-20 h-20 rounded-full bg-base-200 border border-base-300 flex items-center justify-center relative">
+                    <div class="absolute inset-0 rounded-full" style="background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.55), rgba(0,0,0,0.06) 55%, rgba(0,0,0,0.10));"></div>
+                    
+                      <img src="/pictures/wyy_music/%E7%A0%B4%E7%A2%8E%E7%9A%84%E8%94%B7%E8%96%87.png" alt="cover" class="w-12 h-12 rounded-full object-cover border border-base-100 relative" />
+                      <div class="w-2 h-2 rounded-full bg-base-100 border border-base-300 absolute"></div>
+                    
+                  </div>
+                </div>
+
+                <div class="min-w-0 flex-1">
+                  <h2 class="text-lg font-bold leading-tight truncate">破碎的蔷薇</h2>
+                  <p class="text-sm text-base-content/70 truncate">福梦</p>
+
+                  
+                    <p class="mt-3 text-sm italic text-base-content/80"> “在我心中你从来没离开过” </p>
+                  
+
+                  
+                    <p class="mt-3 text-sm text-base-content/80">评价：真是很懊悔呢</p>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          
+          
+
+          <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-[1.01] transition-all duration-300 border border-base-300">
+            <div class="card-body p-6">
+              <div class="flex items-start gap-5">
+                <div class="flex-shrink-0">
+                  <div class="w-20 h-20 rounded-full bg-base-200 border border-base-300 flex items-center justify-center relative">
+                    <div class="absolute inset-0 rounded-full" style="background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.55), rgba(0,0,0,0.06) 55%, rgba(0,0,0,0.10));"></div>
+                    
+                      <img src="/pictures/wyy_music/%E5%9C%86.png" alt="cover" class="w-12 h-12 rounded-full object-cover border border-base-100 relative" />
+                      <div class="w-2 h-2 rounded-full bg-base-100 border border-base-300 absolute"></div>
+                    
+                  </div>
+                </div>
+
+                <div class="min-w-0 flex-1">
+                  <h2 class="text-lg font-bold leading-tight truncate">圆</h2>
+                  <p class="text-sm text-base-content/70 truncate">AGA</p>
+
+                  
+                    <p class="mt-3 text-sm italic text-base-content/80"> “人间的圆虽则是不够缘 而有生一天会遇见” </p>
+                  
+
+                  
+                    <p class="mt-3 text-sm text-base-content/80">评价：一直很喜欢这首歌，圆，缘，完，远，愿（用粤语发音都是相同的），也会让我想到你的名字</p>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          
+          
+
+          <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-[1.01] transition-all duration-300 border border-base-300">
+            <div class="card-body p-6">
+              <div class="flex items-start gap-5">
+                <div class="flex-shrink-0">
+                  <div class="w-20 h-20 rounded-full bg-base-200 border border-base-300 flex items-center justify-center relative">
+                    <div class="absolute inset-0 rounded-full" style="background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.55), rgba(0,0,0,0.06) 55%, rgba(0,0,0,0.10));"></div>
+                    
+                      <img src="/pictures/wyy_music/%E5%8D%81%E9%9D%A2%E5%9F%8B%E4%BC%8F.png" alt="cover" class="w-12 h-12 rounded-full object-cover border border-base-100 relative" />
+                      <div class="w-2 h-2 rounded-full bg-base-100 border border-base-300 absolute"></div>
+                    
+                  </div>
+                </div>
+
+                <div class="min-w-0 flex-1">
+                  <h2 class="text-lg font-bold leading-tight truncate">十面埋伏</h2>
+                  <p class="text-sm text-base-content/70 truncate">陈奕迅</p>
+
+                  
+                    <p class="mt-3 text-sm italic text-base-content/80"> “何以我来回巡逻遍，仍然和你擦肩” </p>
+                  
+
+                  
+                    <p class="mt-3 text-sm text-base-content/80">评价：我专门去看了一下十面埋伏背后的故事，男生去了女生常常活动的地方，但是从来没有遇见过她，总是会错过……</p>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          
+          
+
+          <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-[1.01] transition-all duration-300 border border-base-300">
+            <div class="card-body p-6">
+              <div class="flex items-start gap-5">
+                <div class="flex-shrink-0">
+                  <div class="w-20 h-20 rounded-full bg-base-200 border border-base-300 flex items-center justify-center relative">
+                    <div class="absolute inset-0 rounded-full" style="background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.55), rgba(0,0,0,0.06) 55%, rgba(0,0,0,0.10));"></div>
+                    
+                      <img src="/pictures/wyy_music/%E9%BB%91%E7%9C%BC%E5%9C%88.png" alt="cover" class="w-12 h-12 rounded-full object-cover border border-base-100 relative" />
+                      <div class="w-2 h-2 rounded-full bg-base-100 border border-base-300 absolute"></div>
+                    
+                  </div>
+                </div>
+
+                <div class="min-w-0 flex-1">
+                  <h2 class="text-lg font-bold leading-tight truncate">黑眼圈</h2>
+                  <p class="text-sm text-base-content/70 truncate">汪苏泷</p>
+
+                  
+                    <p class="mt-3 text-sm italic text-base-content/80"> “最后变成一种罪 谁也不想去面对” </p>
+                  
+
+                  
+                    <p class="mt-3 text-sm text-base-content/80">评价：从你的听歌记录里发现的、、很好听！</p>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          
+          
+
+          <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-[1.01] transition-all duration-300 border border-base-300">
+            <div class="card-body p-6">
+              <div class="flex items-start gap-5">
+                <div class="flex-shrink-0">
+                  <div class="w-20 h-20 rounded-full bg-base-200 border border-base-300 flex items-center justify-center relative">
+                    <div class="absolute inset-0 rounded-full" style="background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.55), rgba(0,0,0,0.06) 55%, rgba(0,0,0,0.10));"></div>
+                    
+                      <img src="/pictures/wyy_music/Mr.broken_heart.png" alt="cover" class="w-12 h-12 rounded-full object-cover border border-base-100 relative" />
+                      <div class="w-2 h-2 rounded-full bg-base-100 border border-base-300 absolute"></div>
+                    
+                  </div>
+                </div>
+
+                <div class="min-w-0 flex-1">
+                  <h2 class="text-lg font-bold leading-tight truncate">Mr. Broken Heart</h2>
+                  <p class="text-sm text-base-content/70 truncate">松下優也</p>
+
+                  
+                    <p class="mt-3 text-sm italic text-base-content/80"> “君と逢いたい　I am “Broken Heart” </p>
+                  
+
+                  
+                    <p class="mt-3 text-sm text-base-content/80">评价：好像变成了一种符号，跟回忆交织起来了……</p>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          
+          
+
+          <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-[1.01] transition-all duration-300 border border-base-300">
+            <div class="card-body p-6">
+              <div class="flex items-start gap-5">
+                <div class="flex-shrink-0">
+                  <div class="w-20 h-20 rounded-full bg-base-200 border border-base-300 flex items-center justify-center relative">
+                    <div class="absolute inset-0 rounded-full" style="background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.55), rgba(0,0,0,0.06) 55%, rgba(0,0,0,0.10));"></div>
+                    
+                      <img src="/pictures/wyy_music/%E5%A4%AA%E9%98%B3%E4%B8%8E%E5%9C%B0%E7%90%83.png" alt="cover" class="w-12 h-12 rounded-full object-cover border border-base-100 relative" />
+                      <div class="w-2 h-2 rounded-full bg-base-100 border border-base-300 absolute"></div>
+                    
+                  </div>
+                </div>
+
+                <div class="min-w-0 flex-1">
+                  <h2 class="text-lg font-bold leading-tight truncate">太阳与地球</h2>
+                  <p class="text-sm text-base-content/70 truncate">卢广仲</p>
+
+                  
+                    <p class="mt-3 text-sm italic text-base-content/80"> “谁要 我们的心 遥远的像 太阳与地球” </p>
+                  
+
+                  
+                    <p class="mt-3 text-sm text-base-content/80">评价：刚断开联系的时候，我还分享了一次这首歌……</p>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        
+      </div>
     
-        
-        <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-[1.01] transition-all duration-300 border border-base-300 plan-item"
-                data-status="待完成"
-                data-category="出行">
-            <div class="card-body p-6">
-            
-            <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-2">
-                <h2 class="card-title text-xl font-bold text-primary leading-tight flex-1 mb-1 md:mb-0 ">
-                去迪士尼看烟花 🎆
-                </h2>
-                <div class="flex items-center gap-2 mt-1 md:mt-0">
-                
-                <div class="badge badge-warning badge-lg z-50">
-                    ⏳ 待完成
-                </div>
-                </div>
-            </div>
-
-            <div class="mb-4">
-                <div class="flex flex-wrap items-center gap-4 text-sm text-base-content/70">
-                <span class="flex items-center">
-                    <i class="fa-regular fa-calendar w-4 h-4 mr-1"></i>
-                    待定
-                </span>
-                
-                    <span class="flex items-center">
-                    <i class="fa-solid fa-location-dot w-4 h-4 mr-1"></i>
-                    香港迪士尼
-                    </span>
-                
-                <span class="flex items-center">
-                    <i class="fa-solid fa-tag w-4 h-4 mr-1"></i>
-                    出行
-                </span>
-                </div>
-            </div>
-
-            <div class="prose max-w-none mb-4">
-                <p class="text-base-content/80 text-sm leading-relaxed">带老大去迪士尼看玲娜贝儿，晚上一起看城堡烟花，要记得提前买好头箍！</p>
-            </div>
-
-            
-
-            </div>
-        </div>
-        
-        <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-[1.01] transition-all duration-300 border border-base-300 plan-item"
-                data-status="已完成"
-                data-category="重要">
-            <div class="card-body p-6">
-            
-            <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-2">
-                <h2 class="card-title text-xl font-bold text-primary leading-tight flex-1 mb-1 md:mb-0 decoration-line-through decoration-2 decoration-primary/50">
-                第一次正式出行 (普陀寺)
-                </h2>
-                <div class="flex items-center gap-2 mt-1 md:mt-0">
-                
-                <div class="badge badge-success text-white badge-lg z-50">
-                    ✅ 已完成
-                </div>
-                </div>
-            </div>
-
-            <div class="mb-4">
-                <div class="flex flex-wrap items-center gap-4 text-sm text-base-content/70">
-                <span class="flex items-center">
-                    <i class="fa-regular fa-calendar w-4 h-4 mr-1"></i>
-                    2025-10-04
-                </span>
-                
-                    <span class="flex items-center">
-                    <i class="fa-solid fa-location-dot w-4 h-4 mr-1"></i>
-                    普陀寺 &amp; 珠海
-                    </span>
-                
-                <span class="flex items-center">
-                    <i class="fa-solid fa-tag w-4 h-4 mr-1"></i>
-                    重要
-                </span>
-                </div>
-            </div>
-
-            <div class="prose max-w-none mb-4">
-                <p class="text-base-content/80 text-sm leading-relaxed">和Lulu老大的第一次正式约会，送了pingu和史迪仔，吃了美味的日料，非常开心的一天！</p>
-            </div>
-
-            
-                <div class="card-actions justify-start">
-                <a href="/2025/10/04/第一次生日记录/" class="btn btn-sm btn-outline btn-primary">
-                    <i class="fa-solid fa-book-open"></i> 查看记录
-                </a>
-                </div>
-            
-
-            </div>
-        </div>
-        
-        <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-[1.01] transition-all duration-300 border border-base-300 plan-item"
-                data-status="待完成"
-                data-category="美食">
-            <div class="card-body p-6">
-            
-            <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-2">
-                <h2 class="card-title text-xl font-bold text-primary leading-tight flex-1 mb-1 md:mb-0 ">
-                打卡美味面包店(Buttery)
-                </h2>
-                <div class="flex items-center gap-2 mt-1 md:mt-0">
-                
-                <div class="badge badge-warning badge-lg z-50">
-                    ⏳ 待完成
-                </div>
-                </div>
-            </div>
-
-            <div class="mb-4">
-                <div class="flex flex-wrap items-center gap-4 text-sm text-base-content/70">
-                <span class="flex items-center">
-                    <i class="fa-regular fa-calendar w-4 h-4 mr-1"></i>
-                    待定
-                </span>
-                
-                    <span class="flex items-center">
-                    <i class="fa-solid fa-location-dot w-4 h-4 mr-1"></i>
-                    珠海
-                    </span>
-                
-                <span class="flex items-center">
-                    <i class="fa-solid fa-tag w-4 h-4 mr-1"></i>
-                    美食
-                </span>
-                </div>
-            </div>
-
-            <div class="prose max-w-none mb-4">
-                <p class="text-base-content/80 text-sm leading-relaxed">既然老大爱吃甜品，要带她去吃！！</p>
-            </div>
-
-            
-
-            </div>
-        </div>
-        
-    
-    </div>
 
 </div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const statusFilter = document.getElementById('statusFilter');
-    const categoryFilter = document.getElementById('categoryFilter');
-    const searchInput = document.getElementById('searchInput');
-    const plans = document.querySelectorAll('.plan-item');
-
-    function filterPlans() {
-    const statusVal = statusFilter.value;
-    const categoryVal = categoryFilter.value;
-    const searchVal = searchInput.value.toLowerCase();
-    
-    let visibleCount = 0;
-
-    plans.forEach(plan => {
-        const planStatus = plan.getAttribute('data-status');
-        const planCategory = plan.getAttribute('data-category');
-        
-        // 获取标题和描述文本用于搜索
-        const titleElement = plan.querySelector('.card-title');
-        const descElement = plan.querySelector('.prose p');
-        const title = titleElement ? titleElement.textContent.toLowerCase() : '';
-        const desc = descElement ? descElement.textContent.toLowerCase() : '';
-
-        const matchesStatus = !statusVal || planStatus === statusVal;
-        const matchesCategory = !categoryVal || planCategory === categoryVal;
-        const matchesSearch = !searchVal || title.includes(searchVal) || desc.includes(searchVal);
-
-        if (matchesStatus && matchesCategory && matchesSearch) {
-        plan.style.display = 'block';
-        visibleCount++;
-        } else {
-        plan.style.display = 'none';
-        }
-    });
-    console.log(`Showing ${visibleCount} plans`);
-    }
-
-    statusFilter.addEventListener('change', filterPlans);
-    categoryFilter.addEventListener('change', filterPlans);
-    searchInput.addEventListener('input', filterPlans);
-});
-</script>
 
 <footer class="mt-auto">
 <footer class="footer footer-center sm:footer-horizontal p-4 bg-base-200 text-base-content">
@@ -1008,10 +1169,8 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="grid grid-flow-col gap-4">
     <div class="text-center">
       <span>© 2025 Lulu</span>
-      <span>·</span>
-      <span>Powered by <a href="https://hexo.io/" target="_blank" rel="noopener noreferrer" class="link link-info no-underline">Hexo</a></span>
-      <span>·</span>
-      <span>Theme: <a href="https://github.com/jiehua1995/hexo-theme-researcher" target="_blank" rel="noopener noreferrer" class="link link-info no-underline">Researcher v0.1.4</a></span>
+
+      
     </div>
   </div>
 </footer>
