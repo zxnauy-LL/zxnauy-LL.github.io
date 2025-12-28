@@ -74,13 +74,6 @@ var _hmt = _hmt || [];
 <meta name="generator" content="Hexo 7.3.0"></head>
 <body class="min-h-screen bg-base-200">
 
-  <!-- 桌面端切换布局按钮，悬浮左上角 -->
-  <div class="fixed top-4 z-50 transition-all duration-300 lg:block hidden" style="left: 20px;">
-    <button id="layout-toggle-btn-desktop" class="btn btn-circle btn-primary shadow-md hover:scale-110 transition-transform" onclick="toggleHomeLayout()" title="切换布局风格">
-      <i class="fa-solid fa-layer-group text-lg" id="layout-icon-desktop"></i>
-    </button>
-  </div>
-
   <!-- Sidebar for Desktop -->
   <aside class="hidden lg:flex fixed left-0 top-0 h-screen w-80 bg-base-200 z-40 flex-col overflow-y-auto">
     <div class="relative h-full">
@@ -130,17 +123,19 @@ var _hmt = _hmt || [];
 
 
 <div class="p-4 border-t border-base-300">
+  
   <div class="flex justify-center items-center gap-4">
-    
-    
-    
+
     
       <a href="https://github.com/zxnauy-LL" class="text-base-content hover:text-primary hover:scale-110 transition-all duration-200 flex-shrink-0" target="_blank" rel="noopener noreferrer" title="GitHub">
         <i class="fa-brands fa-github text-2xl block"></i>
       </a>
     
-    
-    
+
+    <a href="https://y.music.163.com/m/user?id=310700901" class="text-base-content hover:text-primary hover:scale-110 transition-all duration-200 flex-shrink-0" target="_blank" rel="noopener noreferrer" title="网易云音乐">
+      <i class="fa-solid fa-music text-2xl block"></i>
+    </a>
+
   </div>
 </div>
     </div>
@@ -165,10 +160,6 @@ var _hmt = _hmt || [];
           </a>
         </div>
         <div class="flex-none flex items-center gap-2">
-          <!-- 移动端切换布局按钮，和主题切换按钮并列 -->
-          <button id="layout-toggle-btn-mobile" class="btn btn-circle btn-primary shadow-md hover:scale-110 transition-transform lg:hidden mr-2" onclick="toggleHomeLayout()" title="切换布局风格">
-            <i class="fa-solid fa-layer-group text-lg" id="layout-icon-mobile"></i>
-          </button>
           
 
 <select class="select select-bordered w-full max-w-xs" data-choose-theme>
@@ -421,6 +412,10 @@ var _hmt = _hmt || [];
 </select>
 
 
+            <!-- 切换布局按钮：放在主题切换按钮右边（移动端/桌面端一致） -->
+            <button id="layout-toggle-btn-mobile" class="btn btn-circle btn-primary shadow-md hover:scale-110 transition-transform lg:hidden" onclick="toggleHomeLayout()" title="切换布局风格">
+              <i class="fa-solid fa-layer-group text-lg" id="layout-icon-mobile"></i>
+            </button>
         </div>
       </div>
     </div>
@@ -476,17 +471,19 @@ var _hmt = _hmt || [];
 
 
 <div class="p-4 border-t border-base-300">
+  
   <div class="flex justify-center items-center gap-4">
-    
-    
-    
+
     
       <a href="https://github.com/zxnauy-LL" class="text-base-content hover:text-primary hover:scale-110 transition-all duration-200 flex-shrink-0" target="_blank" rel="noopener noreferrer" title="GitHub">
         <i class="fa-brands fa-github text-2xl block"></i>
       </a>
     
-    
-    
+
+    <a href="https://y.music.163.com/m/user?id=310700901" class="text-base-content hover:text-primary hover:scale-110 transition-all duration-200 flex-shrink-0" target="_blank" rel="noopener noreferrer" title="网易云音乐">
+      <i class="fa-solid fa-music text-2xl block"></i>
+    </a>
+
   </div>
 </div>
         </div>
@@ -502,9 +499,22 @@ var _hmt = _hmt || [];
     <h1 class="text-5xl md:text-6xl font-normal mb-4 text-base-content tracking-tight" style="font-family: system-ui, -apple-system, sans-serif;">记Lu</h1>
     <p class="text-xl text-base-content/60 font-light">想对你说的……</p>
   </header>
+
+  
+
+  
+    <div class="mb-12 px-2">
+      <div class="bg-base-200/50 backdrop-blur-2xl rounded-[28px] p-6 md:p-8 shadow-md border border-white/40 transition-all duration-300 hover:shadow-lg hover:bg-base-200/70">
+        <div class="prose prose-sm md:prose-base max-w-none text-base-content">
+          <p>带有<strong>幼稚</strong>标签的笔记，请多多考虑之后再阅读吧，特别是当理性的时候，看到一些毫无逻辑的内容，应该还是会蛮影响心情。</p>
+
+        </div>
+      </div>
+    </div>
+  
   
   <!-- Material You Filter Bar -->
-  <div class="bg-base-200/50 backdrop-blur-2xl rounded-[28px] p-3 mb-12 shadow-sm border border-white/20 flex flex-col md:flex-row gap-3 transition-all duration-300 hover:shadow-md hover:bg-base-200/70">
+  <div class="bg-base-200/50 backdrop-blur-2xl rounded-[28px] p-3 mb-12 shadow-md border border-white/40 flex flex-col md:flex-row gap-3 transition-all duration-300 hover:shadow-lg hover:bg-base-200/70">
     
     <!-- Category Filter -->
     <div class="relative group min-w-[160px]">
@@ -543,20 +553,76 @@ var _hmt = _hmt || [];
 
   <!-- Results Count -->
   <div class="px-4 mb-6 text-sm font-medium opacity-50 tracking-wide uppercase">
-    <span id="resultsCount">Showing all 5 notes</span>
+    <span id="resultsCount">Showing all 6 notes</span>
   </div>
 
   <!-- Posts Grid -->
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="notesContainer">
     
-      
+      <article class="card group relative h-[420px] w-full overflow-hidden rounded-[32px] border-none shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl note-item"
+               data-category=""
+               data-year="2025"
+               data-title=""
+               data-content=""
+               data-tags="">
+        
+        <!-- Background Image / Gradient -->
+        <div class="absolute inset-0 h-full w-full bg-gradient-to-br from-rose-400 to-orange-300 transition-transform duration-700 group-hover:scale-110">
+          <!-- Try to load image matching the post slug -->
+          <img src="/pictures/posts/祝福.jpg" 
+               class="h-full w-full object-cover transition-opacity duration-300"
+               loading="lazy"
+               onerror="this.style.display='none'"
+               alt="">
+        </div>
 
+        <!-- Dark Gradient Overlay for Text Readability -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 transition-opacity duration-300 group-hover:opacity-90"></div>
+
+        <!-- Content Container -->
+        <div class="absolute inset-0 flex flex-col justify-end p-6 text-white">
+          
+          <!-- Top Right Badge (Date) -->
+          <div class="absolute top-5 right-5 translate-y-[-10px] opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+             <span class="rounded-full bg-black/30 px-3 py-1.5 text-[10px] font-bold backdrop-blur-md border border-white/10 tracking-wider uppercase">
+                Dec 28
+             </span>
+          </div>
+
+          <!-- Category + Extra Label (Top Left, same row) -->
+          
+
+          <!-- Main Content Area -->
+          <div class="mb-4">
+            <!-- Title -->
+            <h2 class="mb-2 text-xl font-bold leading-tight tracking-tight text-white drop-shadow-sm">
+              
+            </h2>
+
+            <!-- Excerpt -->
+            <p class="line-clamp-2 text-xs font-medium text-gray-200/90 leading-relaxed">
+              ...
+            </p>
+          </div>
+
+          <!-- Tags -->
+          <div class="mb-5 flex flex-wrap gap-2 opacity-80">
+            
+          </div>
+
+          <!-- Action Button -->
+          <a href="/2025/12/28/%E7%A5%9D%E7%A6%8F/" class="flex w-full items-center justify-center rounded-full bg-white py-3.5 text-sm font-bold text-black transition-all active:scale-95 hover:bg-gray-100 shadow-lg">
+            Read Note
+          </a>
+        </div>
+      </article>
+    
       <article class="card group relative h-[420px] w-full overflow-hidden rounded-[32px] border-none shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl note-item"
                data-category="薯仔想法,幼稚的想法"
                data-year="2025"
                data-title="几分之几"
                data-content=""
-               data-tags="薯仔想法,幼稚的想法">
+               data-tags="">
         
         <!-- Background Image / Gradient -->
         <div class="absolute inset-0 h-full w-full bg-gradient-to-br from-teal-400 to-lime-400 transition-transform duration-700 group-hover:scale-110">
@@ -581,12 +647,17 @@ var _hmt = _hmt || [];
              </span>
           </div>
 
-          <!-- Category Tag (Top Left) -->
+          <!-- Category + Extra Label (Top Left, same row) -->
           
-            <div class="absolute top-5 left-5">
+            <div class="absolute top-5 left-5 flex items-center gap-2">
               <span class="rounded-full bg-white/20 px-3 py-1.5 text-[10px] font-bold backdrop-blur-md border border-white/10 tracking-wider uppercase">
                 薯仔想法
               </span>
+              
+                <span class="rounded-full bg-white/20 px-3 py-1.5 text-[10px] font-bold backdrop-blur-md border border-white/10 tracking-wider uppercase">
+                  幼稚
+                </span>
+              
             </div>
           
 
@@ -606,12 +677,6 @@ var _hmt = _hmt || [];
           <!-- Tags -->
           <div class="mb-5 flex flex-wrap gap-2 opacity-80">
             
-              
-                <span class="text-[10px] font-medium text-gray-300">#薯仔想法</span>
-              
-                <span class="text-[10px] font-medium text-gray-300">#幼稚</span>
-              
-            
           </div>
 
           <!-- Action Button -->
@@ -621,14 +686,12 @@ var _hmt = _hmt || [];
         </div>
       </article>
     
-      
-
       <article class="card group relative h-[420px] w-full overflow-hidden rounded-[32px] border-none shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl note-item"
                data-category="薯仔想法"
                data-year="2025"
                data-title="道歉信"
                data-content=""
-               data-tags="薯仔想法">
+               data-tags="">
         
         <!-- Background Image / Gradient -->
         <div class="absolute inset-0 h-full w-full bg-gradient-to-br from-violet-400 to-fuchsia-400 transition-transform duration-700 group-hover:scale-110">
@@ -653,12 +716,13 @@ var _hmt = _hmt || [];
              </span>
           </div>
 
-          <!-- Category Tag (Top Left) -->
+          <!-- Category + Extra Label (Top Left, same row) -->
           
-            <div class="absolute top-5 left-5">
+            <div class="absolute top-5 left-5 flex items-center gap-2">
               <span class="rounded-full bg-white/20 px-3 py-1.5 text-[10px] font-bold backdrop-blur-md border border-white/10 tracking-wider uppercase">
                 薯仔想法
               </span>
+              
             </div>
           
 
@@ -678,10 +742,6 @@ var _hmt = _hmt || [];
           <!-- Tags -->
           <div class="mb-5 flex flex-wrap gap-2 opacity-80">
             
-              
-                <span class="text-[10px] font-medium text-gray-300">#薯仔想法</span>
-              
-            
           </div>
 
           <!-- Action Button -->
@@ -691,14 +751,12 @@ var _hmt = _hmt || [];
         </div>
       </article>
     
-      
-
       <article class="card group relative h-[420px] w-full overflow-hidden rounded-[32px] border-none shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl note-item"
                data-category="薯仔想法,幼稚的想法"
                data-year="2025"
                data-title="沟通失败的想法"
                data-content=""
-               data-tags="薯仔想法,幼稚的想法">
+               data-tags="">
         
         <!-- Background Image / Gradient -->
         <div class="absolute inset-0 h-full w-full bg-gradient-to-br from-blue-400 to-indigo-400 transition-transform duration-700 group-hover:scale-110">
@@ -723,12 +781,17 @@ var _hmt = _hmt || [];
              </span>
           </div>
 
-          <!-- Category Tag (Top Left) -->
+          <!-- Category + Extra Label (Top Left, same row) -->
           
-            <div class="absolute top-5 left-5">
+            <div class="absolute top-5 left-5 flex items-center gap-2">
               <span class="rounded-full bg-white/20 px-3 py-1.5 text-[10px] font-bold backdrop-blur-md border border-white/10 tracking-wider uppercase">
                 薯仔想法
               </span>
+              
+                <span class="rounded-full bg-white/20 px-3 py-1.5 text-[10px] font-bold backdrop-blur-md border border-white/10 tracking-wider uppercase">
+                  幼稚
+                </span>
+              
             </div>
           
 
@@ -748,12 +811,6 @@ var _hmt = _hmt || [];
           <!-- Tags -->
           <div class="mb-5 flex flex-wrap gap-2 opacity-80">
             
-              
-                <span class="text-[10px] font-medium text-gray-300">#薯仔想法</span>
-              
-                <span class="text-[10px] font-medium text-gray-300">#幼稚</span>
-              
-            
           </div>
 
           <!-- Action Button -->
@@ -763,14 +820,12 @@ var _hmt = _hmt || [];
         </div>
       </article>
     
-      
-
       <article class="card group relative h-[420px] w-full overflow-hidden rounded-[32px] border-none shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl note-item"
                data-category="薯仔想法"
                data-year="2025"
                data-title="思考"
                data-content=""
-               data-tags="薯仔想法">
+               data-tags="">
         
         <!-- Background Image / Gradient -->
         <div class="absolute inset-0 h-full w-full bg-gradient-to-br from-amber-400 to-orange-400 transition-transform duration-700 group-hover:scale-110">
@@ -795,12 +850,13 @@ var _hmt = _hmt || [];
              </span>
           </div>
 
-          <!-- Category Tag (Top Left) -->
+          <!-- Category + Extra Label (Top Left, same row) -->
           
-            <div class="absolute top-5 left-5">
+            <div class="absolute top-5 left-5 flex items-center gap-2">
               <span class="rounded-full bg-white/20 px-3 py-1.5 text-[10px] font-bold backdrop-blur-md border border-white/10 tracking-wider uppercase">
                 薯仔想法
               </span>
+              
             </div>
           
 
@@ -820,10 +876,6 @@ var _hmt = _hmt || [];
           <!-- Tags -->
           <div class="mb-5 flex flex-wrap gap-2 opacity-80">
             
-              
-                <span class="text-[10px] font-medium text-gray-300">#薯仔想法</span>
-              
-            
           </div>
 
           <!-- Action Button -->
@@ -833,14 +885,12 @@ var _hmt = _hmt || [];
         </div>
       </article>
     
-      
-
       <article class="card group relative h-[420px] w-full overflow-hidden rounded-[32px] border-none shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl note-item"
                data-category="出行"
                data-year="2025"
                data-title="第一次生日记录"
                data-content=""
-               data-tags="出行">
+               data-tags="">
         
         <!-- Background Image / Gradient -->
         <div class="absolute inset-0 h-full w-full bg-gradient-to-br from-emerald-400 to-cyan-400 transition-transform duration-700 group-hover:scale-110">
@@ -865,12 +915,13 @@ var _hmt = _hmt || [];
              </span>
           </div>
 
-          <!-- Category Tag (Top Left) -->
+          <!-- Category + Extra Label (Top Left, same row) -->
           
-            <div class="absolute top-5 left-5">
+            <div class="absolute top-5 left-5 flex items-center gap-2">
               <span class="rounded-full bg-white/20 px-3 py-1.5 text-[10px] font-bold backdrop-blur-md border border-white/10 tracking-wider uppercase">
                 出行
               </span>
+              
             </div>
           
 
@@ -889,10 +940,6 @@ var _hmt = _hmt || [];
 
           <!-- Tags -->
           <div class="mb-5 flex flex-wrap gap-2 opacity-80">
-            
-              
-                <span class="text-[10px] font-medium text-gray-300">#出行</span>
-              
             
           </div>
 
@@ -1183,7 +1230,7 @@ document.addEventListener('DOMContentLoaded', function() {
       zxnauy
       </a>
     </div>
-    <div class="flex-none">
+    <div class="flex-none flex items-center gap-2">
       
 
 <select class="select select-bordered w-full max-w-xs" data-choose-theme>
@@ -1436,6 +1483,10 @@ document.addEventListener('DOMContentLoaded', function() {
 </select>
 
 
+      <!-- 桌面端：切换布局按钮也放在主题切换按钮右边 -->
+      <button id="layout-toggle-btn-desktop" class="btn btn-circle btn-primary shadow-md hover:scale-110 transition-transform" onclick="toggleHomeLayout()" title="切换布局风格">
+        <i class="fa-solid fa-layer-group text-lg" id="layout-icon-desktop"></i>
+      </button>
     </div>
   </div>
 

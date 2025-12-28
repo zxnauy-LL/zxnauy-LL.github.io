@@ -74,13 +74,6 @@ var _hmt = _hmt || [];
 <meta name="generator" content="Hexo 7.3.0"></head>
 <body class="min-h-screen bg-base-200">
 
-  <!-- 桌面端切换布局按钮，悬浮左上角 -->
-  <div class="fixed top-4 z-50 transition-all duration-300 lg:block hidden" style="left: 20px;">
-    <button id="layout-toggle-btn-desktop" class="btn btn-circle btn-primary shadow-md hover:scale-110 transition-transform" onclick="toggleHomeLayout()" title="切换布局风格">
-      <i class="fa-solid fa-layer-group text-lg" id="layout-icon-desktop"></i>
-    </button>
-  </div>
-
   <!-- Sidebar for Desktop -->
   <aside class="hidden lg:flex fixed left-0 top-0 h-screen w-80 bg-base-200 z-40 flex-col overflow-y-auto">
     <div class="relative h-full">
@@ -130,17 +123,19 @@ var _hmt = _hmt || [];
 
 
 <div class="p-4 border-t border-base-300">
+  
   <div class="flex justify-center items-center gap-4">
-    
-    
-    
+
     
       <a href="https://github.com/zxnauy-LL" class="text-base-content hover:text-primary hover:scale-110 transition-all duration-200 flex-shrink-0" target="_blank" rel="noopener noreferrer" title="GitHub">
         <i class="fa-brands fa-github text-2xl block"></i>
       </a>
     
-    
-    
+
+    <a href="https://y.music.163.com/m/user?id=310700901" class="text-base-content hover:text-primary hover:scale-110 transition-all duration-200 flex-shrink-0" target="_blank" rel="noopener noreferrer" title="网易云音乐">
+      <i class="fa-solid fa-music text-2xl block"></i>
+    </a>
+
   </div>
 </div>
     </div>
@@ -165,10 +160,6 @@ var _hmt = _hmt || [];
           </a>
         </div>
         <div class="flex-none flex items-center gap-2">
-          <!-- 移动端切换布局按钮，和主题切换按钮并列 -->
-          <button id="layout-toggle-btn-mobile" class="btn btn-circle btn-primary shadow-md hover:scale-110 transition-transform lg:hidden mr-2" onclick="toggleHomeLayout()" title="切换布局风格">
-            <i class="fa-solid fa-layer-group text-lg" id="layout-icon-mobile"></i>
-          </button>
           
 
 <select class="select select-bordered w-full max-w-xs" data-choose-theme>
@@ -421,6 +412,10 @@ var _hmt = _hmt || [];
 </select>
 
 
+            <!-- 切换布局按钮：放在主题切换按钮右边（移动端/桌面端一致） -->
+            <button id="layout-toggle-btn-mobile" class="btn btn-circle btn-primary shadow-md hover:scale-110 transition-transform lg:hidden" onclick="toggleHomeLayout()" title="切换布局风格">
+              <i class="fa-solid fa-layer-group text-lg" id="layout-icon-mobile"></i>
+            </button>
         </div>
       </div>
     </div>
@@ -476,17 +471,19 @@ var _hmt = _hmt || [];
 
 
 <div class="p-4 border-t border-base-300">
+  
   <div class="flex justify-center items-center gap-4">
-    
-    
-    
+
     
       <a href="https://github.com/zxnauy-LL" class="text-base-content hover:text-primary hover:scale-110 transition-all duration-200 flex-shrink-0" target="_blank" rel="noopener noreferrer" title="GitHub">
         <i class="fa-brands fa-github text-2xl block"></i>
       </a>
     
-    
-    
+
+    <a href="https://y.music.163.com/m/user?id=310700901" class="text-base-content hover:text-primary hover:scale-110 transition-all duration-200 flex-shrink-0" target="_blank" rel="noopener noreferrer" title="网易云音乐">
+      <i class="fa-solid fa-music text-2xl block"></i>
+    </a>
+
   </div>
 </div>
         </div>
@@ -497,12 +494,6 @@ var _hmt = _hmt || [];
   <!-- Content area for Desktop -->
   <div class="lg:ml-80 pt-20 px-4 py-8">
     <div class="relative w-full min-h-screen">
-
-  <div class="fixed top-4 z-50 transition-all duration-300" style="left: 20px;">
-    <button id="layout-toggle-btn" class="btn btn-circle btn-primary shadow-md hover:scale-110 transition-transform" onclick="toggleHomeLayout()" title="切换布局风格">
-      <i class="fa-solid fa-layer-group text-lg" id="layout-icon"></i>
-    </button>
-  </div>
 
   <div id="layout-view-main" class="layout-view transition-opacity duration-300 ease-in-out">
     <!-- 引入样式库：DaisyUI 和 TailwindCSS -->
@@ -1209,6 +1200,35 @@ var _hmt = _hmt || [];
           <!-- Header (日期在左，分类在右) -->
           <div class="mb-4 flex justify-between items-start">
             <time class="text-sm opacity-60 font-medium tracking-wide">
+              <i class="far fa-calendar-alt mr-1"></i> 2025年12月28日
+            </time>
+            
+          </div>
+
+          <!-- Title -->
+          <h3 class="card-title text-xl font-bold leading-snug mb-3">
+            <a href="/2025/12/28/%E7%A5%9D%E7%A6%8F/" class="hover:text-primary no-underline transition-colors duration-200">
+              
+            </a>
+          </h3>
+
+          <!-- Excerpt -->
+          
+            <div class="flex-1"></div>
+          
+
+          <!-- Tags -->
+          
+        </div>
+      </article>
+    
+      <!-- 卡片样式优化：移除 glass，统一圆角，增加阴影和悬停效果 -->
+      <article class="card rounded-2xl shadow-md bg-base-100/90 text-base-content hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 h-full flex flex-col">
+        <div class="card-body p-6 flex flex-col h-full">
+          
+          <!-- Header (日期在左，分类在右) -->
+          <div class="mb-4 flex justify-between items-start">
+            <time class="text-sm opacity-60 font-medium tracking-wide">
               <i class="far fa-calendar-alt mr-1"></i> 2025年12月26日
             </time>
             
@@ -1268,39 +1288,6 @@ var _hmt = _hmt || [];
         </div>
       </article>
     
-      <!-- 卡片样式优化：移除 glass，统一圆角，增加阴影和悬停效果 -->
-      <article class="card rounded-2xl shadow-md bg-base-100/90 text-base-content hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 h-full flex flex-col">
-        <div class="card-body p-6 flex flex-col h-full">
-          
-          <!-- Header (日期在左，分类在右) -->
-          <div class="mb-4 flex justify-between items-start">
-            <time class="text-sm opacity-60 font-medium tracking-wide">
-              <i class="far fa-calendar-alt mr-1"></i> 2025年10月23日
-            </time>
-            
-              <div class="badge badge-outline badge-primary badge-sm py-2">
-                薯仔想法
-              </div>
-            
-          </div>
-
-          <!-- Title -->
-          <h3 class="card-title text-xl font-bold leading-snug mb-3">
-            <a href="/2025/10/23/%E6%B2%9F%E9%80%9A%E5%A4%B1%E8%B4%A5%E7%9A%84%E6%83%B3%E6%B3%95/" class="hover:text-primary no-underline transition-colors duration-200">
-              沟通失败的想法
-            </a>
-          </h3>
-
-          <!-- Excerpt -->
-          
-            <div class="flex-1"></div>
-          
-
-          <!-- Tags -->
-          
-        </div>
-      </article>
-    
   </div>
 
   <!-- View All -->
@@ -1313,64 +1300,6 @@ var _hmt = _hmt || [];
 </div>
 
 
-<!-- -------------------------- Featured Projects (礼物及灵感) -------------------------- -->
-<div class="container mx-auto px-4 py-16 max-w-7xl">
-  
-  <!-- 标题区域：统一风格 -->
-  <div class="flex items-center gap-3 mb-10 pl-2">
-     <div class="h-8 w-1.5 bg-gradient-to-b from-primary to-secondary rounded-full shadow-sm"></div>
-     <h2 class="text-3xl font-bold tracking-tight text-base-content">礼物及灵感</h2>
-  </div>
-  
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    
-      <!-- 卡片样式优化：新增悬停光晕和上浮效果 -->
-      <div class="group relative flex flex-col h-full transition-all duration-300 hover:-translate-y-1">
-        
-        <!-- 装饰背景：悬停时显示的渐变光晕边框 -->
-        <div class="absolute -inset-0.5 bg-gradient-to-br from-primary/40 to-secondary/40 rounded-2xl opacity-0 group-hover:opacity-100 blur-sm transition duration-500"></div>
-        
-        <div class="relative flex-grow card rounded-2xl shadow-md bg-base-100/90 text-base-content hover:shadow-xl transition-all duration-300">
-          <div class="card-body p-6">
-            
-            <h3 class="card-title text-xl font-semibold mb-3 flex items-center justify-between">
-              <span class="title group-hover:text-primary transition-colors">干花信封</span>
-              
-                <div class="badge badge-outline badge-secondary text-xs py-2">灵感</div>
-              
-            </h3>
-            
-            <!-- Metadata -->
-            <div class="text-sm opacity-80 mb-3">
-              
-                <p class="flex items-center text-sm mb-1">
-                  <i class="far fa-calendar-alt w-4 mr-2 opacity-60"></i>2025年10月6日（中秋节）
-                </p>
-              
-              
-            </div>
-            
-            
-              <p class="mt-3 text-base-content/80 text-sm flex-grow line-clamp-3">计划作为老大的考研结束小礼物！默默坚持了5~6个月，lulu老大一定很辛苦😭😭希望老大会喜欢这个礼物！</p>
-            
-            
-            <!-- Actions -->
-            <div class="card-actions justify-end mt-4 pt-3 border-t border-base-content/5 gap-2 flex-wrap">
-              
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    
-  </div>
-  <div class="text-center mt-10">
-    <a href="/projects" class="btn btn-lg btn-outline btn-primary shadow-md">
-      <i class="fa-solid fa-lightbulb mr-2"></i>
-      探索所有灵感
-    </a>
-  </div>
-</div>
   </div>
 
   <div id="layout-view-lulu_style" class="layout-view hidden transition-opacity duration-300 ease-in-out">
@@ -2072,6 +2001,32 @@ var _hmt = _hmt || [];
             <div class="space-y-4">
               
                 <article class="group p-4 rounded-2xl bg-white border-2 border-[#F0EDF5] hover:border-[#A8E6CF] hover:shadow-md transition-all cursor-pointer">
+                  <a href="/2025/12/28/%E7%A5%9D%E7%A6%8F/" class="flex gap-4">
+                    <!-- 日期 -->
+                    <div class="flex-shrink-0 text-center">
+                      <div class="w-12 h-12 rounded-xl bg-[#E0F7EC] text-[#5DA47A] flex flex-col items-center justify-center font-bold group-hover:bg-[#A8E6CF] group-hover:text-white transition-colors">
+                        <span class="text-lg leading-none">28</span>
+                      </div>
+                      <span class="text-[10px] text-[#8B7A9E] uppercase font-bold">Dec</span>
+                    </div>
+                    
+                    <!-- 内容 -->
+                    <div class="flex-grow min-w-0">
+                      <h4 class="font-bold text-[#5D4A6F] group-hover:text-[#5DA47A] transition-colors truncate"></h4>
+                      
+                      <div class="flex flex-wrap gap-1 mt-2">
+                        
+                      </div>
+                    </div>
+                    
+                    <!-- 箭头 -->
+                    <div class="flex-shrink-0 self-center opacity-0 group-hover:opacity-100 transition-opacity">
+                      <i class="fa-solid fa-arrow-right text-[#A8E6CF]"></i>
+                    </div>
+                  </a>
+                </article>
+              
+                <article class="group p-4 rounded-2xl bg-white border-2 border-[#F0EDF5] hover:border-[#A8E6CF] hover:shadow-md transition-all cursor-pointer">
                   <a href="/2025/12/26/%E5%87%A0%E5%88%86%E4%B9%8B%E5%87%A0/" class="flex gap-4">
                     <!-- 日期 -->
                     <div class="flex-shrink-0 text-center">
@@ -2110,32 +2065,6 @@ var _hmt = _hmt || [];
                     <!-- 内容 -->
                     <div class="flex-grow min-w-0">
                       <h4 class="font-bold text-[#5D4A6F] group-hover:text-[#5DA47A] transition-colors truncate">道歉信</h4>
-                      
-                      <div class="flex flex-wrap gap-1 mt-2">
-                        
-                      </div>
-                    </div>
-                    
-                    <!-- 箭头 -->
-                    <div class="flex-shrink-0 self-center opacity-0 group-hover:opacity-100 transition-opacity">
-                      <i class="fa-solid fa-arrow-right text-[#A8E6CF]"></i>
-                    </div>
-                  </a>
-                </article>
-              
-                <article class="group p-4 rounded-2xl bg-white border-2 border-[#F0EDF5] hover:border-[#A8E6CF] hover:shadow-md transition-all cursor-pointer">
-                  <a href="/2025/10/23/%E6%B2%9F%E9%80%9A%E5%A4%B1%E8%B4%A5%E7%9A%84%E6%83%B3%E6%B3%95/" class="flex gap-4">
-                    <!-- 日期 -->
-                    <div class="flex-shrink-0 text-center">
-                      <div class="w-12 h-12 rounded-xl bg-[#E0F7EC] text-[#5DA47A] flex flex-col items-center justify-center font-bold group-hover:bg-[#A8E6CF] group-hover:text-white transition-colors">
-                        <span class="text-lg leading-none">23</span>
-                      </div>
-                      <span class="text-[10px] text-[#8B7A9E] uppercase font-bold">Oct</span>
-                    </div>
-                    
-                    <!-- 内容 -->
-                    <div class="flex-grow min-w-0">
-                      <h4 class="font-bold text-[#5D4A6F] group-hover:text-[#5DA47A] transition-colors truncate">沟通失败的想法</h4>
                       
                       <div class="flex flex-wrap gap-1 mt-2">
                         
@@ -2450,87 +2379,6 @@ var _hmt = _hmt || [];
 
 </div>
 
-<script>
-  // 1. 定义布局配置
-  const LAYOUTS = {
-    STANDARD: 'main',
-    LULU: 'lulu_style'     // 对应 partial 文件名
-  };
-
-  // 2. 获取缓存配置
-  let currentLayout = localStorage.getItem('home_layout_pref') || LAYOUTS.STANDARD;
-
-  // DOM 元素引用
-  const viewStandard = document.getElementById('layout-view-main');
-  const viewLulu = document.getElementById('layout-view-lulu_style'); // 对应上面的 ID
-  const toggleIcon = document.getElementById('layout-icon');
-
-  // 3. 初始化
-  function initLayout() {
-    applyLayout(currentLayout);
-  }
-
-  // 4. 应用布局逻辑
-  function applyLayout(layoutName) {
-    if (layoutName === LAYOUTS.STANDARD) {
-      // 切换到 Standard
-      viewStandard.classList.remove('hidden');
-      viewLulu.classList.add('hidden');
-      
-      toggleIcon.classList.replace('fa-list', 'fa-layer-group');
-      
-      // 触发 Resize 以修复 ECharts/布局 渲染问题
-      setTimeout(() => {
-        window.dispatchEvent(new Event('resize'));
-      }, 100);
-
-    } else {
-      // 切换到 Lulu
-      viewStandard.classList.add('hidden');
-      viewLulu.classList.remove('hidden');
-      
-      toggleIcon.classList.replace('fa-layer-group', 'fa-list');
-      
-      // 【关键修复】切换到 Lulu 布局时，延迟初始化 ECharts 心情足迹
-      setTimeout(() => {
-        if (typeof window.tryInitLuluHeatmap === 'function') {
-          window.tryInitLuluHeatmap();
-        }
-        window.dispatchEvent(new Event('resize'));
-      }, 150);
-    }
-  }
-
-  // 5. 按钮点击切换事件
-  function toggleHomeLayout() {
-    // 【Bug 修复】: 之前这里写的是 LAYOUTS.TIMELINE (undefined)，已修复为 LAYOUTS.LULU
-    currentLayout = currentLayout === LAYOUTS.STANDARD ? LAYOUTS.LULU : LAYOUTS.STANDARD;
-    
-    // 保存设置
-    localStorage.setItem('home_layout_pref', currentLayout);
-    
-    // 简单的淡入淡出过渡
-    const activeView = currentLayout === LAYOUTS.STANDARD ? viewStandard : viewLulu;
-    
-    // 先设为透明
-    activeView.style.opacity = '0';
-    applyLayout(currentLayout);
-    
-    // 下一帧设为不透明，触发 CSS transition
-    requestAnimationFrame(() => {
-      activeView.style.opacity = '1';
-    });
-  }
-
-  // 执行初始化
-  initLayout();
-  
-  // 页面加载完成后的双重检查（防止图表渲染问题）
-  document.addEventListener('DOMContentLoaded', () => {
-      // 可以在这里再次触发一次 resize 确保万无一失
-      window.dispatchEvent(new Event('resize'));
-  });
-</script>
   </div>
 
   <!-- Fixed top navbar for desktop -->
@@ -2540,7 +2388,7 @@ var _hmt = _hmt || [];
       zxnauy
       </a>
     </div>
-    <div class="flex-none">
+    <div class="flex-none flex items-center gap-2">
       
 
 <select class="select select-bordered w-full max-w-xs" data-choose-theme>
@@ -2793,6 +2641,10 @@ var _hmt = _hmt || [];
 </select>
 
 
+      <!-- 桌面端：切换布局按钮也放在主题切换按钮右边 -->
+      <button id="layout-toggle-btn-desktop" class="btn btn-circle btn-primary shadow-md hover:scale-110 transition-transform" onclick="toggleHomeLayout()" title="切换布局风格">
+        <i class="fa-solid fa-layer-group text-lg" id="layout-icon-desktop"></i>
+      </button>
     </div>
   </div>
 
