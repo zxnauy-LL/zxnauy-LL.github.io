@@ -74,6 +74,13 @@ var _hmt = _hmt || [];
 <meta name="generator" content="Hexo 7.3.0"></head>
 <body class="min-h-screen bg-base-200">
 
+  <!-- 桌面端切换布局按钮，悬浮左上角 -->
+  <div class="fixed top-4 z-50 transition-all duration-300 lg:block hidden" style="left: 20px;">
+    <button id="layout-toggle-btn-desktop" class="btn btn-circle btn-primary shadow-md hover:scale-110 transition-transform" onclick="toggleHomeLayout()" title="切换布局风格">
+      <i class="fa-solid fa-layer-group text-lg" id="layout-icon-desktop"></i>
+    </button>
+  </div>
+
   <!-- Sidebar for Desktop -->
   <aside class="hidden lg:flex fixed left-0 top-0 h-screen w-80 bg-base-200 z-40 flex-col overflow-y-auto">
     <div class="relative h-full">
@@ -157,7 +164,11 @@ var _hmt = _hmt || [];
           zxnauy
           </a>
         </div>
-        <div class="flex-none">
+        <div class="flex-none flex items-center gap-2">
+          <!-- 移动端切换布局按钮，和主题切换按钮并列 -->
+          <button id="layout-toggle-btn-mobile" class="btn btn-circle btn-primary shadow-md hover:scale-110 transition-transform lg:hidden mr-2" onclick="toggleHomeLayout()" title="切换布局风格">
+            <i class="fa-solid fa-layer-group text-lg" id="layout-icon-mobile"></i>
+          </button>
           
 
 <select class="select select-bordered w-full max-w-xs" data-choose-theme>
@@ -606,7 +617,8 @@ var _hmt = _hmt || [];
           }
         </style>
         
-        <div id="processed-content"><h2 id="想送给你的歌"><a href="#想送给你的歌" class="headerlink" title="想送给你的歌"></a>想送给你的歌</h2><p>其实以前我从来没有怎么听过卢广仲的歌，听过的就是《鱼仔》，而且之前从来没有对歌词表达的内容有什么深入的了解。在认识你之后，特别是在我们断开联系之后，我好像听进去了，我开始频繁地听卢广仲的歌。原来这些歌这么地悲伤，充满了这么多遗憾和不甘。这段时间是我第一次认认真真地会去注意每首歌的歌词想要表达的内容。</p>
+        <div id="processed-content"><h2 id="想送给你的歌"><a href="#想送给你的歌" class="headerlink" title="想送给你的歌"></a>想送给你的歌</h2><p><span style="color: #484242ff;"><em>（2025&#x2F;12&#x2F;28）又想了一想，感觉这件事情好幼稚，明明歌就在那里，为什么会有“送”这一回事呢…不过呢，我知道自己就是这样一个幼稚的人，所以想着对一些记录打上幼稚的tag，这样子假如你不想看的话也可以避免的</em></span></p>
+<p>其实以前我从来没有怎么听过卢广仲的歌，听过的就是《鱼仔》，而且之前从来没有对歌词表达的内容有什么深入的了解。在认识你之后，特别是在我们断开联系之后，我好像听进去了，我开始频繁地听卢广仲的歌。原来这些歌这么地悲伤，充满了这么多遗憾和不甘。这段时间是我第一次认认真真地会去注意每首歌的歌词想要表达的内容。</p>
 <p>卢广仲的《几分之几》，《大人中》，《太阳与地球》和《鱼仔》，汪苏泷的《晴》，《黑眼圈》和《想到我们》，还有其他在你歌单里的歌，我都会细细地阅读歌词，然后就会想到我们，想到幸福开心的片段，想到痛苦的片段。</p>
 <p>那么想要送给你的歌是哪一首呢？我精挑细选了很久，最后选了《几分之几》。虽然你也一定听了许多遍了，但是因为你我才了解了卢广仲，了解到这些歌，所以我会在他的歌单里选择。那为什么会是这一首呢，因为这是从我自己角度出发的，You Complete Me，它的歌名非常地符合我对于我们关系的认知，而且对我来说，你确实构成了我人生的几分之几，真的十分十分地重要。</p>
 <p>就想歌词里说的，我真的闭上眼都可以看到你，有时发呆的时候，脑子里就会想到23号的晚上，你对我说的话，那一晚的星星，还有你留给我的祝福（这总是发呆的终点）。我的文笔不好，逻辑组织也不流畅，所以想用这首歌来表达对你的情感，还是很谢谢你</p>
@@ -1844,6 +1856,80 @@ src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
   })();
 </script>
 
+
+  <!-- 切换布局脚本，支持桌面端和移动端按钮同步 -->
+  <script>
+    // 1. 定义布局配置
+    const LAYOUTS = {
+      STANDARD: 'main',
+      LULU: 'lulu_style'
+    };
+
+    // 2. 获取缓存配置
+    let currentLayout = localStorage.getItem('home_layout_pref') || LAYOUTS.STANDARD;
+
+    // DOM 元素引用
+    function getLayoutElements() {
+      return {
+        viewStandard: document.getElementById('layout-view-main'),
+        viewLulu: document.getElementById('layout-view-lulu_style'),
+        iconDesktop: document.getElementById('layout-icon-desktop'),
+        iconMobile: document.getElementById('layout-icon-mobile')
+      };
+    }
+
+    // 3. 初始化
+    function initLayout() {
+      applyLayout(currentLayout);
+    }
+
+    // 4. 应用布局逻辑
+    function applyLayout(layoutName) {
+      const { viewStandard, viewLulu, iconDesktop, iconMobile } = getLayoutElements();
+      if (!viewStandard || !viewLulu) return;
+      if (layoutName === LAYOUTS.STANDARD) {
+        viewStandard.classList.remove('hidden');
+        viewLulu.classList.add('hidden');
+        if (iconDesktop) iconDesktop.classList.replace('fa-list', 'fa-layer-group');
+        if (iconMobile) iconMobile.classList.replace('fa-list', 'fa-layer-group');
+        setTimeout(() => {
+          window.dispatchEvent(new Event('resize'));
+        }, 100);
+      } else {
+        viewStandard.classList.add('hidden');
+        viewLulu.classList.remove('hidden');
+        if (iconDesktop) iconDesktop.classList.replace('fa-layer-group', 'fa-list');
+        if (iconMobile) iconMobile.classList.replace('fa-layer-group', 'fa-list');
+        setTimeout(() => {
+          if (typeof window.tryInitLuluHeatmap === 'function') {
+            window.tryInitLuluHeatmap();
+          }
+          window.dispatchEvent(new Event('resize'));
+        }, 150);
+      }
+    }
+
+    // 5. 按钮点击切换事件
+    function toggleHomeLayout() {
+      currentLayout = currentLayout === LAYOUTS.STANDARD ? LAYOUTS.LULU : LAYOUTS.STANDARD;
+      localStorage.setItem('home_layout_pref', currentLayout);
+      const { viewStandard, viewLulu } = getLayoutElements();
+      const activeView = currentLayout === LAYOUTS.STANDARD ? viewStandard : viewLulu;
+      if (activeView) {
+        activeView.style.opacity = '0';
+      }
+      applyLayout(currentLayout);
+      requestAnimationFrame(() => {
+        if (activeView) activeView.style.opacity = '1';
+      });
+    }
+
+    // 执行初始化
+    document.addEventListener('DOMContentLoaded', () => {
+      initLayout();
+      window.dispatchEvent(new Event('resize'));
+    });
+  </script>
 
   <!-- MathJax for mathematical formulas -->
   <script>

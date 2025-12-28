@@ -74,6 +74,13 @@ var _hmt = _hmt || [];
 <meta name="generator" content="Hexo 7.3.0"></head>
 <body class="min-h-screen bg-base-200">
 
+  <!-- 桌面端切换布局按钮，悬浮左上角 -->
+  <div class="fixed top-4 z-50 transition-all duration-300 lg:block hidden" style="left: 20px;">
+    <button id="layout-toggle-btn-desktop" class="btn btn-circle btn-primary shadow-md hover:scale-110 transition-transform" onclick="toggleHomeLayout()" title="切换布局风格">
+      <i class="fa-solid fa-layer-group text-lg" id="layout-icon-desktop"></i>
+    </button>
+  </div>
+
   <!-- Sidebar for Desktop -->
   <aside class="hidden lg:flex fixed left-0 top-0 h-screen w-80 bg-base-200 z-40 flex-col overflow-y-auto">
     <div class="relative h-full">
@@ -157,7 +164,11 @@ var _hmt = _hmt || [];
           zxnauy
           </a>
         </div>
-        <div class="flex-none">
+        <div class="flex-none flex items-center gap-2">
+          <!-- 移动端切换布局按钮，和主题切换按钮并列 -->
+          <button id="layout-toggle-btn-mobile" class="btn btn-circle btn-primary shadow-md hover:scale-110 transition-transform lg:hidden mr-2" onclick="toggleHomeLayout()" title="切换布局风格">
+            <i class="fa-solid fa-layer-group text-lg" id="layout-icon-mobile"></i>
+          </button>
           
 
 <select class="select select-bordered w-full max-w-xs" data-choose-theme>
@@ -1845,6 +1856,80 @@ src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
   })();
 </script>
 
+
+  <!-- 切换布局脚本，支持桌面端和移动端按钮同步 -->
+  <script>
+    // 1. 定义布局配置
+    const LAYOUTS = {
+      STANDARD: 'main',
+      LULU: 'lulu_style'
+    };
+
+    // 2. 获取缓存配置
+    let currentLayout = localStorage.getItem('home_layout_pref') || LAYOUTS.STANDARD;
+
+    // DOM 元素引用
+    function getLayoutElements() {
+      return {
+        viewStandard: document.getElementById('layout-view-main'),
+        viewLulu: document.getElementById('layout-view-lulu_style'),
+        iconDesktop: document.getElementById('layout-icon-desktop'),
+        iconMobile: document.getElementById('layout-icon-mobile')
+      };
+    }
+
+    // 3. 初始化
+    function initLayout() {
+      applyLayout(currentLayout);
+    }
+
+    // 4. 应用布局逻辑
+    function applyLayout(layoutName) {
+      const { viewStandard, viewLulu, iconDesktop, iconMobile } = getLayoutElements();
+      if (!viewStandard || !viewLulu) return;
+      if (layoutName === LAYOUTS.STANDARD) {
+        viewStandard.classList.remove('hidden');
+        viewLulu.classList.add('hidden');
+        if (iconDesktop) iconDesktop.classList.replace('fa-list', 'fa-layer-group');
+        if (iconMobile) iconMobile.classList.replace('fa-list', 'fa-layer-group');
+        setTimeout(() => {
+          window.dispatchEvent(new Event('resize'));
+        }, 100);
+      } else {
+        viewStandard.classList.add('hidden');
+        viewLulu.classList.remove('hidden');
+        if (iconDesktop) iconDesktop.classList.replace('fa-layer-group', 'fa-list');
+        if (iconMobile) iconMobile.classList.replace('fa-layer-group', 'fa-list');
+        setTimeout(() => {
+          if (typeof window.tryInitLuluHeatmap === 'function') {
+            window.tryInitLuluHeatmap();
+          }
+          window.dispatchEvent(new Event('resize'));
+        }, 150);
+      }
+    }
+
+    // 5. 按钮点击切换事件
+    function toggleHomeLayout() {
+      currentLayout = currentLayout === LAYOUTS.STANDARD ? LAYOUTS.LULU : LAYOUTS.STANDARD;
+      localStorage.setItem('home_layout_pref', currentLayout);
+      const { viewStandard, viewLulu } = getLayoutElements();
+      const activeView = currentLayout === LAYOUTS.STANDARD ? viewStandard : viewLulu;
+      if (activeView) {
+        activeView.style.opacity = '0';
+      }
+      applyLayout(currentLayout);
+      requestAnimationFrame(() => {
+        if (activeView) activeView.style.opacity = '1';
+      });
+    }
+
+    // 执行初始化
+    document.addEventListener('DOMContentLoaded', () => {
+      initLayout();
+      window.dispatchEvent(new Event('resize'));
+    });
+  </script>
 
   <!-- MathJax for mathematical formulas -->
   <script>
