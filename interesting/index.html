@@ -77,65 +77,143 @@ var _hmt = _hmt || [];
   <!-- Sidebar for Desktop -->
   <aside class="hidden lg:flex fixed left-0 top-0 h-screen w-80 bg-base-200 z-40 flex-col overflow-y-auto">
     <div class="relative h-full">
-      <a href="/" class="block no-underline hover:bg-base-100 transition rounded-box">
-  <div class="p-4 text-center border-base-300 flex flex-col items-center cursor-pointer hidden lg:flex">
-    <div class="avatar mb-4">
-      <div class="w-24 rounded-full ring ring-primary ring-offset-base-100">
-        <img
-  src="/images/avatar.jpg"
-  alt="Profile"
-  class="transition-transform duration-500 hover:rotate-210 cursor-pointer rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 w-24"
-/>
+      <!-- 侧边栏整体容器：使用 flex 布局，占满高度，背景色与主色调一致 -->
+<div class="flex flex-col h-full bg-base-100 text-base-content">
+  
+  <!-- 1. 顶部个人信息区域：增加渐变背景装饰 -->
+  <div class="relative pt-10 pb-6 px-6 flex flex-col items-center text-center shrink-0">
+    <!-- 装饰背景：顶部淡色渐变，增加层次感 -->
+    <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none"></div>
+    
+    <!-- 头像：增加悬停旋转和阴影 -->
+    <div class="avatar relative z-10 mb-4 group cursor-pointer">
+      <div class="w-28 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 shadow-xl transition-transform duration-500 group-hover:rotate-12">
+        <a href="/" class="block">
+          <img src="/images/avatar.jpg" alt="Lulu" class="rounded-full" />
+        </a>
+      </div>
+      
+      <!-- Desktop Hint: Tooltip on the right (Hover) -->
+      <div class="hidden lg:block absolute top-1/2 -right-20 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500 transform -translate-x-4 group-hover:translate-x-0 pointer-events-none z-20">
+         <div class="flex items-center gap-1.5 text-[10px] font-bold tracking-widest text-base-content/50 bg-base-100/90 backdrop-blur px-3 py-1.5 rounded-full border border-base-content/10 shadow-sm">
+            <i class="fa-solid fa-house text-[9px]"></i>
+            <span>HOME</span>
+         </div>
+      </div>
 
+      <!-- Mobile Hint: Small Badge (Always Visible) -->
+      <div class="lg:hidden absolute bottom-1 right-1 z-20 pointer-events-none">
+         <div class="w-7 h-7 rounded-full bg-base-100/80 backdrop-blur shadow-sm border border-base-content/10 flex items-center justify-center text-base-content/40">
+            <i class="fa-solid fa-house text-[10px]"></i>
+         </div>
       </div>
     </div>
-    <h2 class="text-xl font-bold text-base-content">Lulu</h2>
-    <p class="text-base-content opacity-80"></p>
+    
+    <!-- 文字信息 -->
+    <div class="relative z-10">
+      <h2 class="text-2xl font-bold tracking-tight text-base-content">Lulu</h2>
+      <p class="text-sm opacity-60 mt-1 font-medium tracking-wide"></p>
+    </div>
   </div>
-</a>
 
-
-<nav class="p-4 space-y-2 flex-grow">
-  
+  <!-- 2. 导航菜单：可滚动区域，增加自定义滚动条样式 -->
+  <nav class="flex-1 px-4 space-y-2 overflow-y-auto py-4 custom-scrollbar">
     
-      <a href="/plan/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-compact-disc mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        听歌♪(´▽｀)
+      
+        <!-- 判断当前链接是否激活 (简单判断) -->
+         
+        
+        <a href="/plan/" 
+           class="flex items-center gap-4 px-4 py-3 rounded-2xl transition-all duration-300 group
+                  hover:bg-base-200 hover:text-primary text-base-content/80">
+          
+          <!-- 图标：固定宽度居中 -->
+          <div class="w-6 flex justify-center">
+            <i class="fa-solid fa-compact-disc text-lg transition-transform duration-300 group-hover:scale-110 opacity-70"></i>
+          </div>
+          
+          <span class="font-bold tracking-wide text-sm">听歌♪(´▽｀)</span>
+          
+          
+        </a>
+      
+        <!-- 判断当前链接是否激活 (简单判断) -->
+         
+        
+        <a href="/cv/" 
+           class="flex items-center gap-4 px-4 py-3 rounded-2xl transition-all duration-300 group
+                  hover:bg-base-200 hover:text-primary text-base-content/80">
+          
+          <!-- 图标：固定宽度居中 -->
+          <div class="w-6 flex justify-center">
+            <i class="fa-solid fa-id-card text-lg transition-transform duration-300 group-hover:scale-110 opacity-70"></i>
+          </div>
+          
+          <span class="font-bold tracking-wide text-sm">个人信息</span>
+          
+          
+        </a>
+      
+        <!-- 判断当前链接是否激活 (简单判断) -->
+         
+        
+        <a href="/notes/" 
+           class="flex items-center gap-4 px-4 py-3 rounded-2xl transition-all duration-300 group
+                  hover:bg-base-200 hover:text-primary text-base-content/80">
+          
+          <!-- 图标：固定宽度居中 -->
+          <div class="w-6 flex justify-center">
+            <i class="fa-solid fa-sticky-note text-lg transition-transform duration-300 group-hover:scale-110 opacity-70"></i>
+          </div>
+          
+          <span class="font-bold tracking-wide text-sm">记Lu</span>
+          
+          
+        </a>
+      
+        <!-- 判断当前链接是否激活 (简单判断) -->
+         
+        
+        <a href="/contact/" 
+           class="flex items-center gap-4 px-4 py-3 rounded-2xl transition-all duration-300 group
+                  hover:bg-base-200 hover:text-primary text-base-content/80">
+          
+          <!-- 图标：固定宽度居中 -->
+          <div class="w-6 flex justify-center">
+            <i class="fa-solid fa-envelope text-lg transition-transform duration-300 group-hover:scale-110 opacity-70"></i>
+          </div>
+          
+          <span class="font-bold tracking-wide text-sm">联系方式</span>
+          
+          
+        </a>
+      
+    
+  </nav>
+
+  <!-- 3. 底部社交区域：固定在底部，增加分割线 -->
+  <div class="p-6 border-t border-base-200 bg-base-50/50 shrink-0">
+    
+    <div class="flex justify-center items-center gap-3">
+
+      
+        <a href="https://github.com/zxnauy-LL" target="_blank" rel="noopener noreferrer" 
+           class="btn btn-ghost btn-circle btn-sm hover:bg-base-content hover:text-base-100 transition-all duration-300" title="GitHub">
+          <i class="fa-brands fa-github text-xl"></i>
+        </a>
+      
+
+      <a href="https://y.music.163.com/m/user?id=310700901" target="_blank" rel="noopener noreferrer" 
+         class="btn btn-ghost btn-circle btn-sm hover:bg-red-500 hover:text-white transition-all duration-300" title="网易云音乐">
+        <i class="fa-solid fa-music text-xl"></i>
       </a>
+      
+    </div>
     
-      <a href="/cv/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-id-card mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        个人信息
-      </a>
-    
-      <a href="/notes/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-sticky-note mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        记Lu
-      </a>
-    
-      <a href="/contact/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-envelope mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        联系方式
-      </a>
-    
-  
-</nav>
-
-
-<div class="p-4 border-t border-base-300">
-  
-  <div class="flex justify-center items-center gap-4">
-
-    
-      <a href="https://github.com/zxnauy-LL" class="text-base-content hover:text-primary hover:scale-110 transition-all duration-200 flex-shrink-0" target="_blank" rel="noopener noreferrer" title="GitHub">
-        <i class="fa-brands fa-github text-2xl block"></i>
-      </a>
-    
-
-    <a href="https://y.music.163.com/m/user?id=310700901" class="text-base-content hover:text-primary hover:scale-110 transition-all duration-200 flex-shrink-0" target="_blank" rel="noopener noreferrer" title="网易云音乐">
-      <i class="fa-solid fa-music text-2xl block"></i>
-    </a>
-
+    <!-- 版权信息 -->
+    <div class="text-xs text-center mt-4 opacity-40 font-mono">
+      © 2026 Lulu
+    </div>
   </div>
 </div>
     </div>
@@ -425,65 +503,143 @@ var _hmt = _hmt || [];
       <label for="my-drawer" class="drawer-overlay"></label>
       <aside class="w-80 bg-base-200 min-h-full overflow-y-auto">
         <div class="relative h-full">
-          <a href="/" class="block no-underline hover:bg-base-100 transition rounded-box">
-  <div class="p-4 text-center border-base-300 flex flex-col items-center cursor-pointer hidden lg:flex">
-    <div class="avatar mb-4">
-      <div class="w-24 rounded-full ring ring-primary ring-offset-base-100">
-        <img
-  src="/images/avatar.jpg"
-  alt="Profile"
-  class="transition-transform duration-500 hover:rotate-210 cursor-pointer rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 w-24"
-/>
+          <!-- 侧边栏整体容器：使用 flex 布局，占满高度，背景色与主色调一致 -->
+<div class="flex flex-col h-full bg-base-100 text-base-content">
+  
+  <!-- 1. 顶部个人信息区域：增加渐变背景装饰 -->
+  <div class="relative pt-10 pb-6 px-6 flex flex-col items-center text-center shrink-0">
+    <!-- 装饰背景：顶部淡色渐变，增加层次感 -->
+    <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none"></div>
+    
+    <!-- 头像：增加悬停旋转和阴影 -->
+    <div class="avatar relative z-10 mb-4 group cursor-pointer">
+      <div class="w-28 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 shadow-xl transition-transform duration-500 group-hover:rotate-12">
+        <a href="/" class="block">
+          <img src="/images/avatar.jpg" alt="Lulu" class="rounded-full" />
+        </a>
+      </div>
+      
+      <!-- Desktop Hint: Tooltip on the right (Hover) -->
+      <div class="hidden lg:block absolute top-1/2 -right-20 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500 transform -translate-x-4 group-hover:translate-x-0 pointer-events-none z-20">
+         <div class="flex items-center gap-1.5 text-[10px] font-bold tracking-widest text-base-content/50 bg-base-100/90 backdrop-blur px-3 py-1.5 rounded-full border border-base-content/10 shadow-sm">
+            <i class="fa-solid fa-house text-[9px]"></i>
+            <span>HOME</span>
+         </div>
+      </div>
 
+      <!-- Mobile Hint: Small Badge (Always Visible) -->
+      <div class="lg:hidden absolute bottom-1 right-1 z-20 pointer-events-none">
+         <div class="w-7 h-7 rounded-full bg-base-100/80 backdrop-blur shadow-sm border border-base-content/10 flex items-center justify-center text-base-content/40">
+            <i class="fa-solid fa-house text-[10px]"></i>
+         </div>
       </div>
     </div>
-    <h2 class="text-xl font-bold text-base-content">Lulu</h2>
-    <p class="text-base-content opacity-80"></p>
+    
+    <!-- 文字信息 -->
+    <div class="relative z-10">
+      <h2 class="text-2xl font-bold tracking-tight text-base-content">Lulu</h2>
+      <p class="text-sm opacity-60 mt-1 font-medium tracking-wide"></p>
+    </div>
   </div>
-</a>
 
-
-<nav class="p-4 space-y-2 flex-grow">
-  
+  <!-- 2. 导航菜单：可滚动区域，增加自定义滚动条样式 -->
+  <nav class="flex-1 px-4 space-y-2 overflow-y-auto py-4 custom-scrollbar">
     
-      <a href="/plan/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-compact-disc mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        听歌♪(´▽｀)
+      
+        <!-- 判断当前链接是否激活 (简单判断) -->
+         
+        
+        <a href="/plan/" 
+           class="flex items-center gap-4 px-4 py-3 rounded-2xl transition-all duration-300 group
+                  hover:bg-base-200 hover:text-primary text-base-content/80">
+          
+          <!-- 图标：固定宽度居中 -->
+          <div class="w-6 flex justify-center">
+            <i class="fa-solid fa-compact-disc text-lg transition-transform duration-300 group-hover:scale-110 opacity-70"></i>
+          </div>
+          
+          <span class="font-bold tracking-wide text-sm">听歌♪(´▽｀)</span>
+          
+          
+        </a>
+      
+        <!-- 判断当前链接是否激活 (简单判断) -->
+         
+        
+        <a href="/cv/" 
+           class="flex items-center gap-4 px-4 py-3 rounded-2xl transition-all duration-300 group
+                  hover:bg-base-200 hover:text-primary text-base-content/80">
+          
+          <!-- 图标：固定宽度居中 -->
+          <div class="w-6 flex justify-center">
+            <i class="fa-solid fa-id-card text-lg transition-transform duration-300 group-hover:scale-110 opacity-70"></i>
+          </div>
+          
+          <span class="font-bold tracking-wide text-sm">个人信息</span>
+          
+          
+        </a>
+      
+        <!-- 判断当前链接是否激活 (简单判断) -->
+         
+        
+        <a href="/notes/" 
+           class="flex items-center gap-4 px-4 py-3 rounded-2xl transition-all duration-300 group
+                  hover:bg-base-200 hover:text-primary text-base-content/80">
+          
+          <!-- 图标：固定宽度居中 -->
+          <div class="w-6 flex justify-center">
+            <i class="fa-solid fa-sticky-note text-lg transition-transform duration-300 group-hover:scale-110 opacity-70"></i>
+          </div>
+          
+          <span class="font-bold tracking-wide text-sm">记Lu</span>
+          
+          
+        </a>
+      
+        <!-- 判断当前链接是否激活 (简单判断) -->
+         
+        
+        <a href="/contact/" 
+           class="flex items-center gap-4 px-4 py-3 rounded-2xl transition-all duration-300 group
+                  hover:bg-base-200 hover:text-primary text-base-content/80">
+          
+          <!-- 图标：固定宽度居中 -->
+          <div class="w-6 flex justify-center">
+            <i class="fa-solid fa-envelope text-lg transition-transform duration-300 group-hover:scale-110 opacity-70"></i>
+          </div>
+          
+          <span class="font-bold tracking-wide text-sm">联系方式</span>
+          
+          
+        </a>
+      
+    
+  </nav>
+
+  <!-- 3. 底部社交区域：固定在底部，增加分割线 -->
+  <div class="p-6 border-t border-base-200 bg-base-50/50 shrink-0">
+    
+    <div class="flex justify-center items-center gap-3">
+
+      
+        <a href="https://github.com/zxnauy-LL" target="_blank" rel="noopener noreferrer" 
+           class="btn btn-ghost btn-circle btn-sm hover:bg-base-content hover:text-base-100 transition-all duration-300" title="GitHub">
+          <i class="fa-brands fa-github text-xl"></i>
+        </a>
+      
+
+      <a href="https://y.music.163.com/m/user?id=310700901" target="_blank" rel="noopener noreferrer" 
+         class="btn btn-ghost btn-circle btn-sm hover:bg-red-500 hover:text-white transition-all duration-300" title="网易云音乐">
+        <i class="fa-solid fa-music text-xl"></i>
       </a>
+      
+    </div>
     
-      <a href="/cv/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-id-card mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        个人信息
-      </a>
-    
-      <a href="/notes/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-sticky-note mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        记Lu
-      </a>
-    
-      <a href="/contact/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-envelope mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        联系方式
-      </a>
-    
-  
-</nav>
-
-
-<div class="p-4 border-t border-base-300">
-  
-  <div class="flex justify-center items-center gap-4">
-
-    
-      <a href="https://github.com/zxnauy-LL" class="text-base-content hover:text-primary hover:scale-110 transition-all duration-200 flex-shrink-0" target="_blank" rel="noopener noreferrer" title="GitHub">
-        <i class="fa-brands fa-github text-2xl block"></i>
-      </a>
-    
-
-    <a href="https://y.music.163.com/m/user?id=310700901" class="text-base-content hover:text-primary hover:scale-110 transition-all duration-200 flex-shrink-0" target="_blank" rel="noopener noreferrer" title="网易云音乐">
-      <i class="fa-solid fa-music text-2xl block"></i>
-    </a>
-
+    <!-- 版权信息 -->
+    <div class="text-xs text-center mt-4 opacity-40 font-mono">
+      © 2026 Lulu
+    </div>
   </div>
 </div>
         </div>
@@ -493,41 +649,1024 @@ var _hmt = _hmt || [];
 
   <!-- Content area for Desktop -->
   <div class="lg:ml-80 pt-20 px-4 py-8">
-    <div class="container mx-auto px-4 py-8 md:py-12 max-w-7xl">
-  <header class="mb-12 px-2">
-    <h1 class="text-5xl md:text-6xl font-normal mb-4 text-base-content tracking-tight" style="font-family: system-ui, -apple-system, sans-serif;">Interesting</h1>
-    <p class="text-xl text-base-content/60 font-light">一些好玩的项目</p>
-  </header>
+    <div class="container mx-auto px-4 py-8 md:py-16 max-w-5xl">
+  <!-- Main Article Card -->
+  <article class="bg-base-100/80 backdrop-blur-2xl shadow-[0_8px_40px_rgb(0,0,0,0.06)] rounded-[40px] border border-white/40 dark:border-white/5 overflow-hidden transition-all duration-500">
+    
+    <!-- Article Header -->
+    <header class="px-6 md:px-20 pt-16 pb-12 text-center relative overflow-hidden">
+      <!-- Decorative Background Gradient -->
+      <div class="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-primary/5 to-transparent -z-10"></div>
+      
+      <!-- Meta Info -->
+      <div class="flex flex-wrap justify-center items-center gap-4 mb-8 text-sm font-medium opacity-60 tracking-widest uppercase font-sans">
+        <time datetime="2025-12-27T16:00:00.000Z" class="flex items-center gap-2 bg-base-200/50 px-3 py-1 rounded-full">
+          <i class="fa-regular fa-calendar"></i>
+          Dec 28, 2025
+        </time>
+        
+        
 
-  <div class="px-2">
-    <div class="bg-base-200/50 backdrop-blur-2xl rounded-[28px] p-4 md:p-6 shadow-md border border-white/40 transition-all duration-300 hover:shadow-lg hover:bg-base-200/70">
-      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
-        <div class="min-w-0">
-          <h2 class="text-base md:text-lg font-extrabold text-base-content">圣诞树</h2>
-          <p class="text-sm text-base-content/60">粒子圣诞树 · 一键切换形态</p>
+        <div class="flex items-center gap-2 bg-base-200/50 px-3 py-1 rounded-full">
+          <i class="fa-solid fa-clock"></i>
+          <span>0 min read</span>
         </div>
-        <button id="christmas-toggle" class="btn btn-primary rounded-full px-6">
-          切换为生日蛋糕
-        </button>
       </div>
 
-      <div class="rounded-[24px] overflow-hidden bg-base-100/60 border border-white/30">
-        <div id="christmas-tree-root" class="w-full h-[420px] md:h-[520px]"></div>
-      </div>
+      <!-- Title -->
+      <h1 class="text-4xl md:text-6xl font-bold text-base-content mb-8 leading-tight tracking-tight drop-shadow-sm" style="font-family: 'Noto Serif SC', serif;">
+        interesting
+      </h1>
 
-      <p class="mt-4 text-xs text-base-content/50">
-        如果你的浏览器禁用了 WebGL，该项目可能无法显示。
-      </p>
+      <!-- Tags -->
+      
+    </header>
+
+    <!-- Article Content -->
+    <div class="px-6 md:px-20 pb-16">
+      <div class="prose prose-lg md:prose-xl max-w-none post-content mx-auto">
+        <style>
+          @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600;700&family=Nunito:wght@400;600;700&display=swap');
+
+          .post-content {
+            font-family: 'Noto Serif SC', 'Songti SC', 'SimSun', serif;
+            line-height: 2;
+            color: var(--color-base-content);
+            font-size: 1.15rem;
+          }
+          
+          .post-content p {
+            margin-bottom: 2em;
+            text-align: justify;
+            letter-spacing: 0.01em;
+            font-weight: 400;
+          }
+
+          .post-content h1, .post-content h2, .post-content h3,
+          .post-content h4, .post-content h5, .post-content h6 {
+            font-family: 'Nunito', system-ui, sans-serif;
+            font-weight: 700;
+            margin-top: 3em;
+            margin-bottom: 1em;
+            letter-spacing: -0.02em;
+            color: var(--color-base-content);
+          }
+
+          .post-content strong {
+            font-weight: 600;
+            color: var(--color-primary);
+          }
+
+          .post-content blockquote {
+            font-style: normal;
+            border-left: 4px solid var(--color-primary);
+            background: var(--color-base-200);
+            padding: 1.5rem 2rem;
+            border-radius: 0 1rem 1rem 0;
+            font-family: 'Nunito', sans-serif;
+            opacity: 0.9;
+          }
+
+          .post-content img {
+            border-radius: 16px;
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
+            margin: 3rem auto;
+          }
+
+          .post-content code {
+            font-family: 'JetBrains Mono', monospace;
+            background: var(--color-base-200);
+            padding: 0.2em 0.4em;
+            border-radius: 6px;
+            font-size: 0.85em;
+            color: var(--color-primary);
+          }
+
+          /* Table Styles */
+          .table-container {
+            border-radius: 16px;
+            border: 1px solid var(--color-base-300);
+            overflow: hidden;
+            margin: 2rem 0;
+          }
+          
+          .post-content table {
+            margin: 0;
+          }
+          
+          .post-content th {
+            background: var(--color-base-200);
+            padding: 1rem;
+          }
+          
+          .post-content td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--color-base-200);
+          }
+        </style>
+        
+        <div id="processed-content"></div>
+      </div>
     </div>
-  </div>
+
+    <!-- Article Footer -->
+    <footer class="bg-base-200/30 px-6 md:px-20 py-12 border-t border-base-content/5">
+      <!-- Share & Actions -->
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-12">
+        <div class="flex gap-3">
+          <button class="btn btn-circle btn-ghost hover:bg-primary/10 hover:text-primary transition-all" onclick="copyToClipboard()" title="Copy Link">
+            <i class="fa-solid fa-link text-lg"></i>
+          </button>
+          <button class="btn btn-circle btn-ghost hover:bg-primary/10 hover:text-primary transition-all" onclick="downloadPostCardImage()" title="Save as Image">
+            <i class="fa-solid fa-image text-lg"></i>
+          </button>
+        </div>
+        
+        <a href="/notes/" class="btn btn-outline rounded-full px-8 hover:bg-primary hover:border-primary hover:text-white transition-all group">
+          <i class="fa-solid fa-arrow-left group-hover:-translate-x-1 transition-transform"></i>
+          Back to Notes
+        </a>
+      </div>
+
+      <!-- Prev/Next Navigation -->
+      
+    </footer>
+  </article>
 </div>
 
-<script type="module" src="/js/interesting/christmas_tree_app.js"></script>
+<script>
+// ====== Post -> Long Image ======
+// Export the full post as a long PNG with markdown-like formatting.
+const __POST_CARD_DATA__ = {"title":"interesting","dateText":"2025-12-28","category":""};
 
+async function downloadPostCardImage() {
+  try {
+    // ========== 0. Ensure fonts are loaded (avoid garbled text / wrong measurements) ==========
+    const fontHref = 'https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Nunito:wght@700;800&display=swap';
+    try {
+      const exists = Array.from(document.querySelectorAll('link[rel="stylesheet"]'))
+        .some((l) => (l.href || '').includes('fonts.googleapis.com') && (l.href || '').includes('Noto+Serif+SC'));
+      if (!exists) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = fontHref;
+        document.head.appendChild(link);
+      }
+      if (document.fonts && document.fonts.load) {
+        await Promise.race([
+          Promise.all([
+            document.fonts.load('700 64px "Noto Serif SC"'),
+            document.fonts.load('700 44px Nunito'),
+            document.fonts.load('400 32px "Noto Serif SC"'),
+            document.fonts.load('700 18px Nunito')
+          ]),
+          new Promise((resolve) => setTimeout(resolve, 1400))
+        ]);
+      }
+    } catch (e) {
+      // Best-effort.
+    }
+
+    const data = __POST_CARD_DATA__;
+    const contentRoot = document.getElementById('processed-content');
+    if (!contentRoot) {
+      alert('未找到文章内容区域，无法生成长图。');
+      return;
+    }
+
+    // ========== 1. Convert rendered HTML into blocks ==========
+    function normText(s) {
+      return String(s || '').replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+    }
+
+    function isBlockTag(tag) {
+      return ['P','H1','H2','H3','H4','H5','H6','UL','OL','BLOCKQUOTE','PRE','TABLE','HR','FIGURE','DIV'].includes(tag);
+    }
+
+    function collectBlocksFromElement(el, listDepth = 0, orderedIndexStart = 1) {
+      const blocks = [];
+      if (!el || el.nodeType !== Node.ELEMENT_NODE) return blocks;
+      const tag = (el.tagName || '').toUpperCase();
+
+      // Ignore non-textual/media.
+      if (tag === 'IMG' || tag === 'VIDEO' || tag === 'AUDIO' || tag === 'CANVAS') return blocks;
+      if (tag === 'SCRIPT' || tag === 'STYLE') return blocks;
+
+      if (/^H[1-6]$/.test(tag)) {
+        const level = Number(tag.slice(1));
+        const text = normText(el.innerText).trim();
+        if (text) blocks.push({ type: 'heading', level, text });
+        return blocks;
+      }
+
+      if (tag === 'HR') {
+        blocks.push({ type: 'hr' });
+        return blocks;
+      }
+
+      if (tag === 'BLOCKQUOTE') {
+        const text = normText(el.innerText).trim();
+        if (text) blocks.push({ type: 'blockquote', text });
+        return blocks;
+      }
+
+      // Code blocks (support DaisyUI mockup-code or plain PRE)
+      if (tag === 'PRE' || el.classList.contains('mockup-code') || el.closest('.mockup-code')) {
+        const codeText = normText(el.innerText || '').replace(/\n+$/g, '');
+        const lines = codeText.split('\n');
+        if (lines.some((l) => l.trim() !== '')) blocks.push({ type: 'code', lines });
+        return blocks;
+      }
+
+      if (tag === 'TABLE') {
+        const rows = [];
+        el.querySelectorAll('tr').forEach((tr) => {
+          const cells = Array.from(tr.querySelectorAll('th,td')).map((c) => normText(c.innerText).trim());
+          if (cells.length) rows.push(cells.join(' | '));
+        });
+        if (rows.length) blocks.push({ type: 'table', rows });
+        return blocks;
+      }
+
+      if (tag === 'UL' || tag === 'OL') {
+        const ordered = tag === 'OL';
+        let idx = orderedIndexStart;
+        Array.from(el.children).forEach((child) => {
+          if (!child || child.tagName.toUpperCase() !== 'LI') return;
+
+          // Extract LI own text without nested lists first.
+          const liClone = child.cloneNode(true);
+          liClone.querySelectorAll('ul,ol').forEach((n) => n.remove());
+          const liText = normText(liClone.innerText).trim();
+          if (liText) {
+            blocks.push({
+              type: 'list-item',
+              ordered,
+              index: idx,
+              depth: listDepth,
+              text: liText
+            });
+          }
+          // Nested lists
+          const nested = child.querySelectorAll(':scope > ul, :scope > ol');
+          nested.forEach((nl) => {
+            blocks.push(...collectBlocksFromElement(nl, listDepth + 1, 1));
+          });
+          idx += 1;
+        });
+        return blocks;
+      }
+
+      if (tag === 'P') {
+        const text = normText(el.innerText);
+        // Preserve explicit line breaks.
+        if (text.trim()) blocks.push({ type: 'paragraph', text });
+        else blocks.push({ type: 'spacer' });
+        return blocks;
+      }
+
+      // For DIVs that act as math display, etc.
+      if (tag === 'DIV' && (el.classList.contains('math-display') || el.classList.contains('MathJax') || el.querySelector('.MathJax'))) {
+        const text = normText(el.innerText).trim();
+        if (text) blocks.push({ type: 'paragraph', text });
+        return blocks;
+      }
+
+      // Default: walk children if it contains block tags, else treat as paragraph.
+      const childEls = Array.from(el.children || []);
+      const hasBlockChild = childEls.some((c) => isBlockTag((c.tagName || '').toUpperCase()));
+      if (hasBlockChild) {
+        childEls.forEach((c) => blocks.push(...collectBlocksFromElement(c, listDepth, orderedIndexStart)));
+      } else {
+        const text = normText(el.innerText).trim();
+        if (text) blocks.push({ type: 'paragraph', text });
+      }
+      return blocks;
+    }
+
+    const blocks = [];
+    Array.from(contentRoot.children).forEach((el) => {
+      blocks.push(...collectBlocksFromElement(el, 0, 1));
+    });
+
+    // ========== 2. Layout + rendering helpers ==========
+    const W = 1080;
+    const PAD_X = 84;
+    const PAD_TOP = 120;
+    const PAD_BOTTOM = 120;
+    const CONTENT_W = W - PAD_X * 2;
+    
+    // Theme colors
+    const BG_CARD = '#ffffff';
+    const TEXT = '#2c2c2c';
+    const MUTED = 'rgba(44,44,44,0.65)';
+    const SOFT_BORDER = 'rgba(44,44,44,0.08)';
+    const CODE_BG = '#f8f9fa';
+    const ACCENT = 'rgba(59,130,246,0.08)'; // Subtle blue tint for accents
+
+    const F_TITLE = '700 64px "Noto Serif SC", "Songti SC", serif';
+    const F_H2 = '800 44px Nunito, system-ui, sans-serif';
+    const F_H3 = '800 38px Nunito, system-ui, sans-serif';
+    const F_H4 = '800 32px Nunito, system-ui, sans-serif';
+    const F_BODY = '400 32px "Noto Serif SC", "Songti SC", serif';
+    const F_META = '700 18px Nunito, system-ui, sans-serif';
+    const F_CODE = '500 26px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace';
+
+    const LH_TITLE = 88;
+    const LH_H2 = 64;
+    const LH_H3 = 56;
+    const LH_H4 = 50;
+    const LH_BODY = 58;
+    const LH_CODE = 44;
+
+    function wrapText(ctx, text, maxW, font) {
+      ctx.font = font;
+      const raw = normText(text);
+      const paras = raw.split('\n');
+      const lines = [];
+      for (const para of paras) {
+        const chars = String(para).split('');
+        let line = '';
+        for (const ch of chars) {
+          const test = line + ch;
+          if (ctx.measureText(test).width > maxW && line) {
+            lines.push(line);
+            line = ch;
+          } else {
+            line = test;
+          }
+        }
+        if (line) lines.push(line);
+        // Preserve empty line between paragraphs.
+        if (para !== paras[paras.length - 1]) lines.push('');
+      }
+      return lines;
+    }
+
+    function truncateLineToWidth(ctx, line, maxW, font) {
+      ctx.font = font;
+      if (ctx.measureText(line).width <= maxW) return line;
+      const ell = '…';
+      let s = line;
+      while (s.length > 0 && ctx.measureText(s + ell).width > maxW) {
+        s = s.slice(0, -1);
+      }
+      return (s.length > 0) ? (s + ell) : ell;
+    }
+
+    function roundRect(ctx, x, y, w, h, r) {
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.lineTo(x + w - r, y);
+      ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+      ctx.lineTo(x + w, y + h - r);
+      ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+      ctx.lineTo(x + r, y + h);
+      ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+      ctx.lineTo(x, y + r);
+      ctx.quadraticCurveTo(x, y, x + r, y);
+      ctx.closePath();
+    }
+
+    function pillWidth(ctx, text) {
+      ctx.font = F_META;
+      const t = String(text || '').trim();
+      return Math.ceil(ctx.measureText(t).width) + 32;
+    }
+
+    function renderSegment(segmentBlocks, partIndex, partCount) {
+      // First pass: measure height
+      const measureCanvas = document.createElement('canvas');
+      measureCanvas.width = 10; measureCanvas.height = 10;
+      const mctx = measureCanvas.getContext('2d');
+
+      let y = PAD_TOP;
+
+      // Meta pills
+      const pillH = 42;
+      if (data.dateText || data.category) {
+        y += pillH + 32;
+      }
+
+      // Title
+      {
+        const lines = wrapText(mctx, data.title, CONTENT_W, F_TITLE);
+        y += lines.length * LH_TITLE + 32;
+      }
+
+      // Body blocks
+      for (const b of segmentBlocks) {
+        if (b.type === 'spacer') {
+          y += 24;
+          continue;
+        }
+        if (b.type === 'hr') {
+          y += 40 + 24;
+          continue;
+        }
+        if (b.type === 'heading') {
+          const font = b.level <= 2 ? F_H2 : (b.level === 3 ? F_H3 : F_H4);
+          const lh = b.level <= 2 ? LH_H2 : (b.level === 3 ? LH_H3 : LH_H4);
+          const lines = wrapText(mctx, b.text, CONTENT_W, font);
+          y += lines.length * lh + 32;
+          continue;
+        }
+        if (b.type === 'blockquote') {
+          const innerW = CONTENT_W - 48;
+          const lines = wrapText(mctx, b.text, innerW, F_BODY);
+          y += 24 + lines.length * LH_BODY + 24 + 32;
+          continue;
+        }
+        if (b.type === 'list-item') {
+          const prefix = b.ordered ? `${b.index}. ` : '• ';
+          const indent = b.depth * 40;
+          const maxW = CONTENT_W - indent;
+          const lines = wrapText(mctx, prefix + b.text, maxW, F_BODY);
+          y += lines.length * LH_BODY + 16;
+          continue;
+        }
+        if (b.type === 'code') {
+          const innerW = CONTENT_W - 48;
+          // Each line wraps too (rare)
+          let lineCount = 0;
+          for (const ln of b.lines) {
+            const lines = wrapText(mctx, ln, innerW, F_CODE);
+            lineCount += Math.max(1, lines.length);
+          }
+          y += 24 + lineCount * LH_CODE + 24 + 32;
+          continue;
+        }
+        if (b.type === 'table') {
+          const lines = b.rows || [];
+          let rowLines = 0;
+          for (const row of lines) {
+            rowLines += wrapText(mctx, row, CONTENT_W, F_BODY).length;
+          }
+          y += rowLines * LH_BODY + 32;
+          continue;
+        }
+        // paragraph / default
+        {
+          const lines = wrapText(mctx, b.text || '', CONTENT_W, F_BODY);
+          y += lines.length * LH_BODY + 32;
+        }
+      }
+
+      const H = Math.ceil(y + PAD_BOTTOM);
+      const canvas = document.createElement('canvas');
+      canvas.width = W * 2;
+      canvas.height = H * 2;
+      const ctx = canvas.getContext('2d');
+      ctx.scale(2, 2);
+
+      // === Background & Card Style ===
+      // 1. Subtle gradient background
+      const bgGrad = ctx.createLinearGradient(0, 0, 0, H);
+      bgGrad.addColorStop(0, '#fdfbf7'); // Warm paper-like top
+      bgGrad.addColorStop(1, '#f5f5f7'); // Cool gray bottom
+      ctx.fillStyle = bgGrad;
+      ctx.fillRect(0, 0, W, H);
+
+      // 2. Decorative top gradient mesh (subtle)
+      const meshGrad = ctx.createRadialGradient(W*0.8, 0, 0, W*0.8, 0, 800);
+      meshGrad.addColorStop(0, 'rgba(59,130,246,0.06)');
+      meshGrad.addColorStop(1, 'transparent');
+      ctx.fillStyle = meshGrad;
+      ctx.fillRect(0, 0, W, H);
+
+      // 3. Card container (white rounded rect)
+      const cardM = 40; // margin
+      const cardW = W - cardM*2;
+      const cardH = H - cardM*2;
+      
+      // Drop shadow
+      ctx.shadowColor = 'rgba(0,0,0,0.08)';
+      ctx.shadowBlur = 60;
+      ctx.shadowOffsetY = 20;
+      
+      roundRect(ctx, cardM, cardM, cardW, cardH, 48);
+      ctx.fillStyle = BG_CARD;
+      ctx.fill();
+      
+      // Reset shadow
+      ctx.shadowColor = 'transparent';
+      ctx.shadowBlur = 0;
+      ctx.shadowOffsetY = 0;
+
+      // Inner border (very subtle)
+      ctx.strokeStyle = 'rgba(0,0,0,0.03)';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      // === Content Rendering ===
+      // Adjust coordinate system to be relative to card content area
+      // Original PAD_X was 84, now we are inside a card with margin 40.
+      // Let's keep visual padding similar: 84 - 40 = 44 padding inside card?
+      // Actually let's just use absolute coordinates but shift everything by cardM
+      // However, our measure logic assumed W=1080. 
+      // To keep layout consistent, we'll just draw content at original coordinates 
+      // but ensure they fall nicely within the card.
+      // PAD_X=84, cardM=40 => content is 44px from card edge. That's good.
+
+      let dy = PAD_TOP;
+
+      // Meta pills
+      if (data.dateText || data.category) {
+        let x = PAD_X;
+        const drawPill = (text) => {
+          const w = pillWidth(ctx, text);
+          const h = 42;
+          roundRect(ctx, x, dy, w, h, 21);
+          ctx.fillStyle = ACCENT;
+          ctx.fill();
+          
+          ctx.font = F_META;
+          ctx.fillStyle = '#3b82f6'; // Primary blue
+          ctx.textBaseline = 'middle';
+          ctx.textAlign = 'left';
+          ctx.fillText(String(text || '').trim(), x + 16, dy + h / 2 + 1);
+          x += w + 16;
+        };
+        if (data.dateText) drawPill(data.dateText);
+        if (data.category) drawPill(data.category);
+        dy += 42 + 32;
+      }
+
+      // Title
+      {
+        ctx.fillStyle = '#1a1a1a'; // Darker title
+        const lines = wrapText(ctx, data.title, CONTENT_W, F_TITLE);
+        ctx.font = F_TITLE;
+        ctx.textBaseline = 'top';
+        for (const line of lines) {
+          ctx.fillText(line, PAD_X, dy);
+          dy += LH_TITLE;
+        }
+        dy += 32;
+      }
+
+      // Body
+      ctx.textAlign = 'left';
+      ctx.textBaseline = 'top';
+
+      for (const b of segmentBlocks) {
+        if (b.type === 'spacer') {
+          dy += 24;
+          continue;
+        }
+        if (b.type === 'hr') {
+          ctx.strokeStyle = SOFT_BORDER;
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          ctx.moveTo(PAD_X + 40, dy + 20); // Indented HR
+          ctx.lineTo(PAD_X + CONTENT_W - 40, dy + 20);
+          ctx.stroke();
+          dy += 40 + 24;
+          continue;
+        }
+        if (b.type === 'heading') {
+          const font = b.level <= 2 ? F_H2 : (b.level === 3 ? F_H3 : F_H4);
+          const lh = b.level <= 2 ? LH_H2 : (b.level === 3 ? LH_H3 : LH_H4);
+          ctx.fillStyle = '#1a1a1a';
+          const lines = wrapText(ctx, b.text, CONTENT_W, font);
+          ctx.font = font;
+          for (const line of lines) {
+            ctx.fillText(line, PAD_X, dy);
+            dy += lh;
+          }
+          dy += 32;
+          continue;
+        }
+        if (b.type === 'blockquote') {
+          const boxX = PAD_X;
+          const boxW = CONTENT_W;
+          const innerX = boxX + 32;
+          const innerW = boxW - 64;
+          const lines = wrapText(ctx, b.text, innerW, F_BODY);
+          const boxH = 24 + lines.length * LH_BODY + 24;
+
+          roundRect(ctx, boxX, dy, boxW, boxH, 24);
+          ctx.fillStyle = '#f8f9fa';
+          ctx.fill();
+          
+          // Decorative quote mark
+          ctx.font = 'italic 700 60px serif';
+          ctx.fillStyle = 'rgba(0,0,0,0.06)';
+          ctx.fillText('“', boxX + 16, dy + 10);
+
+          ctx.fillStyle = '#4a4a4a';
+          ctx.font = F_BODY;
+          let ty = dy + 24;
+          for (const line of lines) {
+            ctx.fillText(line, innerX, ty);
+            ty += LH_BODY;
+          }
+          dy += boxH + 32;
+          continue;
+        }
+        if (b.type === 'list-item') {
+          const prefix = b.ordered ? `${b.index}. ` : '• ';
+          const indent = b.depth * 40;
+          const x = PAD_X + indent;
+          const maxW = CONTENT_W - indent;
+          ctx.fillStyle = TEXT;
+          ctx.font = F_BODY;
+          const lines = wrapText(ctx, prefix + b.text, maxW, F_BODY);
+          for (const line of lines) {
+            ctx.fillText(line, x, dy);
+            dy += LH_BODY;
+          }
+          dy += 16;
+          continue;
+        }
+        if (b.type === 'code') {
+          const boxX = PAD_X;
+          const boxW = CONTENT_W;
+          const innerX = boxX + 24;
+          const innerW = boxW - 48;
+          // Pre-wrap each line
+          const allLines = [];
+          for (const ln of (b.lines || [])) {
+            const wrapped = wrapText(ctx, ln, innerW, F_CODE);
+            if (wrapped.length === 0) allLines.push('');
+            else allLines.push(...wrapped);
+          }
+          const boxH = 24 + allLines.length * LH_CODE + 24;
+          roundRect(ctx, boxX, dy, boxW, boxH, 20);
+          ctx.fillStyle = CODE_BG;
+          ctx.fill();
+          ctx.strokeStyle = SOFT_BORDER;
+          ctx.lineWidth = 1;
+          ctx.stroke();
+
+          ctx.fillStyle = '#444';
+          ctx.font = F_CODE;
+          let ty = dy + 24;
+          for (const line of allLines) {
+            ctx.fillText(line, innerX, ty);
+            ty += LH_CODE;
+          }
+          dy += boxH + 32;
+          continue;
+        }
+        if (b.type === 'table') {
+          ctx.fillStyle = TEXT;
+          ctx.font = F_BODY;
+          for (const row of (b.rows || [])) {
+            const lines = wrapText(ctx, row, CONTENT_W, F_BODY);
+            for (const line of lines) {
+              ctx.fillText(line, PAD_X, dy);
+              dy += LH_BODY;
+            }
+            dy += 16;
+          }
+          dy += 16;
+          continue;
+        }
+
+        // paragraph / default
+        {
+          ctx.fillStyle = TEXT;
+          ctx.font = F_BODY;
+          const lines = wrapText(ctx, b.text || '', CONTENT_W, F_BODY);
+          for (const line of lines) {
+            if (line === '') {
+              dy += LH_BODY * 0.6;
+            } else {
+              ctx.fillText(line, PAD_X, dy);
+              dy += LH_BODY;
+            }
+          }
+          dy += 32;
+        }
+      }
+
+      return canvas;
+    }
+
+    // ========== 3. Split into parts if too tall ==========
+    // Conservative max height for wide canvases in Chrome.
+    const MAX_H = 28000;
+    // Measure each block height with a tiny measuring context.
+    const meas = document.createElement('canvas');
+    meas.width = 10; meas.height = 10;
+    const mctx = meas.getContext('2d');
+
+    function estimateBlockHeight(b) {
+      if (b.type === 'spacer') return 22;
+      if (b.type === 'hr') return 28 + 22;
+      if (b.type === 'heading') {
+        const font = b.level <= 2 ? F_H2 : (b.level === 3 ? F_H3 : F_H4);
+        const lh = b.level <= 2 ? LH_H2 : (b.level === 3 ? LH_H3 : LH_H4);
+        return wrapText(mctx, b.text, CONTENT_W, font).length * lh + 26;
+      }
+      if (b.type === 'blockquote') {
+        const innerW = CONTENT_W - 40;
+        const lines = wrapText(mctx, b.text, innerW, F_BODY);
+        return 18 + lines.length * LH_BODY + 18 + 22;
+      }
+      if (b.type === 'list-item') {
+        const prefix = b.ordered ? `${b.index}. ` : '• ';
+        const indent = b.depth * 40;
+        const maxW = CONTENT_W - indent;
+        return wrapText(mctx, prefix + b.text, maxW, F_BODY).length * LH_BODY + 12;
+      }
+      if (b.type === 'code') {
+        const innerW = CONTENT_W - 40;
+        let lineCount = 0;
+        for (const ln of (b.lines || [])) {
+          lineCount += Math.max(1, wrapText(mctx, ln, innerW, F_CODE).length);
+        }
+        return 18 + lineCount * LH_CODE + 18 + 22;
+      }
+      if (b.type === 'table') {
+        let rowLines = 0;
+        for (const row of (b.rows || [])) {
+          rowLines += wrapText(mctx, row, CONTENT_W, F_BODY).length;
+        }
+        return rowLines * LH_BODY + 22;
+      }
+      // paragraph/default
+      return wrapText(mctx, b.text || '', CONTENT_W, F_BODY).length * LH_BODY + 22;
+    }
+
+    // Estimate header height
+    const headerEstimate = (() => {
+      let y = PAD_TOP;
+      if (data.dateText || data.category) y += 40 + 22;
+      y += wrapText(mctx, data.title, CONTENT_W, F_TITLE).length * LH_TITLE + 22;
+      return y;
+    })();
+
+    const parts = [];
+    let current = [];
+    let curH = headerEstimate + PAD_BOTTOM;
+    for (const b of blocks) {
+      const bh = estimateBlockHeight(b);
+      if (current.length > 0 && (curH + bh) > MAX_H) {
+        parts.push(current);
+        current = [b];
+        curH = headerEstimate + PAD_BOTTOM + bh;
+      } else {
+        current.push(b);
+        curH += bh;
+      }
+    }
+    if (current.length) parts.push(current);
+
+    // ========== 4. Render + download ==========
+    const safeTitle = (data.title || 'post').replace(/[\\/:*?"<>|]/g, '').trim().slice(0, 50);
+    const total = parts.length;
+    for (let i = 0; i < total; i++) {
+      const canvas = renderSegment(parts[i], i + 1, total);
+      const dataUrl = canvas.toDataURL('image/png');
+      const a = document.createElement('a');
+      a.href = dataUrl;
+      a.download = total === 1
+        ? `${safeTitle || 'post'}-long.png`
+        : `${safeTitle || 'post'}-long-part${i + 1}.png`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      // Small delay to avoid blocking the browser when downloading multiple parts
+      if (total > 1) {
+        await new Promise((r) => setTimeout(r, 350));
+      }
+    }
+
+  } catch (err) {
+    console.error('Generate image failed:', err);
+    alert(`生成图片失败：${err && err.message ? err.message : err}`);
+  }
+}
+
+// Copy to clipboard function
+function copyToClipboard() {
+  const url = window.location.href;
+  navigator.clipboard.writeText(url).then(function() {
+    // Show success feedback
+    const button = event.target.closest('button');
+    const originalText = button.innerHTML;
+    button.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+    button.classList.remove('btn-outline');
+    button.classList.add('btn-success');
+    
+    setTimeout(function() {
+      button.innerHTML = originalText;
+      button.classList.remove('btn-success');
+      button.classList.add('btn-outline');
+    }, 2000);
+  }).catch(function(err) {
+    console.error('Failed to copy: ', err);
+    // Fallback for older browsers
+    const textArea = document.createElement('textarea');
+    textArea.value = url;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+    
+    // Show success feedback
+    const button = event.target.closest('button');
+    const originalText = button.innerHTML;
+    button.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+    button.classList.remove('btn-outline');
+    button.classList.add('btn-success');
+    
+    setTimeout(function() {
+      button.innerHTML = originalText;
+      button.classList.remove('btn-success');
+      button.classList.add('btn-outline');
+    }, 2000);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const processedContent = document.getElementById('processed-content');
+  let content = processedContent.innerHTML;
+
+  // ========== 数学公式处理 ==========
+  console.log('开始处理数学公式...');
+  
+  // 1. 处理单行公式：<p>$$formula$$</p>
+  content = content.replace(/<p>\s*\$\$([\s\S]*?)\$\$\s*<\/p>/g, function(match, formula) {
+    console.log('找到单行公式:', formula.trim());
+    return '<div class="math-display">$$' + formula.trim() + '$$</div>';
+  });
+
+  // 2. 处理多行公式：<p>$$</p>...content...<p>$$</p>
+  content = content.replace(/<p>\s*\$\$\s*<\/p>([\s\S]*?)<p>\s*\$\$\s*<\/p>/g, function(match, mathContent) {
+    console.log('找到多行公式:', mathContent);
+    // 提取数学内容，移除HTML标签
+    const cleanContent = mathContent
+      .replace(/<p>/g, '\n')
+      .replace(/<\/p>/g, '')
+      .replace(/\n+/g, '\n')
+      .trim();
+    console.log('清理后的数学内容:', cleanContent);
+    return '<div class="math-display">$$\n' + cleanContent + '\n$$</div>';
+  });
+
+  // 3. 清理任何剩余的单独$$ 
+  content = content.replace(/<p>\s*\$\$\s*<\/p>/g, '');
+  
+  console.log('数学公式处理完成');
+
+  // 更新内容
+  processedContent.innerHTML = content;
+
+  // ========== 表格滚动容器处理 ==========
+  // 为所有表格添加滚动容器
+  const tables = processedContent.querySelectorAll('table');
+  tables.forEach(function(table) {
+    if (!table.closest('.table-container')) {
+      const container = document.createElement('div');
+      container.className = 'table-container';
+      table.parentNode.insertBefore(container, table);
+      container.appendChild(table);
+    }
+  });
+
+  // ========== 代码块转换 ==========
+  setTimeout(function() {
+    console.log('开始处理代码块...');
+    
+    // 转换 Hexo highlight.js 代码块为 mockup-code 样式
+    const highlightFigures = processedContent.querySelectorAll('figure.highlight');
+    console.log('找到代码块数量:', highlightFigures.length);
+    
+    highlightFigures.forEach(function(figure) {
+      const codeLines = [];
+      const lineSpans = figure.querySelectorAll('td.code .line');
+      
+      lineSpans.forEach(function(lineSpan) {
+        let lineText = '';
+        for (let node of lineSpan.childNodes) {
+          if (node.nodeType === Node.TEXT_NODE) {
+            lineText += node.textContent;
+          } else if (node.nodeType === Node.ELEMENT_NODE) {
+            lineText += node.textContent;
+          }
+        }
+        codeLines.push(lineText);
+      });
+
+      // 如果没有从表格获取到行，尝试其他方法
+      if (codeLines.length === 0) {
+        const codeContent = figure.querySelector('td.code');
+        if (codeContent) {
+          const text = codeContent.textContent || codeContent.innerText;
+          codeLines.push(...text.split('\n').filter(line => line.trim() !== ''));
+        }
+      }
+
+      if (codeLines.length === 0) return;
+
+      // 创建新的 mockup-code 容器
+      const mockupCode = document.createElement('div');
+      mockupCode.className = 'mockup-code bg-base-200 text-base-content w-full';
+      
+      let htmlContent = '';
+      codeLines.forEach((line, index) => {
+        const lineNumber = index + 1;
+        const escapedLine = line
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;');
+        
+        // 检测特殊行类型并添加相应样式
+        let className = '';
+        const lowerLine = line.toLowerCase().trim();
+        
+        if (lowerLine.includes('error') || lowerLine.includes('exception') || lowerLine.includes('failed')) {
+          className = ' class="bg-error text-error-content"';
+        } else if (lowerLine.includes('warning') || lowerLine.includes('warn')) {
+          className = ' class="bg-warning text-warning-content"';
+        } else if (lowerLine.includes('success') || lowerLine.includes('done') || lowerLine.includes('completed')) {
+          className = ' class="bg-success text-success-content"';
+        } else if (lowerLine.includes('info') || lowerLine.includes('installing') || lowerLine.includes('loading')) {
+          className = ' class="bg-info text-info-content"';
+        }
+        
+        htmlContent += `<pre data-prefix="${lineNumber}"${className}><code>${escapedLine}</code></pre>`;
+      });
+
+      mockupCode.innerHTML = htmlContent;
+      figure.parentNode.replaceChild(mockupCode, figure);
+    });
+
+    // 处理其他普通的 pre/code 块
+    const preBlocks = processedContent.querySelectorAll('pre:not(.mockup-code pre)');
+    preBlocks.forEach(function(pre) {
+      if (pre.closest('.mockup-code')) return;
+      
+      const codeElement = pre.querySelector('code') || pre;
+      const text = codeElement.textContent || codeElement.innerText || '';
+      const lines = text.split('\n').filter(line => line.trim() !== '');
+      
+      if (lines.length === 0) return;
+      
+      const mockupCode = document.createElement('div');
+      mockupCode.className = 'mockup-code bg-base-200 text-base-content w-full';
+      
+      let htmlContent = '';
+      lines.forEach((line, index) => {
+        const lineNumber = index + 1;
+        const escapedLine = line
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;');
+        
+        htmlContent += `<pre data-prefix="${lineNumber}"><code>${escapedLine}</code></pre>`;
+      });
+
+      mockupCode.innerHTML = htmlContent;
+      pre.parentNode.replaceChild(mockupCode, pre);
+    });
+
+    console.log('代码块处理完成');
+
+    // ========== MathJax 初始化 ==========
+    console.log('初始化 MathJax...');
+    if (window.MathJax) {
+      MathJax.typesetPromise([processedContent]).then(function() {
+        console.log('MathJax 渲染完成');
+      }).catch(function (err) {
+        console.log('MathJax typeset failed: ' + err.message);
+      });
+    }
+  }, 50); // 短暂延迟确保DOM更新完成
+});
+</script>
+
+<!-- MathJax Configuration -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    tags: 'ams'
+  },
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
+</script>
+
+<script type="text/javascript" id="MathJax-script" async
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
   </div>
 
   <!-- Fixed top navbar for desktop -->
-  <div class="hidden lg:flex fixed top-0 left-80 right-0 z-50 bg-base-300 h-16 items-center px-4">
+  <div class="hidden lg:flex fixed top-0 left-80 right-0 z-50 bg-base-100/80 backdrop-blur-md border-b border-base-200 h-16 items-center px-4 transition-all duration-300">
     <div class="flex-1">
       <a href="/" class="btn btn-ghost normal-case text-xl">
       zxnauy
@@ -799,7 +1938,7 @@ var _hmt = _hmt || [];
 <footer class="footer footer-center sm:footer-horizontal p-4 bg-base-200 text-base-content">
   <div class="grid grid-flow-col gap-4">
     <div class="text-center">
-      <span>© 2025 Lulu</span>
+      <span>© 2026 Lulu</span>
 
       
     </div>

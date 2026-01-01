@@ -77,65 +77,143 @@ var _hmt = _hmt || [];
   <!-- Sidebar for Desktop -->
   <aside class="hidden lg:flex fixed left-0 top-0 h-screen w-80 bg-base-200 z-40 flex-col overflow-y-auto">
     <div class="relative h-full">
-      <a href="/" class="block no-underline hover:bg-base-100 transition rounded-box">
-  <div class="p-4 text-center border-base-300 flex flex-col items-center cursor-pointer hidden lg:flex">
-    <div class="avatar mb-4">
-      <div class="w-24 rounded-full ring ring-primary ring-offset-base-100">
-        <img
-  src="/images/avatar.jpg"
-  alt="Profile"
-  class="transition-transform duration-500 hover:rotate-210 cursor-pointer rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 w-24"
-/>
+      <!-- 侧边栏整体容器：使用 flex 布局，占满高度，背景色与主色调一致 -->
+<div class="flex flex-col h-full bg-base-100 text-base-content">
+  
+  <!-- 1. 顶部个人信息区域：增加渐变背景装饰 -->
+  <div class="relative pt-10 pb-6 px-6 flex flex-col items-center text-center shrink-0">
+    <!-- 装饰背景：顶部淡色渐变，增加层次感 -->
+    <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none"></div>
+    
+    <!-- 头像：增加悬停旋转和阴影 -->
+    <div class="avatar relative z-10 mb-4 group cursor-pointer">
+      <div class="w-28 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 shadow-xl transition-transform duration-500 group-hover:rotate-12">
+        <a href="/" class="block">
+          <img src="/images/avatar.jpg" alt="Lulu" class="rounded-full" />
+        </a>
+      </div>
+      
+      <!-- Desktop Hint: Tooltip on the right (Hover) -->
+      <div class="hidden lg:block absolute top-1/2 -right-20 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500 transform -translate-x-4 group-hover:translate-x-0 pointer-events-none z-20">
+         <div class="flex items-center gap-1.5 text-[10px] font-bold tracking-widest text-base-content/50 bg-base-100/90 backdrop-blur px-3 py-1.5 rounded-full border border-base-content/10 shadow-sm">
+            <i class="fa-solid fa-house text-[9px]"></i>
+            <span>HOME</span>
+         </div>
+      </div>
 
+      <!-- Mobile Hint: Small Badge (Always Visible) -->
+      <div class="lg:hidden absolute bottom-1 right-1 z-20 pointer-events-none">
+         <div class="w-7 h-7 rounded-full bg-base-100/80 backdrop-blur shadow-sm border border-base-content/10 flex items-center justify-center text-base-content/40">
+            <i class="fa-solid fa-house text-[10px]"></i>
+         </div>
       </div>
     </div>
-    <h2 class="text-xl font-bold text-base-content">Lulu</h2>
-    <p class="text-base-content opacity-80"></p>
+    
+    <!-- 文字信息 -->
+    <div class="relative z-10">
+      <h2 class="text-2xl font-bold tracking-tight text-base-content">Lulu</h2>
+      <p class="text-sm opacity-60 mt-1 font-medium tracking-wide"></p>
+    </div>
   </div>
-</a>
 
-
-<nav class="p-4 space-y-2 flex-grow">
-  
+  <!-- 2. 导航菜单：可滚动区域，增加自定义滚动条样式 -->
+  <nav class="flex-1 px-4 space-y-2 overflow-y-auto py-4 custom-scrollbar">
     
-      <a href="/plan/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-compact-disc mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        听歌♪(´▽｀)
+      
+        <!-- 判断当前链接是否激活 (简单判断) -->
+         
+        
+        <a href="/plan/" 
+           class="flex items-center gap-4 px-4 py-3 rounded-2xl transition-all duration-300 group
+                  hover:bg-base-200 hover:text-primary text-base-content/80">
+          
+          <!-- 图标：固定宽度居中 -->
+          <div class="w-6 flex justify-center">
+            <i class="fa-solid fa-compact-disc text-lg transition-transform duration-300 group-hover:scale-110 opacity-70"></i>
+          </div>
+          
+          <span class="font-bold tracking-wide text-sm">听歌♪(´▽｀)</span>
+          
+          
+        </a>
+      
+        <!-- 判断当前链接是否激活 (简单判断) -->
+         
+        
+        <a href="/cv/" 
+           class="flex items-center gap-4 px-4 py-3 rounded-2xl transition-all duration-300 group
+                  hover:bg-base-200 hover:text-primary text-base-content/80">
+          
+          <!-- 图标：固定宽度居中 -->
+          <div class="w-6 flex justify-center">
+            <i class="fa-solid fa-id-card text-lg transition-transform duration-300 group-hover:scale-110 opacity-70"></i>
+          </div>
+          
+          <span class="font-bold tracking-wide text-sm">个人信息</span>
+          
+          
+        </a>
+      
+        <!-- 判断当前链接是否激活 (简单判断) -->
+         
+        
+        <a href="/notes/" 
+           class="flex items-center gap-4 px-4 py-3 rounded-2xl transition-all duration-300 group
+                  hover:bg-base-200 hover:text-primary text-base-content/80">
+          
+          <!-- 图标：固定宽度居中 -->
+          <div class="w-6 flex justify-center">
+            <i class="fa-solid fa-sticky-note text-lg transition-transform duration-300 group-hover:scale-110 opacity-70"></i>
+          </div>
+          
+          <span class="font-bold tracking-wide text-sm">记Lu</span>
+          
+          
+        </a>
+      
+        <!-- 判断当前链接是否激活 (简单判断) -->
+         
+        
+        <a href="/contact/" 
+           class="flex items-center gap-4 px-4 py-3 rounded-2xl transition-all duration-300 group
+                  hover:bg-base-200 hover:text-primary text-base-content/80">
+          
+          <!-- 图标：固定宽度居中 -->
+          <div class="w-6 flex justify-center">
+            <i class="fa-solid fa-envelope text-lg transition-transform duration-300 group-hover:scale-110 opacity-70"></i>
+          </div>
+          
+          <span class="font-bold tracking-wide text-sm">联系方式</span>
+          
+          
+        </a>
+      
+    
+  </nav>
+
+  <!-- 3. 底部社交区域：固定在底部，增加分割线 -->
+  <div class="p-6 border-t border-base-200 bg-base-50/50 shrink-0">
+    
+    <div class="flex justify-center items-center gap-3">
+
+      
+        <a href="https://github.com/zxnauy-LL" target="_blank" rel="noopener noreferrer" 
+           class="btn btn-ghost btn-circle btn-sm hover:bg-base-content hover:text-base-100 transition-all duration-300" title="GitHub">
+          <i class="fa-brands fa-github text-xl"></i>
+        </a>
+      
+
+      <a href="https://y.music.163.com/m/user?id=310700901" target="_blank" rel="noopener noreferrer" 
+         class="btn btn-ghost btn-circle btn-sm hover:bg-red-500 hover:text-white transition-all duration-300" title="网易云音乐">
+        <i class="fa-solid fa-music text-xl"></i>
       </a>
+      
+    </div>
     
-      <a href="/cv/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-id-card mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        个人信息
-      </a>
-    
-      <a href="/notes/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-sticky-note mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        记Lu
-      </a>
-    
-      <a href="/contact/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-envelope mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        联系方式
-      </a>
-    
-  
-</nav>
-
-
-<div class="p-4 border-t border-base-300">
-  
-  <div class="flex justify-center items-center gap-4">
-
-    
-      <a href="https://github.com/zxnauy-LL" class="text-base-content hover:text-primary hover:scale-110 transition-all duration-200 flex-shrink-0" target="_blank" rel="noopener noreferrer" title="GitHub">
-        <i class="fa-brands fa-github text-2xl block"></i>
-      </a>
-    
-
-    <a href="https://y.music.163.com/m/user?id=310700901" class="text-base-content hover:text-primary hover:scale-110 transition-all duration-200 flex-shrink-0" target="_blank" rel="noopener noreferrer" title="网易云音乐">
-      <i class="fa-solid fa-music text-2xl block"></i>
-    </a>
-
+    <!-- 版权信息 -->
+    <div class="text-xs text-center mt-4 opacity-40 font-mono">
+      © 2026 Lulu
+    </div>
   </div>
 </div>
     </div>
@@ -425,65 +503,143 @@ var _hmt = _hmt || [];
       <label for="my-drawer" class="drawer-overlay"></label>
       <aside class="w-80 bg-base-200 min-h-full overflow-y-auto">
         <div class="relative h-full">
-          <a href="/" class="block no-underline hover:bg-base-100 transition rounded-box">
-  <div class="p-4 text-center border-base-300 flex flex-col items-center cursor-pointer hidden lg:flex">
-    <div class="avatar mb-4">
-      <div class="w-24 rounded-full ring ring-primary ring-offset-base-100">
-        <img
-  src="/images/avatar.jpg"
-  alt="Profile"
-  class="transition-transform duration-500 hover:rotate-210 cursor-pointer rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 w-24"
-/>
+          <!-- 侧边栏整体容器：使用 flex 布局，占满高度，背景色与主色调一致 -->
+<div class="flex flex-col h-full bg-base-100 text-base-content">
+  
+  <!-- 1. 顶部个人信息区域：增加渐变背景装饰 -->
+  <div class="relative pt-10 pb-6 px-6 flex flex-col items-center text-center shrink-0">
+    <!-- 装饰背景：顶部淡色渐变，增加层次感 -->
+    <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none"></div>
+    
+    <!-- 头像：增加悬停旋转和阴影 -->
+    <div class="avatar relative z-10 mb-4 group cursor-pointer">
+      <div class="w-28 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 shadow-xl transition-transform duration-500 group-hover:rotate-12">
+        <a href="/" class="block">
+          <img src="/images/avatar.jpg" alt="Lulu" class="rounded-full" />
+        </a>
+      </div>
+      
+      <!-- Desktop Hint: Tooltip on the right (Hover) -->
+      <div class="hidden lg:block absolute top-1/2 -right-20 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500 transform -translate-x-4 group-hover:translate-x-0 pointer-events-none z-20">
+         <div class="flex items-center gap-1.5 text-[10px] font-bold tracking-widest text-base-content/50 bg-base-100/90 backdrop-blur px-3 py-1.5 rounded-full border border-base-content/10 shadow-sm">
+            <i class="fa-solid fa-house text-[9px]"></i>
+            <span>HOME</span>
+         </div>
+      </div>
 
+      <!-- Mobile Hint: Small Badge (Always Visible) -->
+      <div class="lg:hidden absolute bottom-1 right-1 z-20 pointer-events-none">
+         <div class="w-7 h-7 rounded-full bg-base-100/80 backdrop-blur shadow-sm border border-base-content/10 flex items-center justify-center text-base-content/40">
+            <i class="fa-solid fa-house text-[10px]"></i>
+         </div>
       </div>
     </div>
-    <h2 class="text-xl font-bold text-base-content">Lulu</h2>
-    <p class="text-base-content opacity-80"></p>
+    
+    <!-- 文字信息 -->
+    <div class="relative z-10">
+      <h2 class="text-2xl font-bold tracking-tight text-base-content">Lulu</h2>
+      <p class="text-sm opacity-60 mt-1 font-medium tracking-wide"></p>
+    </div>
   </div>
-</a>
 
-
-<nav class="p-4 space-y-2 flex-grow">
-  
+  <!-- 2. 导航菜单：可滚动区域，增加自定义滚动条样式 -->
+  <nav class="flex-1 px-4 space-y-2 overflow-y-auto py-4 custom-scrollbar">
     
-      <a href="/plan/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-compact-disc mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        听歌♪(´▽｀)
+      
+        <!-- 判断当前链接是否激活 (简单判断) -->
+         
+        
+        <a href="/plan/" 
+           class="flex items-center gap-4 px-4 py-3 rounded-2xl transition-all duration-300 group
+                  hover:bg-base-200 hover:text-primary text-base-content/80">
+          
+          <!-- 图标：固定宽度居中 -->
+          <div class="w-6 flex justify-center">
+            <i class="fa-solid fa-compact-disc text-lg transition-transform duration-300 group-hover:scale-110 opacity-70"></i>
+          </div>
+          
+          <span class="font-bold tracking-wide text-sm">听歌♪(´▽｀)</span>
+          
+          
+        </a>
+      
+        <!-- 判断当前链接是否激活 (简单判断) -->
+         
+        
+        <a href="/cv/" 
+           class="flex items-center gap-4 px-4 py-3 rounded-2xl transition-all duration-300 group
+                  hover:bg-base-200 hover:text-primary text-base-content/80">
+          
+          <!-- 图标：固定宽度居中 -->
+          <div class="w-6 flex justify-center">
+            <i class="fa-solid fa-id-card text-lg transition-transform duration-300 group-hover:scale-110 opacity-70"></i>
+          </div>
+          
+          <span class="font-bold tracking-wide text-sm">个人信息</span>
+          
+          
+        </a>
+      
+        <!-- 判断当前链接是否激活 (简单判断) -->
+         
+        
+        <a href="/notes/" 
+           class="flex items-center gap-4 px-4 py-3 rounded-2xl transition-all duration-300 group
+                  hover:bg-base-200 hover:text-primary text-base-content/80">
+          
+          <!-- 图标：固定宽度居中 -->
+          <div class="w-6 flex justify-center">
+            <i class="fa-solid fa-sticky-note text-lg transition-transform duration-300 group-hover:scale-110 opacity-70"></i>
+          </div>
+          
+          <span class="font-bold tracking-wide text-sm">记Lu</span>
+          
+          
+        </a>
+      
+        <!-- 判断当前链接是否激活 (简单判断) -->
+         
+        
+        <a href="/contact/" 
+           class="flex items-center gap-4 px-4 py-3 rounded-2xl transition-all duration-300 group
+                  hover:bg-base-200 hover:text-primary text-base-content/80">
+          
+          <!-- 图标：固定宽度居中 -->
+          <div class="w-6 flex justify-center">
+            <i class="fa-solid fa-envelope text-lg transition-transform duration-300 group-hover:scale-110 opacity-70"></i>
+          </div>
+          
+          <span class="font-bold tracking-wide text-sm">联系方式</span>
+          
+          
+        </a>
+      
+    
+  </nav>
+
+  <!-- 3. 底部社交区域：固定在底部，增加分割线 -->
+  <div class="p-6 border-t border-base-200 bg-base-50/50 shrink-0">
+    
+    <div class="flex justify-center items-center gap-3">
+
+      
+        <a href="https://github.com/zxnauy-LL" target="_blank" rel="noopener noreferrer" 
+           class="btn btn-ghost btn-circle btn-sm hover:bg-base-content hover:text-base-100 transition-all duration-300" title="GitHub">
+          <i class="fa-brands fa-github text-xl"></i>
+        </a>
+      
+
+      <a href="https://y.music.163.com/m/user?id=310700901" target="_blank" rel="noopener noreferrer" 
+         class="btn btn-ghost btn-circle btn-sm hover:bg-red-500 hover:text-white transition-all duration-300" title="网易云音乐">
+        <i class="fa-solid fa-music text-xl"></i>
       </a>
+      
+    </div>
     
-      <a href="/cv/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-id-card mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        个人信息
-      </a>
-    
-      <a href="/notes/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-sticky-note mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        记Lu
-      </a>
-    
-      <a href="/contact/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-envelope mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        联系方式
-      </a>
-    
-  
-</nav>
-
-
-<div class="p-4 border-t border-base-300">
-  
-  <div class="flex justify-center items-center gap-4">
-
-    
-      <a href="https://github.com/zxnauy-LL" class="text-base-content hover:text-primary hover:scale-110 transition-all duration-200 flex-shrink-0" target="_blank" rel="noopener noreferrer" title="GitHub">
-        <i class="fa-brands fa-github text-2xl block"></i>
-      </a>
-    
-
-    <a href="https://y.music.163.com/m/user?id=310700901" class="text-base-content hover:text-primary hover:scale-110 transition-all duration-200 flex-shrink-0" target="_blank" rel="noopener noreferrer" title="网易云音乐">
-      <i class="fa-solid fa-music text-2xl block"></i>
-    </a>
-
+    <!-- 版权信息 -->
+    <div class="text-xs text-center mt-4 opacity-40 font-mono">
+      © 2026 Lulu
+    </div>
   </div>
 </div>
         </div>
@@ -504,22 +660,27 @@ var _hmt = _hmt || [];
       
       <!-- Meta Info -->
       <div class="flex flex-wrap justify-center items-center gap-4 mb-8 text-sm font-medium opacity-60 tracking-widest uppercase font-sans">
-        <time datetime="2025-12-28T14:03:51.075Z" class="flex items-center gap-2 bg-base-200/50 px-3 py-1 rounded-full">
+        <time datetime="2025-12-31T16:00:00.000Z" class="flex items-center gap-2 bg-base-200/50 px-3 py-1 rounded-full">
           <i class="fa-regular fa-calendar"></i>
-          Dec 28, 2025
+          Jan 01, 2026
         </time>
         
+        
+          <a href="/notes/?category=%E8%96%AF%E4%BB%94%E6%83%B3%E6%B3%95" class="flex items-center gap-2 bg-primary/10 text-primary px-3 py-1 rounded-full hover:bg-primary hover:text-white transition-colors">
+            <i class="fa-solid fa-folder-open"></i>
+            薯仔想法
+          </a>
         
 
         <div class="flex items-center gap-2 bg-base-200/50 px-3 py-1 rounded-full">
           <i class="fa-solid fa-clock"></i>
-          <span>0 min read</span>
+          <span>3 min read</span>
         </div>
       </div>
 
       <!-- Title -->
       <h1 class="text-4xl md:text-6xl font-bold text-base-content mb-8 leading-tight tracking-tight drop-shadow-sm" style="font-family: 'Noto Serif SC', serif;">
-        
+        祝福
       </h1>
 
       <!-- Tags -->
@@ -609,7 +770,11 @@ var _hmt = _hmt || [];
           }
         </style>
         
-        <div id="processed-content"></div>
+        <div id="processed-content"><h2 id="最近"><a href="#最近" class="headerlink" title="最近"></a>最近</h2><p>最近通过专注于别的事情来避免频频想起你，这并不有效，因为在做某些事情之前，我都要提醒自己做这个是为了避免想起你，但是这个提醒本身就会让我想到你。嗯。。为什么要这么伤感呢，其实你应该也没那么在意了呀，非要把你拉入一种奇怪的情绪。嗯，其实我最近的想法也逐渐逐渐地清晰了，继续发展下去似乎确实不是一个正确的选项吧，虽然我还没有足够的理由去说服自己这个观点，但是我幻想了一下发展下去的时间线，我们会不停地消耗对方的情绪，直到一个更加糟糕的结局。或许现在这个结局是最好的呢，，当然啦，并不是说我想到了这些事情就代表我放下了对你的情感，，这是两码事情</p>
+<h2 id="新年快乐"><a href="#新年快乐" class="headerlink" title="新年快乐"></a>新年快乐</h2><p>新的一年啦，希望你的学业顺顺利利呀！也祝福你球技提高，到更大的平台去享受排球这项运动，我有时觉得你对排球的热爱也太热烈，看到你不顾行程到处去打球的时候，我会觉得自己也太懒惰，对排球也太不上进。所以看到这些，我也会敦促自己要更多地练球，争取在今年的省锦标，全国赛都打到首发的位置。最后，也祝你过得开心幸福。其实这一点我自己做的很糟糕啊哈哈哈，从我的视角来看，你把自己照顾的很好，我的生活完全糟糕，，，但无论怎么说，还是希望你可以多多地开心，我们的经历只是你去年的小小曲折，这么看待就好了！</p>
+<p>最后最后，还是请你多一些自信！虽然提及这个很、、很突兀吧，但是想到了之前你的一些想法，所以在这里表达一下我的看法（并不代表我是一个很自信的人）。之前逸仙杯有去看你的比赛，是一个力挽狂澜的角色，观众们也都是这么觉得的，所以说明球技真的很厉害了。然后就是，还是很漂亮，，，</p>
+<p>ok就这样，不知道还会不会更新这个网站，，先这样吧，拜拜</p>
+</div>
       </div>
     </div>
 
@@ -640,9 +805,9 @@ var _hmt = _hmt || [];
           
           
           
-            <a href="/2025/12/26/%E5%87%A0%E5%88%86%E4%B9%8B%E5%87%A0/" class="group flex flex-col p-6 rounded-3xl bg-base-100 border border-base-content/5 hover:border-primary/30 hover:shadow-lg transition-all duration-300 text-right">
+            <a href="/2025/12/26/%E9%81%97%E6%86%BE/" class="group flex flex-col p-6 rounded-3xl bg-base-100 border border-base-content/5 hover:border-primary/30 hover:shadow-lg transition-all duration-300 text-right">
               <span class="text-xs font-bold opacity-40 uppercase tracking-wider mb-2 group-hover:text-primary transition-colors">Next Note</span>
-              <span class="text-lg font-bold line-clamp-2 group-hover:text-primary transition-colors">几分之几</span>
+              <span class="text-lg font-bold line-clamp-2 group-hover:text-primary transition-colors">道歉信</span>
             </a>
           
         </div>
@@ -654,7 +819,7 @@ var _hmt = _hmt || [];
 <script>
 // ====== Post -> Long Image ======
 // Export the full post as a long PNG with markdown-like formatting.
-const __POST_CARD_DATA__ = {"title":"","dateText":"2025-12-28","category":""};
+const __POST_CARD_DATA__ = {"title":"祝福","dateText":"2026-01-01","category":"薯仔想法"};
 
 async function downloadPostCardImage() {
   try {
@@ -1523,7 +1688,7 @@ src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
   </div>
 
   <!-- Fixed top navbar for desktop -->
-  <div class="hidden lg:flex fixed top-0 left-80 right-0 z-50 bg-base-300 h-16 items-center px-4">
+  <div class="hidden lg:flex fixed top-0 left-80 right-0 z-50 bg-base-100/80 backdrop-blur-md border-b border-base-200 h-16 items-center px-4 transition-all duration-300">
     <div class="flex-1">
       <a href="/" class="btn btn-ghost normal-case text-xl">
       zxnauy
@@ -1795,7 +1960,7 @@ src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 <footer class="footer footer-center sm:footer-horizontal p-4 bg-base-200 text-base-content">
   <div class="grid grid-flow-col gap-4">
     <div class="text-center">
-      <span>© 2025 Lulu</span>
+      <span>© 2026 Lulu</span>
 
       
     </div>

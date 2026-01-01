@@ -77,65 +77,145 @@ var _hmt = _hmt || [];
   <!-- Sidebar for Desktop -->
   <aside class="hidden lg:flex fixed left-0 top-0 h-screen w-80 bg-base-200 z-40 flex-col overflow-y-auto">
     <div class="relative h-full">
-      <a href="/" class="block no-underline hover:bg-base-100 transition rounded-box">
-  <div class="p-4 text-center border-base-300 flex flex-col items-center cursor-pointer hidden lg:flex">
-    <div class="avatar mb-4">
-      <div class="w-24 rounded-full ring ring-primary ring-offset-base-100">
-        <img
-  src="/images/avatar.jpg"
-  alt="Profile"
-  class="transition-transform duration-500 hover:rotate-210 cursor-pointer rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 w-24"
-/>
+      <!-- 侧边栏整体容器：使用 flex 布局，占满高度，背景色与主色调一致 -->
+<div class="flex flex-col h-full bg-base-100 text-base-content">
+  
+  <!-- 1. 顶部个人信息区域：增加渐变背景装饰 -->
+  <div class="relative pt-10 pb-6 px-6 flex flex-col items-center text-center shrink-0">
+    <!-- 装饰背景：顶部淡色渐变，增加层次感 -->
+    <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none"></div>
+    
+    <!-- 头像：增加悬停旋转和阴影 -->
+    <div class="avatar relative z-10 mb-4 group cursor-pointer">
+      <div class="w-28 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 shadow-xl transition-transform duration-500 group-hover:rotate-12">
+        <a href="/" class="block">
+          <img src="/images/avatar.jpg" alt="Lulu" class="rounded-full" />
+        </a>
+      </div>
+      
+      <!-- Desktop Hint: Tooltip on the right (Hover) -->
+      <div class="hidden lg:block absolute top-1/2 -right-20 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500 transform -translate-x-4 group-hover:translate-x-0 pointer-events-none z-20">
+         <div class="flex items-center gap-1.5 text-[10px] font-bold tracking-widest text-base-content/50 bg-base-100/90 backdrop-blur px-3 py-1.5 rounded-full border border-base-content/10 shadow-sm">
+            <i class="fa-solid fa-house text-[9px]"></i>
+            <span>HOME</span>
+         </div>
+      </div>
 
+      <!-- Mobile Hint: Small Badge (Always Visible) -->
+      <div class="lg:hidden absolute bottom-1 right-1 z-20 pointer-events-none">
+         <div class="w-7 h-7 rounded-full bg-base-100/80 backdrop-blur shadow-sm border border-base-content/10 flex items-center justify-center text-base-content/40">
+            <i class="fa-solid fa-house text-[10px]"></i>
+         </div>
       </div>
     </div>
-    <h2 class="text-xl font-bold text-base-content">Lulu</h2>
-    <p class="text-base-content opacity-80"></p>
+    
+    <!-- 文字信息 -->
+    <div class="relative z-10">
+      <h2 class="text-2xl font-bold tracking-tight text-base-content">Lulu</h2>
+      <p class="text-sm opacity-60 mt-1 font-medium tracking-wide"></p>
+    </div>
   </div>
-</a>
 
-
-<nav class="p-4 space-y-2 flex-grow">
-  
+  <!-- 2. 导航菜单：可滚动区域，增加自定义滚动条样式 -->
+  <nav class="flex-1 px-4 space-y-2 overflow-y-auto py-4 custom-scrollbar">
     
-      <a href="/plan/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-compact-disc mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        听歌♪(´▽｀)
+      
+        <!-- 判断当前链接是否激活 (简单判断) -->
+         
+        
+        <a href="/plan/" 
+           class="flex items-center gap-4 px-4 py-3 rounded-2xl transition-all duration-300 group
+                  bg-primary text-primary-content shadow-md shadow-primary/30">
+          
+          <!-- 图标：固定宽度居中 -->
+          <div class="w-6 flex justify-center">
+            <i class="fa-solid fa-compact-disc text-lg transition-transform duration-300 group-hover:scale-110 "></i>
+          </div>
+          
+          <span class="font-bold tracking-wide text-sm">听歌♪(´▽｀)</span>
+          
+          
+            <div class="ml-auto w-1.5 h-1.5 rounded-full bg-white/80"></div>
+          
+        </a>
+      
+        <!-- 判断当前链接是否激活 (简单判断) -->
+         
+        
+        <a href="/cv/" 
+           class="flex items-center gap-4 px-4 py-3 rounded-2xl transition-all duration-300 group
+                  hover:bg-base-200 hover:text-primary text-base-content/80">
+          
+          <!-- 图标：固定宽度居中 -->
+          <div class="w-6 flex justify-center">
+            <i class="fa-solid fa-id-card text-lg transition-transform duration-300 group-hover:scale-110 opacity-70"></i>
+          </div>
+          
+          <span class="font-bold tracking-wide text-sm">个人信息</span>
+          
+          
+        </a>
+      
+        <!-- 判断当前链接是否激活 (简单判断) -->
+         
+        
+        <a href="/notes/" 
+           class="flex items-center gap-4 px-4 py-3 rounded-2xl transition-all duration-300 group
+                  hover:bg-base-200 hover:text-primary text-base-content/80">
+          
+          <!-- 图标：固定宽度居中 -->
+          <div class="w-6 flex justify-center">
+            <i class="fa-solid fa-sticky-note text-lg transition-transform duration-300 group-hover:scale-110 opacity-70"></i>
+          </div>
+          
+          <span class="font-bold tracking-wide text-sm">记Lu</span>
+          
+          
+        </a>
+      
+        <!-- 判断当前链接是否激活 (简单判断) -->
+         
+        
+        <a href="/contact/" 
+           class="flex items-center gap-4 px-4 py-3 rounded-2xl transition-all duration-300 group
+                  hover:bg-base-200 hover:text-primary text-base-content/80">
+          
+          <!-- 图标：固定宽度居中 -->
+          <div class="w-6 flex justify-center">
+            <i class="fa-solid fa-envelope text-lg transition-transform duration-300 group-hover:scale-110 opacity-70"></i>
+          </div>
+          
+          <span class="font-bold tracking-wide text-sm">联系方式</span>
+          
+          
+        </a>
+      
+    
+  </nav>
+
+  <!-- 3. 底部社交区域：固定在底部，增加分割线 -->
+  <div class="p-6 border-t border-base-200 bg-base-50/50 shrink-0">
+    
+    <div class="flex justify-center items-center gap-3">
+
+      
+        <a href="https://github.com/zxnauy-LL" target="_blank" rel="noopener noreferrer" 
+           class="btn btn-ghost btn-circle btn-sm hover:bg-base-content hover:text-base-100 transition-all duration-300" title="GitHub">
+          <i class="fa-brands fa-github text-xl"></i>
+        </a>
+      
+
+      <a href="https://y.music.163.com/m/user?id=310700901" target="_blank" rel="noopener noreferrer" 
+         class="btn btn-ghost btn-circle btn-sm hover:bg-red-500 hover:text-white transition-all duration-300" title="网易云音乐">
+        <i class="fa-solid fa-music text-xl"></i>
       </a>
+      
+    </div>
     
-      <a href="/cv/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-id-card mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        个人信息
-      </a>
-    
-      <a href="/notes/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-sticky-note mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        记Lu
-      </a>
-    
-      <a href="/contact/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-envelope mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        联系方式
-      </a>
-    
-  
-</nav>
-
-
-<div class="p-4 border-t border-base-300">
-  
-  <div class="flex justify-center items-center gap-4">
-
-    
-      <a href="https://github.com/zxnauy-LL" class="text-base-content hover:text-primary hover:scale-110 transition-all duration-200 flex-shrink-0" target="_blank" rel="noopener noreferrer" title="GitHub">
-        <i class="fa-brands fa-github text-2xl block"></i>
-      </a>
-    
-
-    <a href="https://y.music.163.com/m/user?id=310700901" class="text-base-content hover:text-primary hover:scale-110 transition-all duration-200 flex-shrink-0" target="_blank" rel="noopener noreferrer" title="网易云音乐">
-      <i class="fa-solid fa-music text-2xl block"></i>
-    </a>
-
+    <!-- 版权信息 -->
+    <div class="text-xs text-center mt-4 opacity-40 font-mono">
+      © 2026 Lulu
+    </div>
   </div>
 </div>
     </div>
@@ -425,65 +505,145 @@ var _hmt = _hmt || [];
       <label for="my-drawer" class="drawer-overlay"></label>
       <aside class="w-80 bg-base-200 min-h-full overflow-y-auto">
         <div class="relative h-full">
-          <a href="/" class="block no-underline hover:bg-base-100 transition rounded-box">
-  <div class="p-4 text-center border-base-300 flex flex-col items-center cursor-pointer hidden lg:flex">
-    <div class="avatar mb-4">
-      <div class="w-24 rounded-full ring ring-primary ring-offset-base-100">
-        <img
-  src="/images/avatar.jpg"
-  alt="Profile"
-  class="transition-transform duration-500 hover:rotate-210 cursor-pointer rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 w-24"
-/>
+          <!-- 侧边栏整体容器：使用 flex 布局，占满高度，背景色与主色调一致 -->
+<div class="flex flex-col h-full bg-base-100 text-base-content">
+  
+  <!-- 1. 顶部个人信息区域：增加渐变背景装饰 -->
+  <div class="relative pt-10 pb-6 px-6 flex flex-col items-center text-center shrink-0">
+    <!-- 装饰背景：顶部淡色渐变，增加层次感 -->
+    <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none"></div>
+    
+    <!-- 头像：增加悬停旋转和阴影 -->
+    <div class="avatar relative z-10 mb-4 group cursor-pointer">
+      <div class="w-28 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 shadow-xl transition-transform duration-500 group-hover:rotate-12">
+        <a href="/" class="block">
+          <img src="/images/avatar.jpg" alt="Lulu" class="rounded-full" />
+        </a>
+      </div>
+      
+      <!-- Desktop Hint: Tooltip on the right (Hover) -->
+      <div class="hidden lg:block absolute top-1/2 -right-20 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500 transform -translate-x-4 group-hover:translate-x-0 pointer-events-none z-20">
+         <div class="flex items-center gap-1.5 text-[10px] font-bold tracking-widest text-base-content/50 bg-base-100/90 backdrop-blur px-3 py-1.5 rounded-full border border-base-content/10 shadow-sm">
+            <i class="fa-solid fa-house text-[9px]"></i>
+            <span>HOME</span>
+         </div>
+      </div>
 
+      <!-- Mobile Hint: Small Badge (Always Visible) -->
+      <div class="lg:hidden absolute bottom-1 right-1 z-20 pointer-events-none">
+         <div class="w-7 h-7 rounded-full bg-base-100/80 backdrop-blur shadow-sm border border-base-content/10 flex items-center justify-center text-base-content/40">
+            <i class="fa-solid fa-house text-[10px]"></i>
+         </div>
       </div>
     </div>
-    <h2 class="text-xl font-bold text-base-content">Lulu</h2>
-    <p class="text-base-content opacity-80"></p>
+    
+    <!-- 文字信息 -->
+    <div class="relative z-10">
+      <h2 class="text-2xl font-bold tracking-tight text-base-content">Lulu</h2>
+      <p class="text-sm opacity-60 mt-1 font-medium tracking-wide"></p>
+    </div>
   </div>
-</a>
 
-
-<nav class="p-4 space-y-2 flex-grow">
-  
+  <!-- 2. 导航菜单：可滚动区域，增加自定义滚动条样式 -->
+  <nav class="flex-1 px-4 space-y-2 overflow-y-auto py-4 custom-scrollbar">
     
-      <a href="/plan/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-compact-disc mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        听歌♪(´▽｀)
+      
+        <!-- 判断当前链接是否激活 (简单判断) -->
+         
+        
+        <a href="/plan/" 
+           class="flex items-center gap-4 px-4 py-3 rounded-2xl transition-all duration-300 group
+                  bg-primary text-primary-content shadow-md shadow-primary/30">
+          
+          <!-- 图标：固定宽度居中 -->
+          <div class="w-6 flex justify-center">
+            <i class="fa-solid fa-compact-disc text-lg transition-transform duration-300 group-hover:scale-110 "></i>
+          </div>
+          
+          <span class="font-bold tracking-wide text-sm">听歌♪(´▽｀)</span>
+          
+          
+            <div class="ml-auto w-1.5 h-1.5 rounded-full bg-white/80"></div>
+          
+        </a>
+      
+        <!-- 判断当前链接是否激活 (简单判断) -->
+         
+        
+        <a href="/cv/" 
+           class="flex items-center gap-4 px-4 py-3 rounded-2xl transition-all duration-300 group
+                  hover:bg-base-200 hover:text-primary text-base-content/80">
+          
+          <!-- 图标：固定宽度居中 -->
+          <div class="w-6 flex justify-center">
+            <i class="fa-solid fa-id-card text-lg transition-transform duration-300 group-hover:scale-110 opacity-70"></i>
+          </div>
+          
+          <span class="font-bold tracking-wide text-sm">个人信息</span>
+          
+          
+        </a>
+      
+        <!-- 判断当前链接是否激活 (简单判断) -->
+         
+        
+        <a href="/notes/" 
+           class="flex items-center gap-4 px-4 py-3 rounded-2xl transition-all duration-300 group
+                  hover:bg-base-200 hover:text-primary text-base-content/80">
+          
+          <!-- 图标：固定宽度居中 -->
+          <div class="w-6 flex justify-center">
+            <i class="fa-solid fa-sticky-note text-lg transition-transform duration-300 group-hover:scale-110 opacity-70"></i>
+          </div>
+          
+          <span class="font-bold tracking-wide text-sm">记Lu</span>
+          
+          
+        </a>
+      
+        <!-- 判断当前链接是否激活 (简单判断) -->
+         
+        
+        <a href="/contact/" 
+           class="flex items-center gap-4 px-4 py-3 rounded-2xl transition-all duration-300 group
+                  hover:bg-base-200 hover:text-primary text-base-content/80">
+          
+          <!-- 图标：固定宽度居中 -->
+          <div class="w-6 flex justify-center">
+            <i class="fa-solid fa-envelope text-lg transition-transform duration-300 group-hover:scale-110 opacity-70"></i>
+          </div>
+          
+          <span class="font-bold tracking-wide text-sm">联系方式</span>
+          
+          
+        </a>
+      
+    
+  </nav>
+
+  <!-- 3. 底部社交区域：固定在底部，增加分割线 -->
+  <div class="p-6 border-t border-base-200 bg-base-50/50 shrink-0">
+    
+    <div class="flex justify-center items-center gap-3">
+
+      
+        <a href="https://github.com/zxnauy-LL" target="_blank" rel="noopener noreferrer" 
+           class="btn btn-ghost btn-circle btn-sm hover:bg-base-content hover:text-base-100 transition-all duration-300" title="GitHub">
+          <i class="fa-brands fa-github text-xl"></i>
+        </a>
+      
+
+      <a href="https://y.music.163.com/m/user?id=310700901" target="_blank" rel="noopener noreferrer" 
+         class="btn btn-ghost btn-circle btn-sm hover:bg-red-500 hover:text-white transition-all duration-300" title="网易云音乐">
+        <i class="fa-solid fa-music text-xl"></i>
       </a>
+      
+    </div>
     
-      <a href="/cv/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-id-card mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        个人信息
-      </a>
-    
-      <a href="/notes/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-sticky-note mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        记Lu
-      </a>
-    
-      <a href="/contact/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-envelope mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        联系方式
-      </a>
-    
-  
-</nav>
-
-
-<div class="p-4 border-t border-base-300">
-  
-  <div class="flex justify-center items-center gap-4">
-
-    
-      <a href="https://github.com/zxnauy-LL" class="text-base-content hover:text-primary hover:scale-110 transition-all duration-200 flex-shrink-0" target="_blank" rel="noopener noreferrer" title="GitHub">
-        <i class="fa-brands fa-github text-2xl block"></i>
-      </a>
-    
-
-    <a href="https://y.music.163.com/m/user?id=310700901" class="text-base-content hover:text-primary hover:scale-110 transition-all duration-200 flex-shrink-0" target="_blank" rel="noopener noreferrer" title="网易云音乐">
-      <i class="fa-solid fa-music text-2xl block"></i>
-    </a>
-
+    <!-- 版权信息 -->
+    <div class="text-xs text-center mt-4 opacity-40 font-mono">
+      © 2026 Lulu
+    </div>
   </div>
 </div>
         </div>
@@ -494,395 +654,864 @@ var _hmt = _hmt || [];
   <!-- Content area for Desktop -->
   <div class="lg:ml-80 pt-20 px-4 py-8">
     
-<div class="container mx-auto px-4 py-8">
-      
-    <h1 class="text-3xl font-bold mb-8 text-base-content">唱片收藏库 💿</h1>
+<!-- Global Background -->
+<div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+    <div class="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-primary/5 blur-[120px] animate-pulse"></div>
+    <div class="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-secondary/5 blur-[120px] animate-pulse" style="animation-delay: 2s;"></div>
+    <div class="absolute inset-0 opacity-20 mix-blend-soft-light" 
+         style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22 opacity=%220.5%22/%3E%3C/svg%3E');">
+    </div>
+</div>
+
+<div class="relative z-10 container mx-auto px-4 py-12 max-w-6xl">
+    
+    <!-- Header -->
+    <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-6xl font-black tracking-tighter mb-4 text-base-content flex items-center justify-center gap-4">
+            <span>唱片收藏库</span>
+            <i class="fa-solid fa-compact-disc text-primary animate-spin-slow"></i>
+        </h1>
+        <p class="text-sm font-bold tracking-[0.3em] text-base-content/40 uppercase">Music Collection & Thoughts</p>
+    </div>
 
     
     
 
     
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         
           
           
 
-          <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-[1.01] transition-all duration-300 border border-base-300">
-            <div class="card-body p-6">
-              <div class="flex items-start gap-5">
-                <div class="flex-shrink-0">
-                  <div class="w-20 h-20 rounded-full bg-base-200 border border-base-300 flex items-center justify-center relative">
-                    <div class="absolute inset-0 rounded-full" style="background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.55), rgba(0,0,0,0.06) 55%, rgba(0,0,0,0.10));"></div>
+          <!-- Vinyl Card -->
+          <div class="group relative bg-base-100/60 backdrop-blur-xl border border-base-content/5 rounded-3xl p-6 hover:bg-base-100/80 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 overflow-hidden">
+            
+            <!-- Background Blur -->
+            
+                <div class="absolute inset-0 opacity-10 blur-3xl scale-150 transition-opacity duration-700 group-hover:opacity-20" style="background-image: url('/pictures/wyy_music/%E4%B8%8D%E6%AD%BB%E4%B9%8B%E8%BA%AB.png'); background-size: cover; background-position: center;"></div>
+            
+
+            <div class="relative z-10 flex flex-col sm:flex-row items-center gap-8">
+                
+                <!-- Vinyl Record Visual -->
+                <div class="relative shrink-0">
+                    <!-- Sleeve/Case Shadow -->
+                    <div class="absolute inset-0 bg-black/20 rounded-full blur-xl transform translate-y-4 scale-90"></div>
                     
-                      <img src="/pictures/wyy_music/%E4%B8%8D%E6%AD%BB%E4%B9%8B%E8%BA%AB.png" alt="cover" class="w-12 h-12 rounded-full object-cover border border-base-100 relative" />
-                      <div class="w-2 h-2 rounded-full bg-base-100 border border-base-300 absolute"></div>
+                    <!-- The Record -->
+                    <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-black relative flex items-center justify-center shadow-2xl ring-4 ring-base-content/5 group-hover:scale-105 transition-transform duration-700 ease-out">
+                        <!-- Grooves -->
+                        <div class="absolute inset-0 rounded-full border-[10px] border-base-content/5 opacity-20"></div>
+                        <div class="absolute inset-2 rounded-full border border-white/10 opacity-30"></div>
+                        <div class="absolute inset-4 rounded-full border border-white/10 opacity-20"></div>
+                        <div class="absolute inset-8 rounded-full border border-white/10 opacity-10"></div>
+                        
+                        <!-- Cover Art (Label) -->
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden relative z-10 animate-spin-slow" style="animation-play-state: paused;">
+                            
+                                <img src="/pictures/wyy_music/%E4%B8%8D%E6%AD%BB%E4%B9%8B%E8%BA%AB.png" alt="cover" class="w-full h-full object-cover" />
+                            
+                            <!-- Center Hole -->
+                            <div class="absolute inset-0 m-auto w-3 h-3 bg-base-100 rounded-full border border-black/20"></div>
+                        </div>
+
+                        <!-- Shine Reflection -->
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-white/10 to-transparent pointer-events-none"></div>
+                    </div>
                     
-                  </div>
+                    <!-- Play Button Overlay -->
+                    <div class="absolute bottom-0 right-0 w-10 h-10 bg-primary text-primary-content rounded-full flex items-center justify-center shadow-lg transform scale-0 group-hover:scale-100 transition-transform duration-300 delay-100">
+                        <i class="fa-solid fa-play text-sm ml-0.5"></i>
+                    </div>
                 </div>
 
-                <div class="min-w-0 flex-1">
-                  <h2 class="text-lg font-bold leading-tight truncate">不死之身</h2>
-                  <p class="text-sm text-base-content/70 truncate">林俊杰</p>
+                <!-- Info -->
+                <div class="flex-1 text-center sm:text-left min-w-0 w-full">
+                    <div class="mb-1">
+                        <span class="text-[10px] font-bold tracking-widest uppercase text-primary/60 mb-1 block">Track 01</span>
+                        <h2 class="text-2xl font-black leading-tight text-base-content truncate" title="不死之身">不死之身</h2>
+                        <p class="text-sm font-medium text-base-content/60 truncate mt-1">林俊杰</p>
+                    </div>
 
-                  
-                    <p class="mt-3 text-sm italic text-base-content/80"> “地球毁灭了以后……” </p>
-                  
+                    
+                        <div class="relative mt-4 py-3 px-4 bg-base-content/5 rounded-xl border border-base-content/5">
+                            <i class="fa-solid fa-quote-left absolute top-2 left-2 text-[10px] text-base-content/20"></i>
+                            <p class="text-xs italic text-base-content/70 font-serif leading-relaxed line-clamp-2">“地球毁灭了以后……”</p>
+                        </div>
+                    
 
-                  
-                    <p class="mt-3 text-sm text-base-content/80">评价：从你的歌单里听到的，虽然以前就听过，但是还是很喜欢</p>
-                  
+                    
+                        <div class="mt-4 flex items-start gap-2">
+                            <i class="fa-regular fa-comment-dots mt-1 text-secondary/60 text-xs shrink-0"></i>
+                            <p class="text-xs text-base-content/80 leading-relaxed text-justify">从你的歌单里听到的，虽然以前就听过，但是还是很喜欢</p>
+                        </div>
+                    
                 </div>
-              </div>
             </div>
           </div>
         
           
           
 
-          <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-[1.01] transition-all duration-300 border border-base-300">
-            <div class="card-body p-6">
-              <div class="flex items-start gap-5">
-                <div class="flex-shrink-0">
-                  <div class="w-20 h-20 rounded-full bg-base-200 border border-base-300 flex items-center justify-center relative">
-                    <div class="absolute inset-0 rounded-full" style="background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.55), rgba(0,0,0,0.06) 55%, rgba(0,0,0,0.10));"></div>
+          <!-- Vinyl Card -->
+          <div class="group relative bg-base-100/60 backdrop-blur-xl border border-base-content/5 rounded-3xl p-6 hover:bg-base-100/80 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 overflow-hidden">
+            
+            <!-- Background Blur -->
+            
+                <div class="absolute inset-0 opacity-10 blur-3xl scale-150 transition-opacity duration-700 group-hover:opacity-20" style="background-image: url('/pictures/wyy_music/%E5%A4%A7%E4%BA%BA%E4%B8%AD.png'); background-size: cover; background-position: center;"></div>
+            
+
+            <div class="relative z-10 flex flex-col sm:flex-row items-center gap-8">
+                
+                <!-- Vinyl Record Visual -->
+                <div class="relative shrink-0">
+                    <!-- Sleeve/Case Shadow -->
+                    <div class="absolute inset-0 bg-black/20 rounded-full blur-xl transform translate-y-4 scale-90"></div>
                     
-                      <img src="/pictures/wyy_music/%E5%A4%A7%E4%BA%BA%E4%B8%AD.png" alt="cover" class="w-12 h-12 rounded-full object-cover border border-base-100 relative" />
-                      <div class="w-2 h-2 rounded-full bg-base-100 border border-base-300 absolute"></div>
+                    <!-- The Record -->
+                    <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-black relative flex items-center justify-center shadow-2xl ring-4 ring-base-content/5 group-hover:scale-105 transition-transform duration-700 ease-out">
+                        <!-- Grooves -->
+                        <div class="absolute inset-0 rounded-full border-[10px] border-base-content/5 opacity-20"></div>
+                        <div class="absolute inset-2 rounded-full border border-white/10 opacity-30"></div>
+                        <div class="absolute inset-4 rounded-full border border-white/10 opacity-20"></div>
+                        <div class="absolute inset-8 rounded-full border border-white/10 opacity-10"></div>
+                        
+                        <!-- Cover Art (Label) -->
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden relative z-10 animate-spin-slow" style="animation-play-state: paused;">
+                            
+                                <img src="/pictures/wyy_music/%E5%A4%A7%E4%BA%BA%E4%B8%AD.png" alt="cover" class="w-full h-full object-cover" />
+                            
+                            <!-- Center Hole -->
+                            <div class="absolute inset-0 m-auto w-3 h-3 bg-base-100 rounded-full border border-black/20"></div>
+                        </div>
+
+                        <!-- Shine Reflection -->
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-white/10 to-transparent pointer-events-none"></div>
+                    </div>
                     
-                  </div>
+                    <!-- Play Button Overlay -->
+                    <div class="absolute bottom-0 right-0 w-10 h-10 bg-primary text-primary-content rounded-full flex items-center justify-center shadow-lg transform scale-0 group-hover:scale-100 transition-transform duration-300 delay-100">
+                        <i class="fa-solid fa-play text-sm ml-0.5"></i>
+                    </div>
                 </div>
 
-                <div class="min-w-0 flex-1">
-                  <h2 class="text-lg font-bold leading-tight truncate">大人中</h2>
-                  <p class="text-sm text-base-content/70 truncate">卢广仲</p>
+                <!-- Info -->
+                <div class="flex-1 text-center sm:text-left min-w-0 w-full">
+                    <div class="mb-1">
+                        <span class="text-[10px] font-bold tracking-widest uppercase text-primary/60 mb-1 block">Track 02</span>
+                        <h2 class="text-2xl font-black leading-tight text-base-content truncate" title="大人中">大人中</h2>
+                        <p class="text-sm font-medium text-base-content/60 truncate mt-1">卢广仲</p>
+                    </div>
 
-                  
-                    <p class="mt-3 text-sm italic text-base-content/80"> “抬起头才发现，流眼泪的星星正在放弃我……” </p>
-                  
+                    
+                        <div class="relative mt-4 py-3 px-4 bg-base-content/5 rounded-xl border border-base-content/5">
+                            <i class="fa-solid fa-quote-left absolute top-2 left-2 text-[10px] text-base-content/20"></i>
+                            <p class="text-xs italic text-base-content/70 font-serif leading-relaxed line-clamp-2">“抬起头才发现，流眼泪的星星正在放弃我……”</p>
+                        </div>
+                    
 
-                  
-                    <p class="mt-3 text-sm text-base-content/80">评价：你在考研前分享的歌曲，听起来很舒服</p>
-                  
+                    
+                        <div class="mt-4 flex items-start gap-2">
+                            <i class="fa-regular fa-comment-dots mt-1 text-secondary/60 text-xs shrink-0"></i>
+                            <p class="text-xs text-base-content/80 leading-relaxed text-justify">你在考研前分享的歌曲</p>
+                        </div>
+                    
                 </div>
-              </div>
             </div>
           </div>
         
           
           
 
-          <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-[1.01] transition-all duration-300 border border-base-300">
-            <div class="card-body p-6">
-              <div class="flex items-start gap-5">
-                <div class="flex-shrink-0">
-                  <div class="w-20 h-20 rounded-full bg-base-200 border border-base-300 flex items-center justify-center relative">
-                    <div class="absolute inset-0 rounded-full" style="background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.55), rgba(0,0,0,0.06) 55%, rgba(0,0,0,0.10));"></div>
+          <!-- Vinyl Card -->
+          <div class="group relative bg-base-100/60 backdrop-blur-xl border border-base-content/5 rounded-3xl p-6 hover:bg-base-100/80 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 overflow-hidden">
+            
+            <!-- Background Blur -->
+            
+                <div class="absolute inset-0 opacity-10 blur-3xl scale-150 transition-opacity duration-700 group-hover:opacity-20" style="background-image: url('/pictures/wyy_music/%E5%A4%A7%E5%A4%B4%E8%B4%B4.png'); background-size: cover; background-position: center;"></div>
+            
+
+            <div class="relative z-10 flex flex-col sm:flex-row items-center gap-8">
+                
+                <!-- Vinyl Record Visual -->
+                <div class="relative shrink-0">
+                    <!-- Sleeve/Case Shadow -->
+                    <div class="absolute inset-0 bg-black/20 rounded-full blur-xl transform translate-y-4 scale-90"></div>
                     
-                      <img src="/pictures/wyy_music/%E5%A4%A7%E5%A4%B4%E8%B4%B4.png" alt="cover" class="w-12 h-12 rounded-full object-cover border border-base-100 relative" />
-                      <div class="w-2 h-2 rounded-full bg-base-100 border border-base-300 absolute"></div>
+                    <!-- The Record -->
+                    <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-black relative flex items-center justify-center shadow-2xl ring-4 ring-base-content/5 group-hover:scale-105 transition-transform duration-700 ease-out">
+                        <!-- Grooves -->
+                        <div class="absolute inset-0 rounded-full border-[10px] border-base-content/5 opacity-20"></div>
+                        <div class="absolute inset-2 rounded-full border border-white/10 opacity-30"></div>
+                        <div class="absolute inset-4 rounded-full border border-white/10 opacity-20"></div>
+                        <div class="absolute inset-8 rounded-full border border-white/10 opacity-10"></div>
+                        
+                        <!-- Cover Art (Label) -->
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden relative z-10 animate-spin-slow" style="animation-play-state: paused;">
+                            
+                                <img src="/pictures/wyy_music/%E5%A4%A7%E5%A4%B4%E8%B4%B4.png" alt="cover" class="w-full h-full object-cover" />
+                            
+                            <!-- Center Hole -->
+                            <div class="absolute inset-0 m-auto w-3 h-3 bg-base-100 rounded-full border border-black/20"></div>
+                        </div>
+
+                        <!-- Shine Reflection -->
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-white/10 to-transparent pointer-events-none"></div>
+                    </div>
                     
-                  </div>
+                    <!-- Play Button Overlay -->
+                    <div class="absolute bottom-0 right-0 w-10 h-10 bg-primary text-primary-content rounded-full flex items-center justify-center shadow-lg transform scale-0 group-hover:scale-100 transition-transform duration-300 delay-100">
+                        <i class="fa-solid fa-play text-sm ml-0.5"></i>
+                    </div>
                 </div>
 
-                <div class="min-w-0 flex-1">
-                  <h2 class="text-lg font-bold leading-tight truncate">大头贴</h2>
-                  <p class="text-sm text-base-content/70 truncate">TizzyT</p>
+                <!-- Info -->
+                <div class="flex-1 text-center sm:text-left min-w-0 w-full">
+                    <div class="mb-1">
+                        <span class="text-[10px] font-bold tracking-widest uppercase text-primary/60 mb-1 block">Track 03</span>
+                        <h2 class="text-2xl font-black leading-tight text-base-content truncate" title="大头贴">大头贴</h2>
+                        <p class="text-sm font-medium text-base-content/60 truncate mt-1">TizzyT</p>
+                    </div>
 
-                  
-                    <p class="mt-3 text-sm italic text-base-content/80"> “我把我们的合照 存进我的智能手机” </p>
-                  
+                    
+                        <div class="relative mt-4 py-3 px-4 bg-base-content/5 rounded-xl border border-base-content/5">
+                            <i class="fa-solid fa-quote-left absolute top-2 left-2 text-[10px] text-base-content/20"></i>
+                            <p class="text-xs italic text-base-content/70 font-serif leading-relaxed line-clamp-2">“我把我们的合照 存进我的智能手机”</p>
+                        </div>
+                    
 
-                  
-                    <p class="mt-3 text-sm text-base-content/80">评价：从你的听歌记录里发现的、、</p>
-                  
+                    
+                        <div class="mt-4 flex items-start gap-2">
+                            <i class="fa-regular fa-comment-dots mt-1 text-secondary/60 text-xs shrink-0"></i>
+                            <p class="text-xs text-base-content/80 leading-relaxed text-justify">从你的听歌记录里发现的、、</p>
+                        </div>
+                    
                 </div>
-              </div>
             </div>
           </div>
         
           
           
 
-          <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-[1.01] transition-all duration-300 border border-base-300">
-            <div class="card-body p-6">
-              <div class="flex items-start gap-5">
-                <div class="flex-shrink-0">
-                  <div class="w-20 h-20 rounded-full bg-base-200 border border-base-300 flex items-center justify-center relative">
-                    <div class="absolute inset-0 rounded-full" style="background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.55), rgba(0,0,0,0.06) 55%, rgba(0,0,0,0.10));"></div>
+          <!-- Vinyl Card -->
+          <div class="group relative bg-base-100/60 backdrop-blur-xl border border-base-content/5 rounded-3xl p-6 hover:bg-base-100/80 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 overflow-hidden">
+            
+            <!-- Background Blur -->
+            
+                <div class="absolute inset-0 opacity-10 blur-3xl scale-150 transition-opacity duration-700 group-hover:opacity-20" style="background-image: url('/pictures/wyy_music/%E6%99%B4.png'); background-size: cover; background-position: center;"></div>
+            
+
+            <div class="relative z-10 flex flex-col sm:flex-row items-center gap-8">
+                
+                <!-- Vinyl Record Visual -->
+                <div class="relative shrink-0">
+                    <!-- Sleeve/Case Shadow -->
+                    <div class="absolute inset-0 bg-black/20 rounded-full blur-xl transform translate-y-4 scale-90"></div>
                     
-                      <img src="/pictures/wyy_music/%E6%99%B4.png" alt="cover" class="w-12 h-12 rounded-full object-cover border border-base-100 relative" />
-                      <div class="w-2 h-2 rounded-full bg-base-100 border border-base-300 absolute"></div>
+                    <!-- The Record -->
+                    <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-black relative flex items-center justify-center shadow-2xl ring-4 ring-base-content/5 group-hover:scale-105 transition-transform duration-700 ease-out">
+                        <!-- Grooves -->
+                        <div class="absolute inset-0 rounded-full border-[10px] border-base-content/5 opacity-20"></div>
+                        <div class="absolute inset-2 rounded-full border border-white/10 opacity-30"></div>
+                        <div class="absolute inset-4 rounded-full border border-white/10 opacity-20"></div>
+                        <div class="absolute inset-8 rounded-full border border-white/10 opacity-10"></div>
+                        
+                        <!-- Cover Art (Label) -->
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden relative z-10 animate-spin-slow" style="animation-play-state: paused;">
+                            
+                                <img src="/pictures/wyy_music/%E6%99%B4.png" alt="cover" class="w-full h-full object-cover" />
+                            
+                            <!-- Center Hole -->
+                            <div class="absolute inset-0 m-auto w-3 h-3 bg-base-100 rounded-full border border-black/20"></div>
+                        </div>
+
+                        <!-- Shine Reflection -->
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-white/10 to-transparent pointer-events-none"></div>
+                    </div>
                     
-                  </div>
+                    <!-- Play Button Overlay -->
+                    <div class="absolute bottom-0 right-0 w-10 h-10 bg-primary text-primary-content rounded-full flex items-center justify-center shadow-lg transform scale-0 group-hover:scale-100 transition-transform duration-300 delay-100">
+                        <i class="fa-solid fa-play text-sm ml-0.5"></i>
+                    </div>
                 </div>
 
-                <div class="min-w-0 flex-1">
-                  <h2 class="text-lg font-bold leading-tight truncate">晴</h2>
-                  <p class="text-sm text-base-content/70 truncate">汪苏泷</p>
+                <!-- Info -->
+                <div class="flex-1 text-center sm:text-left min-w-0 w-full">
+                    <div class="mb-1">
+                        <span class="text-[10px] font-bold tracking-widest uppercase text-primary/60 mb-1 block">Track 04</span>
+                        <h2 class="text-2xl font-black leading-tight text-base-content truncate" title="晴">晴</h2>
+                        <p class="text-sm font-medium text-base-content/60 truncate mt-1">汪苏泷</p>
+                    </div>
 
-                  
-                    <p class="mt-3 text-sm italic text-base-content/80"> “歌词里面的转折 现在变成了你我” </p>
-                  
+                    
+                        <div class="relative mt-4 py-3 px-4 bg-base-content/5 rounded-xl border border-base-content/5">
+                            <i class="fa-solid fa-quote-left absolute top-2 left-2 text-[10px] text-base-content/20"></i>
+                            <p class="text-xs italic text-base-content/70 font-serif leading-relaxed line-clamp-2">“歌词里面的转折 现在变成了你我”</p>
+                        </div>
+                    
 
-                  
-                    <p class="mt-3 text-sm text-base-content/80">评价：歌名是晴，可歌词都是关于雨</p>
-                  
+                    
+                        <div class="mt-4 flex items-start gap-2">
+                            <i class="fa-regular fa-comment-dots mt-1 text-secondary/60 text-xs shrink-0"></i>
+                            <p class="text-xs text-base-content/80 leading-relaxed text-justify">歌名是晴，可歌词都是关于雨</p>
+                        </div>
+                    
                 </div>
-              </div>
             </div>
           </div>
         
           
           
 
-          <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-[1.01] transition-all duration-300 border border-base-300">
-            <div class="card-body p-6">
-              <div class="flex items-start gap-5">
-                <div class="flex-shrink-0">
-                  <div class="w-20 h-20 rounded-full bg-base-200 border border-base-300 flex items-center justify-center relative">
-                    <div class="absolute inset-0 rounded-full" style="background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.55), rgba(0,0,0,0.06) 55%, rgba(0,0,0,0.10));"></div>
+          <!-- Vinyl Card -->
+          <div class="group relative bg-base-100/60 backdrop-blur-xl border border-base-content/5 rounded-3xl p-6 hover:bg-base-100/80 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 overflow-hidden">
+            
+            <!-- Background Blur -->
+            
+                <div class="absolute inset-0 opacity-10 blur-3xl scale-150 transition-opacity duration-700 group-hover:opacity-20" style="background-image: url('/pictures/wyy_music/%E6%83%B3%E5%88%B0%E6%88%91%E4%BB%AC.png'); background-size: cover; background-position: center;"></div>
+            
+
+            <div class="relative z-10 flex flex-col sm:flex-row items-center gap-8">
+                
+                <!-- Vinyl Record Visual -->
+                <div class="relative shrink-0">
+                    <!-- Sleeve/Case Shadow -->
+                    <div class="absolute inset-0 bg-black/20 rounded-full blur-xl transform translate-y-4 scale-90"></div>
                     
-                      <img src="/pictures/wyy_music/%E6%83%B3%E5%88%B0%E6%88%91%E4%BB%AC.png" alt="cover" class="w-12 h-12 rounded-full object-cover border border-base-100 relative" />
-                      <div class="w-2 h-2 rounded-full bg-base-100 border border-base-300 absolute"></div>
+                    <!-- The Record -->
+                    <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-black relative flex items-center justify-center shadow-2xl ring-4 ring-base-content/5 group-hover:scale-105 transition-transform duration-700 ease-out">
+                        <!-- Grooves -->
+                        <div class="absolute inset-0 rounded-full border-[10px] border-base-content/5 opacity-20"></div>
+                        <div class="absolute inset-2 rounded-full border border-white/10 opacity-30"></div>
+                        <div class="absolute inset-4 rounded-full border border-white/10 opacity-20"></div>
+                        <div class="absolute inset-8 rounded-full border border-white/10 opacity-10"></div>
+                        
+                        <!-- Cover Art (Label) -->
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden relative z-10 animate-spin-slow" style="animation-play-state: paused;">
+                            
+                                <img src="/pictures/wyy_music/%E6%83%B3%E5%88%B0%E6%88%91%E4%BB%AC.png" alt="cover" class="w-full h-full object-cover" />
+                            
+                            <!-- Center Hole -->
+                            <div class="absolute inset-0 m-auto w-3 h-3 bg-base-100 rounded-full border border-black/20"></div>
+                        </div>
+
+                        <!-- Shine Reflection -->
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-white/10 to-transparent pointer-events-none"></div>
+                    </div>
                     
-                  </div>
+                    <!-- Play Button Overlay -->
+                    <div class="absolute bottom-0 right-0 w-10 h-10 bg-primary text-primary-content rounded-full flex items-center justify-center shadow-lg transform scale-0 group-hover:scale-100 transition-transform duration-300 delay-100">
+                        <i class="fa-solid fa-play text-sm ml-0.5"></i>
+                    </div>
                 </div>
 
-                <div class="min-w-0 flex-1">
-                  <h2 class="text-lg font-bold leading-tight truncate">想到我们</h2>
-                  <p class="text-sm text-base-content/70 truncate">汪苏泷</p>
+                <!-- Info -->
+                <div class="flex-1 text-center sm:text-left min-w-0 w-full">
+                    <div class="mb-1">
+                        <span class="text-[10px] font-bold tracking-widest uppercase text-primary/60 mb-1 block">Track 05</span>
+                        <h2 class="text-2xl font-black leading-tight text-base-content truncate" title="想到我们">想到我们</h2>
+                        <p class="text-sm font-medium text-base-content/60 truncate mt-1">汪苏泷</p>
+                    </div>
 
-                  
-                    <p class="mt-3 text-sm italic text-base-content/80"> “想到世界足够辽阔 想到我们毫无结果” </p>
-                  
+                    
+                        <div class="relative mt-4 py-3 px-4 bg-base-content/5 rounded-xl border border-base-content/5">
+                            <i class="fa-solid fa-quote-left absolute top-2 left-2 text-[10px] text-base-content/20"></i>
+                            <p class="text-xs italic text-base-content/70 font-serif leading-relaxed line-clamp-2">“想到世界足够辽阔 想到我们毫无结果”</p>
+                        </div>
+                    
 
-                  
-                    <p class="mt-3 text-sm text-base-content/80">评价：灵魂陪你静坐</p>
-                  
+                    
+                        <div class="mt-4 flex items-start gap-2">
+                            <i class="fa-regular fa-comment-dots mt-1 text-secondary/60 text-xs shrink-0"></i>
+                            <p class="text-xs text-base-content/80 leading-relaxed text-justify">灵魂陪你静坐</p>
+                        </div>
+                    
                 </div>
-              </div>
             </div>
           </div>
         
           
           
 
-          <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-[1.01] transition-all duration-300 border border-base-300">
-            <div class="card-body p-6">
-              <div class="flex items-start gap-5">
-                <div class="flex-shrink-0">
-                  <div class="w-20 h-20 rounded-full bg-base-200 border border-base-300 flex items-center justify-center relative">
-                    <div class="absolute inset-0 rounded-full" style="background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.55), rgba(0,0,0,0.06) 55%, rgba(0,0,0,0.10));"></div>
+          <!-- Vinyl Card -->
+          <div class="group relative bg-base-100/60 backdrop-blur-xl border border-base-content/5 rounded-3xl p-6 hover:bg-base-100/80 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 overflow-hidden">
+            
+            <!-- Background Blur -->
+            
+                <div class="absolute inset-0 opacity-10 blur-3xl scale-150 transition-opacity duration-700 group-hover:opacity-20" style="background-image: url('/pictures/wyy_music/replay.png'); background-size: cover; background-position: center;"></div>
+            
+
+            <div class="relative z-10 flex flex-col sm:flex-row items-center gap-8">
+                
+                <!-- Vinyl Record Visual -->
+                <div class="relative shrink-0">
+                    <!-- Sleeve/Case Shadow -->
+                    <div class="absolute inset-0 bg-black/20 rounded-full blur-xl transform translate-y-4 scale-90"></div>
                     
-                      <img src="/pictures/wyy_music/replay.png" alt="cover" class="w-12 h-12 rounded-full object-cover border border-base-100 relative" />
-                      <div class="w-2 h-2 rounded-full bg-base-100 border border-base-300 absolute"></div>
+                    <!-- The Record -->
+                    <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-black relative flex items-center justify-center shadow-2xl ring-4 ring-base-content/5 group-hover:scale-105 transition-transform duration-700 ease-out">
+                        <!-- Grooves -->
+                        <div class="absolute inset-0 rounded-full border-[10px] border-base-content/5 opacity-20"></div>
+                        <div class="absolute inset-2 rounded-full border border-white/10 opacity-30"></div>
+                        <div class="absolute inset-4 rounded-full border border-white/10 opacity-20"></div>
+                        <div class="absolute inset-8 rounded-full border border-white/10 opacity-10"></div>
+                        
+                        <!-- Cover Art (Label) -->
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden relative z-10 animate-spin-slow" style="animation-play-state: paused;">
+                            
+                                <img src="/pictures/wyy_music/replay.png" alt="cover" class="w-full h-full object-cover" />
+                            
+                            <!-- Center Hole -->
+                            <div class="absolute inset-0 m-auto w-3 h-3 bg-base-100 rounded-full border border-black/20"></div>
+                        </div>
+
+                        <!-- Shine Reflection -->
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-white/10 to-transparent pointer-events-none"></div>
+                    </div>
                     
-                  </div>
+                    <!-- Play Button Overlay -->
+                    <div class="absolute bottom-0 right-0 w-10 h-10 bg-primary text-primary-content rounded-full flex items-center justify-center shadow-lg transform scale-0 group-hover:scale-100 transition-transform duration-300 delay-100">
+                        <i class="fa-solid fa-play text-sm ml-0.5"></i>
+                    </div>
                 </div>
 
-                <div class="min-w-0 flex-1">
-                  <h2 class="text-lg font-bold leading-tight truncate">Replay</h2>
-                  <p class="text-sm text-base-content/70 truncate">16</p>
+                <!-- Info -->
+                <div class="flex-1 text-center sm:text-left min-w-0 w-full">
+                    <div class="mb-1">
+                        <span class="text-[10px] font-bold tracking-widest uppercase text-primary/60 mb-1 block">Track 06</span>
+                        <h2 class="text-2xl font-black leading-tight text-base-content truncate" title="Replay">Replay</h2>
+                        <p class="text-sm font-medium text-base-content/60 truncate mt-1">16</p>
+                    </div>
 
-                  
-                    <p class="mt-3 text-sm italic text-base-content/80"> “I&#39;m on replay all night” </p>
-                  
+                    
+                        <div class="relative mt-4 py-3 px-4 bg-base-content/5 rounded-xl border border-base-content/5">
+                            <i class="fa-solid fa-quote-left absolute top-2 left-2 text-[10px] text-base-content/20"></i>
+                            <p class="text-xs italic text-base-content/70 font-serif leading-relaxed line-clamp-2">“I&#39;m on replay all night”</p>
+                        </div>
+                    
 
-                  
+                    
                 </div>
-              </div>
             </div>
           </div>
         
           
           
 
-          <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-[1.01] transition-all duration-300 border border-base-300">
-            <div class="card-body p-6">
-              <div class="flex items-start gap-5">
-                <div class="flex-shrink-0">
-                  <div class="w-20 h-20 rounded-full bg-base-200 border border-base-300 flex items-center justify-center relative">
-                    <div class="absolute inset-0 rounded-full" style="background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.55), rgba(0,0,0,0.06) 55%, rgba(0,0,0,0.10));"></div>
+          <!-- Vinyl Card -->
+          <div class="group relative bg-base-100/60 backdrop-blur-xl border border-base-content/5 rounded-3xl p-6 hover:bg-base-100/80 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 overflow-hidden">
+            
+            <!-- Background Blur -->
+            
+                <div class="absolute inset-0 opacity-10 blur-3xl scale-150 transition-opacity duration-700 group-hover:opacity-20" style="background-image: url('/pictures/wyy_music/%E7%A0%B4%E7%A2%8E%E7%9A%84%E8%94%B7%E8%96%87.png'); background-size: cover; background-position: center;"></div>
+            
+
+            <div class="relative z-10 flex flex-col sm:flex-row items-center gap-8">
+                
+                <!-- Vinyl Record Visual -->
+                <div class="relative shrink-0">
+                    <!-- Sleeve/Case Shadow -->
+                    <div class="absolute inset-0 bg-black/20 rounded-full blur-xl transform translate-y-4 scale-90"></div>
                     
-                      <img src="/pictures/wyy_music/%E7%A0%B4%E7%A2%8E%E7%9A%84%E8%94%B7%E8%96%87.png" alt="cover" class="w-12 h-12 rounded-full object-cover border border-base-100 relative" />
-                      <div class="w-2 h-2 rounded-full bg-base-100 border border-base-300 absolute"></div>
+                    <!-- The Record -->
+                    <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-black relative flex items-center justify-center shadow-2xl ring-4 ring-base-content/5 group-hover:scale-105 transition-transform duration-700 ease-out">
+                        <!-- Grooves -->
+                        <div class="absolute inset-0 rounded-full border-[10px] border-base-content/5 opacity-20"></div>
+                        <div class="absolute inset-2 rounded-full border border-white/10 opacity-30"></div>
+                        <div class="absolute inset-4 rounded-full border border-white/10 opacity-20"></div>
+                        <div class="absolute inset-8 rounded-full border border-white/10 opacity-10"></div>
+                        
+                        <!-- Cover Art (Label) -->
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden relative z-10 animate-spin-slow" style="animation-play-state: paused;">
+                            
+                                <img src="/pictures/wyy_music/%E7%A0%B4%E7%A2%8E%E7%9A%84%E8%94%B7%E8%96%87.png" alt="cover" class="w-full h-full object-cover" />
+                            
+                            <!-- Center Hole -->
+                            <div class="absolute inset-0 m-auto w-3 h-3 bg-base-100 rounded-full border border-black/20"></div>
+                        </div>
+
+                        <!-- Shine Reflection -->
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-white/10 to-transparent pointer-events-none"></div>
+                    </div>
                     
-                  </div>
+                    <!-- Play Button Overlay -->
+                    <div class="absolute bottom-0 right-0 w-10 h-10 bg-primary text-primary-content rounded-full flex items-center justify-center shadow-lg transform scale-0 group-hover:scale-100 transition-transform duration-300 delay-100">
+                        <i class="fa-solid fa-play text-sm ml-0.5"></i>
+                    </div>
                 </div>
 
-                <div class="min-w-0 flex-1">
-                  <h2 class="text-lg font-bold leading-tight truncate">破碎的蔷薇</h2>
-                  <p class="text-sm text-base-content/70 truncate">福梦</p>
+                <!-- Info -->
+                <div class="flex-1 text-center sm:text-left min-w-0 w-full">
+                    <div class="mb-1">
+                        <span class="text-[10px] font-bold tracking-widest uppercase text-primary/60 mb-1 block">Track 07</span>
+                        <h2 class="text-2xl font-black leading-tight text-base-content truncate" title="破碎的蔷薇">破碎的蔷薇</h2>
+                        <p class="text-sm font-medium text-base-content/60 truncate mt-1">福梦</p>
+                    </div>
 
-                  
-                    <p class="mt-3 text-sm italic text-base-content/80"> “在我心中你从来没离开过” </p>
-                  
+                    
+                        <div class="relative mt-4 py-3 px-4 bg-base-content/5 rounded-xl border border-base-content/5">
+                            <i class="fa-solid fa-quote-left absolute top-2 left-2 text-[10px] text-base-content/20"></i>
+                            <p class="text-xs italic text-base-content/70 font-serif leading-relaxed line-clamp-2">“在我心中你从来没离开过”</p>
+                        </div>
+                    
 
-                  
-                    <p class="mt-3 text-sm text-base-content/80">评价：真是很懊悔呢</p>
-                  
+                    
+                        <div class="mt-4 flex items-start gap-2">
+                            <i class="fa-regular fa-comment-dots mt-1 text-secondary/60 text-xs shrink-0"></i>
+                            <p class="text-xs text-base-content/80 leading-relaxed text-justify">真是很懊悔呢</p>
+                        </div>
+                    
                 </div>
-              </div>
             </div>
           </div>
         
           
           
 
-          <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-[1.01] transition-all duration-300 border border-base-300">
-            <div class="card-body p-6">
-              <div class="flex items-start gap-5">
-                <div class="flex-shrink-0">
-                  <div class="w-20 h-20 rounded-full bg-base-200 border border-base-300 flex items-center justify-center relative">
-                    <div class="absolute inset-0 rounded-full" style="background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.55), rgba(0,0,0,0.06) 55%, rgba(0,0,0,0.10));"></div>
+          <!-- Vinyl Card -->
+          <div class="group relative bg-base-100/60 backdrop-blur-xl border border-base-content/5 rounded-3xl p-6 hover:bg-base-100/80 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 overflow-hidden">
+            
+            <!-- Background Blur -->
+            
+                <div class="absolute inset-0 opacity-10 blur-3xl scale-150 transition-opacity duration-700 group-hover:opacity-20" style="background-image: url('/pictures/wyy_music/%E5%9C%86.png'); background-size: cover; background-position: center;"></div>
+            
+
+            <div class="relative z-10 flex flex-col sm:flex-row items-center gap-8">
+                
+                <!-- Vinyl Record Visual -->
+                <div class="relative shrink-0">
+                    <!-- Sleeve/Case Shadow -->
+                    <div class="absolute inset-0 bg-black/20 rounded-full blur-xl transform translate-y-4 scale-90"></div>
                     
-                      <img src="/pictures/wyy_music/%E5%9C%86.png" alt="cover" class="w-12 h-12 rounded-full object-cover border border-base-100 relative" />
-                      <div class="w-2 h-2 rounded-full bg-base-100 border border-base-300 absolute"></div>
+                    <!-- The Record -->
+                    <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-black relative flex items-center justify-center shadow-2xl ring-4 ring-base-content/5 group-hover:scale-105 transition-transform duration-700 ease-out">
+                        <!-- Grooves -->
+                        <div class="absolute inset-0 rounded-full border-[10px] border-base-content/5 opacity-20"></div>
+                        <div class="absolute inset-2 rounded-full border border-white/10 opacity-30"></div>
+                        <div class="absolute inset-4 rounded-full border border-white/10 opacity-20"></div>
+                        <div class="absolute inset-8 rounded-full border border-white/10 opacity-10"></div>
+                        
+                        <!-- Cover Art (Label) -->
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden relative z-10 animate-spin-slow" style="animation-play-state: paused;">
+                            
+                                <img src="/pictures/wyy_music/%E5%9C%86.png" alt="cover" class="w-full h-full object-cover" />
+                            
+                            <!-- Center Hole -->
+                            <div class="absolute inset-0 m-auto w-3 h-3 bg-base-100 rounded-full border border-black/20"></div>
+                        </div>
+
+                        <!-- Shine Reflection -->
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-white/10 to-transparent pointer-events-none"></div>
+                    </div>
                     
-                  </div>
+                    <!-- Play Button Overlay -->
+                    <div class="absolute bottom-0 right-0 w-10 h-10 bg-primary text-primary-content rounded-full flex items-center justify-center shadow-lg transform scale-0 group-hover:scale-100 transition-transform duration-300 delay-100">
+                        <i class="fa-solid fa-play text-sm ml-0.5"></i>
+                    </div>
                 </div>
 
-                <div class="min-w-0 flex-1">
-                  <h2 class="text-lg font-bold leading-tight truncate">圆</h2>
-                  <p class="text-sm text-base-content/70 truncate">AGA</p>
+                <!-- Info -->
+                <div class="flex-1 text-center sm:text-left min-w-0 w-full">
+                    <div class="mb-1">
+                        <span class="text-[10px] font-bold tracking-widest uppercase text-primary/60 mb-1 block">Track 08</span>
+                        <h2 class="text-2xl font-black leading-tight text-base-content truncate" title="圆">圆</h2>
+                        <p class="text-sm font-medium text-base-content/60 truncate mt-1">AGA</p>
+                    </div>
 
-                  
-                    <p class="mt-3 text-sm italic text-base-content/80"> “人间的圆虽则是不够缘 而有生一天会遇见” </p>
-                  
+                    
+                        <div class="relative mt-4 py-3 px-4 bg-base-content/5 rounded-xl border border-base-content/5">
+                            <i class="fa-solid fa-quote-left absolute top-2 left-2 text-[10px] text-base-content/20"></i>
+                            <p class="text-xs italic text-base-content/70 font-serif leading-relaxed line-clamp-2">“人间的圆虽则是不够缘 而有生一天会遇见”</p>
+                        </div>
+                    
 
-                  
-                    <p class="mt-3 text-sm text-base-content/80">评价：一直很喜欢这首歌，圆，缘，完，远，愿（用粤语发音都是相同的），也会让我想到你的名字</p>
-                  
+                    
+                        <div class="mt-4 flex items-start gap-2">
+                            <i class="fa-regular fa-comment-dots mt-1 text-secondary/60 text-xs shrink-0"></i>
+                            <p class="text-xs text-base-content/80 leading-relaxed text-justify">一直很喜欢这首歌，圆，缘，完，远，愿（用粤语发音都是相同的），也会让我想到你的名字</p>
+                        </div>
+                    
                 </div>
-              </div>
             </div>
           </div>
         
           
           
 
-          <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-[1.01] transition-all duration-300 border border-base-300">
-            <div class="card-body p-6">
-              <div class="flex items-start gap-5">
-                <div class="flex-shrink-0">
-                  <div class="w-20 h-20 rounded-full bg-base-200 border border-base-300 flex items-center justify-center relative">
-                    <div class="absolute inset-0 rounded-full" style="background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.55), rgba(0,0,0,0.06) 55%, rgba(0,0,0,0.10));"></div>
+          <!-- Vinyl Card -->
+          <div class="group relative bg-base-100/60 backdrop-blur-xl border border-base-content/5 rounded-3xl p-6 hover:bg-base-100/80 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 overflow-hidden">
+            
+            <!-- Background Blur -->
+            
+                <div class="absolute inset-0 opacity-10 blur-3xl scale-150 transition-opacity duration-700 group-hover:opacity-20" style="background-image: url('/pictures/wyy_music/%E5%8D%81%E9%9D%A2%E5%9F%8B%E4%BC%8F.png'); background-size: cover; background-position: center;"></div>
+            
+
+            <div class="relative z-10 flex flex-col sm:flex-row items-center gap-8">
+                
+                <!-- Vinyl Record Visual -->
+                <div class="relative shrink-0">
+                    <!-- Sleeve/Case Shadow -->
+                    <div class="absolute inset-0 bg-black/20 rounded-full blur-xl transform translate-y-4 scale-90"></div>
                     
-                      <img src="/pictures/wyy_music/%E5%8D%81%E9%9D%A2%E5%9F%8B%E4%BC%8F.png" alt="cover" class="w-12 h-12 rounded-full object-cover border border-base-100 relative" />
-                      <div class="w-2 h-2 rounded-full bg-base-100 border border-base-300 absolute"></div>
+                    <!-- The Record -->
+                    <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-black relative flex items-center justify-center shadow-2xl ring-4 ring-base-content/5 group-hover:scale-105 transition-transform duration-700 ease-out">
+                        <!-- Grooves -->
+                        <div class="absolute inset-0 rounded-full border-[10px] border-base-content/5 opacity-20"></div>
+                        <div class="absolute inset-2 rounded-full border border-white/10 opacity-30"></div>
+                        <div class="absolute inset-4 rounded-full border border-white/10 opacity-20"></div>
+                        <div class="absolute inset-8 rounded-full border border-white/10 opacity-10"></div>
+                        
+                        <!-- Cover Art (Label) -->
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden relative z-10 animate-spin-slow" style="animation-play-state: paused;">
+                            
+                                <img src="/pictures/wyy_music/%E5%8D%81%E9%9D%A2%E5%9F%8B%E4%BC%8F.png" alt="cover" class="w-full h-full object-cover" />
+                            
+                            <!-- Center Hole -->
+                            <div class="absolute inset-0 m-auto w-3 h-3 bg-base-100 rounded-full border border-black/20"></div>
+                        </div>
+
+                        <!-- Shine Reflection -->
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-white/10 to-transparent pointer-events-none"></div>
+                    </div>
                     
-                  </div>
+                    <!-- Play Button Overlay -->
+                    <div class="absolute bottom-0 right-0 w-10 h-10 bg-primary text-primary-content rounded-full flex items-center justify-center shadow-lg transform scale-0 group-hover:scale-100 transition-transform duration-300 delay-100">
+                        <i class="fa-solid fa-play text-sm ml-0.5"></i>
+                    </div>
                 </div>
 
-                <div class="min-w-0 flex-1">
-                  <h2 class="text-lg font-bold leading-tight truncate">十面埋伏</h2>
-                  <p class="text-sm text-base-content/70 truncate">陈奕迅</p>
+                <!-- Info -->
+                <div class="flex-1 text-center sm:text-left min-w-0 w-full">
+                    <div class="mb-1">
+                        <span class="text-[10px] font-bold tracking-widest uppercase text-primary/60 mb-1 block">Track 09</span>
+                        <h2 class="text-2xl font-black leading-tight text-base-content truncate" title="十面埋伏">十面埋伏</h2>
+                        <p class="text-sm font-medium text-base-content/60 truncate mt-1">陈奕迅</p>
+                    </div>
 
-                  
-                    <p class="mt-3 text-sm italic text-base-content/80"> “何以我来回巡逻遍，仍然和你擦肩” </p>
-                  
+                    
+                        <div class="relative mt-4 py-3 px-4 bg-base-content/5 rounded-xl border border-base-content/5">
+                            <i class="fa-solid fa-quote-left absolute top-2 left-2 text-[10px] text-base-content/20"></i>
+                            <p class="text-xs italic text-base-content/70 font-serif leading-relaxed line-clamp-2">“何以我来回巡逻遍，仍然和你擦肩”</p>
+                        </div>
+                    
 
-                  
-                    <p class="mt-3 text-sm text-base-content/80">评价：我专门去看了一下十面埋伏背后的故事，男生去了女生常常活动的地方，但是从来没有遇见过她，总是会错过……</p>
-                  
+                    
+                        <div class="mt-4 flex items-start gap-2">
+                            <i class="fa-regular fa-comment-dots mt-1 text-secondary/60 text-xs shrink-0"></i>
+                            <p class="text-xs text-base-content/80 leading-relaxed text-justify">我专门去看了一下十面埋伏背后的故事，男生去了女生常常活动的地方，但是从来没有遇见过她，总是会错过……</p>
+                        </div>
+                    
                 </div>
-              </div>
             </div>
           </div>
         
           
           
 
-          <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-[1.01] transition-all duration-300 border border-base-300">
-            <div class="card-body p-6">
-              <div class="flex items-start gap-5">
-                <div class="flex-shrink-0">
-                  <div class="w-20 h-20 rounded-full bg-base-200 border border-base-300 flex items-center justify-center relative">
-                    <div class="absolute inset-0 rounded-full" style="background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.55), rgba(0,0,0,0.06) 55%, rgba(0,0,0,0.10));"></div>
+          <!-- Vinyl Card -->
+          <div class="group relative bg-base-100/60 backdrop-blur-xl border border-base-content/5 rounded-3xl p-6 hover:bg-base-100/80 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 overflow-hidden">
+            
+            <!-- Background Blur -->
+            
+                <div class="absolute inset-0 opacity-10 blur-3xl scale-150 transition-opacity duration-700 group-hover:opacity-20" style="background-image: url('/pictures/wyy_music/%E9%BB%91%E7%9C%BC%E5%9C%88.png'); background-size: cover; background-position: center;"></div>
+            
+
+            <div class="relative z-10 flex flex-col sm:flex-row items-center gap-8">
+                
+                <!-- Vinyl Record Visual -->
+                <div class="relative shrink-0">
+                    <!-- Sleeve/Case Shadow -->
+                    <div class="absolute inset-0 bg-black/20 rounded-full blur-xl transform translate-y-4 scale-90"></div>
                     
-                      <img src="/pictures/wyy_music/%E9%BB%91%E7%9C%BC%E5%9C%88.png" alt="cover" class="w-12 h-12 rounded-full object-cover border border-base-100 relative" />
-                      <div class="w-2 h-2 rounded-full bg-base-100 border border-base-300 absolute"></div>
+                    <!-- The Record -->
+                    <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-black relative flex items-center justify-center shadow-2xl ring-4 ring-base-content/5 group-hover:scale-105 transition-transform duration-700 ease-out">
+                        <!-- Grooves -->
+                        <div class="absolute inset-0 rounded-full border-[10px] border-base-content/5 opacity-20"></div>
+                        <div class="absolute inset-2 rounded-full border border-white/10 opacity-30"></div>
+                        <div class="absolute inset-4 rounded-full border border-white/10 opacity-20"></div>
+                        <div class="absolute inset-8 rounded-full border border-white/10 opacity-10"></div>
+                        
+                        <!-- Cover Art (Label) -->
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden relative z-10 animate-spin-slow" style="animation-play-state: paused;">
+                            
+                                <img src="/pictures/wyy_music/%E9%BB%91%E7%9C%BC%E5%9C%88.png" alt="cover" class="w-full h-full object-cover" />
+                            
+                            <!-- Center Hole -->
+                            <div class="absolute inset-0 m-auto w-3 h-3 bg-base-100 rounded-full border border-black/20"></div>
+                        </div>
+
+                        <!-- Shine Reflection -->
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-white/10 to-transparent pointer-events-none"></div>
+                    </div>
                     
-                  </div>
+                    <!-- Play Button Overlay -->
+                    <div class="absolute bottom-0 right-0 w-10 h-10 bg-primary text-primary-content rounded-full flex items-center justify-center shadow-lg transform scale-0 group-hover:scale-100 transition-transform duration-300 delay-100">
+                        <i class="fa-solid fa-play text-sm ml-0.5"></i>
+                    </div>
                 </div>
 
-                <div class="min-w-0 flex-1">
-                  <h2 class="text-lg font-bold leading-tight truncate">黑眼圈</h2>
-                  <p class="text-sm text-base-content/70 truncate">汪苏泷</p>
+                <!-- Info -->
+                <div class="flex-1 text-center sm:text-left min-w-0 w-full">
+                    <div class="mb-1">
+                        <span class="text-[10px] font-bold tracking-widest uppercase text-primary/60 mb-1 block">Track 10</span>
+                        <h2 class="text-2xl font-black leading-tight text-base-content truncate" title="黑眼圈">黑眼圈</h2>
+                        <p class="text-sm font-medium text-base-content/60 truncate mt-1">汪苏泷</p>
+                    </div>
 
-                  
-                    <p class="mt-3 text-sm italic text-base-content/80"> “最后变成一种罪 谁也不想去面对” </p>
-                  
+                    
+                        <div class="relative mt-4 py-3 px-4 bg-base-content/5 rounded-xl border border-base-content/5">
+                            <i class="fa-solid fa-quote-left absolute top-2 left-2 text-[10px] text-base-content/20"></i>
+                            <p class="text-xs italic text-base-content/70 font-serif leading-relaxed line-clamp-2">“最后变成一种罪 谁也不想去面对”</p>
+                        </div>
+                    
 
-                  
-                    <p class="mt-3 text-sm text-base-content/80">评价：从你的听歌记录里发现的、、很好听！</p>
-                  
+                    
+                        <div class="mt-4 flex items-start gap-2">
+                            <i class="fa-regular fa-comment-dots mt-1 text-secondary/60 text-xs shrink-0"></i>
+                            <p class="text-xs text-base-content/80 leading-relaxed text-justify">从你的听歌记录里发现的、、很好听！</p>
+                        </div>
+                    
                 </div>
-              </div>
             </div>
           </div>
         
           
           
 
-          <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-[1.01] transition-all duration-300 border border-base-300">
-            <div class="card-body p-6">
-              <div class="flex items-start gap-5">
-                <div class="flex-shrink-0">
-                  <div class="w-20 h-20 rounded-full bg-base-200 border border-base-300 flex items-center justify-center relative">
-                    <div class="absolute inset-0 rounded-full" style="background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.55), rgba(0,0,0,0.06) 55%, rgba(0,0,0,0.10));"></div>
+          <!-- Vinyl Card -->
+          <div class="group relative bg-base-100/60 backdrop-blur-xl border border-base-content/5 rounded-3xl p-6 hover:bg-base-100/80 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 overflow-hidden">
+            
+            <!-- Background Blur -->
+            
+                <div class="absolute inset-0 opacity-10 blur-3xl scale-150 transition-opacity duration-700 group-hover:opacity-20" style="background-image: url('/pictures/wyy_music/Mr.broken_heart.png'); background-size: cover; background-position: center;"></div>
+            
+
+            <div class="relative z-10 flex flex-col sm:flex-row items-center gap-8">
+                
+                <!-- Vinyl Record Visual -->
+                <div class="relative shrink-0">
+                    <!-- Sleeve/Case Shadow -->
+                    <div class="absolute inset-0 bg-black/20 rounded-full blur-xl transform translate-y-4 scale-90"></div>
                     
-                      <img src="/pictures/wyy_music/Mr.broken_heart.png" alt="cover" class="w-12 h-12 rounded-full object-cover border border-base-100 relative" />
-                      <div class="w-2 h-2 rounded-full bg-base-100 border border-base-300 absolute"></div>
+                    <!-- The Record -->
+                    <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-black relative flex items-center justify-center shadow-2xl ring-4 ring-base-content/5 group-hover:scale-105 transition-transform duration-700 ease-out">
+                        <!-- Grooves -->
+                        <div class="absolute inset-0 rounded-full border-[10px] border-base-content/5 opacity-20"></div>
+                        <div class="absolute inset-2 rounded-full border border-white/10 opacity-30"></div>
+                        <div class="absolute inset-4 rounded-full border border-white/10 opacity-20"></div>
+                        <div class="absolute inset-8 rounded-full border border-white/10 opacity-10"></div>
+                        
+                        <!-- Cover Art (Label) -->
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden relative z-10 animate-spin-slow" style="animation-play-state: paused;">
+                            
+                                <img src="/pictures/wyy_music/Mr.broken_heart.png" alt="cover" class="w-full h-full object-cover" />
+                            
+                            <!-- Center Hole -->
+                            <div class="absolute inset-0 m-auto w-3 h-3 bg-base-100 rounded-full border border-black/20"></div>
+                        </div>
+
+                        <!-- Shine Reflection -->
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-white/10 to-transparent pointer-events-none"></div>
+                    </div>
                     
-                  </div>
+                    <!-- Play Button Overlay -->
+                    <div class="absolute bottom-0 right-0 w-10 h-10 bg-primary text-primary-content rounded-full flex items-center justify-center shadow-lg transform scale-0 group-hover:scale-100 transition-transform duration-300 delay-100">
+                        <i class="fa-solid fa-play text-sm ml-0.5"></i>
+                    </div>
                 </div>
 
-                <div class="min-w-0 flex-1">
-                  <h2 class="text-lg font-bold leading-tight truncate">Mr. Broken Heart</h2>
-                  <p class="text-sm text-base-content/70 truncate">松下優也</p>
+                <!-- Info -->
+                <div class="flex-1 text-center sm:text-left min-w-0 w-full">
+                    <div class="mb-1">
+                        <span class="text-[10px] font-bold tracking-widest uppercase text-primary/60 mb-1 block">Track 11</span>
+                        <h2 class="text-2xl font-black leading-tight text-base-content truncate" title="Mr. Broken Heart">Mr. Broken Heart</h2>
+                        <p class="text-sm font-medium text-base-content/60 truncate mt-1">松下優也</p>
+                    </div>
 
-                  
-                    <p class="mt-3 text-sm italic text-base-content/80"> “君と逢いたい　I am “Broken Heart” </p>
-                  
+                    
+                        <div class="relative mt-4 py-3 px-4 bg-base-content/5 rounded-xl border border-base-content/5">
+                            <i class="fa-solid fa-quote-left absolute top-2 left-2 text-[10px] text-base-content/20"></i>
+                            <p class="text-xs italic text-base-content/70 font-serif leading-relaxed line-clamp-2">“君と逢いたい　I am “Broken Heart”</p>
+                        </div>
+                    
 
-                  
-                    <p class="mt-3 text-sm text-base-content/80">评价：好像变成了一种符号，跟回忆交织起来了……</p>
-                  
+                    
+                        <div class="mt-4 flex items-start gap-2">
+                            <i class="fa-regular fa-comment-dots mt-1 text-secondary/60 text-xs shrink-0"></i>
+                            <p class="text-xs text-base-content/80 leading-relaxed text-justify">好像变成了一种符号，跟回忆交织起来了……</p>
+                        </div>
+                    
                 </div>
-              </div>
             </div>
           </div>
         
           
           
 
-          <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-[1.01] transition-all duration-300 border border-base-300">
-            <div class="card-body p-6">
-              <div class="flex items-start gap-5">
-                <div class="flex-shrink-0">
-                  <div class="w-20 h-20 rounded-full bg-base-200 border border-base-300 flex items-center justify-center relative">
-                    <div class="absolute inset-0 rounded-full" style="background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.55), rgba(0,0,0,0.06) 55%, rgba(0,0,0,0.10));"></div>
+          <!-- Vinyl Card -->
+          <div class="group relative bg-base-100/60 backdrop-blur-xl border border-base-content/5 rounded-3xl p-6 hover:bg-base-100/80 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 overflow-hidden">
+            
+            <!-- Background Blur -->
+            
+                <div class="absolute inset-0 opacity-10 blur-3xl scale-150 transition-opacity duration-700 group-hover:opacity-20" style="background-image: url('/pictures/wyy_music/%E5%A4%AA%E9%98%B3%E4%B8%8E%E5%9C%B0%E7%90%83.png'); background-size: cover; background-position: center;"></div>
+            
+
+            <div class="relative z-10 flex flex-col sm:flex-row items-center gap-8">
+                
+                <!-- Vinyl Record Visual -->
+                <div class="relative shrink-0">
+                    <!-- Sleeve/Case Shadow -->
+                    <div class="absolute inset-0 bg-black/20 rounded-full blur-xl transform translate-y-4 scale-90"></div>
                     
-                      <img src="/pictures/wyy_music/%E5%A4%AA%E9%98%B3%E4%B8%8E%E5%9C%B0%E7%90%83.png" alt="cover" class="w-12 h-12 rounded-full object-cover border border-base-100 relative" />
-                      <div class="w-2 h-2 rounded-full bg-base-100 border border-base-300 absolute"></div>
+                    <!-- The Record -->
+                    <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-black relative flex items-center justify-center shadow-2xl ring-4 ring-base-content/5 group-hover:scale-105 transition-transform duration-700 ease-out">
+                        <!-- Grooves -->
+                        <div class="absolute inset-0 rounded-full border-[10px] border-base-content/5 opacity-20"></div>
+                        <div class="absolute inset-2 rounded-full border border-white/10 opacity-30"></div>
+                        <div class="absolute inset-4 rounded-full border border-white/10 opacity-20"></div>
+                        <div class="absolute inset-8 rounded-full border border-white/10 opacity-10"></div>
+                        
+                        <!-- Cover Art (Label) -->
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden relative z-10 animate-spin-slow" style="animation-play-state: paused;">
+                            
+                                <img src="/pictures/wyy_music/%E5%A4%AA%E9%98%B3%E4%B8%8E%E5%9C%B0%E7%90%83.png" alt="cover" class="w-full h-full object-cover" />
+                            
+                            <!-- Center Hole -->
+                            <div class="absolute inset-0 m-auto w-3 h-3 bg-base-100 rounded-full border border-black/20"></div>
+                        </div>
+
+                        <!-- Shine Reflection -->
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-white/10 to-transparent pointer-events-none"></div>
+                    </div>
                     
-                  </div>
+                    <!-- Play Button Overlay -->
+                    <div class="absolute bottom-0 right-0 w-10 h-10 bg-primary text-primary-content rounded-full flex items-center justify-center shadow-lg transform scale-0 group-hover:scale-100 transition-transform duration-300 delay-100">
+                        <i class="fa-solid fa-play text-sm ml-0.5"></i>
+                    </div>
                 </div>
 
-                <div class="min-w-0 flex-1">
-                  <h2 class="text-lg font-bold leading-tight truncate">太阳与地球</h2>
-                  <p class="text-sm text-base-content/70 truncate">卢广仲</p>
+                <!-- Info -->
+                <div class="flex-1 text-center sm:text-left min-w-0 w-full">
+                    <div class="mb-1">
+                        <span class="text-[10px] font-bold tracking-widest uppercase text-primary/60 mb-1 block">Track 12</span>
+                        <h2 class="text-2xl font-black leading-tight text-base-content truncate" title="太阳与地球">太阳与地球</h2>
+                        <p class="text-sm font-medium text-base-content/60 truncate mt-1">卢广仲</p>
+                    </div>
 
-                  
-                    <p class="mt-3 text-sm italic text-base-content/80"> “谁要 我们的心 遥远的像 太阳与地球” </p>
-                  
+                    
+                        <div class="relative mt-4 py-3 px-4 bg-base-content/5 rounded-xl border border-base-content/5">
+                            <i class="fa-solid fa-quote-left absolute top-2 left-2 text-[10px] text-base-content/20"></i>
+                            <p class="text-xs italic text-base-content/70 font-serif leading-relaxed line-clamp-2">“谁要 我们的心 遥远的像 太阳与地球”</p>
+                        </div>
+                    
 
-                  
-                    <p class="mt-3 text-sm text-base-content/80">评价：刚断开联系的时候，我还分享了一次这首歌……</p>
-                  
+                    
+                        <div class="mt-4 flex items-start gap-2">
+                            <i class="fa-regular fa-comment-dots mt-1 text-secondary/60 text-xs shrink-0"></i>
+                            <p class="text-xs text-base-content/80 leading-relaxed text-justify">刚断开联系的时候，我还分享了一次这首歌……</p>
+                        </div>
+                    
                 </div>
-              </div>
             </div>
           </div>
         
@@ -891,24 +1520,25 @@ var _hmt = _hmt || [];
 
 </div>
 
-<footer class="mt-auto">
-<footer class="footer footer-center sm:footer-horizontal p-4 bg-base-200 text-base-content">
-    <div class="grid grid-flow-col gap-4">
-    <div class="text-center">
-        <span>© 2025 Lulu</span>
-        <span>·</span>
-        <span>Powered by <a href="https://hexo.io/" target="_blank" class="link link-info no-underline">Hexo</a></span>
-    </div>
-    </div>
-</footer>
-</footer>
+<style>
+    .animate-spin-slow {
+        animation: spin 8s linear infinite;
+    }
+    .group:hover .animate-spin-slow {
+        animation-play-state: running;
+    }
+    @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+</style>
 
 
 
   </div>
 
   <!-- Fixed top navbar for desktop -->
-  <div class="hidden lg:flex fixed top-0 left-80 right-0 z-50 bg-base-300 h-16 items-center px-4">
+  <div class="hidden lg:flex fixed top-0 left-80 right-0 z-50 bg-base-100/80 backdrop-blur-md border-b border-base-200 h-16 items-center px-4 transition-all duration-300">
     <div class="flex-1">
       <a href="/" class="btn btn-ghost normal-case text-xl">
       zxnauy
@@ -1180,7 +1810,7 @@ var _hmt = _hmt || [];
 <footer class="footer footer-center sm:footer-horizontal p-4 bg-base-200 text-base-content">
   <div class="grid grid-flow-col gap-4">
     <div class="text-center">
-      <span>© 2025 Lulu</span>
+      <span>© 2026 Lulu</span>
 
       
     </div>

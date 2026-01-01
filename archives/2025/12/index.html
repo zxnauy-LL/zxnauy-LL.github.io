@@ -77,65 +77,143 @@ var _hmt = _hmt || [];
   <!-- Sidebar for Desktop -->
   <aside class="hidden lg:flex fixed left-0 top-0 h-screen w-80 bg-base-200 z-40 flex-col overflow-y-auto">
     <div class="relative h-full">
-      <a href="/" class="block no-underline hover:bg-base-100 transition rounded-box">
-  <div class="p-4 text-center border-base-300 flex flex-col items-center cursor-pointer hidden lg:flex">
-    <div class="avatar mb-4">
-      <div class="w-24 rounded-full ring ring-primary ring-offset-base-100">
-        <img
-  src="/images/avatar.jpg"
-  alt="Profile"
-  class="transition-transform duration-500 hover:rotate-210 cursor-pointer rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 w-24"
-/>
+      <!-- 侧边栏整体容器：使用 flex 布局，占满高度，背景色与主色调一致 -->
+<div class="flex flex-col h-full bg-base-100 text-base-content">
+  
+  <!-- 1. 顶部个人信息区域：增加渐变背景装饰 -->
+  <div class="relative pt-10 pb-6 px-6 flex flex-col items-center text-center shrink-0">
+    <!-- 装饰背景：顶部淡色渐变，增加层次感 -->
+    <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none"></div>
+    
+    <!-- 头像：增加悬停旋转和阴影 -->
+    <div class="avatar relative z-10 mb-4 group cursor-pointer">
+      <div class="w-28 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 shadow-xl transition-transform duration-500 group-hover:rotate-12">
+        <a href="/" class="block">
+          <img src="/images/avatar.jpg" alt="Lulu" class="rounded-full" />
+        </a>
+      </div>
+      
+      <!-- Desktop Hint: Tooltip on the right (Hover) -->
+      <div class="hidden lg:block absolute top-1/2 -right-20 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500 transform -translate-x-4 group-hover:translate-x-0 pointer-events-none z-20">
+         <div class="flex items-center gap-1.5 text-[10px] font-bold tracking-widest text-base-content/50 bg-base-100/90 backdrop-blur px-3 py-1.5 rounded-full border border-base-content/10 shadow-sm">
+            <i class="fa-solid fa-house text-[9px]"></i>
+            <span>HOME</span>
+         </div>
+      </div>
 
+      <!-- Mobile Hint: Small Badge (Always Visible) -->
+      <div class="lg:hidden absolute bottom-1 right-1 z-20 pointer-events-none">
+         <div class="w-7 h-7 rounded-full bg-base-100/80 backdrop-blur shadow-sm border border-base-content/10 flex items-center justify-center text-base-content/40">
+            <i class="fa-solid fa-house text-[10px]"></i>
+         </div>
       </div>
     </div>
-    <h2 class="text-xl font-bold text-base-content">Lulu</h2>
-    <p class="text-base-content opacity-80"></p>
+    
+    <!-- 文字信息 -->
+    <div class="relative z-10">
+      <h2 class="text-2xl font-bold tracking-tight text-base-content">Lulu</h2>
+      <p class="text-sm opacity-60 mt-1 font-medium tracking-wide"></p>
+    </div>
   </div>
-</a>
 
-
-<nav class="p-4 space-y-2 flex-grow">
-  
+  <!-- 2. 导航菜单：可滚动区域，增加自定义滚动条样式 -->
+  <nav class="flex-1 px-4 space-y-2 overflow-y-auto py-4 custom-scrollbar">
     
-      <a href="/plan/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-compact-disc mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        听歌♪(´▽｀)
+      
+        <!-- 判断当前链接是否激活 (简单判断) -->
+         
+        
+        <a href="/plan/" 
+           class="flex items-center gap-4 px-4 py-3 rounded-2xl transition-all duration-300 group
+                  hover:bg-base-200 hover:text-primary text-base-content/80">
+          
+          <!-- 图标：固定宽度居中 -->
+          <div class="w-6 flex justify-center">
+            <i class="fa-solid fa-compact-disc text-lg transition-transform duration-300 group-hover:scale-110 opacity-70"></i>
+          </div>
+          
+          <span class="font-bold tracking-wide text-sm">听歌♪(´▽｀)</span>
+          
+          
+        </a>
+      
+        <!-- 判断当前链接是否激活 (简单判断) -->
+         
+        
+        <a href="/cv/" 
+           class="flex items-center gap-4 px-4 py-3 rounded-2xl transition-all duration-300 group
+                  hover:bg-base-200 hover:text-primary text-base-content/80">
+          
+          <!-- 图标：固定宽度居中 -->
+          <div class="w-6 flex justify-center">
+            <i class="fa-solid fa-id-card text-lg transition-transform duration-300 group-hover:scale-110 opacity-70"></i>
+          </div>
+          
+          <span class="font-bold tracking-wide text-sm">个人信息</span>
+          
+          
+        </a>
+      
+        <!-- 判断当前链接是否激活 (简单判断) -->
+         
+        
+        <a href="/notes/" 
+           class="flex items-center gap-4 px-4 py-3 rounded-2xl transition-all duration-300 group
+                  hover:bg-base-200 hover:text-primary text-base-content/80">
+          
+          <!-- 图标：固定宽度居中 -->
+          <div class="w-6 flex justify-center">
+            <i class="fa-solid fa-sticky-note text-lg transition-transform duration-300 group-hover:scale-110 opacity-70"></i>
+          </div>
+          
+          <span class="font-bold tracking-wide text-sm">记Lu</span>
+          
+          
+        </a>
+      
+        <!-- 判断当前链接是否激活 (简单判断) -->
+         
+        
+        <a href="/contact/" 
+           class="flex items-center gap-4 px-4 py-3 rounded-2xl transition-all duration-300 group
+                  hover:bg-base-200 hover:text-primary text-base-content/80">
+          
+          <!-- 图标：固定宽度居中 -->
+          <div class="w-6 flex justify-center">
+            <i class="fa-solid fa-envelope text-lg transition-transform duration-300 group-hover:scale-110 opacity-70"></i>
+          </div>
+          
+          <span class="font-bold tracking-wide text-sm">联系方式</span>
+          
+          
+        </a>
+      
+    
+  </nav>
+
+  <!-- 3. 底部社交区域：固定在底部，增加分割线 -->
+  <div class="p-6 border-t border-base-200 bg-base-50/50 shrink-0">
+    
+    <div class="flex justify-center items-center gap-3">
+
+      
+        <a href="https://github.com/zxnauy-LL" target="_blank" rel="noopener noreferrer" 
+           class="btn btn-ghost btn-circle btn-sm hover:bg-base-content hover:text-base-100 transition-all duration-300" title="GitHub">
+          <i class="fa-brands fa-github text-xl"></i>
+        </a>
+      
+
+      <a href="https://y.music.163.com/m/user?id=310700901" target="_blank" rel="noopener noreferrer" 
+         class="btn btn-ghost btn-circle btn-sm hover:bg-red-500 hover:text-white transition-all duration-300" title="网易云音乐">
+        <i class="fa-solid fa-music text-xl"></i>
       </a>
+      
+    </div>
     
-      <a href="/cv/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-id-card mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        个人信息
-      </a>
-    
-      <a href="/notes/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-sticky-note mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        记Lu
-      </a>
-    
-      <a href="/contact/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-envelope mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        联系方式
-      </a>
-    
-  
-</nav>
-
-
-<div class="p-4 border-t border-base-300">
-  
-  <div class="flex justify-center items-center gap-4">
-
-    
-      <a href="https://github.com/zxnauy-LL" class="text-base-content hover:text-primary hover:scale-110 transition-all duration-200 flex-shrink-0" target="_blank" rel="noopener noreferrer" title="GitHub">
-        <i class="fa-brands fa-github text-2xl block"></i>
-      </a>
-    
-
-    <a href="https://y.music.163.com/m/user?id=310700901" class="text-base-content hover:text-primary hover:scale-110 transition-all duration-200 flex-shrink-0" target="_blank" rel="noopener noreferrer" title="网易云音乐">
-      <i class="fa-solid fa-music text-2xl block"></i>
-    </a>
-
+    <!-- 版权信息 -->
+    <div class="text-xs text-center mt-4 opacity-40 font-mono">
+      © 2026 Lulu
+    </div>
   </div>
 </div>
     </div>
@@ -425,65 +503,143 @@ var _hmt = _hmt || [];
       <label for="my-drawer" class="drawer-overlay"></label>
       <aside class="w-80 bg-base-200 min-h-full overflow-y-auto">
         <div class="relative h-full">
-          <a href="/" class="block no-underline hover:bg-base-100 transition rounded-box">
-  <div class="p-4 text-center border-base-300 flex flex-col items-center cursor-pointer hidden lg:flex">
-    <div class="avatar mb-4">
-      <div class="w-24 rounded-full ring ring-primary ring-offset-base-100">
-        <img
-  src="/images/avatar.jpg"
-  alt="Profile"
-  class="transition-transform duration-500 hover:rotate-210 cursor-pointer rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 w-24"
-/>
+          <!-- 侧边栏整体容器：使用 flex 布局，占满高度，背景色与主色调一致 -->
+<div class="flex flex-col h-full bg-base-100 text-base-content">
+  
+  <!-- 1. 顶部个人信息区域：增加渐变背景装饰 -->
+  <div class="relative pt-10 pb-6 px-6 flex flex-col items-center text-center shrink-0">
+    <!-- 装饰背景：顶部淡色渐变，增加层次感 -->
+    <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none"></div>
+    
+    <!-- 头像：增加悬停旋转和阴影 -->
+    <div class="avatar relative z-10 mb-4 group cursor-pointer">
+      <div class="w-28 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 shadow-xl transition-transform duration-500 group-hover:rotate-12">
+        <a href="/" class="block">
+          <img src="/images/avatar.jpg" alt="Lulu" class="rounded-full" />
+        </a>
+      </div>
+      
+      <!-- Desktop Hint: Tooltip on the right (Hover) -->
+      <div class="hidden lg:block absolute top-1/2 -right-20 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500 transform -translate-x-4 group-hover:translate-x-0 pointer-events-none z-20">
+         <div class="flex items-center gap-1.5 text-[10px] font-bold tracking-widest text-base-content/50 bg-base-100/90 backdrop-blur px-3 py-1.5 rounded-full border border-base-content/10 shadow-sm">
+            <i class="fa-solid fa-house text-[9px]"></i>
+            <span>HOME</span>
+         </div>
+      </div>
 
+      <!-- Mobile Hint: Small Badge (Always Visible) -->
+      <div class="lg:hidden absolute bottom-1 right-1 z-20 pointer-events-none">
+         <div class="w-7 h-7 rounded-full bg-base-100/80 backdrop-blur shadow-sm border border-base-content/10 flex items-center justify-center text-base-content/40">
+            <i class="fa-solid fa-house text-[10px]"></i>
+         </div>
       </div>
     </div>
-    <h2 class="text-xl font-bold text-base-content">Lulu</h2>
-    <p class="text-base-content opacity-80"></p>
+    
+    <!-- 文字信息 -->
+    <div class="relative z-10">
+      <h2 class="text-2xl font-bold tracking-tight text-base-content">Lulu</h2>
+      <p class="text-sm opacity-60 mt-1 font-medium tracking-wide"></p>
+    </div>
   </div>
-</a>
 
-
-<nav class="p-4 space-y-2 flex-grow">
-  
+  <!-- 2. 导航菜单：可滚动区域，增加自定义滚动条样式 -->
+  <nav class="flex-1 px-4 space-y-2 overflow-y-auto py-4 custom-scrollbar">
     
-      <a href="/plan/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-compact-disc mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        听歌♪(´▽｀)
+      
+        <!-- 判断当前链接是否激活 (简单判断) -->
+         
+        
+        <a href="/plan/" 
+           class="flex items-center gap-4 px-4 py-3 rounded-2xl transition-all duration-300 group
+                  hover:bg-base-200 hover:text-primary text-base-content/80">
+          
+          <!-- 图标：固定宽度居中 -->
+          <div class="w-6 flex justify-center">
+            <i class="fa-solid fa-compact-disc text-lg transition-transform duration-300 group-hover:scale-110 opacity-70"></i>
+          </div>
+          
+          <span class="font-bold tracking-wide text-sm">听歌♪(´▽｀)</span>
+          
+          
+        </a>
+      
+        <!-- 判断当前链接是否激活 (简单判断) -->
+         
+        
+        <a href="/cv/" 
+           class="flex items-center gap-4 px-4 py-3 rounded-2xl transition-all duration-300 group
+                  hover:bg-base-200 hover:text-primary text-base-content/80">
+          
+          <!-- 图标：固定宽度居中 -->
+          <div class="w-6 flex justify-center">
+            <i class="fa-solid fa-id-card text-lg transition-transform duration-300 group-hover:scale-110 opacity-70"></i>
+          </div>
+          
+          <span class="font-bold tracking-wide text-sm">个人信息</span>
+          
+          
+        </a>
+      
+        <!-- 判断当前链接是否激活 (简单判断) -->
+         
+        
+        <a href="/notes/" 
+           class="flex items-center gap-4 px-4 py-3 rounded-2xl transition-all duration-300 group
+                  hover:bg-base-200 hover:text-primary text-base-content/80">
+          
+          <!-- 图标：固定宽度居中 -->
+          <div class="w-6 flex justify-center">
+            <i class="fa-solid fa-sticky-note text-lg transition-transform duration-300 group-hover:scale-110 opacity-70"></i>
+          </div>
+          
+          <span class="font-bold tracking-wide text-sm">记Lu</span>
+          
+          
+        </a>
+      
+        <!-- 判断当前链接是否激活 (简单判断) -->
+         
+        
+        <a href="/contact/" 
+           class="flex items-center gap-4 px-4 py-3 rounded-2xl transition-all duration-300 group
+                  hover:bg-base-200 hover:text-primary text-base-content/80">
+          
+          <!-- 图标：固定宽度居中 -->
+          <div class="w-6 flex justify-center">
+            <i class="fa-solid fa-envelope text-lg transition-transform duration-300 group-hover:scale-110 opacity-70"></i>
+          </div>
+          
+          <span class="font-bold tracking-wide text-sm">联系方式</span>
+          
+          
+        </a>
+      
+    
+  </nav>
+
+  <!-- 3. 底部社交区域：固定在底部，增加分割线 -->
+  <div class="p-6 border-t border-base-200 bg-base-50/50 shrink-0">
+    
+    <div class="flex justify-center items-center gap-3">
+
+      
+        <a href="https://github.com/zxnauy-LL" target="_blank" rel="noopener noreferrer" 
+           class="btn btn-ghost btn-circle btn-sm hover:bg-base-content hover:text-base-100 transition-all duration-300" title="GitHub">
+          <i class="fa-brands fa-github text-xl"></i>
+        </a>
+      
+
+      <a href="https://y.music.163.com/m/user?id=310700901" target="_blank" rel="noopener noreferrer" 
+         class="btn btn-ghost btn-circle btn-sm hover:bg-red-500 hover:text-white transition-all duration-300" title="网易云音乐">
+        <i class="fa-solid fa-music text-xl"></i>
       </a>
+      
+    </div>
     
-      <a href="/cv/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-id-card mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        个人信息
-      </a>
-    
-      <a href="/notes/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-sticky-note mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        记Lu
-      </a>
-    
-      <a href="/contact/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
-        <i class="fa-solid fa-envelope mr-3 text-lg group-hover:scale-110 transition-transform"></i>
-        联系方式
-      </a>
-    
-  
-</nav>
-
-
-<div class="p-4 border-t border-base-300">
-  
-  <div class="flex justify-center items-center gap-4">
-
-    
-      <a href="https://github.com/zxnauy-LL" class="text-base-content hover:text-primary hover:scale-110 transition-all duration-200 flex-shrink-0" target="_blank" rel="noopener noreferrer" title="GitHub">
-        <i class="fa-brands fa-github text-2xl block"></i>
-      </a>
-    
-
-    <a href="https://y.music.163.com/m/user?id=310700901" class="text-base-content hover:text-primary hover:scale-110 transition-all duration-200 flex-shrink-0" target="_blank" rel="noopener noreferrer" title="网易云音乐">
-      <i class="fa-solid fa-music text-2xl block"></i>
-    </a>
-
+    <!-- 版权信息 -->
+    <div class="text-xs text-center mt-4 opacity-40 font-mono">
+      © 2026 Lulu
+    </div>
   </div>
 </div>
         </div>
@@ -499,160 +655,565 @@ var _hmt = _hmt || [];
     <!-- 引入样式库：DaisyUI 和 TailwindCSS -->
 <!-- <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.min.css" rel="stylesheet" type="text/css" /> -->
 
-<!-- -------------------------- About Section -------------------------- -->
-<div class="container mx-auto px-4 py-16 max-w-7xl">
-  
-  <!-- 标题区域：统一风格 -->
-  <div class="flex items-center gap-3 mb-12 pl-2">
-     <div class="h-8 w-1.5 bg-gradient-to-b from-primary to-secondary rounded-full shadow-sm"></div>
-     <h2 class="text-3xl font-bold tracking-tight text-base-content">Awake</h2>
-  </div>
+<!-- Global Background Design -->
+<div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+    <!-- 1. Ambient Gradient Orbs (Floating & Breathing) -->
+    <div class="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-primary/10 blur-[120px] animate-pulse" style="animation-duration: 8s;"></div>
+    <div class="absolute top-[10%] right-[-10%] w-[40vw] h-[40vw] rounded-full bg-secondary/10 blur-[100px] animate-pulse" style="animation-duration: 12s; animation-delay: 2s;"></div>
+    <div class="absolute bottom-[-10%] left-[10%] w-[45vw] h-[45vw] rounded-full bg-accent/10 blur-[110px] animate-pulse" style="animation-duration: 10s; animation-delay: 4s;"></div>
 
-  <!-- Avatar & Intro -->
-  <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-8">
-    
-    <!-- 左侧：统一的个人信息卡片 -->
-    <div class="card glass rounded-2xl shadow-lg bg-base-100/70 text-base-content p-6 lg:col-span-1 flex flex-col items-center text-center transition-all duration-300">
-        <div class="avatar mb-4">
-          <div class="w-28 rounded-full ring ring-primary ring-offset-base-100 ring-offset-4">
-            <img
-              src="/images/avatar.jpg"
-              alt="Profile"
-              class="rounded-full w-28"
-            />
-          </div>
-        </div>
-        <h2 class="text-2xl font-bold text-base-content mb-1">Lulu</h2>
-        <p class="text-sm opacity-60 font-medium tracking-wider"></p>
-        <div class="divider my-4"></div>
-        <p class="text-xs text-base-content/70">「记录lulu老大的网站！」</p>
+    <!-- 2. Modern Dot Grid Pattern -->
+    <div class="absolute inset-0 text-base-content/5" 
+         style="background-image: radial-gradient(currentColor 1px, transparent 1px); background-size: 32px 32px;">
     </div>
+    
+    <!-- 3. Subtle Noise Texture for 'Premium' Feel -->
+    <div class="absolute inset-0 opacity-20 mix-blend-soft-light" 
+         style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22 opacity=%220.5%22/%3E%3C/svg%3E');">
+    </div>
+</div>
 
-    <!-- 右侧：About 内容卡片 -->
-    <div class="card glass rounded-2xl shadow-lg bg-base-100 text-base-content lg:col-span-3">
-      <div class="card-body p-6">
-        <div class="prose max-w-none text-base">
-          <h3 class="text-xl font-bold text-base-content mb-4">关于我</h3>
-          这里是薯仔给lulu老大创建的电子世界！记录与lulu的回忆和相关灵感🤔，还有就是！lulu的爱好、喜爱的美食和介意的事情等等重要信息！那么请一点一点地搭建起来吧……
+<div class="relative z-10 container mx-auto px-4 py-8 max-w-[1400px] space-y-6">
+  
+  <!-- ==================== Top Section: Dashboard (Profile + Heatmap + Detail) ==================== -->
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+    
+    <!-- 1. Left: Profile & About (3/12) -->
+    <div class="lg:col-span-3 flex flex-col h-full">
+      <div class="card h-full bg-base-100/80 backdrop-blur-md shadow-sm border border-base-content/5 hover:shadow-xl hover:border-primary/20 transition-all duration-500 group relative overflow-hidden">
+        
+        <!-- 装饰：顶部流光 -->
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-50"></div>
+        <div class="absolute -right-10 -top-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-all duration-700"></div>
+
+        <div class="p-8 flex flex-col items-center text-center flex-grow">
+          <!-- Avatar -->
+          <div class="avatar mb-5 relative">
+            <div class="w-28 rounded-full ring-4 ring-base-100 shadow-2xl group-hover:scale-105 transition-transform duration-500 relative z-10">
+              <img src="/images/avatar.jpg" alt="Profile" />
+            </div>
+            <!-- 头像背后的光晕 -->
+            <div class="absolute inset-0 rounded-full bg-primary/20 blur-xl scale-110 -z-10 group-hover:scale-125 transition-transform duration-500"></div>
+          </div>
+          
+          <!-- Info -->
+          <h2 class="text-2xl font-bold text-base-content tracking-tight">Lulu</h2>
+          <div class="flex items-center gap-2 mt-2 mb-1">
+             <span id="time-greeting" class="badge badge-xs badge-primary badge-outline font-mono py-2 opacity-0 transition-opacity duration-1000"></span>
+          </div>
+          <p class="text-xs font-medium text-primary/80 tracking-widest uppercase h-4" id="typewriter-subtitle" data-text=""></p>
+          
+          <div class="w-8 h-1 bg-base-content/10 rounded-full my-5"></div>
+          
+          <!-- About Text -->
+          <div id="typewriter-about" class="text-sm text-base-content/70 leading-7 text-justify w-full overflow-y-auto custom-scrollbar flex-grow pr-2 max-h-[150px] lg:max-h-none font-sans min-h-[100px] whitespace-pre-line"></div>
+          <div id="about-source" class="hidden">这里是薯仔给lulu老大创建的电子世界！记录与lulu的回忆和相关灵感🤔，还有就是！lulu的爱好、喜爱的美食和介意的事情等等重要信息！那么请一点一点地搭建起来吧……</div>
         </div>
       </div>
     </div>
-  </div>
-</div>
 
+    <!-- 2. Center: Heatmap Calendar (6/12) -->
+    <div class="lg:col-span-6 card bg-base-100/80 backdrop-blur-md shadow-sm border border-base-content/5 flex flex-col h-full relative overflow-hidden group">
+      <!-- 装饰背景 -->
+      <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03] pointer-events-none"></div>
+      <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 w-48 h-48 bg-secondary/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
 
-  <!-- -------------------------- Heatmap Section (Current Code) -------------------------- -->
-<div class="container mx-auto px-4 py-16 max-w-7xl">
-  <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content">
-    <div class="card-body p-6">
-      
-      <!-- 头部导航栏：月份切换 -->
-      <div class="flex justify-between items-center mb-4 px-2">
-        <button class="btn btn-circle btn-sm btn-ghost text-lg" onclick="changeMonth(-1)" aria-label="Previous Month">
+      <!-- Header -->
+      <div class="flex justify-between items-center px-6 py-4 border-b border-base-content/5 z-10">
+        <button class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary transition-colors" onclick="changeMonth(-1)">
           <i class="fa-solid fa-chevron-left"></i>
         </button>
-        
-        <!-- 标题区域：修改为 flex 布局以支持精美排版 -->
-        <div class="flex flex-col items-center justify-center" id="heatmap-title">
-           <!-- JS 将会在这里注入更精美的 HTML -->
+        <div id="heatmap-title" class="flex items-baseline gap-2 select-none cursor-default">
+           <!-- JS Injected Title -->
         </div>
-        
-        <button class="btn btn-circle btn-sm btn-ghost text-lg" onclick="changeMonth(1)" aria-label="Next Month">
+        <button class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary transition-colors" onclick="changeMonth(1)">
           <i class="fa-solid fa-chevron-right"></i>
         </button>
       </div>
-      
-      <!-- 主要内容区域：左侧日历 + 右侧详情 -->
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-        
-        <!-- 左侧日历容器 -->
-        <div class="md:col-span-7 lg:col-span-8 rounded-2xl p-4 relative group">
-          
-          <!-- 精美修改：Calendar View 标签 -->
-          <div class="absolute top-4 left-6 flex items-center gap-2 select-none pointer-events-none">
-             <div class="w-1 h-3 bg-primary/40 rounded-full"></div>
-             <!-- 修正点：提高渐变的对比度 (80% 到 60%) -->
-             <span class="text-xs font-black text-transparent bg-clip-text bg-gradient-to-r from-base-content/80 to-base-content/60 uppercase tracking-[0.25em]">
-               Calendar View
-             </span>
-          </div>
-          
-          <div id="heatmap-container" class="w-full h-[450px]"></div>
-        </div>
-        
-        <!-- 右侧详情面板 -->
-        <div class="md:col-span-5 lg:col-span-4 sticky top-4">
-          <div class="card bg-base-100 shadow-md border border-base-200">
-            <div class="card-body p-6">
-              <h3 class="card-title text-lg font-bold mb-4 flex items-center gap-2 text-primary">
-                <i class="fa-regular fa-calendar-check"></i>
-                <span>记录详情</span>
-              </h3>
-              
-              <!-- 默认状态 -->
-              <div id="detail-default" class="text-center py-12 flex flex-col items-center justify-center min-h-[300px]">
-                <div class="w-16 h-16 rounded-full bg-base-200 flex items-center justify-center mb-4">
-                  <i class="fa-regular fa-hand-pointer text-2xl opacity-40"></i>
-                </div>
-                <p class="font-medium">选择一个日期</p>
-                <p class="text-sm text-base-content/60 mt-2 max-w-[200px]">点击左侧日历中的方块，查看当天的思念记录与心情。</p>
-              </div>
-              
-              <!-- 详情内容 -->
-              <div id="detail-content" class="hidden min-h-[300px] flex flex-col">
-                <!-- 日期头部 -->
-                <div class="flex items-end gap-3 mb-6">
-                  <div class="text-4xl font-bold text-base-content" id="detail-day">--</div>
-                  <div class="mb-1">
-                    <div class="text-sm font-bold uppercase text-primary" id="detail-month">--</div>
-                    <div class="text-xs opacity-50" id="detail-weekday">--</div>
-                  </div>
-                  <div class="ml-auto">
-                     <span id="detail-mood-badge" class="badge badge-lg badge-outline gap-2 font-bold py-3">--</span>
-                  </div>
-                </div>
 
-                <!-- 进度条 -->
-                <div class="mb-6">
-                  <div class="flex justify-between text-xs mb-2 font-medium opacity-70">
-                    <span>思念</span>
-                    <span id="detail-count-val">0/10</span>
-                  </div>
-                  <progress id="detail-progress" class="progress progress-primary w-full h-3" value="0" max="10"></progress>
-                </div>
-                
-                <!-- 想法记录卡片 -->
-                <div class="bg-base-200/50 rounded-xl p-4 border border-base-200/50 relative mb-4 flex-grow min-h-[200px]">
-                  <i class="fa-solid fa-quote-left text-primary/20 absolute top-3 left-3 text-xl"></i>
-                  <p class="text-sm leading-7 text-base-content/80 relative z-10 pt-8 indent-4" id="thoughts-text">...</p>
-                </div>
-              </div>
+      <!-- Chart Container -->
+      <div class="flex-grow relative w-full flex flex-col items-center justify-center">
+         <div id="heatmap-container" class="w-full flex-grow min-h-[300px]"></div>
+         
+         <!-- Stats Row -->
+         <div class="w-full px-8 pb-4 flex justify-between items-end opacity-60">
+            <div class="flex flex-col">
+               <span class="text-[10px] font-bold uppercase tracking-widest text-base-content/50">Recorded</span>
+               <span class="text-xl font-black font-mono text-primary" id="stats-days">0</span>
             </div>
-          </div>
-        </div>
+         </div>
+
+         <!-- Decorative Label -->
+         <div class="absolute bottom-3 right-5 flex items-center gap-2 opacity-20 hidden">
+            <div class="w-1 h-1 rounded-full bg-primary animate-pulse"></div>
+            <span class="text-[9px] font-mono tracking-widest uppercase">Mood Tracker</span>
+         </div>
       </div>
-      
-      <!-- 数据注入容器 -->
-      <div id="heatmap-data" 
-           data-json="[{&#34;date&#34;:&#34;2025-10-04&#34;,&#34;count&#34;:6,&#34;thoughts&#34;:&#34;今天是lulu的生日，，出去玩好开心呀好开心&#34;},{&#34;date&#34;:&#34;2025-10-11&#34;,&#34;count&#34;:10,&#34;thoughts&#34;:&#34;好后悔……好难过啊……&#34;},{&#34;date&#34;:&#34;2025-12-06&#34;,&#34;count&#34;:9,&#34;thoughts&#34;:&#34;偷偷完善这个网站ing……&#34;},{&#34;date&#34;:&#34;2025-12-23&#34;,&#34;count&#34;:10,&#34;thoughts&#34;:&#34;应该是最后一次可以跟你这样子沟通了吧，很开心很开心，但是也很舍不得呢，遗憾呐……&#34;},{&#34;date&#34;:&#34;2025-12-26&#34;,&#34;count&#34;:8,&#34;thoughts&#34;:&#34;好愧疚…可是要面对自己的错误和问题呢&#34;}]" 
-           style="display: none;"></div>
-      
-      <!-- 底部说明文字 -->
-      <p class="text-sm text-center opacity-60 mt-4">点击日历中的日期查看详细信息</p>
+    </div>
+
+    <!-- 3. Right: Detail Panel (3/12) -->
+    <div class="lg:col-span-3 card bg-base-100/80 backdrop-blur-md shadow-sm border border-base-content/5 h-full flex flex-col group hover:border-primary/20 transition-colors duration-300">
+      <div class="p-6 flex flex-col h-full relative">
+        
+        <!-- Title -->
+        <div class="flex items-center justify-between mb-6">
+           <div class="flex items-center gap-2 text-base-content/80">
+              <i class="fa-regular fa-calendar-check text-primary"></i>
+              <span class="text-xs font-bold uppercase tracking-wider">Daily Record</span>
+           </div>
+           <div class="w-1.5 h-1.5 rounded-full bg-base-content/20 group-hover:bg-primary transition-colors"></div>
+        </div>
+
+        <!-- Default State -->
+        <div id="detail-default" class="flex-grow flex flex-col items-center justify-center text-center opacity-60 space-y-4 px-4">
+           <div class="w-12 h-12 rounded-full bg-base-content/5 flex items-center justify-center mb-2">
+              <i class="fa-solid fa-quote-left text-primary/40"></i>
+           </div>
+           <div class="w-8 h-0.5 bg-base-content/10 rounded-full"></div>
+           <p class="text-[10px] font-bold tracking-widest uppercase opacity-50">Select a date to view record</p>
+        </div>
+
+        <!-- Active State -->
+        <div id="detail-content" class="hidden flex-col h-full animate-fade-in">
+           <!-- Date Header -->
+           <div class="flex items-start justify-between mb-6">
+              <div>
+                 <div class="text-5xl font-black text-base-content/90 leading-none tracking-tighter" id="detail-day">--</div>
+                 <div class="text-xs font-bold text-primary/80 mt-2 uppercase tracking-wide">
+                    <span id="detail-month">--</span> <span class="opacity-50 mx-1">/</span> <span id="detail-weekday">--</span>
+                 </div>
+              </div>
+              <span id="detail-mood-badge" class="badge badge-md badge-outline font-bold px-3 py-1.5 border shadow-sm text-xs tracking-wider">--</span>
+           </div>
+
+           <!-- Progress (Segmented) -->
+           <div class="mb-6">
+              <div class="flex justify-between text-[10px] px-1 mb-2 opacity-50 font-mono font-bold tracking-widest">
+                <span>INTENSITY</span>
+                <span id="detail-count-val">0/10</span>
+              </div>
+              <div class="flex gap-1 h-3" id="detail-progress-container">
+                 <!-- Segments injected by JS -->
+                 
+                    <div class="flex-1 rounded-sm bg-base-content/10 transition-all duration-300" id="progress-seg-0"></div>
+                 
+                    <div class="flex-1 rounded-sm bg-base-content/10 transition-all duration-300" id="progress-seg-1"></div>
+                 
+                    <div class="flex-1 rounded-sm bg-base-content/10 transition-all duration-300" id="progress-seg-2"></div>
+                 
+                    <div class="flex-1 rounded-sm bg-base-content/10 transition-all duration-300" id="progress-seg-3"></div>
+                 
+                    <div class="flex-1 rounded-sm bg-base-content/10 transition-all duration-300" id="progress-seg-4"></div>
+                 
+                    <div class="flex-1 rounded-sm bg-base-content/10 transition-all duration-300" id="progress-seg-5"></div>
+                 
+                    <div class="flex-1 rounded-sm bg-base-content/10 transition-all duration-300" id="progress-seg-6"></div>
+                 
+                    <div class="flex-1 rounded-sm bg-base-content/10 transition-all duration-300" id="progress-seg-7"></div>
+                 
+                    <div class="flex-1 rounded-sm bg-base-content/10 transition-all duration-300" id="progress-seg-8"></div>
+                 
+                    <div class="flex-1 rounded-sm bg-base-content/10 transition-all duration-300" id="progress-seg-9"></div>
+                 
+              </div>
+           </div>
+
+           <!-- Thoughts Area -->
+           <div class="flex-grow bg-gradient-to-br from-base-200/50 to-base-100/50 rounded-2xl p-4 relative overflow-y-auto custom-scrollbar border border-base-content/5">
+              <i class="fa-solid fa-quote-left text-primary/20 absolute top-3 left-3 text-xl"></i>
+              <p class="text-sm leading-relaxed text-base-content/80 relative z-10 pt-5 indent-2 font-serif" id="thoughts-text">...</p>
+           </div>
+        </div>
+
+      </div>
     </div>
   </div>
+
+  <!-- ==================== Bottom Section: Interests & Notes ==================== -->
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+    
+    <!-- 1. Interests (Magazine Style) (7/12) -->
+    <div class="lg:col-span-7 card bg-base-100/80 backdrop-blur-md shadow-sm border border-base-content/5 p-6 lg:p-8">
+       <div class="flex items-center gap-3 mb-6">
+          <div class="w-1.5 h-6 bg-gradient-to-b from-primary to-primary/20 rounded-full"></div>
+          <h3 class="text-xl font-bold text-base-content tracking-tight">Interests & Hobbies</h3>
+       </div>
+
+       
+         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            
+               <!-- Exquisite Card -->
+               <div class="js-tilt group relative p-5 rounded-2xl bg-gradient-to-br from-base-100 to-base-200/20 border border-base-content/10 hover:border-primary/50 transition-all duration-500 hover:shadow-[0_15px_40px_-10px_rgba(0,0,0,0.1)] hover:shadow-primary/10 overflow-hidden flex flex-col h-full" data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
+                  
+                  <!-- Subtle Gradient Overlay -->
+                  <div class="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  <div class="relative z-10 flex flex-col h-full">
+                    <!-- Header -->
+                    <div class="flex items-center justify-between mb-4">
+                       <div class="flex items-center gap-4">
+                          <!-- Icon Box -->
+                          <div class="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center text-primary font-bold text-lg shadow-sm group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-content transition-all duration-500 ring-1 ring-primary/10">
+                             排
+                          </div>
+                          <h4 class="font-bold text-base text-base-content group-hover:text-primary transition-colors tracking-tight">排球</h4>
+                       </div>
+                    </div>
+                    
+                    <!-- Description -->
+                    
+                       <div class="mb-5 flex-grow">
+                         <p class="text-xs text-base-content/60 leading-relaxed group-hover:text-base-content/80 transition-colors font-sans text-justify">
+                            这是老大最喜欢的运动，从高中开始就在打排球了！来了珠海之后，也爱上了沙滩排球🏐
+                         </p>
+                       </div>
+                    
+           
+                    <!-- Keywords -->
+                    
+                       <div class="flex flex-wrap gap-2 pt-4 border-t border-base-content/5 group-hover:border-primary/10 transition-colors">
+                          
+                             <span class="text-[10px] font-medium px-2.5 py-1 rounded-full bg-base-200/50 text-base-content/60 border border-base-content/5 group-hover:border-primary/20 group-hover:text-primary group-hover:bg-primary/5 transition-all duration-300">
+                                排球
+                             </span>
+                          
+                             <span class="text-[10px] font-medium px-2.5 py-1 rounded-full bg-base-200/50 text-base-content/60 border border-base-content/5 group-hover:border-primary/20 group-hover:text-primary group-hover:bg-primary/5 transition-all duration-300">
+                                运动
+                             </span>
+                          
+                       </div>
+                    
+                  </div>
+               </div>
+            
+               <!-- Exquisite Card -->
+               <div class="js-tilt group relative p-5 rounded-2xl bg-gradient-to-br from-base-100 to-base-200/20 border border-base-content/10 hover:border-primary/50 transition-all duration-500 hover:shadow-[0_15px_40px_-10px_rgba(0,0,0,0.1)] hover:shadow-primary/10 overflow-hidden flex flex-col h-full" data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
+                  
+                  <!-- Subtle Gradient Overlay -->
+                  <div class="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  <div class="relative z-10 flex flex-col h-full">
+                    <!-- Header -->
+                    <div class="flex items-center justify-between mb-4">
+                       <div class="flex items-center gap-4">
+                          <!-- Icon Box -->
+                          <div class="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center text-primary font-bold text-lg shadow-sm group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-content transition-all duration-500 ring-1 ring-primary/10">
+                             零
+                          </div>
+                          <h4 class="font-bold text-base text-base-content group-hover:text-primary transition-colors tracking-tight">零食</h4>
+                       </div>
+                    </div>
+                    
+                    <!-- Description -->
+                    
+                       <div class="mb-5 flex-grow">
+                         <p class="text-xs text-base-content/60 leading-relaxed group-hover:text-base-content/80 transition-colors font-sans text-justify">
+                            老大是一个很爱吃零食的小孩，当然要是美味的零食Ψ(￣∀￣)Ψ
+                         </p>
+                       </div>
+                    
+           
+                    <!-- Keywords -->
+                    
+                       <div class="flex flex-wrap gap-2 pt-4 border-t border-base-content/5 group-hover:border-primary/10 transition-colors">
+                          
+                             <span class="text-[10px] font-medium px-2.5 py-1 rounded-full bg-base-200/50 text-base-content/60 border border-base-content/5 group-hover:border-primary/20 group-hover:text-primary group-hover:bg-primary/5 transition-all duration-300">
+                                零食
+                             </span>
+                          
+                             <span class="text-[10px] font-medium px-2.5 py-1 rounded-full bg-base-200/50 text-base-content/60 border border-base-content/5 group-hover:border-primary/20 group-hover:text-primary group-hover:bg-primary/5 transition-all duration-300">
+                                美味
+                             </span>
+                          
+                       </div>
+                    
+                  </div>
+               </div>
+            
+               <!-- Exquisite Card -->
+               <div class="js-tilt group relative p-5 rounded-2xl bg-gradient-to-br from-base-100 to-base-200/20 border border-base-content/10 hover:border-primary/50 transition-all duration-500 hover:shadow-[0_15px_40px_-10px_rgba(0,0,0,0.1)] hover:shadow-primary/10 overflow-hidden flex flex-col h-full" data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
+                  
+                  <!-- Subtle Gradient Overlay -->
+                  <div class="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  <div class="relative z-10 flex flex-col h-full">
+                    <!-- Header -->
+                    <div class="flex items-center justify-between mb-4">
+                       <div class="flex items-center gap-4">
+                          <!-- Icon Box -->
+                          <div class="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center text-primary font-bold text-lg shadow-sm group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-content transition-all duration-500 ring-1 ring-primary/10">
+                             猫
+                          </div>
+                          <h4 class="font-bold text-base text-base-content group-hover:text-primary transition-colors tracking-tight">猫咪</h4>
+                       </div>
+                    </div>
+                    
+                    <!-- Description -->
+                    
+                       <div class="mb-5 flex-grow">
+                         <p class="text-xs text-base-content/60 leading-relaxed group-hover:text-base-content/80 transition-colors font-sans text-justify">
+                            🐱是老大最爱的动物！虽然对猫毛过敏，但是完全阻挡不了她的喜欢……
+                         </p>
+                       </div>
+                    
+           
+                    <!-- Keywords -->
+                    
+                       <div class="flex flex-wrap gap-2 pt-4 border-t border-base-content/5 group-hover:border-primary/10 transition-colors">
+                          
+                             <span class="text-[10px] font-medium px-2.5 py-1 rounded-full bg-base-200/50 text-base-content/60 border border-base-content/5 group-hover:border-primary/20 group-hover:text-primary group-hover:bg-primary/5 transition-all duration-300">
+                                猫咪
+                             </span>
+                          
+                             <span class="text-[10px] font-medium px-2.5 py-1 rounded-full bg-base-200/50 text-base-content/60 border border-base-content/5 group-hover:border-primary/20 group-hover:text-primary group-hover:bg-primary/5 transition-all duration-300">
+                                萌物
+                             </span>
+                          
+                       </div>
+                    
+                  </div>
+               </div>
+            
+         </div>
+       
+    </div>
+
+    <!-- 2. Recent Notes (Compact List) (5/12) -->
+    <div class="lg:col-span-5 card bg-base-100/80 backdrop-blur-md shadow-sm border border-base-content/5 p-6 lg:p-8 flex flex-col">
+       <div class="flex items-center justify-between mb-6">
+          <div class="flex items-center gap-3">
+             <div class="w-1.5 h-6 bg-gradient-to-b from-secondary to-secondary/20 rounded-full"></div>
+             <h3 class="text-xl font-bold text-base-content tracking-tight">Recent Notes</h3>
+          </div>
+          <a href="/notes" class="btn btn-xs btn-ghost opacity-60 hover:opacity-100 hover:bg-base-200">
+             View All <i class="fa-solid fa-arrow-right ml-1"></i>
+          </a>
+       </div>
+
+       <div class="flex flex-col gap-3 flex-grow">
+          
+             <a href="/2026/01/01/%E7%A5%9D%E7%A6%8F/" class="flex items-center gap-4 p-3 rounded-2xl bg-base-100/40 hover:bg-base-100 border border-base-content/10 hover:border-primary/50 hover:shadow-md transition-all duration-300 group relative overflow-hidden">
+                
+                <!-- Hover Highlight -->
+                <div class="absolute left-0 top-0 bottom-0 w-1 bg-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                <!-- Date Box -->
+                <div class="flex flex-col items-center justify-center w-12 h-12 rounded-full bg-base-200/50 shrink-0 group-hover:bg-primary group-hover:text-primary-content transition-all duration-300 border border-base-content/5 group-hover:border-primary group-hover:scale-105">
+                   <span class="text-[9px] font-bold opacity-60 group-hover:opacity-90 uppercase tracking-wider">Jan</span>
+                   <span class="text-lg font-black leading-none">01</span>
+                </div>
+                
+                <!-- Content -->
+                <div class="flex-grow min-w-0 py-0.5">
+                   <h4 class="font-bold text-sm text-base-content truncate group-hover:text-primary transition-colors mb-1">祝福</h4>
+                   <div class="flex items-center gap-3">
+                      
+                         <span class="text-[10px] px-2 py-0.5 rounded-full bg-base-200/50 text-base-content/60 border border-base-content/5 group-hover:border-primary/10 group-hover:text-primary group-hover:bg-primary/5 transition-colors">
+                            薯仔想法
+                         </span>
+                      
+                      <span class="text-[10px] opacity-40 truncate flex-grow font-medium">
+                         Read article
+                      </span>
+                   </div>
+                </div>
+                
+                <!-- Arrow -->
+                <div class="w-8 h-8 rounded-full flex items-center justify-center opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-primary">
+                   <i class="fa-solid fa-arrow-right-long"></i>
+                </div>
+             </a>
+          
+             <a href="/2025/12/26/%E9%81%97%E6%86%BE/" class="flex items-center gap-4 p-3 rounded-2xl bg-base-100/40 hover:bg-base-100 border border-base-content/10 hover:border-primary/50 hover:shadow-md transition-all duration-300 group relative overflow-hidden">
+                
+                <!-- Hover Highlight -->
+                <div class="absolute left-0 top-0 bottom-0 w-1 bg-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                <!-- Date Box -->
+                <div class="flex flex-col items-center justify-center w-12 h-12 rounded-full bg-base-200/50 shrink-0 group-hover:bg-primary group-hover:text-primary-content transition-all duration-300 border border-base-content/5 group-hover:border-primary group-hover:scale-105">
+                   <span class="text-[9px] font-bold opacity-60 group-hover:opacity-90 uppercase tracking-wider">Dec</span>
+                   <span class="text-lg font-black leading-none">26</span>
+                </div>
+                
+                <!-- Content -->
+                <div class="flex-grow min-w-0 py-0.5">
+                   <h4 class="font-bold text-sm text-base-content truncate group-hover:text-primary transition-colors mb-1">道歉信</h4>
+                   <div class="flex items-center gap-3">
+                      
+                         <span class="text-[10px] px-2 py-0.5 rounded-full bg-base-200/50 text-base-content/60 border border-base-content/5 group-hover:border-primary/10 group-hover:text-primary group-hover:bg-primary/5 transition-colors">
+                            薯仔想法
+                         </span>
+                      
+                      <span class="text-[10px] opacity-40 truncate flex-grow font-medium">
+                         Read article
+                      </span>
+                   </div>
+                </div>
+                
+                <!-- Arrow -->
+                <div class="w-8 h-8 rounded-full flex items-center justify-center opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-primary">
+                   <i class="fa-solid fa-arrow-right-long"></i>
+                </div>
+             </a>
+          
+             <a href="/2025/12/26/%E5%87%A0%E5%88%86%E4%B9%8B%E5%87%A0/" class="flex items-center gap-4 p-3 rounded-2xl bg-base-100/40 hover:bg-base-100 border border-base-content/10 hover:border-primary/50 hover:shadow-md transition-all duration-300 group relative overflow-hidden">
+                
+                <!-- Hover Highlight -->
+                <div class="absolute left-0 top-0 bottom-0 w-1 bg-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                <!-- Date Box -->
+                <div class="flex flex-col items-center justify-center w-12 h-12 rounded-full bg-base-200/50 shrink-0 group-hover:bg-primary group-hover:text-primary-content transition-all duration-300 border border-base-content/5 group-hover:border-primary group-hover:scale-105">
+                   <span class="text-[9px] font-bold opacity-60 group-hover:opacity-90 uppercase tracking-wider">Dec</span>
+                   <span class="text-lg font-black leading-none">26</span>
+                </div>
+                
+                <!-- Content -->
+                <div class="flex-grow min-w-0 py-0.5">
+                   <h4 class="font-bold text-sm text-base-content truncate group-hover:text-primary transition-colors mb-1">几分之几</h4>
+                   <div class="flex items-center gap-3">
+                      
+                         <span class="text-[10px] px-2 py-0.5 rounded-full bg-base-200/50 text-base-content/60 border border-base-content/5 group-hover:border-primary/10 group-hover:text-primary group-hover:bg-primary/5 transition-colors">
+                            薯仔想法
+                         </span>
+                      
+                      <span class="text-[10px] opacity-40 truncate flex-grow font-medium">
+                         Read article
+                      </span>
+                   </div>
+                </div>
+                
+                <!-- Arrow -->
+                <div class="w-8 h-8 rounded-full flex items-center justify-center opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-primary">
+                   <i class="fa-solid fa-arrow-right-long"></i>
+                </div>
+             </a>
+          
+             <a href="/2025/10/23/%E6%B2%9F%E9%80%9A%E5%A4%B1%E8%B4%A5%E7%9A%84%E6%83%B3%E6%B3%95/" class="flex items-center gap-4 p-3 rounded-2xl bg-base-100/40 hover:bg-base-100 border border-base-content/10 hover:border-primary/50 hover:shadow-md transition-all duration-300 group relative overflow-hidden">
+                
+                <!-- Hover Highlight -->
+                <div class="absolute left-0 top-0 bottom-0 w-1 bg-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                <!-- Date Box -->
+                <div class="flex flex-col items-center justify-center w-12 h-12 rounded-full bg-base-200/50 shrink-0 group-hover:bg-primary group-hover:text-primary-content transition-all duration-300 border border-base-content/5 group-hover:border-primary group-hover:scale-105">
+                   <span class="text-[9px] font-bold opacity-60 group-hover:opacity-90 uppercase tracking-wider">Oct</span>
+                   <span class="text-lg font-black leading-none">23</span>
+                </div>
+                
+                <!-- Content -->
+                <div class="flex-grow min-w-0 py-0.5">
+                   <h4 class="font-bold text-sm text-base-content truncate group-hover:text-primary transition-colors mb-1">沟通失败的想法</h4>
+                   <div class="flex items-center gap-3">
+                      
+                         <span class="text-[10px] px-2 py-0.5 rounded-full bg-base-200/50 text-base-content/60 border border-base-content/5 group-hover:border-primary/10 group-hover:text-primary group-hover:bg-primary/5 transition-colors">
+                            薯仔想法
+                         </span>
+                      
+                      <span class="text-[10px] opacity-40 truncate flex-grow font-medium">
+                         Read article
+                      </span>
+                   </div>
+                </div>
+                
+                <!-- Arrow -->
+                <div class="w-8 h-8 rounded-full flex items-center justify-center opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-primary">
+                   <i class="fa-solid fa-arrow-right-long"></i>
+                </div>
+             </a>
+          
+       </div>
+    </div>
+
+  </div>
+
 </div>
 
+<!-- Data Injection -->
+<div id="heatmap-data" data-json="[{&#34;date&#34;:&#34;2025-10-04&#34;,&#34;count&#34;:6,&#34;thoughts&#34;:&#34;今天是lulu的生日，，出去玩好开心呀好开心&#34;},{&#34;date&#34;:&#34;2025-10-11&#34;,&#34;count&#34;:10,&#34;thoughts&#34;:&#34;好后悔……好难过啊……&#34;},{&#34;date&#34;:&#34;2025-12-06&#34;,&#34;count&#34;:9,&#34;thoughts&#34;:&#34;偷偷完善这个网站ing……&#34;},{&#34;date&#34;:&#34;2025-12-23&#34;,&#34;count&#34;:10,&#34;thoughts&#34;:&#34;应该是最后一次可以跟你这样子沟通了吧，很开心很开心，但是也很舍不得呢，遗憾呐……&#34;},{&#34;date&#34;:&#34;2025-12-26&#34;,&#34;count&#34;:8,&#34;thoughts&#34;:&#34;好愧疚…可是要面对自己的错误和问题呢&#34;}]" style="display: none;"></div>
+
 <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
 
 <script>
   let currentDisplayDate = new Date();
   let updateChartDate;
   let myChart;
   let dataMap = new Map();
-  let thoughtsData = {}; // 存储完整的想法数据
+
+  // --- Typewriter Effect ---
+  function typeWriter(elementId, sourceId, speed = 50) {
+    const element = document.getElementById(elementId);
+    if (!element) return;
+    
+    let text = '';
+    const sourceEl = document.getElementById(sourceId);
+    if (sourceEl) {
+        text = sourceEl.innerText.trim();
+    } else {
+        text = element.getAttribute('data-text') || '';
+    }
+    
+    element.textContent = '';
+    let i = 0;
+    function type() {
+      if (i < text.length) {
+        element.textContent += text.charAt(i);
+        i++;
+        setTimeout(type, speed);
+      }
+    }
+    type();
+  }
+
+  // --- Greeting Logic ---
+  function setGreeting() {
+     const hour = new Date().getHours();
+     const badge = document.getElementById('time-greeting');
+     if(!badge) return;
+     
+     let text = '';
+     let icon = '';
+     if (hour < 5) { text = 'Late Night'; icon = '🌙'; }
+     else if (hour < 12) { text = 'Good Morning'; icon = '☀️'; }
+     else if (hour < 18) { text = 'Good Afternoon'; icon = '☕'; }
+     else { text = 'Good Evening'; icon = '✨'; }
+     
+     badge.textContent = `${icon} ${text}`;
+     badge.classList.remove('opacity-0');
+  }
+
+  // --- Random Quote ---
+  function setRandomQuote() {
+     const quotes = [
+        "Life is what happens when you're busy making other plans.",
+        "The only way to do great work is to love what you do.",
+        "Stay hungry, stay foolish.",
+        "Simplicity is the ultimate sophistication.",
+        "Code is poetry.",
+        "Every day is a new beginning."
+     ];
+     const el = document.getElementById('daily-quote');
+     if(el) el.textContent = `"${quotes[Math.floor(Math.random() * quotes.length)]}"`;
+  }
 
   document.addEventListener('DOMContentLoaded', function() {
+    // Init Effects
+    setTimeout(() => typeWriter('typewriter-subtitle', null, 100), 500);
+    setTimeout(() => typeWriter('typewriter-about', 'about-source', 20), 1500);
+    setGreeting();
+    setRandomQuote();
+    
+    // Init Tilt
+    if (typeof VanillaTilt !== 'undefined') {
+       VanillaTilt.init(document.querySelectorAll(".js-tilt"), {
+          max: 5,
+          speed: 400,
+          glare: true,
+          "max-glare": 0.1,
+          scale: 1.02
+       });
+    }
+
     const chartDom = document.getElementById('heatmap-container');
     const titleDom = document.getElementById('heatmap-title');
     const dataDom = document.getElementById('heatmap-data');
@@ -663,258 +1224,208 @@ var _hmt = _hmt || [];
     
     myChart.on('click', function(params) {
       if (params.componentType === 'series') {
-        // params.data 是一个数组 [dateString, value]
         const dateStr = params.data[0];
         showDayDetail(dateStr);
       }
     });
 
-    // --- 1. 安全获取数据 ---
+    // 1. Parse Data
     let rawData = [];
     try {
       const jsonString = dataDom.getAttribute('data-json');
       rawData = JSON.parse(jsonString || '[]');
-    } catch (e) {
-      console.warn('Data parsing error:', e);
-    }
+    } catch (e) { console.warn('Data parsing error:', e); }
     
-    // 将数据转为 Map: '2025-10-04' => {count, thoughts}
+    let totalDays = 0;
+    let totalMood = 0;
+
     rawData.forEach(item => {
       const dateStr = item.date instanceof Date ? item.date.toISOString().split('T')[0] : item.date;
+      const count = item.count || 0;
       dataMap.set(dateStr, {
-        count: item.count || 0,
-        thoughts: item.thoughts || item.note || "", // 兼容不同字段名
-        mood: getMoodText(item.count || 0)
+        count: count,
+        thoughts: item.thoughts || item.note || "",
+        mood: getMoodText(count)
       });
+      if (count > 0) {
+         totalDays++;
+         totalMood += count;
+      }
     });
 
-    // --- 2. 颜色配置 ---
+    // Update Stats
+    const statsDays = document.getElementById('stats-days');
+    const statsMood = document.getElementById('stats-mood');
+    if(statsDays) statsDays.textContent = totalDays;
+    if(statsMood) statsMood.textContent = totalDays > 0 ? getMoodText(Math.round(totalMood / totalDays)) : '--';
+
+    // 2. Colors
     const lightColors = ['#ffe6ef', '#ffadd2', '#ff85c0', '#f759ab', '#eb2f96', '#c41d7f'];
     const darkColors  = ['#4a2333', '#702438', '#962e4a', '#bd385d', '#e3426f', '#ff85c0'];
 
-    // --- 3. 核心：补全当月数据 ---
+    // 3. Data Helper
     function getMonthData(year, month) {
       const daysInMonth = new Date(year, month, 0).getDate();
       const res = [];
       for (let i = 1; i <= daysInMonth; i++) {
-        const dateStr = [
-          year,
-          month.toString().padStart(2, '0'),
-          i.toString().padStart(2, '0')
-        ].join('-');
-        const data = dataMap.get(dateStr) || { count: 0, thoughts: "", mood: "淡" };
+        const dateStr = [year, month.toString().padStart(2, '0'), i.toString().padStart(2, '0')].join('-');
+        const data = dataMap.get(dateStr) || { count: 0 };
         res.push([dateStr, data.count]);
       }
       return res;
     }
 
-    // --- 4. 文案映射 ---
     function getMoodText(val) {
-      if (val === 0) return '淡淡的';
-      if (val >= 1 && val <= 5) return '想…';
+      if (val === 0) return '平淡';
+      if (val <= 5) return '想念';
       if (val === 6) return '听歌';
       if (val === 7) return '好奇';
       if (val === 8) return '难过';
-      if (val === 9) return '梦';
-      if (val === 10) return '懊悔…';
-      return '淡';
+      if (val === 9) return '梦境';
+      return '懊悔';
     }
 
-    // --- 5. 点击事件处理 ---
+    // 4. Show Detail
     const showDayDetail = (dateStr) => {
       const item = dataMap.get(dateStr) || { count: 0, thoughts: '' };
       const date = new Date(dateStr);
       
-      // === 核心修复：确保这里操作的 ID 在 HTML 中真实存在 ===
-      
-      // 切换显示状态
       document.getElementById('detail-default').classList.add('hidden');
       const content = document.getElementById('detail-content');
       content.classList.remove('hidden');
-      
-      // 触发动画
       content.classList.remove('animate-fade-in');
       void content.offsetWidth; 
       content.classList.add('animate-fade-in');
 
-      // 填充日期信息 (对应 HTML 中的 id="detail-day", "detail-month"...)
-      const months = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'];
-      const weekdays = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+      const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
       
       document.getElementById('detail-day').textContent = date.getDate();
       document.getElementById('detail-month').textContent = months[date.getMonth()];
       document.getElementById('detail-weekday').textContent = weekdays[date.getDay()];
 
-      // 填充心情徽章 (对应 HTML 中的 id="detail-mood-badge")
       const moodInfo = getMoodInfo(item.count);
       const badge = document.getElementById('detail-mood-badge');
       badge.textContent = moodInfo.text;
       badge.style.borderColor = moodInfo.color;
-      badge.style.color = item.count > 0 ? '#c41d7f' : '#9ca3af';
-      badge.style.backgroundColor = item.count > 0 ? moodInfo.color + '20' : 'transparent';
+      badge.style.color = item.count > 0 ? moodInfo.color : 'currentColor';
+      badge.style.backgroundColor = item.count > 0 ? moodInfo.color + '10' : 'transparent';
 
-      // 填充进度条和数值 (对应 HTML 中的 id="detail-count-val", "detail-progress")
       document.getElementById('detail-count-val').textContent = `${item.count}/10`;
-      document.getElementById('detail-progress').value = item.count;
       
-      // 填充想法文字
+      // Update Segmented Progress
+      for (let i = 0; i < 10; i++) {
+         const seg = document.getElementById(`progress-seg-${i}`);
+         if (i < item.count) {
+            seg.style.backgroundColor = moodInfo.color;
+            seg.style.opacity = '1';
+            seg.style.boxShadow = `0 0 8px ${moodInfo.color}40`;
+         } else {
+            seg.style.backgroundColor = 'currentColor';
+            seg.style.opacity = '0.1';
+            seg.style.boxShadow = 'none';
+         }
+      }
+      
       const tText = document.getElementById('thoughts-text');
       if (item.thoughts) {
         tText.textContent = item.thoughts;
-        tText.classList.add('opacity-85');
-        // tText.classList.remove('italic', 'opacity-50');
+        tText.classList.remove('italic', 'opacity-50');
       } else {
-        tText.textContent = "今天没有记录什么特别的想法...";
+        tText.textContent = "No records for this day...";
         tText.classList.add('italic', 'opacity-50');
       }
     };
     
     function getMoodInfo(val) {
-       // 简单的内部辅助函数，确保showDayDetail能获取到颜色
        const c = ['#ffe6ef', '#ffadd2', '#ff85c0', '#f759ab', '#eb2f96', '#c41d7f'];
        const t = getMoodText(val);
        const idx = Math.min(Math.floor(val/2), c.length-1);
        return { color: val===0 ? '#ccc' : c[idx], text: t };
     }
 
-
-    // --- 6. 生成 ECharts 配置 ---
+    // 5. ECharts Option
     function getOption(theme, dateObj) {
-      const isDark = ['dark', 'halloween', 'forest', 'black', 'luxury', 'dracula', 'business', 'night'].includes(theme);
-      
+      const isDark = ['dark', 'black', 'night'].includes(theme);
       const year = dateObj.getFullYear();
       const month = dateObj.getMonth() + 1;
       const displayData = getMonthData(year, month);
-
       const gradientColors = isDark ? darkColors : lightColors;
       const textColor = isDark ? '#a6adbb' : '#374151';
-      
-      const emptyColor = isDark ? 'rgba(255,255,255,0.05)' : '#f3f4f6';
-      const transparentColor = 'rgba(0,0,0,0)'; 
 
-      // === 精美标题修改 ===
-      // 使用 HTML 而不是纯文本，以实现不同字体大小和颜色的混排
       titleDom.innerHTML = `
-        <div class="flex items-baseline gap-2 select-none">
-          <span class="text-3xl font-black font-mono text-primary tracking-tight" style="text-shadow: 0 2px 10px rgba(var(--p), 0.2);">${month.toString().padStart(2, '0')}</span>
-          <span class="text-sm font-medium text-base-content/40 tracking-widest uppercase">/ ${year}</span>
-        </div>
+        <span class="text-2xl font-black font-mono text-primary tracking-tighter" style="text-shadow: 0 4px 12px rgba(var(--p), 0.15);">${month.toString().padStart(2, '0')}</span>
+        <span class="text-[10px] font-bold opacity-40 tracking-widest">/ ${year}</span>
       `;
       
-      // === 动态计算 Scatter 大小 ===
-      const containerWidth = chartDom.clientWidth;
-      const visualMapLength = containerWidth * 0.84; 
-      
-      // 计算单个格子的宽度：容器宽度 * (1 - 左右padding 16%) / 7列
-      const cellWidth = (containerWidth * 0.84) / 7;
-      const cellHeight = 60;
-      // 设置间距 Gap (像素)
-      const gap = 8;
+      // Compact Sizing
+      // Dynamic sizing based on container width would be better, but for now let's make it larger to fill space
+      const cellWidth = 60; 
+      const cellHeight = 55;
 
       return {
         backgroundColor: 'transparent',
         tooltip: { show: false },
-        
         visualMap: {
-          type: 'continuous',
-          min: 0,
-          max: 10,
-          calculable: true,
-          orient: 'horizontal',
-          left: 'center',
-          bottom: 10,
-          itemWidth: 16,
-          itemHeight: visualMapLength, 
-          inRange: { color: gradientColors },
-          textStyle: { color: textColor },
-          outOfRange: { color: emptyColor },
-          formatter: function (val) { return getMoodText(Math.floor(val)); },
-          handleLabel: {
-              show: true,
-              position: 'bottom',
-              color: textColor
-          }
+          show: false, // Hide visual map for cleaner look
+          min: 0, max: 10,
+          inRange: { color: gradientColors }
         },
-
         calendar: {
-          top: 80, 
-          left: '8%',
-          right: '8%',
+          top: 'center',
+          left: 'center',
           orient: 'vertical',
-          // 这里的 cellSize 决定了坐标系格子的物理大小
-          cellSize: ['auto', 60], 
+          cellSize: [cellWidth, cellHeight],
           yearLabel: { show: false },
           monthLabel: { show: false },
           dayLabel: {
             firstDay: 1,
-            nameMap: 'CN',
+            nameMap: 'en',
             color: textColor,
-            margin: 15,
-            fontSize: 14,
-            fontWeight: 'bold'
+            fontSize: 12,
+            fontWeight: 'bold',
+            margin: 15
           },
-          // 隐藏日历的所有线条和背景
           itemStyle: {
             color: 'transparent',
             borderColor: 'transparent',
-            borderWidth: 0, // 关键：设为0，不让日历画格子
-            backgroundColor: 'transparent'
+            borderWidth: 0
           },
           splitLine: { show: false },
-          range: `${year}-${month.toString().padStart(2, '0')}`,
-          bottom: 60
+          range: `${year}-${month.toString().padStart(2, '0')}`
         },
-
         series: {
-          // === 关键修改：改为 scatter (散点图) ===
           type: 'scatter',
           coordinateSystem: 'calendar',
-          symbol: 'roundRect', // 或者 'roundRect'
-          // 动态计算符号大小：[宽 - 间距, 高 - 间距]
-          symbolSize: function (val) {
-             return [Math.max(0, cellWidth - gap), Math.max(0, cellHeight - gap)];
-          },
+          symbol: 'roundRect',
+          symbolSize: [cellWidth - 10, cellHeight - 10], // Larger cells
           data: displayData,
-          
           label: {
             show: true,
             formatter: function (params) {
-              var d = echarts.number.parseDate(params.value[0]);
-              return d.getDate();
+              return echarts.number.parseDate(params.value[0]).getDate();
             },
-            color: isDark ? 'rgba(255,255,255,0.7)' : 'rgba(0,0,0,0.6)',
-            fontSize: 14, 
+            color: isDark ? 'rgba(255,255,255,0.9)' : 'rgba(0,0,0,0.8)',
+            fontSize: 14,
             fontWeight: 'bold',
-            // 确保标签显示在色块内部
-            position: 'inside'
+            fontFamily: 'monospace'
           },
-          // 样式设置
           itemStyle: {
-            borderRadius: 8, // 圆角效果
-            borderColor: 'transparent',
-            borderWidth: 0
+            borderRadius: 12,
+            shadowBlur: 6,
+            shadowColor: 'rgba(0,0,0,0.08)'
           }
         }
       };
     }
 
-    // --- 7. 初始化默认显示今天 ---
+    // 6. Init
     function initDefaultDetail() {
       const today = new Date();
       const todayStr = today.toISOString().split('T')[0];
-      
-      if (dataMap.has(todayStr)) {
-        showDayDetail(todayStr);
-      } else {
-        // 显示最近有数据的日期
-        const dates = Array.from(dataMap.keys()).sort();
-        if (dates.length > 0) {
-          showDayDetail(dates[dates.length - 1]);
-        }
-      }
+      if (dataMap.has(todayStr)) showDayDetail(todayStr);
     }
 
-    // --- 8. 渲染与更新 ---
     updateChartDate = function(offset) {
       currentDisplayDate.setMonth(currentDisplayDate.getMonth() + offset);
       const theme = document.documentElement.getAttribute('data-theme');
@@ -924,18 +1435,15 @@ var _hmt = _hmt || [];
     updateChartDate(0);
     initDefaultDetail();
 
-    // 主题切换监听
+    // Resize & Theme
     const observer = new MutationObserver(function(mutations) {
       mutations.forEach(function(mutation) {
-        if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+        if (mutation.attributeName === 'data-theme') {
           const theme = document.documentElement.getAttribute('data-theme');
           myChart.dispose();
           myChart = echarts.init(chartDom, null, { renderer: 'svg' });
           myChart.on('click', function(params) {
-            if (params.componentType === 'series') {
-              const dateStr = params.data[0];
-              showDayDetail(dateStr);
-            }
+             if (params.componentType === 'series') showDayDetail(params.data[0]);
           });
           myChart.setOption(getOption(theme, currentDisplayDate));
         }
@@ -944,12 +1452,11 @@ var _hmt = _hmt || [];
     observer.observe(document.documentElement, { attributes: true });
 
     window.addEventListener('resize', function() {
-    // 只有当容器可见且有宽度时才 resize，避免报错
-    if (chartDom && chartDom.clientWidth > 0) {
+      if (chartDom && chartDom.clientWidth > 0) {
         myChart.resize();
         const theme = document.documentElement.getAttribute('data-theme');
         myChart.setOption(getOption(theme, currentDisplayDate));
-    }
+      }
     });
   });
 
@@ -959,345 +1466,13 @@ var _hmt = _hmt || [];
 </script>
 
 <style>
-  /* 添加一些自定义样式 */
-  #detail-mood {
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-  }
-  
-  #heatmap-container .echarts-heatmap-cell {
-    cursor: pointer;
-    transition: transform 0.2s ease;
-  }
-  
-  #heatmap-container .echarts-heatmap-cell:hover {
-    transform: scale(1.05);
-    z-index: 10;
-  }
+  .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+  .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+  .custom-scrollbar::-webkit-scrollbar-thumb { background-color: rgba(0,0,0,0.1); border-radius: 10px; }
+  .animate-fade-in { animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px) scale(0.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
 </style>
 
-
-<!-- Lulu 爱好 -->
-
-<div class="w-full py-16">
-  <div class="container mx-auto px-4 max-w-7xl">
-    
-    <!-- 标题区域：统一风格 -->
-    <div class="flex items-center gap-3 mb-10 pl-2">
-       <div class="h-8 w-1.5 bg-gradient-to-b from-primary to-secondary rounded-full shadow-sm"></div>
-       <h2 class="text-3xl font-bold tracking-tight text-base-content">lulu的爱好</h2>
-    </div>
-  
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      
-      
-        
-        
-        <!-- 2. 卡片容器：group 用于控制内部悬停效果 -->
-        <div class="group relative flex flex-col h-full transition-all duration-300 hover:-translate-y-1">
-          
-          <!-- 装饰背景：悬停时显示的渐变光晕边框 -->
-          <div class="absolute -inset-0.5 bg-gradient-to-br from-primary/40 to-secondary/40 rounded-[1.4rem] opacity-0 group-hover:opacity-100 blur-sm transition duration-500"></div>
-          
-          <!-- 卡片主体：磨砂玻璃质感 -->
-          <div class="relative flex flex-col flex-grow h-full bg-base-100/90 backdrop-blur-md border border-base-content/5 rounded-[1.3rem] p-6 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden">
-            
-            <!-- 顶部装饰背景图标 (修改处) -->
-            <div class="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
-                <!-- 动态应用图标 Class -->
-                <i class="fa-solid fa-volleyball text-6xl text-primary transform rotate-12"></i>
-            </div>
-  
-            <!-- 3. 头部：动态图标与标题 -->
-            <div class="flex items-center gap-4 mb-5 relative z-10">
-              <!-- 自动生成首字母图标 -->
-              <div class="w-12 h-12 shrink-0 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-xl font-black shadow-sm group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-content transition-all duration-300">
-                排
-              </div>
-              <h3 class="text-xl font-bold text-base-content group-hover:text-primary transition-colors">
-                排球
-              </h3>
-            </div>
-  
-            <!-- 4. 描述文字：限制行数，保持整齐 -->
-            
-              <div class="mb-6 relative z-10">
-                <p class="text-sm text-base-content/70 leading-relaxed line-clamp-3 group-hover:text-base-content/90 transition-colors">
-                  这是老大最喜欢的运动，从高中开始就在打排球了！来了珠海之后，也爱上了沙滩排球🏐
-                </p>
-              </div>
-            
-  
-            <!-- 占位符，将标签推到底部 -->
-            <div class="flex-grow"></div>
-  
-            <!-- 5. 关键词标签：精致的胶囊样式 -->
-            
-              <div class="pt-4 border-t border-base-content/5 relative z-10">
-                <div class="flex flex-wrap gap-2">
-                  
-                    <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium bg-base-200/50 text-base-content/60 border border-base-content/5 group-hover:border-primary/20 group-hover:text-primary group-hover:bg-primary/5 transition-all duration-300 cursor-default">
-                      <span class="w-1 h-1 rounded-full bg-current opacity-40 mr-1.5"></span>
-                      排球
-                    </span>
-                  
-                    <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium bg-base-200/50 text-base-content/60 border border-base-content/5 group-hover:border-primary/20 group-hover:text-primary group-hover:bg-primary/5 transition-all duration-300 cursor-default">
-                      <span class="w-1 h-1 rounded-full bg-current opacity-40 mr-1.5"></span>
-                      运动
-                    </span>
-                  
-                </div>
-              </div>
-            
-            
-          </div>
-        </div>
-      
-        
-        
-        <!-- 2. 卡片容器：group 用于控制内部悬停效果 -->
-        <div class="group relative flex flex-col h-full transition-all duration-300 hover:-translate-y-1">
-          
-          <!-- 装饰背景：悬停时显示的渐变光晕边框 -->
-          <div class="absolute -inset-0.5 bg-gradient-to-br from-primary/40 to-secondary/40 rounded-[1.4rem] opacity-0 group-hover:opacity-100 blur-sm transition duration-500"></div>
-          
-          <!-- 卡片主体：磨砂玻璃质感 -->
-          <div class="relative flex flex-col flex-grow h-full bg-base-100/90 backdrop-blur-md border border-base-content/5 rounded-[1.3rem] p-6 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden">
-            
-            <!-- 顶部装饰背景图标 (修改处) -->
-            <div class="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
-                <!-- 动态应用图标 Class -->
-                <i class="fa-solid fa-cookie-bite text-6xl text-primary transform rotate-12"></i>
-            </div>
-  
-            <!-- 3. 头部：动态图标与标题 -->
-            <div class="flex items-center gap-4 mb-5 relative z-10">
-              <!-- 自动生成首字母图标 -->
-              <div class="w-12 h-12 shrink-0 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-xl font-black shadow-sm group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-content transition-all duration-300">
-                零
-              </div>
-              <h3 class="text-xl font-bold text-base-content group-hover:text-primary transition-colors">
-                零食
-              </h3>
-            </div>
-  
-            <!-- 4. 描述文字：限制行数，保持整齐 -->
-            
-              <div class="mb-6 relative z-10">
-                <p class="text-sm text-base-content/70 leading-relaxed line-clamp-3 group-hover:text-base-content/90 transition-colors">
-                  老大是一个很爱吃零食的小孩，当然要是美味的零食Ψ(￣∀￣)Ψ
-                </p>
-              </div>
-            
-  
-            <!-- 占位符，将标签推到底部 -->
-            <div class="flex-grow"></div>
-  
-            <!-- 5. 关键词标签：精致的胶囊样式 -->
-            
-              <div class="pt-4 border-t border-base-content/5 relative z-10">
-                <div class="flex flex-wrap gap-2">
-                  
-                    <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium bg-base-200/50 text-base-content/60 border border-base-content/5 group-hover:border-primary/20 group-hover:text-primary group-hover:bg-primary/5 transition-all duration-300 cursor-default">
-                      <span class="w-1 h-1 rounded-full bg-current opacity-40 mr-1.5"></span>
-                      零食
-                    </span>
-                  
-                    <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium bg-base-200/50 text-base-content/60 border border-base-content/5 group-hover:border-primary/20 group-hover:text-primary group-hover:bg-primary/5 transition-all duration-300 cursor-default">
-                      <span class="w-1 h-1 rounded-full bg-current opacity-40 mr-1.5"></span>
-                      美味
-                    </span>
-                  
-                </div>
-              </div>
-            
-            
-          </div>
-        </div>
-      
-        
-        
-        <!-- 2. 卡片容器：group 用于控制内部悬停效果 -->
-        <div class="group relative flex flex-col h-full transition-all duration-300 hover:-translate-y-1">
-          
-          <!-- 装饰背景：悬停时显示的渐变光晕边框 -->
-          <div class="absolute -inset-0.5 bg-gradient-to-br from-primary/40 to-secondary/40 rounded-[1.4rem] opacity-0 group-hover:opacity-100 blur-sm transition duration-500"></div>
-          
-          <!-- 卡片主体：磨砂玻璃质感 -->
-          <div class="relative flex flex-col flex-grow h-full bg-base-100/90 backdrop-blur-md border border-base-content/5 rounded-[1.3rem] p-6 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden">
-            
-            <!-- 顶部装饰背景图标 (修改处) -->
-            <div class="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
-                <!-- 动态应用图标 Class -->
-                <i class="fa-solid fa-cat text-6xl text-primary transform rotate-12"></i>
-            </div>
-  
-            <!-- 3. 头部：动态图标与标题 -->
-            <div class="flex items-center gap-4 mb-5 relative z-10">
-              <!-- 自动生成首字母图标 -->
-              <div class="w-12 h-12 shrink-0 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-xl font-black shadow-sm group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-content transition-all duration-300">
-                猫
-              </div>
-              <h3 class="text-xl font-bold text-base-content group-hover:text-primary transition-colors">
-                猫咪
-              </h3>
-            </div>
-  
-            <!-- 4. 描述文字：限制行数，保持整齐 -->
-            
-              <div class="mb-6 relative z-10">
-                <p class="text-sm text-base-content/70 leading-relaxed line-clamp-3 group-hover:text-base-content/90 transition-colors">
-                  🐱是老大最爱的动物！虽然对猫毛过敏，但是完全阻挡不了她的喜欢……
-                </p>
-              </div>
-            
-  
-            <!-- 占位符，将标签推到底部 -->
-            <div class="flex-grow"></div>
-  
-            <!-- 5. 关键词标签：精致的胶囊样式 -->
-            
-              <div class="pt-4 border-t border-base-content/5 relative z-10">
-                <div class="flex flex-wrap gap-2">
-                  
-                    <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium bg-base-200/50 text-base-content/60 border border-base-content/5 group-hover:border-primary/20 group-hover:text-primary group-hover:bg-primary/5 transition-all duration-300 cursor-default">
-                      <span class="w-1 h-1 rounded-full bg-current opacity-40 mr-1.5"></span>
-                      猫咪
-                    </span>
-                  
-                    <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium bg-base-200/50 text-base-content/60 border border-base-content/5 group-hover:border-primary/20 group-hover:text-primary group-hover:bg-primary/5 transition-all duration-300 cursor-default">
-                      <span class="w-1 h-1 rounded-full bg-current opacity-40 mr-1.5"></span>
-                      萌物
-                    </span>
-                  
-                </div>
-              </div>
-            
-            
-          </div>
-        </div>
-      
-    </div>
-  </div>
-</div>
-
-
-<!-- -------------------------- Recent Notes (记lu) -------------------------- -->
-<div class="container mx-auto px-4 py-16 max-w-7xl">
-  
-  <!-- 标题区域：统一风格 -->
-  <div class="flex items-center gap-3 mb-10 pl-2">
-     <div class="h-8 w-1.5 bg-gradient-to-b from-primary to-secondary rounded-full shadow-sm"></div>
-     <h2 class="text-3xl font-bold tracking-tight text-base-content">记lu</h2>
-  </div>
-  
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    
-      <!-- 卡片样式优化：移除 glass，统一圆角，增加阴影和悬停效果 -->
-      <article class="card rounded-2xl shadow-md bg-base-100/90 text-base-content hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 h-full flex flex-col">
-        <div class="card-body p-6 flex flex-col h-full">
-          
-          <!-- Header (日期在左，分类在右) -->
-          <div class="mb-4 flex justify-between items-start">
-            <time class="text-sm opacity-60 font-medium tracking-wide">
-              <i class="far fa-calendar-alt mr-1"></i> 2025年12月28日
-            </time>
-            
-          </div>
-
-          <!-- Title -->
-          <h3 class="card-title text-xl font-bold leading-snug mb-3">
-            <a href="/2025/12/28/%E7%A5%9D%E7%A6%8F/" class="hover:text-primary no-underline transition-colors duration-200">
-              
-            </a>
-          </h3>
-
-          <!-- Excerpt -->
-          
-            <div class="flex-1"></div>
-          
-
-          <!-- Tags -->
-          
-        </div>
-      </article>
-    
-      <!-- 卡片样式优化：移除 glass，统一圆角，增加阴影和悬停效果 -->
-      <article class="card rounded-2xl shadow-md bg-base-100/90 text-base-content hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 h-full flex flex-col">
-        <div class="card-body p-6 flex flex-col h-full">
-          
-          <!-- Header (日期在左，分类在右) -->
-          <div class="mb-4 flex justify-between items-start">
-            <time class="text-sm opacity-60 font-medium tracking-wide">
-              <i class="far fa-calendar-alt mr-1"></i> 2025年12月26日
-            </time>
-            
-              <div class="badge badge-outline badge-primary badge-sm py-2">
-                薯仔想法
-              </div>
-            
-          </div>
-
-          <!-- Title -->
-          <h3 class="card-title text-xl font-bold leading-snug mb-3">
-            <a href="/2025/12/26/%E5%87%A0%E5%88%86%E4%B9%8B%E5%87%A0/" class="hover:text-primary no-underline transition-colors duration-200">
-              几分之几
-            </a>
-          </h3>
-
-          <!-- Excerpt -->
-          
-            <div class="flex-1"></div>
-          
-
-          <!-- Tags -->
-          
-        </div>
-      </article>
-    
-      <!-- 卡片样式优化：移除 glass，统一圆角，增加阴影和悬停效果 -->
-      <article class="card rounded-2xl shadow-md bg-base-100/90 text-base-content hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 h-full flex flex-col">
-        <div class="card-body p-6 flex flex-col h-full">
-          
-          <!-- Header (日期在左，分类在右) -->
-          <div class="mb-4 flex justify-between items-start">
-            <time class="text-sm opacity-60 font-medium tracking-wide">
-              <i class="far fa-calendar-alt mr-1"></i> 2025年12月26日
-            </time>
-            
-              <div class="badge badge-outline badge-primary badge-sm py-2">
-                薯仔想法
-              </div>
-            
-          </div>
-
-          <!-- Title -->
-          <h3 class="card-title text-xl font-bold leading-snug mb-3">
-            <a href="/2025/12/26/%E9%81%97%E6%86%BE/" class="hover:text-primary no-underline transition-colors duration-200">
-              道歉信
-            </a>
-          </h3>
-
-          <!-- Excerpt -->
-          
-            <div class="flex-1"></div>
-          
-
-          <!-- Tags -->
-          
-        </div>
-      </article>
-    
-  </div>
-
-  <!-- View All -->
-  <div class="text-center mt-10">
-    <a href="/notes" class="btn btn-lg btn-outline btn-primary shadow-md">
-       <i class="fa-solid fa-arrow-right mr-2"></i>
-       探索所有记录
-    </a>
-  </div>
-</div>
 
 
   </div>
@@ -2001,44 +2176,18 @@ var _hmt = _hmt || [];
             <div class="space-y-4">
               
                 <article class="group p-4 rounded-2xl bg-white border-2 border-[#F0EDF5] hover:border-[#A8E6CF] hover:shadow-md transition-all cursor-pointer">
-                  <a href="/2025/12/28/%E7%A5%9D%E7%A6%8F/" class="flex gap-4">
+                  <a href="/2026/01/01/%E7%A5%9D%E7%A6%8F/" class="flex gap-4">
                     <!-- 日期 -->
                     <div class="flex-shrink-0 text-center">
                       <div class="w-12 h-12 rounded-xl bg-[#E0F7EC] text-[#5DA47A] flex flex-col items-center justify-center font-bold group-hover:bg-[#A8E6CF] group-hover:text-white transition-colors">
-                        <span class="text-lg leading-none">28</span>
+                        <span class="text-lg leading-none">01</span>
                       </div>
-                      <span class="text-[10px] text-[#8B7A9E] uppercase font-bold">Dec</span>
+                      <span class="text-[10px] text-[#8B7A9E] uppercase font-bold">Jan</span>
                     </div>
                     
                     <!-- 内容 -->
                     <div class="flex-grow min-w-0">
-                      <h4 class="font-bold text-[#5D4A6F] group-hover:text-[#5DA47A] transition-colors truncate"></h4>
-                      
-                      <div class="flex flex-wrap gap-1 mt-2">
-                        
-                      </div>
-                    </div>
-                    
-                    <!-- 箭头 -->
-                    <div class="flex-shrink-0 self-center opacity-0 group-hover:opacity-100 transition-opacity">
-                      <i class="fa-solid fa-arrow-right text-[#A8E6CF]"></i>
-                    </div>
-                  </a>
-                </article>
-              
-                <article class="group p-4 rounded-2xl bg-white border-2 border-[#F0EDF5] hover:border-[#A8E6CF] hover:shadow-md transition-all cursor-pointer">
-                  <a href="/2025/12/26/%E5%87%A0%E5%88%86%E4%B9%8B%E5%87%A0/" class="flex gap-4">
-                    <!-- 日期 -->
-                    <div class="flex-shrink-0 text-center">
-                      <div class="w-12 h-12 rounded-xl bg-[#E0F7EC] text-[#5DA47A] flex flex-col items-center justify-center font-bold group-hover:bg-[#A8E6CF] group-hover:text-white transition-colors">
-                        <span class="text-lg leading-none">26</span>
-                      </div>
-                      <span class="text-[10px] text-[#8B7A9E] uppercase font-bold">Dec</span>
-                    </div>
-                    
-                    <!-- 内容 -->
-                    <div class="flex-grow min-w-0">
-                      <h4 class="font-bold text-[#5D4A6F] group-hover:text-[#5DA47A] transition-colors truncate">几分之几</h4>
+                      <h4 class="font-bold text-[#5D4A6F] group-hover:text-[#5DA47A] transition-colors truncate">祝福</h4>
                       
                       <div class="flex flex-wrap gap-1 mt-2">
                         
@@ -2065,6 +2214,32 @@ var _hmt = _hmt || [];
                     <!-- 内容 -->
                     <div class="flex-grow min-w-0">
                       <h4 class="font-bold text-[#5D4A6F] group-hover:text-[#5DA47A] transition-colors truncate">道歉信</h4>
+                      
+                      <div class="flex flex-wrap gap-1 mt-2">
+                        
+                      </div>
+                    </div>
+                    
+                    <!-- 箭头 -->
+                    <div class="flex-shrink-0 self-center opacity-0 group-hover:opacity-100 transition-opacity">
+                      <i class="fa-solid fa-arrow-right text-[#A8E6CF]"></i>
+                    </div>
+                  </a>
+                </article>
+              
+                <article class="group p-4 rounded-2xl bg-white border-2 border-[#F0EDF5] hover:border-[#A8E6CF] hover:shadow-md transition-all cursor-pointer">
+                  <a href="/2025/12/26/%E5%87%A0%E5%88%86%E4%B9%8B%E5%87%A0/" class="flex gap-4">
+                    <!-- 日期 -->
+                    <div class="flex-shrink-0 text-center">
+                      <div class="w-12 h-12 rounded-xl bg-[#E0F7EC] text-[#5DA47A] flex flex-col items-center justify-center font-bold group-hover:bg-[#A8E6CF] group-hover:text-white transition-colors">
+                        <span class="text-lg leading-none">26</span>
+                      </div>
+                      <span class="text-[10px] text-[#8B7A9E] uppercase font-bold">Dec</span>
+                    </div>
+                    
+                    <!-- 内容 -->
+                    <div class="flex-grow min-w-0">
+                      <h4 class="font-bold text-[#5D4A6F] group-hover:text-[#5DA47A] transition-colors truncate">几分之几</h4>
                       
                       <div class="flex flex-wrap gap-1 mt-2">
                         
@@ -2382,7 +2557,7 @@ var _hmt = _hmt || [];
   </div>
 
   <!-- Fixed top navbar for desktop -->
-  <div class="hidden lg:flex fixed top-0 left-80 right-0 z-50 bg-base-300 h-16 items-center px-4">
+  <div class="hidden lg:flex fixed top-0 left-80 right-0 z-50 bg-base-100/80 backdrop-blur-md border-b border-base-200 h-16 items-center px-4 transition-all duration-300">
     <div class="flex-1">
       <a href="/" class="btn btn-ghost normal-case text-xl">
       zxnauy
@@ -2654,7 +2829,7 @@ var _hmt = _hmt || [];
 <footer class="footer footer-center sm:footer-horizontal p-4 bg-base-200 text-base-content">
   <div class="grid grid-flow-col gap-4">
     <div class="text-center">
-      <span>© 2025 Lulu</span>
+      <span>© 2026 Lulu</span>
 
       
     </div>
