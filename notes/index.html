@@ -725,11 +725,76 @@ var _hmt = _hmt || [];
 
   <!-- Results Count -->
   <div class="px-4 mb-6 text-sm font-medium opacity-50 tracking-wide uppercase">
-    <span id="resultsCount">Showing all 6 notes</span>
+    <span id="resultsCount">Showing all 7 notes</span>
   </div>
 
   <!-- Posts Grid -->
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="notesContainer">
+    
+      <article class="card group relative h-[420px] w-full overflow-hidden rounded-[32px] border-none shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl note-item"
+               data-category="薯仔想法"
+               data-year="2026"
+               data-title="打扰"
+               data-content=""
+               data-tags="">
+        
+        <!-- Background Image / Gradient -->
+        <div class="absolute inset-0 h-full w-full bg-gradient-to-br from-blue-400 to-indigo-400 transition-transform duration-700 group-hover:scale-110">
+          <!-- Try to load image matching the post slug -->
+          <img src="/pictures/posts/打扰.jpg" 
+               class="h-full w-full object-cover transition-opacity duration-300"
+               loading="lazy"
+               onerror="this.style.display='none'"
+               alt="打扰">
+        </div>
+
+        <!-- Dark Gradient Overlay for Text Readability -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 transition-opacity duration-300 group-hover:opacity-90"></div>
+
+        <!-- Content Container -->
+        <div class="absolute inset-0 flex flex-col justify-end p-6 text-white">
+          
+          <!-- Top Right Badge (Date) -->
+          <div class="absolute top-5 right-5 translate-y-[-10px] opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+             <span class="rounded-full bg-black/30 px-3 py-1.5 text-[10px] font-bold backdrop-blur-md border border-white/10 tracking-wider uppercase">
+                Feb 10
+             </span>
+          </div>
+
+          <!-- Category + Extra Label (Top Left, same row) -->
+          
+            <div class="absolute top-5 left-5 flex items-center gap-2">
+              <span class="rounded-full bg-white/20 px-3 py-1.5 text-[10px] font-bold backdrop-blur-md border border-white/10 tracking-wider uppercase">
+                薯仔想法
+              </span>
+              
+            </div>
+          
+
+          <!-- Main Content Area -->
+          <div class="mb-4">
+            <!-- Title -->
+            <h2 class="mb-2 text-xl font-bold leading-tight tracking-tight text-white drop-shadow-sm">
+              打扰
+            </h2>
+
+            <!-- Excerpt -->
+            <p class="line-clamp-2 text-xs font-medium text-gray-200/90 leading-relaxed">
+              ...
+            </p>
+          </div>
+
+          <!-- Tags -->
+          <div class="mb-5 flex flex-wrap gap-2 opacity-80">
+            
+          </div>
+
+          <!-- Action Button -->
+          <a href="/2026/02/10/%E6%89%93%E6%89%B0/" class="flex w-full items-center justify-center rounded-full bg-white py-3.5 text-sm font-bold text-black transition-all active:scale-95 hover:bg-gray-100 shadow-lg">
+            Read Note
+          </a>
+        </div>
+      </article>
     
       <article class="card group relative h-[420px] w-full overflow-hidden rounded-[32px] border-none shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl note-item"
                data-category="薯仔想法"
